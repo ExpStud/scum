@@ -25,7 +25,7 @@ const NumberInput: FC<Props> = (props: Props) => {
         value && value.length >= charLim ? "text-red-500" : ""
       } ${
         componentProps.disabled
-          ? "cursor-not-allowed bg-custom-dark-gray border-custom-dark-gray"
+          ? "cursor-not-allowed bg-template-dark-gray border-template-dark-gray"
           : "hover:border-orange-300 focus:border-red-400 active:outline-none focus:outline-none border-dark"
       }`}
       onInput={(e) => onInput(e)}

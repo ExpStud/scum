@@ -10,26 +10,42 @@ module.exports = {
         "white-gradient": `linear-gradient(360.58deg, #FFFFFF 43.76%, rgba(255, 255, 255, 0) 106.82%)`,
       },
       fontFamily: {
-        primary: ["Karl"],
-        karl: ["Karl"],
-        "helvetica-neue": "Helvetica Neue",
+        primary: ["Forma Bold"],
+        secondary: ["MK Hell"],
+        "forma-bold": "Forma Bold",
+        "forma-extrabold": "Forma Extra Bold",
       },
       fontWeight: {
-        light: 400, //font-helvetica-neue font-light
-        medium: 400,
+        light: 300,
+        normal: 400,
+        medium: 500,
+        semibold: 600,
         bold: 700,
+        extrabold: 800,
+        black: 900,
       },
       fontStyle: {
         italic: "italic", // Add "italic" style to the font family
       },
       colors: {
+        //scum
+        "scum-beige": "#F6EFD3",
+        "scum-teal": "#86E4C5",
+        "scum-red": "#B12F4E",
+        "scum-brown": "#2C2524",
+        "scum-black": {
+          DEFAULT: "#2C2524",
+          800: "#1D201F",
+          900: "#2C2524",
+        },
+
         //template
-        "custom-black": "#121212",
-        "custom-white": "#F3F1EA",
-        "custom-yellow": "#FFBA21",
-        "custom-green": "#56BC78",
-        "custom-orange": "#FF5722",
-        "custom-red": "#DF1D00",
+        "template-black": "#121212",
+        "template-white": "#F3F1EA",
+        "template-yellow": "#FFBA21",
+        "template-green": "#56BC78",
+        "template-orange": "#FF5722",
+        "template-red": "#DF1D00",
       },
       screens: {
         "2xs": "360px",

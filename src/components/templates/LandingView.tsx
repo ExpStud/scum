@@ -23,7 +23,7 @@ const LandingView: FC<Props> = (props: Props) => {
           width={400}
           height={400}
           className="px-2 lg:px-20 2xl:px-0"
-          onLoadingComplete={() => handleAssetLoad(0, setAssets)}
+          onLoad={() => handleAssetLoad(0, setAssets)}
         />
       </motion.div>
       <IconBar className="lg:hidden absolute bottom-3" />

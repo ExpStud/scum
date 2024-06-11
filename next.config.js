@@ -3,7 +3,14 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["www.arweave.net", "arweave.net", "shdw-drive.genesysgo.net"],
+    remotePatterns: [
+      {
+        hostname: "images.slimes.xyz",
+      },
+    ],
+  },
+  env: {
+    CLOUDFLARE_STORAGE: "https://images.slimes.xyz",
   },
 };
 

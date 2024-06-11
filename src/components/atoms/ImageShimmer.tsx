@@ -57,7 +57,7 @@ const ImageShimmer: FC<Props> = (props: Props) => {
       <AnimatePresence mode="wait">
         {!imageLoaded && (
           <motion.div
-            className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-custom-dark-gray via-custom-black to-custom-dark-gray rounded opacity-40"
+            className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-template-dark-gray via-template-black to-template-dark-gray rounded opacity-40"
             style={{
               backgroundSize: "200% 100%",
               animation: "shimmer 1.5s ease-in-out infinite",
@@ -82,7 +82,7 @@ const ImageShimmer: FC<Props> = (props: Props) => {
             style={{ objectFit: objectFit }}
             alt={alt}
             className={`rounded ${imageClass}`}
-            onLoadingComplete={() => setImageLoaded(true)}
+            onLoad={() => setImageLoaded(true)}
           />
         )}
         {width && height && (
@@ -92,7 +92,7 @@ const ImageShimmer: FC<Props> = (props: Props) => {
             height={height}
             alt={alt}
             className={`rounded ${imageClass}`}
-            onLoadingComplete={() => setImageLoaded(true)}
+            onLoad={() => setImageLoaded(true)}
           />
         )}
       </motion.div>

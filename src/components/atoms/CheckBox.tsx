@@ -24,7 +24,7 @@ const CheckBox: FC<Props> = (props: Props) => {
     <div
       className={`${className} relative flex justify-between ${styles} transition-all duration-200 border  rounded items-center p-2 text-gray-300 ${
         componentProps.disabled
-          ? "cursor-not-allowed bg-custom-dark-gray border-custom-dark-gray"
+          ? "cursor-not-allowed bg-template-dark-gray border-template-dark-gray"
           : "hover:border-orange-300 active:border-red-400 cursor-pointer border-dark "
       }`}
       onClick={() => onChange()}
