@@ -8,13 +8,13 @@
 }
 @font-face {
   font-family: 'Forma Bold';
-  src: url('/public/fonts/forma-djr/FormaDJRBanner-Bold.ttf') format('truetype');
+  src: url('../public/fonts/forma-djr/FormaDJRBanner-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: 'Forma Extra Bold';
-  src: url('/public/fonts/forma-djr/FormaDJRBanner-ExtraBold-.ttf') format('truetype');
+  src: url('../public/fonts/forma-djr/FormaDJRBanner-ExtraBold.ttf') format('truetype');
   font-weight: 800;
   font-style: normal;
 }
@@ -35,19 +35,16 @@ a {
 
 @layer base {
   html {
-    @apply scroll-smooth bg-main bg-cover bg-fixed bg-template-black text-template-white font-primary;
+    @apply scroll-smooth bg-fixed bg-scum-beige font-primary;
   }
   h1 {
-    @apply font-primary;
+    @apply text-5xl md:text-[72px];
   }
   h2 {
-    @apply font-primary uppercase text-5xl md:text-[64px];
+    @apply  text-4xl md:text-[64px];
   }
   h3 {
-    @apply font-primary uppercase text-4xl md:text-[54px];
-  }
-  h4 {
-    @apply font-primary uppercase text-2xl md:text-3xl;
+    @apply  text-2xl md:text-3xl;
   }
 }
 

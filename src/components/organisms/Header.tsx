@@ -12,7 +12,7 @@ interface Props {
 }
 
 const Header: FC<Props> = (props: Props) => {
-  const { type = "absolute", showHeader = true } = props;
+  const { type = "relative", showHeader = true } = props;
 
   const [animateHeader, setAnimateHeader] = useState<boolean>(true);
 

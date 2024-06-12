@@ -6,12 +6,12 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        main: "url('/images/background.png')",
+        // main: "url('/images/background.png')",
         "white-gradient": `linear-gradient(360.58deg, #FFFFFF 43.76%, rgba(255, 255, 255, 0) 106.82%)`,
       },
       fontFamily: {
-        primary: ["Forma Bold"],
-        secondary: ["MK Hell"],
+        primary: "Forma Bold",
+        secondary: "MK Hell",
         "forma-bold": "Forma Bold",
         "forma-extrabold": "Forma Extra Bold",
       },
@@ -25,11 +25,15 @@ module.exports = {
         black: 900,
       },
       fontStyle: {
-        italic: "italic", // Add "italic" style to the font family
+        italic: "italic",
       },
       colors: {
         //scum
-        "scum-beige": "#F6EFD3",
+        "scum-beige": {
+          DEFAULT: "#F6EFD3",
+          500: "#F6EFD3",
+          600: "#FDC3AE",
+        },
         "scum-teal": "#86E4C5",
         "scum-red": "#B12F4E",
         "scum-brown": "#2C2524",

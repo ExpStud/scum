@@ -3,7 +3,7 @@ import { NextPage } from "next";
 import { useState } from "react";
 
 const About: NextPage = () => {
-  const [assets, setAssets] = useState<boolean[]>([false, false]);
+  const [assets, setAssets] = useState<boolean[]>([true]);
 
   return (
     <PageLayout headerType="absolute" assets={assets}>

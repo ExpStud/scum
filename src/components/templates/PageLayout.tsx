@@ -1,4 +1,4 @@
-import { FC, ReactNode, useState } from "react";
+import { FC, ReactNode, use, useEffect, useState } from "react";
 import {
   PageHead,
   Header,
@@ -9,6 +9,7 @@ import {
 import { enterAnimation } from "@constants";
 import { AnimatePresence, motion } from "framer-motion";
 import { ViewContext } from "@contexts";
+import { useRouter } from "next/router";
 
 interface Props {
   children: ReactNode;
@@ -24,7 +25,7 @@ const PageLayout: FC<Props> = (props: Props) => {
     footer = true,
     fixed = false,
     absolute = false,
-    headerType = "absolute",
+    headerType,
     children,
     assets = [],
   } = props;
@@ -38,6 +39,28 @@ const PageLayout: FC<Props> = (props: Props) => {
     showModal,
     setShowModal,
   };
+
+  //set page bg & font color
+  const router = useRouter();
+  useEffect(() => {
+    switch (router.pathname) {
+      case "/slimes":
+        document.body.style.backgroundColor = "#86E4C5";
+        document.body.style.color = "#2C2524";
+        break;
+      case "/maquina":
+        document.body.style.backgroundColor = "#B12F4E";
+        document.body.style.color = "#FDC3AE";
+        break;
+      case "/axolotl":
+        document.body.style.backgroundColor = "#1D201F";
+        document.body.style.color = "#F6EFD3";
+        break;
+      default:
+        document.body.style.backgroundColor = "#F6EFD3";
+        document.body.style.color = "#2C2524";
+    }
+  }, [router.pathname]);
 
   return (
     <ViewContext.Provider value={value}>
@@ -67,7 +90,7 @@ const PageLayout: FC<Props> = (props: Props) => {
         {footer && <Footer />}
 
         {/* load screen */}
-        {assets && <SplashScreen assets={assets} />}
+        {/* {assets && <SplashScreen assets={assets} />} */}
 
         {/* modals */}
         <AnimatePresence mode="wait">
