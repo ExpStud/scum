@@ -36,7 +36,6 @@ const Footer: FC = () => {
           </Link>
         </motion.div>
         <div className="sm:w-1/3">
-          <IconBar className="" />
           <div className="hidden flex-col md:flex-row items-center justify-center gap-4 lg:gap-14 text-3xl md:text-4xl text-white">
             <a
               href="https://twitter.com/rulebreakers___"

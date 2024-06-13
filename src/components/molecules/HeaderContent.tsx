@@ -1,6 +1,7 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import { Logo, Menu, MenuIcon } from "@components";
-import { AnimatePresence, useCycle } from "framer-motion";
+import { AnimatePresence, motion, useCycle } from "framer-motion";
+import { midExitAnimation } from "@constants";
 
 const HeaderContent: FC = () => {
   const [open, cycleOpen] = useCycle(false, true);
@@ -16,6 +17,17 @@ const HeaderContent: FC = () => {
       />
 
       <Menu toggleMenu={() => cycleOpen()} open={open} />
+
+      {/* background shadow */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            className="z-0 fixed inset-0 bg-scum-black/50 "
+            onClick={() => cycleOpen()}
+            {...midExitAnimation}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 };

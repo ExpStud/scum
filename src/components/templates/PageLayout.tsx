@@ -6,10 +6,11 @@ import {
   SplashScreen,
   ImageModal,
 } from "@components";
-import { enterAnimation } from "@constants";
+import { enterAnimation, theme } from "@constants";
 import { AnimatePresence, motion } from "framer-motion";
 import { ViewContext } from "@contexts";
 import { useRouter } from "next/router";
+import { changeTheme } from "@utils";
 
 interface Props {
   children: ReactNode;
@@ -45,20 +46,16 @@ const PageLayout: FC<Props> = (props: Props) => {
   useEffect(() => {
     switch (router.pathname) {
       case "/slimes":
-        document.documentElement.style.background = "#86E4C5";
-        document.body.style.color = "#2C2524";
+        changeTheme(theme[3]);
         break;
       case "/maquina":
-        document.documentElement.style.background = "#B12F4E";
-        document.body.style.color = "#FDC3AE";
+        changeTheme(theme[2]);
         break;
       case "/axolotl":
-        document.documentElement.style.background = "#1D201F";
-        document.body.style.color = "#F6EFD3";
+        changeTheme(theme[1]);
         break;
       default:
-        document.documentElement.style.background = "#F6EFD3";
-        document.body.style.color = "#2C2524";
+        changeTheme(theme[0]);
     }
   }, [router.pathname]);
 

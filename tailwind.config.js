@@ -28,6 +28,8 @@ module.exports = {
         italic: "italic",
       },
       colors: {
+        primary: "var(--color-primary)",
+        secondary: "var(--color-secondary)",
         //scum
         "scum-beige": {
           DEFAULT: "#F6EFD3",

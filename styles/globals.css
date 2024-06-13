@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "themes/red.css";
+@import "themes/black.css";
+@import "themes/beige.css";
+@import "themes/teal.css";
+
 @font-face {
   font-family: 'MK Hell';
   src: url('../public/fonts/MK-HELL-Regular.ttf') format('truetype');
@@ -35,7 +40,11 @@ a {
 
 @layer base {
   html {
-    @apply scroll-smooth bg-fixed font-primary;
+    @apply scroll-smooth bg-fixed font-primary bg-primary text-secondary;
+    /* beige theme */
+    --color-primary: "#F6EFD3";
+    --color-secondary: "#2C2524";
+
   }
   h1 {
     @apply text-5xl md:text-[72px];
@@ -119,4 +128,9 @@ html {
 }
 .transition-200{
   @apply transition-all duration-300;
+}
+
+/* classes */
+.menu-icon {
+  @apply absolute left-0 w-full h-full transform transition-transform duration-300 stroke-secondary;
 }

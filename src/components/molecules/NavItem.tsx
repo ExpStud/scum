@@ -50,7 +50,7 @@ const Item: FC<ItemProps> = (props: ItemProps) => {
   return (
     <div className="flex gap-2 justify-center items-center">
       <div
-        className={` transition-bg duration-300 my-5 p-0 ${
+        className={`text-secondary transition-bg duration-300 ${
           isCurrent
             ? "text-red-600"
             : " text-gray-400 hover:text-white cursor-pointer"

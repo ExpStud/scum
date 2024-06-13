@@ -13,13 +13,14 @@ interface Props {
 
 const Menu: FC<Props> = (props: Props) => {
   const { toggleMenu, open } = props;
-  const [winWidth, winHeight] = useWindowSize();
+
+  const [winWidth] = useWindowSize();
   const timeoutRef = useRef<NodeJS.Timeout>();
   const ref = useRef(null);
 
   // useOutsideAlerter(ref, () => toggleMenu());
 
-  const isTablet: boolean = winWidth < 900;
+  const isTablet: boolean = winWidth < 1024;
   //stop page scroll (when modal or menu open)
   useEffect(() => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -38,39 +39,35 @@ const Menu: FC<Props> = (props: Props) => {
       }
     };
   }, [open]);
+
   return (
     <AnimatePresence mode="wait" initial={false}>
       {open && (
         <motion.aside
           key="main-menu"
-          // onMouseLeave={() => toggleMenu(false)}
           initial={{ width: 0, opacity: 0 }}
-          animate={{ width: isTablet ? winWidth - 15 : 669, opacity: 1 }}
+          animate={{ width: isTablet ? winWidth : 669, opacity: 1 }}
           exit={{
             width: 0,
             transition: { duration: 0.5 },
             opacity: 1,
           }}
           transition={{ duration: 0.7 }}
-          className=" bg-scum-red fixed top-0 right-0 z-50"
-          // onClick={(e) => {
-          //   e.stopPropagation;
-          //   toggleMenu();
-          // }}
+          className="bg-primary fixed top-0 right-0 z-50 shadow-lg"
           ref={ref}
         >
           <motion.div
-            className={`px-4 sm:px-6 lg:px-10 py-6 h-screen relative`}
+            className={`px-4 sm:px-6 lg:px-10 py-6 h-screen relative `}
             variants={fadeVariants}
             initial="closed"
             animate="open"
             exit="closed"
           >
-            <div className="absolute left-1/2 top-[45%] transform -translate-x-1/2 -translate-y-1/2  flex flex-col items-center justify-start text-4xl sm:text-6xl gap-2">
-              <NavItem href="/about">About</NavItem>
-              <NavItem href="/more">More</NavItem>
-            </div>
-            {/* <IconBar className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2 bottom-3" /> */}
+            <NavItem href="/about">About</NavItem>
+            <NavItem href="/slimes">Slimes</NavItem>
+            <NavItem href="/maquina">Maquina Muertes</NavItem>
+            <NavItem href="/family">Family</NavItem>
+            <NavItem href="/axolotls">Axolotls</NavItem>
           </motion.div>
         </motion.aside>
       )}
