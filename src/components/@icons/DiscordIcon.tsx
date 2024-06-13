@@ -1,5 +1,4 @@
 import { FC, SVGProps } from "react";
-import Image from "next/image";
 interface Props extends SVGProps<SVGSVGElement> {
   color?: string;
   size?: number;

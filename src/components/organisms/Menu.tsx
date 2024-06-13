@@ -69,13 +69,23 @@ const Menu: FC<Props> = (props: Props) => {
               <NavItem href="/axolotl">Axolotls</NavItem>
             </div>
 
-            <div className="flex flex-col">
-              <div className="opacity-40 hover-opacity-75 cursor-pointer">
+            <div className="flex flex-col gap-1">
+              <a
+                href="https://exchange.art/scum/on-sale"
+                target="_blank"
+                rel="noreferrer"
+                className="opacity-40 hover-opacity-75"
+              >
                 Exchange.art ↗
-              </div>
-              <div className="opacity-40 hover-opacity-75 cursor-pointer">
+              </a>
+              <a
+                href="https://allintime.xyz/"
+                target="_blank"
+                rel="noreferrer"
+                className="opacity-40 hover-opacity-75"
+              >
                 All In Time ↗
-              </div>
+              </a>
             </div>
 
             <IconBar />

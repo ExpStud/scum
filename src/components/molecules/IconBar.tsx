@@ -1,7 +1,5 @@
-import { motion } from "framer-motion";
 import { FC, HTMLAttributes } from "react";
-import Image from "next/image";
-import { TwitterIcon, DiscordIcon, ExpIcon } from "@components";
+import { TwitterIcon, DiscordIcon } from "@components";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   showExchange?: boolean;

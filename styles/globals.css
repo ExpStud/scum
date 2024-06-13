@@ -135,5 +135,8 @@ html {
   @apply absolute left-0 w-full h-full transform transition-transform duration-300 stroke-secondary opacity-50;
 }
 .hover-opacity-75 {
-  @apply transition-200 hover:opacity-75
+  @apply transition-300 hover:opacity-75
+}
+.hover-opacity-75 {
+  @apply transition-300 hover:opacity-75
 }
