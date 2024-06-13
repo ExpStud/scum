@@ -35,7 +35,7 @@ a {
 
 @layer base {
   html {
-    @apply scroll-smooth bg-fixed bg-scum-beige font-primary;
+    @apply scroll-smooth bg-fixed font-primary;
   }
   h1 {
     @apply text-5xl md:text-[72px];

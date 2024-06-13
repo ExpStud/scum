@@ -6,9 +6,8 @@ const TwitterIcon = dynamic(() => import("./@icons/TwitterIcon"));
 const DiscordIcon = dynamic(() => import("./@icons/DiscordIcon"));
 const ExpIcon = dynamic(() => import("./@icons/ExpIcon"));
 const ExchangeIcon = dynamic(() => import("./@icons/ExchangeIcon"));
-const MenuIcon = dynamic(() => import("./@icons/MenuIcon"));
-const CloseIcon = dynamic(() => import("./@icons/CloseIcon"));
 const DownloadIcon = dynamic(() => import("./@icons/DownloadIcon"));
+const MenuIcon = dynamic(() => import("./@icons/MenuIcon"));
 //atoms
 const NumberInput = dynamic(() => import("./atoms/NumberInput"));
 const TextInput = dynamic(() => import("./atoms/TextInput"));
@@ -47,10 +46,8 @@ export {
   DiscordIcon,
   LoadCircle,
   ExpIcon,
-  MenuIcon,
   NavItem,
   ExchangeIcon,
-  CloseIcon,
   Modal,
   Menu,
   DownloadIcon,
@@ -60,5 +57,6 @@ export {
   ImageShimmer,
   HeaderContent,
   AboutView,
-  ImageModal
+  ImageModal,
+  MenuIcon
 }

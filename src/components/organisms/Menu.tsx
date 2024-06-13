@@ -1,5 +1,5 @@
 import { Dispatch, FC, SetStateAction, useEffect, useRef } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, CycleState, motion } from "framer-motion";
 import { IconBar, NavItem } from "@components";
 import Link from "next/link";
 import { useWindowSize } from "@hooks";
@@ -7,7 +7,7 @@ import { fadeVariants } from "@constants";
 import { useOutsideAlerter } from "@hooks";
 
 interface Props {
-  toggleMenu: Dispatch<SetStateAction<boolean>>;
+  toggleMenu: () => void;
   open: boolean;
 }
 
@@ -17,7 +17,7 @@ const Menu: FC<Props> = (props: Props) => {
   const timeoutRef = useRef<NodeJS.Timeout>();
   const ref = useRef(null);
 
-  useOutsideAlerter(ref, () => toggleMenu(false));
+  // useOutsideAlerter(ref, () => toggleMenu());
 
   const isTablet: boolean = winWidth < 900;
   //stop page scroll (when modal or menu open)
@@ -52,8 +52,11 @@ const Menu: FC<Props> = (props: Props) => {
             opacity: 1,
           }}
           transition={{ duration: 0.7 }}
-          className=" bg-template-black fixed top-0 right-0 z-50 lg:shadow-xl font-daysOne lg:shadow-gray-600"
-          onClick={() => toggleMenu(false)}
+          className=" bg-scum-red fixed top-0 right-0 z-50"
+          // onClick={(e) => {
+          //   e.stopPropagation;
+          //   toggleMenu();
+          // }}
           ref={ref}
         >
           <motion.div
@@ -67,7 +70,7 @@ const Menu: FC<Props> = (props: Props) => {
               <NavItem href="/about">About</NavItem>
               <NavItem href="/more">More</NavItem>
             </div>
-            <IconBar className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2 bottom-3" />
+            {/* <IconBar className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2 bottom-3" /> */}
           </motion.div>
         </motion.aside>
       )}

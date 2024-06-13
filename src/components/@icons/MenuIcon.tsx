@@ -1,24 +1,63 @@
-import { FC, SVGProps } from "react";
+import { useRouter } from "next/router";
+import { FC, HTMLAttributes, useEffect } from "react";
 
-interface Props extends SVGProps<SVGSVGElement> {}
+interface Props extends HTMLAttributes<HTMLDivElement> {
+  animate?: boolean;
+}
 
 const MenuIcon: FC<Props> = (props: Props) => {
-  const { className, ...componentProps } = props;
+  const { animate = false } = props;
+
+  const router = useRouter();
+  const stroke =
+    router.pathname === "/maquina" || router.pathname === "/axolotl"
+      ? "#FDC3AE"
+      : "#2C2524";
+
+  // useEffect(() => {
+  //     if (router.pathname === "/maquina" || router.pathname === "/axolotl") {
+  //       setShowDark(false);
+  //     } else {
+  //       setShowDark(true);
+  //     }
+  //   }, [router.pathname]);
 
   return (
-    <svg
-      width="50"
-      height="50"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={`transition-all duration-300 stroke-gray-300 hover:stroke-white stroke-light-gray cursor-pointer ${className}`}
-      {...componentProps}
+    <div
+      className={` transition-200 relative flex-gap-2 w-7 h-7 cursor-pointer  ${
+        props.className ?? ""
+      }`}
+      onClick={props.onClick}
     >
-      <path d="M5 7H19" strokeWidth="2" strokeLinecap="round" />
-      <path d="M5 12H19" strokeWidth="2" strokeLinecap="round" />
-      <path d="M5 17H19" strokeWidth="2" strokeLinecap="round" />
-    </svg>
+      <svg
+        width="28"
+        height="28"
+        viewBox="0 0 14 14"
+        stroke={stroke}
+        xmlns="http://www.w3.org/2000/svg"
+        className={`absolute  left-0 w-full h-full transform transition-transform duration-300 ${
+          animate ? "rotate-45 top-0" : "-top-1"
+        }`}
+      >
+        <path d="M0.75 7H13.25" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+      <svg
+        width="28"
+        height="28"
+        viewBox="0 0 14 14"
+        stroke={stroke}
+        xmlns="http://www.w3.org/2000/svg"
+        className={`absolute  left-0 w-full h-full transform transition-transform duration-300 ${
+          animate ? "-rotate-45 top-0" : "top-1"
+        }`}
+      >
+        <path
+          d={"M0.75 7H13.25"}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
   );
 };
 

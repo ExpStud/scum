@@ -45,19 +45,19 @@ const PageLayout: FC<Props> = (props: Props) => {
   useEffect(() => {
     switch (router.pathname) {
       case "/slimes":
-        document.body.style.backgroundColor = "#86E4C5";
+        document.documentElement.style.background = "#86E4C5";
         document.body.style.color = "#2C2524";
         break;
       case "/maquina":
-        document.body.style.backgroundColor = "#B12F4E";
+        document.documentElement.style.background = "#B12F4E";
         document.body.style.color = "#FDC3AE";
         break;
       case "/axolotl":
-        document.body.style.backgroundColor = "#1D201F";
+        document.documentElement.style.background = "#1D201F";
         document.body.style.color = "#F6EFD3";
         break;
       default:
-        document.body.style.backgroundColor = "#F6EFD3";
+        document.documentElement.style.background = "#F6EFD3";
         document.body.style.color = "#2C2524";
     }
   }, [router.pathname]);
