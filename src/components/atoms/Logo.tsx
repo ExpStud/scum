@@ -1,8 +1,10 @@
-import { FC, useEffect, useState } from "react";
+import { FC, HTMLAttributes, useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-const Logo: FC = () => {
+interface Props extends HTMLAttributes<HTMLDivElement> {}
+const Logo: FC<Props> = (props: Props) => {
+  const { ...componentProps } = props;
   const [showDark, setShowDark] = useState<boolean | null>(null);
 
   //set icon
@@ -16,7 +18,11 @@ const Logo: FC = () => {
   }, [router.pathname]);
 
   return (
-    <div className="my-0 flex items-center gap-2 cursor-pointer">
+    <div
+      className={`my-0 flex items-center gap-2 cursor-pointer ${
+        componentProps.className ?? ""
+      }`}
+    >
       <Link href="/">
         {showDark !== null && showDark === false && (
           <svg

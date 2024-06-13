@@ -53,11 +53,11 @@ const Menu: FC<Props> = (props: Props) => {
             opacity: 1,
           }}
           transition={{ duration: 0.7 }}
-          className="bg-primary fixed top-0 right-0 z-50 shadow-lg"
+          className="bg-primary fixed top-0 right-0 z-50 h-screen"
           ref={ref}
         >
           <motion.div
-            className={`px-4 sm:px-6 lg:px-10 py-6 h-screen relative `}
+            className={`relative mt-[15vh] px-6 sm:px-6 lg:px-10 py-6 flex flex-col`}
             variants={fadeVariants}
             initial="closed"
             animate="open"

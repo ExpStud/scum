@@ -6,7 +6,7 @@ interface Props extends SVGProps<SVGSVGElement> {
   hoverColor?: string;
 }
 
-const MenuIcon: FC<Props> = (props: Props) => {
+const DownloadIcon: FC<Props> = (props: Props) => {
   const { hoverColor = "white", className, color = "#9ca3af" } = props;
 
   const [didHover, setDidHover] = useState<boolean>(false);
@@ -601,4 +601,4 @@ const MenuIcon: FC<Props> = (props: Props) => {
   );
 };
 
-export default MenuIcon;
+export default DownloadIcon;

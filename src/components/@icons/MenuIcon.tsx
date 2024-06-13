@@ -9,7 +9,7 @@ const MenuIcon: FC<Props> = (props: Props) => {
 
   return (
     <div
-      className={` transition-200 relative flex-gap-2 w-7 h-7 cursor-pointer  ${
+      className={`transition-200 relative flex-gap-2 w-7 h-7 cursor-pointer  ${
         props.className ?? ""
       }`}
       onClick={props.onClick}

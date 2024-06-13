@@ -8,7 +8,7 @@ const HeaderContent: FC = () => {
 
   return (
     <div className="w-screen flex items-center justify-between px-4 md:px-6 py-4 z-20">
-      <Logo />
+      <Logo className="z-[100]" />
 
       <MenuIcon
         animate={open}

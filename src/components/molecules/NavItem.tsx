@@ -48,12 +48,10 @@ interface ItemProps {
 const Item: FC<ItemProps> = (props: ItemProps) => {
   const { children, isCurrent } = props;
   return (
-    <div className="flex gap-2 justify-center items-center">
+    <div className="">
       <div
-        className={`text-secondary transition-bg duration-300 ${
-          isCurrent
-            ? "text-red-600"
-            : " text-gray-400 hover:text-white cursor-pointer"
+        className={`text-secondary text-[40px] transition-bg duration-300 ${
+          isCurrent ? "" : " text-gray-400 hover:text-white cursor-pointer"
         }`}
       >
         {children}
