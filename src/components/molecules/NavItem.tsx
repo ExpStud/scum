@@ -51,7 +51,9 @@ const Item: FC<ItemProps> = (props: ItemProps) => {
     <div className="">
       <div
         className={`text-secondary text-[40px] transition-bg duration-300 ${
-          isCurrent ? "" : " text-gray-400 hover:text-white cursor-pointer"
+          isCurrent
+            ? "underline cursor-default"
+            : " text-gray-400 hover:opacity-50 cursor-pointer"
         }`}
       >
         {children}

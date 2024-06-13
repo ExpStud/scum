@@ -1,10 +1,8 @@
-import { Dispatch, FC, SetStateAction, useEffect, useRef } from "react";
-import { AnimatePresence, CycleState, motion } from "framer-motion";
+import { FC, useEffect, useRef } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { IconBar, NavItem } from "@components";
-import Link from "next/link";
 import { useWindowSize } from "@hooks";
 import { fadeVariants } from "@constants";
-import { useOutsideAlerter } from "@hooks";
 
 interface Props {
   toggleMenu: () => void;
@@ -20,7 +18,7 @@ const Menu: FC<Props> = (props: Props) => {
 
   // useOutsideAlerter(ref, () => toggleMenu());
 
-  const isTablet: boolean = winWidth < 1024;
+  const isTablet: boolean = winWidth > 640;
   //stop page scroll (when modal or menu open)
   useEffect(() => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -46,7 +44,7 @@ const Menu: FC<Props> = (props: Props) => {
         <motion.aside
           key="main-menu"
           initial={{ width: 0, opacity: 0 }}
-          animate={{ width: isTablet ? winWidth : 669, opacity: 1 }}
+          animate={{ width: isTablet ? 420 : winWidth, opacity: 1 }}
           exit={{
             width: 0,
             transition: { duration: 0.5 },
@@ -57,17 +55,30 @@ const Menu: FC<Props> = (props: Props) => {
           ref={ref}
         >
           <motion.div
-            className={`relative mt-[15vh] px-6 sm:px-6 lg:px-10 py-6 flex flex-col`}
+            className={`relative mt-[15vh] px-6 sm:px-6 lg:px-10 py-6 flex flex-col gap-10`}
             variants={fadeVariants}
             initial="closed"
             animate="open"
             exit="closed"
           >
-            <NavItem href="/about">About</NavItem>
-            <NavItem href="/slimes">Slimes</NavItem>
-            <NavItem href="/maquina">Maquina Muertes</NavItem>
-            <NavItem href="/family">Family</NavItem>
-            <NavItem href="/axolotls">Axolotls</NavItem>
+            <div className="flex flex-col">
+              <NavItem href="/about">About</NavItem>
+              <NavItem href="/slimes">Slimes</NavItem>
+              <NavItem href="/maquina">Maquina Muertes</NavItem>
+              <NavItem href="/family">Family</NavItem>
+              <NavItem href="/axolotl">Axolotls</NavItem>
+            </div>
+
+            <div className="flex flex-col">
+              <div className="opacity-40 hover-opacity-75 cursor-pointer">
+                Exchange.art ↗
+              </div>
+              <div className="opacity-40 hover-opacity-75 cursor-pointer">
+                All In Time ↗
+              </div>
+            </div>
+
+            <IconBar />
           </motion.div>
         </motion.aside>
       )}

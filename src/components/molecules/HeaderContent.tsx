@@ -22,7 +22,7 @@ const HeaderContent: FC = () => {
       <AnimatePresence>
         {open && (
           <motion.div
-            className="z-0 fixed inset-0 bg-scum-black/50 "
+            className="z-0 fixed inset-0 bg-black/50 "
             onClick={() => cycleOpen()}
             {...midExitAnimation}
           />

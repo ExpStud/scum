@@ -9,9 +9,9 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 const IconBar: FC<Props> = (props: Props) => {
   const { showExchange = true, className } = props;
   return (
-    <div className={`flex items-center justify-center gap-4 ${className}`}>
-      <DiscordIcon url={""} />
-      <TwitterIcon url={""} />
+    <div className={`flex gap-4 ${className}`}>
+      <TwitterIcon url={"https://x.com/SCUMSOL"} />
+      <DiscordIcon url={"https://discord.com/invite/scumsol"} />
     </div>
   );
 };
