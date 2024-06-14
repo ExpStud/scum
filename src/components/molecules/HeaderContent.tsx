@@ -1,5 +1,11 @@
 import { FC, useEffect, useState } from "react";
-import { Logo, MarqueeTextAnimation, Menu, MenuIcon } from "@components";
+import {
+  Logo,
+  MarqueeTextAnimation,
+  Menu,
+  MenuIcon,
+  NavItem,
+} from "@components";
 import { AnimatePresence, motion, useCycle } from "framer-motion";
 import { midExitAnimation } from "@constants";
 import { useRouter } from "next/router";
@@ -16,36 +22,26 @@ const HeaderContent: FC = () => {
       ? "bg-scum-beige/10"
       : "bg-scum-black/10";
 
-  // //set border
-  // useEffect(() => {
-  //   switch (router.pathname) {
-  //     case "/slimes":
-  //       setBorder
-  //       break;
-  //     case "/maquina":
-  //       setBorder
-  //       break;
-  //     case "/axolotl":
-  //       setBorder
-  //       break;
-  //     default:
-  //       setBorder
-  //   }
-  // }, [router.pathname]);
-
   return (
-    <div className="w-full z-20 overflow-hidden ">
+    <div className="relative w-full z-20">
       <MarqueeTextAnimation />
-      <div className="flex items-center justify-between w-full px-4 pt-2 pb-3 ">
+      <div className="flex items-center justify-between w-full px-4 pt-2 xl:pt-4 pb-3 xl:pr-0 ">
         <Logo className="z-[100]" />
-        {/* scum logo */}
+        <div className="absolute outer-left-spacing top-[26px] hidden xl:flex flex-col">
+          <NavItem href="/about">About</NavItem>
+          <NavItem href="/slimes">Slimes</NavItem>
+          <NavItem href="/maquina">Maquina Muertes</NavItem>
+          <NavItem href="/family">Family</NavItem>
+          <NavItem href="/axolotl">Axolotls</NavItem>
+        </div>
+        {/* scum text */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="114"
           height="32"
           viewBox="0 0 114 32"
           fill="none"
-          className="hidden xl:block"
+          className="hidden xl:block outer-right-margin"
         >
           <path
             d="M98.2288 24.8701L92.0533 29.8667L86.4954 25.0386L88.8533 22.8491V9.03849L84.9796 5.50163L82.5094 6.96129V22.8491L84.9234 25.0386L79.5339 29.8667L73.0778 24.7579L75.2672 22.8491V7.97182L73.0778 5.55777L70.9444 6.90514L70.1584 5.78233L77.962 0.448975L82.0603 5.0525L89.4147 0.448975L95.0287 5.22093L102.72 0.448975L108.559 5.44549L110.411 3.98584L111.422 5.16479L108.615 7.46655V21.5578L111.253 24.1965L113.667 22.4V24.4772L105.359 29.8667L99.8007 25.0386L102.159 22.8491V9.03849L98.2849 5.50163L95.3095 7.29813V22.2877L98.2288 24.8701Z"

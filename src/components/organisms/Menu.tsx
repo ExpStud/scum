@@ -1,7 +1,7 @@
 import { FC, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { IconBar, NavItem } from "@components";
-import { useWindowSize } from "@hooks";
+import { useLockBodyScroll, useWindowSize } from "@hooks";
 import { fadeVariants } from "@constants";
 
 interface Props {
@@ -11,32 +11,11 @@ interface Props {
 
 const Menu: FC<Props> = (props: Props) => {
   const { toggleMenu, open } = props;
-
   const [winWidth] = useWindowSize();
-  const timeoutRef = useRef<NodeJS.Timeout>();
-  const ref = useRef(null);
-
-  // useOutsideAlerter(ref, () => toggleMenu());
+  //stop page scroll (when modal or menu open)
+  useLockBodyScroll(open);
 
   const isTablet: boolean = winWidth > 640;
-  //stop page scroll (when modal or menu open)
-  useEffect(() => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-
-    if (open) {
-      timeoutRef.current = setTimeout(() => {
-        document.body.style.overflow = "hidden";
-      }, 700);
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
-  }, [open]);
 
   return (
     <AnimatePresence mode="wait" initial={false}>
@@ -52,7 +31,6 @@ const Menu: FC<Props> = (props: Props) => {
           }}
           transition={{ duration: 0.7 }}
           className="xl:hidden bg-primary fixed top-0 right-0 z-50 h-screen"
-          ref={ref}
         >
           <motion.div
             className={`relative mt-[15vh] px-6 sm:px-6 lg:px-10 py-6 flex flex-col gap-10`}

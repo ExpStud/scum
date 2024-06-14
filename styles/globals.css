@@ -146,3 +146,23 @@ html {
 .hover-opacity-75 {
   @apply transition-300 hover:opacity-75
 }
+
+/* lines */
+.outer-left-spacing {
+  @apply xl:left-[90px] 2xl:left-[120px]; 
+}
+.outer-left-margin {
+  @apply xl:ml-[90px] 2xl:ml-[120px]; 
+}
+.outer-right-spacing {
+  @apply xl:right-[250px] 2xl:right-[340px]; 
+}
+.outer-right-margin {
+  @apply xl:mr-[250px] 2xl:mr-[340px]; 
+}
+.left-line {
+  @apply outer-left-spacing -z-[1] hidden xl:block fixed w-[1px] h-screen;
+}
+.right-line {
+  @apply outer-right-spacing -z-[1] hidden xl:block fixed  w-[1px] h-screen;
+}

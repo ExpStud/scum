@@ -41,8 +41,16 @@ const PageLayout: FC<Props> = (props: Props) => {
     setShowModal,
   };
 
-  //set page bg & font color
   const router = useRouter();
+
+  const borderColor =
+    router.pathname === "/maquina"
+      ? "bg-scum-beige-600/10"
+      : router.pathname === "/axolotl"
+      ? "bg-scum-beige/10"
+      : "bg-scum-black/10";
+
+  //set page bg & font color
   useEffect(() => {
     switch (router.pathname) {
       case "/slimes":
@@ -99,6 +107,10 @@ const PageLayout: FC<Props> = (props: Props) => {
             />
           )}
         </AnimatePresence>
+
+        {/* lines */}
+        <div className={`left-line ${borderColor}`} />
+        <div className={`right-line ${borderColor}`} />
       </div>
     </ViewContext.Provider>
   );

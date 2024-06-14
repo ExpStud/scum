@@ -50,10 +50,10 @@ const Item: FC<ItemProps> = (props: ItemProps) => {
   return (
     <div className="">
       <div
-        className={`text-secondary text-[40px] transition-300 ${
+        className={`text-secondary xl:text-secondary text-[40px] xl:text-xl transition-300 ${
           isCurrent
-            ? "underline cursor-default"
-            : " text-gray-400 hover:opacity-60 cursor-pointer"
+            ? "underline xl:no-underline opacity-100 cursor-default"
+            : "text-gray-400 hover:opacity-50 xl:hover:opacity-80 xl:opacity-50  cursor-pointer"
         }`}
       >
         {children}
