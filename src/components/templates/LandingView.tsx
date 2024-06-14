@@ -15,18 +15,7 @@ const LandingView: FC<Props> = (props: Props) => {
   const { showView } = useContext(ViewContext);
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center">
-      <motion.div {...slideDown(showView)}>
-        <Image
-          src="/images/logo.png"
-          alt="EXP"
-          width={400}
-          height={400}
-          className="px-2 lg:px-20 2xl:px-0"
-          onLoad={() => handleAssetLoad(0, setAssets)}
-        />
-      </motion.div>
-    </div>
+    <div className="w-full h-full flex flex-col items-center justify-center"></div>
   );
 };
 
