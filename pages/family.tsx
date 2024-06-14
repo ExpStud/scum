@@ -7,7 +7,7 @@ const Family: NextPage = () => {
 
   return (
     <PageLayout headerType="absolute" assets={assets}>
-      <div>Hello there</div>
+      <div></div>
     </PageLayout>
   );
 };

@@ -12,6 +12,12 @@
   src: url('../public/fonts/MK-HELL-Regular.ttf') format('truetype');
 }
 @font-face {
+  font-family: 'Forma Medium';
+  src: url('../public/fonts/forma-djr/FormaDJRBanner-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
   font-family: 'Forma Bold';
   src: url('../public/fonts/forma-djr/FormaDJRBanner-Bold.ttf') format('truetype');
   font-weight: 700;

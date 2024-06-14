@@ -7,7 +7,7 @@ const Maquina: NextPage = () => {
 
   return (
     <PageLayout assets={assets}>
-      <div>Hello there</div>
+      <div></div>
     </PageLayout>
   );
 };

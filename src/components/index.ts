@@ -15,6 +15,7 @@ const CheckBox = dynamic(() => import("./atoms/CheckBox"));
 const LoadCircle = dynamic(() => import("./atoms/LoadSpinner"));
 const ImageShimmer = dynamic(() => import("./atoms/ImageShimmer"));
 const Logo = dynamic(() => import("./atoms/Logo"));
+const MarqueeTextAnimation = dynamic(() => import("./atoms/MarqueeTextAnimation"));
 //molecules
 const PageHead = dynamic(() => import("./molecules/PageHead"));
 const NavItem = dynamic(() => import("./molecules/NavItem"));
@@ -58,5 +59,6 @@ export {
   HeaderContent,
   AboutView,
   ImageModal,
-  MenuIcon
+  MenuIcon,
+  MarqueeTextAnimation
 }

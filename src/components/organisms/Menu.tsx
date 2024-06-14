@@ -51,7 +51,7 @@ const Menu: FC<Props> = (props: Props) => {
             opacity: 1,
           }}
           transition={{ duration: 0.7 }}
-          className="bg-primary fixed top-0 right-0 z-50 h-screen"
+          className="xl:hidden bg-primary fixed top-0 right-0 z-50 h-screen"
           ref={ref}
         >
           <motion.div
