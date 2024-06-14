@@ -14,6 +14,7 @@ const NavItem: FC<Props> = (props: Props) => {
 
   const router = useRouter();
   const isCurrent = router.pathname === href;
+  const isHome = router.pathname === "/";
 
   const DisabledItem = () => (
     <div className="flex gap-2 justify-center items-center">
@@ -30,11 +31,15 @@ const NavItem: FC<Props> = (props: Props) => {
         <DisabledItem />
       ) : isExternal ? (
         <a href={href} rel="noreferrer" target="_blank">
-          <Item isCurrent={isCurrent}>{children}</Item>
+          <Item isCurrent={isCurrent} isHome={isHome}>
+            {children}
+          </Item>
         </a>
       ) : (
         <Link href={href}>
-          <Item isCurrent={isCurrent}>{children}</Item>
+          <Item isCurrent={isCurrent} isHome={isHome}>
+            {children}
+          </Item>
         </Link>
       )}
     </>
@@ -44,20 +49,21 @@ const NavItem: FC<Props> = (props: Props) => {
 interface ItemProps {
   children: ReactNode;
   isCurrent: boolean;
+  isHome: boolean;
 }
 const Item: FC<ItemProps> = (props: ItemProps) => {
-  const { children, isCurrent } = props;
+  const { children, isCurrent, isHome } = props;
   return (
-    <div className="">
-      <div
-        className={`text-secondary xl:text-secondary text-[40px] xl:text-xl transition-300 ${
-          isCurrent
-            ? "underline xl:no-underline opacity-100 cursor-default"
-            : "text-gray-400 hover:opacity-50 xl:hover:opacity-80 xl:opacity-50  cursor-pointer"
-        }`}
-      >
-        {children}
-      </div>
+    <div
+      className={`text-secondary xl:text-secondary text-[40px] xl:text-xl transition-300 ${
+        isHome ? "xl:text-7xl 2xl:text-8xl" : ""
+      } ${
+        isCurrent
+          ? "underline xl:no-underline opacity-100 cursor-default"
+          : "text-gray-400 hover:opacity-50 xl:hover:opacity-80 xl:opacity-50  cursor-pointer"
+      }`}
+    >
+      {children}
     </div>
   );
 };

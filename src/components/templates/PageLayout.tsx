@@ -85,7 +85,7 @@ const PageLayout: FC<Props> = (props: Props) => {
 
         {/* body */}
         <motion.main
-          className={`flex flex-col h-full w-full overflow-x-clip border-x border-secondary/15`}
+          className={`inner-left-padding outer-right-padding flex flex-col h-full w-full`}
           {...enterAnimation}
         >
           {children}
@@ -109,7 +109,8 @@ const PageLayout: FC<Props> = (props: Props) => {
         </AnimatePresence>
 
         {/* lines */}
-        <div className={`left-line ${borderColor}`} />
+        <div className={`outer-left-line ${borderColor}`} />
+        <div className={`inner-left-line ${borderColor}`} />
         <div className={`right-line ${borderColor}`} />
       </div>
     </ViewContext.Provider>

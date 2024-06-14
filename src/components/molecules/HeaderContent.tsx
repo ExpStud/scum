@@ -25,9 +25,9 @@ const HeaderContent: FC = () => {
   return (
     <div className="relative w-full z-20">
       <MarqueeTextAnimation />
-      <div className="flex items-center justify-between w-full px-4 pt-2 xl:pt-4 pb-3 xl:pr-0 ">
+      <div className="flex items-center justify-between w-full px-4 pt-2 xl:pt-4 pb-3 xl:pr-0 3xl:pl-[280px]">
         <Logo className="z-[100]" />
-        <div className="absolute outer-left-spacing top-[26px] hidden xl:flex flex-col">
+        <div className="absolute outer-left-spacing top-10 hidden xl:flex flex-col">
           <NavItem href="/about">About</NavItem>
           <NavItem href="/slimes">Slimes</NavItem>
           <NavItem href="/maquina">Maquina Muertes</NavItem>

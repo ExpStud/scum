@@ -149,19 +149,39 @@ html {
 
 /* lines */
 .outer-left-spacing {
-  @apply xl:left-[90px] 2xl:left-[120px]; 
+  @apply xl:left-[90px] 2xl:left-[120px] 3xl:left-[360px]; 
 }
 .outer-left-margin {
-  @apply xl:ml-[90px] 2xl:ml-[120px]; 
+  @apply xl:ml-[90px] 2xl:ml-[120px] 3xl:ml-[360px]; 
 }
+.outer-left-padding {
+  @apply xl:pl-[90px] 2xl:pl-[120px] 3xl:pl-[360px]; 
+}
+.outer-left-line {
+  @apply outer-left-spacing -z-[1] hidden xl:block fixed w-[1px] h-screen;
+}
+
+.inner-left-spacing {
+  @apply xl:left-[250px] 2xl:left-[340px] 3xl:left-[680px]; 
+}
+.inner-left-margin {
+  @apply xl:ml-[250px] 2xl:ml-[340px] 3xl:ml-[680px]; 
+}
+.inner-left-padding {
+  @apply xl:pl-[250px] 2xl:pl-[340px] 3xl:pl-[680px]; 
+}
+.inner-left-line {
+  @apply inner-left-spacing -z-[1] hidden xl:block fixed w-[1px] h-screen;
+}
+
 .outer-right-spacing {
-  @apply xl:right-[250px] 2xl:right-[340px]; 
+  @apply xl:right-[250px] 2xl:right-[340px] 3xl:right-[680px]; 
 }
 .outer-right-margin {
-  @apply xl:mr-[250px] 2xl:mr-[340px]; 
+  @apply xl:mr-[250px] 2xl:mr-[340px] 3xl:mr-[680px]; 
 }
-.left-line {
-  @apply outer-left-spacing -z-[1] hidden xl:block fixed w-[1px] h-screen;
+.outer-right-padding {
+  @apply xl:pr-[250px] 2xl:pr-[340px] 3xl:pr-[680px]; 
 }
 .right-line {
   @apply outer-right-spacing -z-[1] hidden xl:block fixed  w-[1px] h-screen;
