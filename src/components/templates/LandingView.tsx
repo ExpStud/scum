@@ -15,7 +15,7 @@ const LandingView: FC<Props> = (props: Props) => {
   const { showView } = useContext(ViewContext);
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center"></div>
+    <div className="w-full h-[200vh] flex flex-col items-center justify-center"></div>
   );
 };
 

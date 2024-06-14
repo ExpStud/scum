@@ -39,7 +39,6 @@ module.exports = {
         },
         "scum-teal": "#86E4C5",
         "scum-red": "#B12F4E",
-        "scum-brown": "#2C2524",
         "scum-black": {
           DEFAULT: "#2C2524",
           800: "#1D201F",
