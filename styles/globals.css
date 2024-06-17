@@ -50,6 +50,7 @@ a {
     /* beige theme */
     --color-primary: "#F6EFD3";
     --color-secondary: "#2C2524";
+    --color-tertiaru: "#2C2524";
 
   }
   h1 {
@@ -122,6 +123,16 @@ html {
   @apply flex flex-col items-center justify-around;
 }
 
+.left-centered {
+  @apply absolute left-1/2 transform -translate-x-1/2;
+}
+.top-centered {
+  @apply absolute top-1/2 transform -translate-y-1/2;
+}
+.centered {
+  @apply left-centered top-centered;
+}
+
 /* Animations */
 .transition-1000{
   @apply transition-all duration-1000;
@@ -158,7 +169,7 @@ html {
   @apply xl:pl-[90px] 2xl:pl-[120px] 3xl:pl-[360px]; 
 }
 .outer-left-line {
-  @apply outer-left-spacing -z-[1] hidden xl:block fixed w-[1px] h-screen;
+  @apply outer-left-spacing z-[10] hidden xl:block fixed w-[1px] h-screen;
 }
 
 .inner-left-spacing {
@@ -171,7 +182,7 @@ html {
   @apply xl:pl-[250px] 2xl:pl-[340px] 3xl:pl-[680px]; 
 }
 .inner-left-line {
-  @apply inner-left-spacing -z-[1] hidden xl:block fixed w-[1px] h-screen;
+  @apply inner-left-spacing z-[10] hidden xl:block fixed w-[1px] h-screen;
 }
 
 .outer-right-spacing {
@@ -184,5 +195,5 @@ html {
   @apply xl:pr-[250px] 2xl:pr-[340px] 3xl:pr-[680px]; 
 }
 .right-line {
-  @apply outer-right-spacing -z-[1] hidden xl:block fixed  w-[1px] h-screen;
+  @apply outer-right-spacing z-[10] hidden xl:block fixed  w-[1px] h-screen;
 }

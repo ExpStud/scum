@@ -1,90 +1,86 @@
-import { FC, useState } from "react";
-import { ExpIcon, IconBar } from "@components";
+import { useRouter } from "next/router";
+import { FC } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import Link from "next/link";
-import { enterAnimation } from "@constants";
 
 const Footer: FC = () => {
-  const [animate, setAnimate] = useState<boolean>(false);
+  const router = useRouter();
 
-  //exp hover animation
-  const containerAnimation = {
-    animate: {
-      opacity: 1,
-      rotate: animate ? -90 : 0,
-    },
-    exit: { opacity: 0 },
-    transition: { duration: 0.5, ease: "easeInOut" },
-  };
+  const textColor =
+    router.pathname === "/axolotl"
+      ? "text-scum-black/30"
+      : "text-scum-beige/30";
+  const expColor =
+    router.pathname === "/axolotl" ? "text-scum-black" : "text-scum-beige";
 
   return (
-    <footer
-      className="px-8 py-4 w-full bg-transparent z-0  bottom-0"
-      key="footer"
-    >
-      <div className="flex flex-col sm:flex-row items-center gap-2 md:gap-4">
-        <motion.div className="sm:w-1/3" {...enterAnimation}>
-          <Link href="/">
-            <Image
-              src="/images/logo.png"
-              width={30}
-              height={30}
-              alt="Logo"
-              priority
-            />
-          </Link>
-        </motion.div>
-        <div className="sm:w-1/3">
-          <div className="hidden flex-col md:flex-row items-center justify-center gap-4 lg:gap-14 text-3xl md:text-4xl text-white">
-            <a
-              href="https://twitter.com/rulebreakers___"
-              rel="noreferrer"
-              target="_blank"
-              className="cursor-pointer hover:bg-clip-text hover:bg-orange-gradient hover:text-transparent transition-bg duration-200"
-            >
-              Twitter
-            </a>
-            <a
-              href="https://twitter.com/rulebreakers___"
-              rel="noreferrer"
-              target="_blank"
-              className="cursor-pointer hover:bg-clip-text hover:bg-orange-gradient hover:text-transparent transition-bg duration-200"
-            >
-              Discord
-            </a>
-            <a
-              href="https://twitter.com/rulebreakers___"
-              rel="noreferrer"
-              target="_blank"
-              className="cursor-pointer hover:bg-clip-text hover:bg-orange-gradient hover:text-transparent transition-bg duration-200"
-            >
-              Marketplace
-            </a>
-          </div>
+    <footer>
+      <div
+        className="relative h-[50px] md:h-[100px] transition-200 bg-tertiary rounded-tl-[25px] md:rounded-tl-[50px] rounded-br-[25px] md:rounded-br-[50px] flex items-center justify-between 
+          mb-2 md:mb-5 mx-2 md:mx-5 px-6 md:px-10 xl:px-0 text-xs md:text-lg lg:text-xl 2xl:text-2xl"
+      >
+        <div className="outer-left-padding">
+          <p className={`xl:-ml-4 transition-200 ${textColor}`}>
+            ALL IN TIME. <br /> WITH MY SLIMES.
+          </p>
         </div>
-        <div className="hidden sm:flex sm:w-1/3  justify-end gap-2">
-          {/* exp */}
-          <motion.div
-            className="flex xl:w-1/4 justify-end "
-            {...enterAnimation}
+        <div className="outer-right-padding -mr-3 flex flex-col items-end">
+          <a
+            href="https://expstud.io"
+            target="_blank"
+            rel="noreferrer"
+            className={`transition-200 opacity-70 hover:opacity-90 ${expColor}`}
           >
-            <a
-              className="relative cursor-pointer whitespace-nowrap"
-              href="https://twitter.com/sol_exp"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <motion.div
-                className="rounded"
-                {...containerAnimation}
-                onMouseEnter={() => setAnimate(true)}
-                onMouseLeave={() => setAnimate(false)}
-              >
-                <ExpIcon color={"white"} />
-              </motion.div>
-            </a>
-          </motion.div>
+            Website by EXP
+          </a>
+          <p className={`${textColor}`}>©2024 SCUM</p>
+        </div>
+        {/* centered image */}
+        <div
+          className="left-centered -top-[60px] transition-200 bg-primary rounded-full border-[6px] border-tertiary 
+          scale-50 md:scale-75 lg:scale-100 h-[128px] w-[128px]"
+        >
+          <Image
+            src="/images/footer/hands.png"
+            width={100}
+            height={100}
+            alt="Slimes"
+            className="centered"
+          />
+          {router.pathname === "/maquina" && (
+            <Image
+              src="/images/footer/lines-brown.svg"
+              width={131}
+              height={132}
+              alt="Lines"
+              key="beige"
+              className="scale-110"
+            />
+          )}
+          {router.pathname === "/axolotl" && (
+            <Image
+              src="/images/footer/lines-teal.svg"
+              width={131}
+              height={132}
+              alt="Lines"
+              key="teal"
+              className="scale-110"
+            />
+          )}
+          {router.pathname === "/" ||
+          router.pathname === "/about" ||
+          router.pathname === "/slimes" ||
+          router.pathname === "/family" ? (
+            <Image
+              src="/images/footer/lines-brown.svg"
+              width={131}
+              height={132}
+              alt="Lines"
+              key="brown"
+              className="scale-110"
+            />
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     </footer>

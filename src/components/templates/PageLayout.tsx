@@ -1,4 +1,4 @@
-import { FC, ReactNode, use, useEffect, useState } from "react";
+import { FC, ReactNode, useEffect, useState } from "react";
 import {
   PageHead,
   Header,
@@ -23,7 +23,6 @@ interface Props {
 
 const PageLayout: FC<Props> = (props: Props) => {
   const {
-    footer = true,
     fixed = false,
     absolute = false,
     headerType,
@@ -80,19 +79,15 @@ const PageLayout: FC<Props> = (props: Props) => {
           url="https://addurl.xyz" // no backslash at the end
           twitter="twitterhandle"
         />
-        {/* header */}
-        <Header type={headerType} />
 
-        {/* body */}
+        <Header type={headerType} />
         <motion.main
           className={`inner-left-padding outer-right-padding flex flex-col h-full w-full`}
           {...enterAnimation}
         >
           {children}
         </motion.main>
-
-        {/* footer */}
-        {footer && <Footer />}
+        <Footer />
 
         {/* load screen */}
         {/* {assets && <SplashScreen assets={assets} />} */}
