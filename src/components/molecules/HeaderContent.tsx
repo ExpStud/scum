@@ -1,10 +1,12 @@
 import { FC, useEffect, useState } from "react";
 import {
+  IconBar,
   Logo,
   MarqueeTextAnimation,
   Menu,
   MenuIcon,
   NavItem,
+  Socials,
 } from "@components";
 import { AnimatePresence, motion, useCycle } from "framer-motion";
 import { midExitAnimation } from "@constants";
@@ -12,7 +14,6 @@ import { useRouter } from "next/router";
 
 const HeaderContent: FC = () => {
   const [open, cycleOpen] = useCycle(false, true);
-  // const [border, setBorder] = useState<string>()
 
   const router = useRouter();
   const borderColor =
@@ -34,6 +35,9 @@ const HeaderContent: FC = () => {
           <NavItem href="/family">Family</NavItem>
           <NavItem href="/axolotl">Axolotls</NavItem>
         </div>
+
+        <Socials />
+
         {/* scum text */}
         <svg
           xmlns="http://www.w3.org/2000/svg"

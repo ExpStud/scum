@@ -5,6 +5,8 @@ import {
   Footer,
   SplashScreen,
   ImageModal,
+  IconBar,
+  Socials,
 } from "@components";
 import { enterAnimation, theme } from "@constants";
 import { AnimatePresence, motion } from "framer-motion";
@@ -66,6 +68,8 @@ const PageLayout: FC<Props> = (props: Props) => {
     }
   }, [router.pathname]);
 
+  console.log("router.pathname ", router.pathname);
+
   return (
     <ViewContext.Provider value={value}>
       <div
@@ -81,12 +85,12 @@ const PageLayout: FC<Props> = (props: Props) => {
         />
 
         <Header type={headerType} />
-        <motion.main
+        <main
           className={`inner-left-padding outer-right-padding flex flex-col h-full w-full`}
-          {...enterAnimation}
         >
           {children}
-        </motion.main>
+          <Socials />
+        </main>
         <Footer />
 
         {/* load screen */}
@@ -105,7 +109,11 @@ const PageLayout: FC<Props> = (props: Props) => {
 
         {/* lines */}
         <div className={`outer-left-line ${borderColor}`} />
-        <div className={`inner-left-line ${borderColor}`} />
+        <div
+          className={`inner-left-line ${borderColor} ${
+            router.pathname === "/" ? "opacity-0" : ""
+          }`}
+        />
         <div className={`right-line ${borderColor}`} />
       </div>
     </ViewContext.Provider>
