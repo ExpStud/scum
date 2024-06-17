@@ -1,5 +1,4 @@
-import { Dispatch, SetStateAction, FC, useContext } from "react";
-import { ViewContext } from "@contexts";
+import { Dispatch, SetStateAction, FC } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { fastEnterAnimation } from "src/constants";
@@ -11,7 +10,6 @@ interface Props {
 
 const LandingView: FC<Props> = (props: Props) => {
   const { setAssets } = props;
-  const { showView } = useContext(ViewContext);
 
   return (
     <motion.div className="h-full w-full col-centered" {...fastEnterAnimation}>
