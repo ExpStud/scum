@@ -55,7 +55,7 @@ const Item: FC<ItemProps> = (props: ItemProps) => {
   const { children, isCurrent, isHome } = props;
   return (
     <div
-      className={`text-secondary xl:text-secondary text-[40px] xl:text-xl transition-300 ${
+      className={`text-secondary text-[40px] xl:text-xl transition-200 ${
         isHome ? "xl:text-7xl 2xl:text-8xl" : ""
       } ${
         isCurrent
