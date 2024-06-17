@@ -23,7 +23,7 @@ const Footer: FC = () => {
             ALL IN TIME. <br /> WITH MY SLIMES.
           </p>
         </div>
-        <div className="outer-right-padding -mr-3 flex flex-col items-end">
+        <div className="outer-right-padding xl:-mr-3 flex flex-col items-end">
           <a
             href="https://expstud.io"
             target="_blank"
@@ -32,7 +32,7 @@ const Footer: FC = () => {
           >
             Website by EXP
           </a>
-          <p className={`${textColor}`}>©2024 SCUM</p>
+          <p className={`${textColor}`}>©{new Date().getFullYear()} SCUM</p>
         </div>
         {/* centered image */}
         <div

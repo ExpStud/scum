@@ -1,10 +1,9 @@
-import { motion } from "framer-motion";
 import { Dispatch, SetStateAction, FC, useContext } from "react";
-import { slideDown } from "@constants";
-import { IconBar } from "@components";
-import { handleAssetLoad } from "@utils";
-import Image from "next/image";
 import { ViewContext } from "@contexts";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { fastEnterAnimation } from "src/constants";
+import { isMobile } from "react-device-detect";
 
 interface Props {
   setAssets: Dispatch<SetStateAction<boolean[]>>;
@@ -15,7 +14,15 @@ const LandingView: FC<Props> = (props: Props) => {
   const { showView } = useContext(ViewContext);
 
   return (
-    <div className="w-full h-[200vh] flex flex-col items-center justify-center"></div>
+    <motion.div className="h-full w-full col-centered" {...fastEnterAnimation}>
+      <Image
+        src={`/images/graphics/landing${isMobile ? "-mobile" : ""}.png`}
+        width={521}
+        height={540}
+        alt="Slimes"
+        className="px-5"
+      />
+    </motion.div>
   );
 };
 
