@@ -46,7 +46,7 @@ a {
 
 @layer base {
   html {
-    @apply scroll-smooth bg-fixed font-primary transition-200 bg-primary text-secondary;
+    @apply scroll-smooth bg-fixed font-primary transition-200 bg-primary text-secondary ;
     /* beige theme */
     --color-primary: "#F6EFD3";
     --color-secondary: "#2C2524";
@@ -57,10 +57,13 @@ a {
     @apply text-5xl md:text-[72px];
   }
   h2 {
-    @apply  text-4xl md:text-[64px];
+    @apply  text-4xl md:text-[64px] uppercase font-forma-extrabold tracking-wide;
   }
   h3 {
     @apply  text-2xl md:text-3xl;
+  }
+  p {
+    @apply tracking-wide;
   }
 }
 
@@ -121,6 +124,13 @@ html {
 }
 .col-around {
   @apply flex flex-col items-center justify-around;
+}
+
+.page-centered {
+  @apply h-full w-full col-centered;
+}
+.page-start {
+  @apply h-full w-full col-start;
 }
 
 .left-centered {
@@ -196,4 +206,11 @@ html {
 }
 .right-line {
   @apply outer-right-spacing z-[10] hidden xl:block fixed  w-[1px] h-screen;
+}
+
+.about-cards {
+  @apply rounded-br-[150px] sm:rounded-br-[100px] w-[400px] sm:w-auto;
+}
+.about-cards-container {
+  @apply flex flex-wrap xl:flex-nowrap justify-center xl:justify-between gap-5 my-5 px-5 xl:px-0 w-full;
 }

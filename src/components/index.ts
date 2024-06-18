@@ -24,6 +24,7 @@ const IconBar = dynamic(() => import("./molecules/IconBar"));
 const SplashScreen = dynamic(() => import("./molecules/SplashScreen"));
 const HeaderContent = dynamic(() => import("./molecules/HeaderContent"));
 const Socials = dynamic(() => import("./molecules/Socials"));
+const Heading = dynamic(() => import("./molecules/Heading"));
 //organisms
 const Header = dynamic(() => import("./organisms/Header"));
 const Footer = dynamic(() => import("./organisms/Footer"));
@@ -62,5 +63,6 @@ export {
   ImageModal,
   MenuIcon,
   MarqueeTextAnimation,
-  Socials
+  Socials,
+  Heading
 }

@@ -54,7 +54,7 @@ interface ItemProps {
 const Item: FC<ItemProps> = (props: ItemProps) => {
   const { children, isCurrent, isHome } = props;
   return (
-    <div
+    <p
       className={`text-secondary text-[40px] transition-200 ${
         isHome ? "xl:text-7xl 2xl:text-8xl" : "xl:text-xl "
       } ${
@@ -64,7 +64,7 @@ const Item: FC<ItemProps> = (props: ItemProps) => {
       }`}
     >
       {children}
-    </div>
+    </p>
   );
 };
 
