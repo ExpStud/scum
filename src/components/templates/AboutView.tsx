@@ -27,9 +27,9 @@ const AboutView: FC<Props> = (props: Props) => {
         alt="Scum"
         className={"lg:pt-16 md:px-5 xl:px-0 lg:rounded-br-[100px]"}
       />
-      <div className="self-center col-start gap-8 my-10 mx-5 max-w-[720px] 2xl:max-w-[920px]">
+      <div className="intro-text-container self-center ">
         <h2>scum</h2>
-        <p className="text-lg md:text-xl xl:text-2xl">
+        <p className="intro-text">
           I am a Mexican-American artist from Arizona. I grew up drawing--
           Robots, aliens, space battles and monsters. In my teens I graduated to
           spray painting canals and street signs in a small drug addled rural

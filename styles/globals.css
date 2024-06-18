@@ -127,10 +127,10 @@ html {
 }
 
 .page-centered {
-  @apply h-full w-full col-centered;
+  @apply h-full w-full col-centered mb-16;
 }
 .page-start {
-  @apply h-full w-full col-start;
+  @apply h-full w-full col-start mb-16;
 }
 
 .left-centered {
@@ -213,4 +213,10 @@ html {
 }
 .about-cards-container {
   @apply flex flex-wrap xl:flex-nowrap justify-center xl:justify-between gap-5 my-5 px-5 xl:px-0 w-full;
+}
+.intro-text-container {
+  @apply col-start gap-8 my-10 mx-5 max-w-[720px] 2xl:max-w-[920px];
+}
+.intro-text {
+  @apply text-lg md:text-xl xl:text-2xl;
 }

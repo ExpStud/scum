@@ -89,7 +89,7 @@ const PageLayout: FC<Props> = (props: Props) => {
           className={`inner-left-padding outer-right-padding flex flex-col h-full w-full`}
         >
           {children}
-          <Socials />
+          <Socials className="hidden xl:block absolute outer-left-spacing bottom-[140px]" />
         </main>
         <Footer />
 

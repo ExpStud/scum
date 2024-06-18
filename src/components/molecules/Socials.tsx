@@ -1,10 +1,10 @@
-import { FC } from "react";
+import { FC, HTMLAttributes } from "react";
 import { IconBar } from "@components";
 
-const Socials: FC = () => {
+const Socials: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
   return (
-    <div className="absolute outer-left-spacing bottom-[140px] hidden xl:flex flex-col gap-4">
-      <div className="flex flex-col gap-1">
+    <div className={`flex flex-col ${props.className}`}>
+      <div className="flex flex-col gap-1 pb-6">
         <a
           href="https://exchange.art/scum/on-sale"
           target="_blank"

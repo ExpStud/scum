@@ -17,6 +17,20 @@ const SlimesView: FC<Props> = (props: Props) => {
       {...midEnterAnimation}
     >
       <Heading />
+      <div className="intro-text-container">
+        <h2>The Squad</h2>
+        <p className="intro-text">
+          Slimes are a community of art collectors who&apos;ve rallied around
+          Scum to support and amplify him in his efforts as an artist and
+          activist.
+        </p>
+        <p className="intro-text">
+          These characters act as their respective holder&apos;s identity on
+          social media as well as a membership to this tight-knit community. But
+          most importantly, these characters are just the beginning of a larger
+          story being told in the Maquina Muertes series.
+        </p>
+      </div>
     </motion.div>
   );
 };

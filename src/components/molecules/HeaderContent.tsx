@@ -36,8 +36,6 @@ const HeaderContent: FC = () => {
           <NavItem href="/axolotl">Axolotls</NavItem>
         </div>
 
-        <Socials />
-
         {/* scum text */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
