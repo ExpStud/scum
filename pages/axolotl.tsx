@@ -1,4 +1,4 @@
-import { PageLayout } from "@components";
+import { AxolotlView, PageLayout } from "@components";
 import { NextPage } from "next";
 import { useState } from "react";
 
@@ -7,7 +7,7 @@ const Axolotl: NextPage = () => {
 
   return (
     <PageLayout headerType="absolute" assets={assets}>
-      <div></div>
+      <AxolotlView setAssets={setAssets} />
     </PageLayout>
   );
 };

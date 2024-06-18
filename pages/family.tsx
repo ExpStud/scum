@@ -1,4 +1,4 @@
-import { PageLayout } from "@components";
+import { FamilyView, PageLayout } from "@components";
 import { NextPage } from "next";
 import { useState } from "react";
 
@@ -7,7 +7,7 @@ const Family: NextPage = () => {
 
   return (
     <PageLayout headerType="absolute" assets={assets}>
-      <div></div>
+      <FamilyView setAssets={setAssets} />
     </PageLayout>
   );
 };

@@ -1,4 +1,4 @@
-import { PageLayout } from "@components";
+import { MaquinaView, PageLayout } from "@components";
 import { NextPage } from "next";
 import { useState } from "react";
 
@@ -7,7 +7,7 @@ const Maquina: NextPage = () => {
 
   return (
     <PageLayout assets={assets}>
-      <div></div>
+      <MaquinaView setAssets={setAssets} />
     </PageLayout>
   );
 };

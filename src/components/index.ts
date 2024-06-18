@@ -34,6 +34,10 @@ const ImageModal = dynamic(() => import("./organisms/ImageModal"));
 const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
 const AboutView = dynamic(() => import("./templates/AboutView"));
+const SlimesView = dynamic(() => import("./templates/SlimesView"));
+const MaquinaView = dynamic(() => import("./templates/MaquinaView"));
+const FamilyView = dynamic(() => import("./templates/FamilyView"));
+const AxolotlView = dynamic(() => import("./templates/AxolotlView"));
 
 export {
   PageHead,
@@ -64,5 +68,9 @@ export {
   MenuIcon,
   MarqueeTextAnimation,
   Socials,
-  Heading
+  Heading,
+  SlimesView,
+  MaquinaView,
+  FamilyView,
+  AxolotlView
 }
