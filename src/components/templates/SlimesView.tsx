@@ -17,7 +17,7 @@ const SlimesView: FC<Props> = (props: Props) => {
       {...midEnterAnimation}
     >
       <Heading />
-      <div className="intro-text-container">
+      <div className="intro-text-container !ml-0">
         <h2>The Squad</h2>
         <p className="intro-text">
           Slimes are a community of art collectors who&apos;ve rallied around
