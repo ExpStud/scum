@@ -1,7 +1,6 @@
 
 export interface Collection {
   id: number;
-  tag: string;
   name: string;
   burned?: boolean;
   color: string;
