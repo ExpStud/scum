@@ -7,13 +7,14 @@ import {
   fastExitAnimation,
 } from "src/constants";
 import { Collection } from "src/types";
+import { formatNameAsTag } from "@utils";
+import Link from "next/link";
 interface Props {
   setAssets: Dispatch<SetStateAction<boolean[]>>;
 }
 
 const SlimesView: FC<Props> = (props: Props) => {
   const { setAssets } = props;
-  //`${process.env.CLOUDFLARE_STORAGE}/slimes/low-res/${}.jpg`
 
   return (
     <motion.div
@@ -43,7 +44,7 @@ const SlimesView: FC<Props> = (props: Props) => {
           {collection.length}/<span className="opacity-50">50</span>
         </div>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-5 bg-scum-black-800">
+      <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-5 bg-scum-black">
         {collection.map((slime, i) => (
           <SlimeItem key={i} item={slime} />
         ))}
@@ -62,17 +63,14 @@ const SlimeItem: FC<SlimeItemProps> = (props: SlimeItemProps) => {
   const formatId = (id: number) => String(id).padStart(3, "0");
 
   return (
-    <div
-      className="relative flex flex-col items-center"
+    <Link
+      href={`/slimes/${item.tag}`}
+      className="relative flex flex-col items-center cursor-pointer"
       onMouseEnter={() => setDidHover(true)}
       onMouseLeave={() => setDidHover(false)}
     >
       <ImageShimmer
-        src={`${
-          process.env.CLOUDFLARE_STORAGE
-        }/images/slimes/low-res/${item.name
-          .toLowerCase()
-          .replace(" ", "-")}.jpg`}
+        src={`${process.env.CLOUDFLARE_STORAGE}/images/slimes/low-res/${item.tag}.jpg`}
         width={400}
         height={400}
         alt={item.name}
@@ -91,7 +89,7 @@ const SlimeItem: FC<SlimeItemProps> = (props: SlimeItemProps) => {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </Link>
   );
 };
 export default SlimesView;

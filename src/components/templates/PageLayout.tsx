@@ -53,10 +53,12 @@ const PageLayout: FC<Props> = (props: Props) => {
 
   //set page bg & font color
   useEffect(() => {
+    if (router.pathname.startsWith("/slimes")) {
+      changeTheme(theme[3]);
+      return;
+    }
+
     switch (router.pathname) {
-      case "/slimes":
-        changeTheme(theme[3]);
-        break;
       case "/maquina":
         changeTheme(theme[2]);
         break;
