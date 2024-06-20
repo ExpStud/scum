@@ -18,7 +18,7 @@ const Heading: FC<Props> = (props: Props) => {
           alt="About"
         />
       )}
-      {router.pathname === "/slimes" && (
+      {router.pathname.startsWith("/slimes") && (
         <Image
           src="/images/other/slimes.svg"
           width={786}

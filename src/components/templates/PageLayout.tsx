@@ -70,8 +70,6 @@ const PageLayout: FC<Props> = (props: Props) => {
     }
   }, [router.pathname]);
 
-  console.log("router.pathname ", router.pathname);
-
   return (
     <ViewContext.Provider value={value}>
       <div

@@ -39,7 +39,7 @@ const SlimesView: FC<Props> = (props: Props) => {
       </div>
       {/* slimes */}
       <div className="flex items-center w-full px-5 xl:px-0 ">
-        <hr className="flex-grow border-t border-dotted border-black mr-2 w-full" />
+        <hr className="flex-grow border-t border-dotted border-black/40 mr-2 w-full" />
         <div className="whitespace-nowrap font-forma-medium text-2xl lg:text-4xl 2xl:text-5xl">
           {collection.length}/<span className="opacity-50">50</span>
         </div>

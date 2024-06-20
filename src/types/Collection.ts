@@ -7,4 +7,5 @@ export interface Collection {
   color: string;
   doublePfp?: boolean;
   mintAddress: string;
+  description: string;
 }

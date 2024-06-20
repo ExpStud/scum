@@ -220,3 +220,10 @@ html {
 .intro-text {
   @apply text-lg md:text-xl xl:text-2xl;
 }
+
+.slimes-button {
+  @apply font-forma-bold text-white bg-scum-black/30 row-centered text-base transition-200 hover:bg-scum-black/50 active:bg-scum-black/60
+}
+.slimes-button-round {
+  @apply slimes-button rounded-full w-[44px] h-[44px];
+}
