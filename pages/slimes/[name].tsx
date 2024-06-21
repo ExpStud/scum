@@ -23,28 +23,6 @@ const SlimePage: NextPage<Props> = (props: Props) => {
   const router = useRouter();
   const { name } = router.query;
 
-  console.log(item);
-
-  const getNext = (): string => {
-    if (currentIndex === undefined || currentIndex === null)
-      return collection[0].tag;
-
-    if (currentIndex >= 0 && currentIndex < collection.length - 1) {
-      return collection[currentIndex + 1].tag;
-    }
-    return collection[0].tag;
-  };
-
-  const getPrevious = (): string => {
-    if (currentIndex === undefined || currentIndex === null)
-      return collection[0].tag;
-
-    if (currentIndex > 0) {
-      return collection[currentIndex - 1].tag;
-    }
-    return collection[collection.length - 1].tag;
-  };
-
   return (
     <PageLayout headerType="absolute">
       <motion.div

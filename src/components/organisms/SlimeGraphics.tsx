@@ -90,14 +90,14 @@ const SlimeGraphics: FC<Props> = (props: Props) => {
       {/* main image */}
       <div className="relative w-[300px] h-[342px] md:min-w-[450px] md:h-[513px] bg-white rounded-br-[60px] flex items-end">
         <Image
-          src={`${process.env.CLOUDFLARE_STORAGE}/images/slimes/low-res/${slime.tag}.jpg`}
+          src={`${process.env.CLOUDFLARE_STORAGE}/${selected.lowResPath}/${slime.tag}.${selected.extension}`}
           fill
           alt={slime.name}
-          className="object-cover px-5 md:px-10 pt-5 md:pt-10 pb-16 md:pb-28"
+          className="object-contain px-5 md:px-10 pt-5 md:pt-10 pb-16 md:pb-28"
         />
         <div className="flex justify-between w-full z-10 px-5 md:px-10 pb-2 md:pb-12">
           <button
-            className="w-[115px] h-[44px] col-centered rounded-[22px] bg-scum-black-950 text-white"
+            className="w-[115px] h-[44px] col-centered rounded-[22px] bg-scum-black-950 text-white scale-90 md:scale-100 "
             onClick={() => handleDownload()}
           >
             Download
