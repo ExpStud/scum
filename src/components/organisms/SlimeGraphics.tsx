@@ -103,7 +103,7 @@ const SlimeGraphics: FC<Props> = (props: Props) => {
             Download
           </button>
           <a
-            href="https://exchange.art/scum/on-sale"
+            href={`https://exchange.art/single/${slime.mintAddress}`}
             target="_blank"
             rel="noreferrer"
             className="opacity-50 hover-opacity-75 row-centered gap-2 scale-75 md:scale-90 lg:scale-100"
