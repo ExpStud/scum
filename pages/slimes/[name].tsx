@@ -1,9 +1,16 @@
 import { useRouter } from "next/router";
-import { Heading, PageLayout } from "@components";
+import {
+  Heading,
+  ImageShimmer,
+  PageLayout,
+  SlimeGraphics,
+  SlimeNav,
+} from "@components";
 import { motion } from "framer-motion";
 import { midEnterAnimation, collection } from "@constants";
 import { GetServerSideProps, NextPage } from "next";
 import { Collection } from "@types";
+import Image from "next/image";
 
 type Props = {
   currentIndex: number;
@@ -38,47 +45,20 @@ const SlimePage: NextPage<Props> = (props: Props) => {
     return collection[collection.length - 1].tag;
   };
 
-  // useEffect(() => {
-
-  //   setcurrentIndex(_currentIndex);
-  // }, [name]);
-
   return (
     <PageLayout headerType="absolute">
       <motion.div
-        className="page-start gap-5 xl:gap-10 mt-[86px] xl:mt-0 xl:pt-10"
+        className="page-start gap-5 xl:gap-10 mt-[86px] xl:mt-0 xl:pt-10 xl:pb-32"
         {...midEnterAnimation}
       >
         <Heading />
-        {/* buttons */}
-        <div className="flex items-center gap-2 w-full px-5 xl:px-0 ">
-          <button
-            className="slimes-button rounded-[22px] min-w-[166px] h-[44px]"
-            onClick={() => router.push("/slimes")}
-          >
-            ← Back to Gallery
-          </button>
-          <hr className="flex-grow border-t border-dotted border-black/40 mr-2 w-full" />
-          <div className="flex gap-2">
-            <button
-              className="slimes-button-round"
-              onClick={() => router.push(getPrevious())}
-            >
-              ←
-            </button>
-            <button
-              className="slimes-button-round  "
-              onClick={() => router.push(getNext())}
-            >
-              →
-            </button>
-          </div>
-        </div>
-        {/* content + images */}
-        <div className="flex flex-col gap-10 mx-5 xl:mx-0 max-w-[720px] 2xl:max-w-[920px] mt-10">
+        <SlimeNav currentIndex={currentIndex} />
+        {/* content */}
+        <div className="flex flex-col gap-5 xl:gap-10 mx-5 xl:mx-0 max-w-[720px] 2xl:max-w-[920px] mt-10">
           <h2>{name}</h2>
           <p className="intro-text max-w-[920px]">{item?.description}</p>
         </div>
+        <SlimeGraphics slime={item} />
       </motion.div>
     </PageLayout>
   );

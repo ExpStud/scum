@@ -65,6 +65,12 @@ a {
   p {
     @apply tracking-wide;
   }
+  button {
+    @apply tracking-wide;
+  }
+  div {
+    @apply tracking-wide;
+  }
 }
 
 html {

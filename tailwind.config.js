@@ -44,6 +44,7 @@ module.exports = {
           DEFAULT: "#2C2524",
           800: "#1D201F",
           900: "#2C2524",
+          950: "#072018",
         },
 
         //template
