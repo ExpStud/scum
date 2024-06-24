@@ -25,7 +25,7 @@ const AboutView: FC<Props> = (props: Props) => {
         width={1240}
         height={661}
         alt="Scum"
-        className={"lg:pt-16 md:px-5 xl:px-0 lg:rounded-br-[100px]"}
+        className={"md:px-5 xl:px-0 lg:rounded-br-[100px]"}
       />
       <div className="intro-text-container self-center ">
         <h2>scum</h2>

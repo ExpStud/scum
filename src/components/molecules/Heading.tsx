@@ -9,7 +9,7 @@ const Heading: FC<Props> = (props: Props) => {
   const router = useRouter();
 
   return (
-    <div className={`p-5 xl:p-0 ${className}`}>
+    <div className={`p-5 xl:p-0 lg:mb-16  ${className}`}>
       {router.pathname === "/about" && (
         <Image
           src="/images/other/about.svg"

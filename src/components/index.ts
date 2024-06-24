@@ -32,6 +32,7 @@ const Menu = dynamic(() => import("./organisms/Menu"));
 const ImageModal = dynamic(() => import("./organisms/ImageModal"));
 const SlimeGraphics = dynamic(() => import("./organisms/SlimeGraphics"));
 const SlimeNav = dynamic(() => import("./organisms/SlimeNav"));
+const SlimeItem = dynamic(() => import("./organisms/SlimeItem"));
 //templates
 const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
@@ -76,5 +77,6 @@ export {
   FamilyView,
   AxolotlView,
   SlimeGraphics,
-  SlimeNav
+  SlimeNav,
+  SlimeItem
 }
