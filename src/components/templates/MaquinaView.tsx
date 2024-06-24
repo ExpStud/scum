@@ -12,6 +12,7 @@ const MaquinaView: FC<Props> = (props: Props) => {
   const { setAssets } = props;
 
   const [selected, setSelected] = useState<number>(0);
+  const [worldSelected, setWorldSelected] = useState<number>(0);
 
   return (
     <motion.div
@@ -53,9 +54,13 @@ const MaquinaView: FC<Props> = (props: Props) => {
             </div>
           </motion.div>
         ) : (
-          <motion.div key="world" className="small-mx" {...fastExitAnimation}>
+          <motion.div
+            key="world"
+            className="small-px w-full"
+            {...fastExitAnimation}
+          >
             <h2 className="my-3">World Building</h2>
-            <p className="intro-text text-container-width mt-8 mb-32">
+            <p className="intro-text text-container-width mt-8  mb-16 xl:mb-32">
               All of my collections stem from the same desire; a greater
               understanding of myself. I started Slimes as a tool to explore my
               heritage. I am a mixed, Mexican American from the border region of
@@ -64,10 +69,116 @@ const MaquinaView: FC<Props> = (props: Props) => {
               capture that, explore what it really means to be of Mexican
               descent and share that with the world.
             </p>
+            <div className="col-centered lg:gap-10 w-full">
+              <div className="flex gap-2 w-full sm:w-[600px] bg-scum-black-800/30 rounded-[22px] h-11 p-1">
+                <WorldToggleItem
+                  selected={worldSelected === 0}
+                  onClick={() => setWorldSelected(0)}
+                >
+                  Characters
+                </WorldToggleItem>
+                <WorldToggleItem
+                  selected={worldSelected === 1}
+                  onClick={() => setWorldSelected(1)}
+                >
+                  collaborations
+                </WorldToggleItem>
+                <WorldToggleItem
+                  selected={worldSelected === 2}
+                  onClick={() => setWorldSelected(2)}
+                >
+                  Branding
+                </WorldToggleItem>
+              </div>
+            </div>
+            <div className="max-w-[500px] min-h-[500px] mt-20">
+              <AnimatePresence mode="wait">
+                {worldSelected === 0 && (
+                  <motion.div
+                    key="characters"
+                    className="flex flex-col gap-5"
+                    {...fastExitAnimation}
+                  >
+                    <h3>Characters</h3>
+                    <p className="font-forma-medium">
+                      The original My Slimes collection consists of 50 unique
+                      characters. Some of these are inspired with direction by
+                      the collector of the artwork. most of them come directly
+                      from my head.
+                    </p>
+                    <h3 className="mt-10">CONCEPTS</h3>
+                    <p className="font-forma-medium">
+                      The characters are inspired by the Luchador. The masked
+                      warrior, mysterious, fearless. A showman.
+                    </p>
+                    <p className="font-forma-medium">
+                      Taking the Luchador as the base concept, i will draw from
+                      my experiences; family, environment and studies of
+                      pre-columbian Mexico. From Mythology to regional
+                      aesthetics and traditions.
+                    </p>
+                  </motion.div>
+                )}
+                {worldSelected === 1 && (
+                  <motion.div
+                    key="collaboration"
+                    className="flex flex-col gap-5"
+                    {...fastExitAnimation}
+                  >
+                    <h3>collaborations</h3>
+                    <p className="font-forma-medium">
+                      One of the many joys of building this world is seeing
+                      other artists interpret the lore, characters and
+                      aesthetics. I&apos;ve had the honor of working with so
+                      many artists to expand what Slimes represent to me, my
+                      community and the world
+                    </p>
+                  </motion.div>
+                )}
+                {worldSelected === 2 && (
+                  <motion.div
+                    key="branding"
+                    className="flex flex-col gap-5"
+                    {...fastExitAnimation}
+                  >
+                    <h3>branding</h3>
+                    <p className="font-forma-medium">
+                      Creating the Slimes branding is a labor of love.
+                    </p>
+                    <p className="font-forma-medium">
+                      It&apos;s been riffed on, remixed and reimagined. But
+                      it&apos;s strong foundation has made it unmistakable at
+                      every step.
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
     </motion.div>
+  );
+};
+
+interface ToggleProps extends HTMLAttributes<HTMLDivElement> {
+  selected: boolean;
+}
+
+const WorldToggleItem: FC<ToggleProps> = (props: ToggleProps) => {
+  const { selected, children, ...componentProps } = props;
+
+  return (
+    <div
+      className={`w-1/3 col-centered cursor-pointer text-[10px] sm:text-xs md:text-sm uppercase rounded-[22px] transition-200 ${
+        selected
+          ? "text-scum-black bg-scum-beige-600"
+          : "text-scum-beige-600/60"
+      }`}
+      {...componentProps}
+    >
+      {children}
+    </div>
   );
 };
 
