@@ -32,7 +32,7 @@ const SlimePage: NextPage<Props> = (props: Props) => {
         <Heading />
         <SlimeNav currentIndex={currentIndex} />
         {/* content */}
-        <div className="flex flex-col gap-5 xl:gap-10 mx-5 xl:mx-0 max-w-[720px] 2xl:max-w-[920px] mt-10">
+        <div className="flex flex-col gap-5 xl:gap-10 mx-5 xl:mx-0 text-container-width mt-10">
           <h2>{name}</h2>
           <p className="intro-text max-w-[920px]">{item?.description}</p>
         </div>

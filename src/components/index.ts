@@ -25,6 +25,8 @@ const SplashScreen = dynamic(() => import("./molecules/SplashScreen"));
 const HeaderContent = dynamic(() => import("./molecules/HeaderContent"));
 const Socials = dynamic(() => import("./molecules/Socials"));
 const Heading = dynamic(() => import("./molecules/Heading"));
+const MaquinaToggleItem = dynamic(() => import("./molecules/MaquinaToggleItem"));
+const MaquinaImage = dynamic(() => import("./molecules/MaquinaImage"));
 //organisms
 const Header = dynamic(() => import("./organisms/Header"));
 const Footer = dynamic(() => import("./organisms/Footer"));
@@ -78,5 +80,7 @@ export {
   AxolotlView,
   SlimeGraphics,
   SlimeNav,
-  SlimeItem
+  SlimeItem,
+  MaquinaToggleItem,
+  MaquinaImage
 }
