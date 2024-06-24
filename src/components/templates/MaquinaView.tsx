@@ -2,11 +2,7 @@ import { Dispatch, SetStateAction, FC, HTMLAttributes, useState } from "react";
 import Image from "next/image";
 import { Heading, MaquinaImage, MaquinaToggleItem } from "@components";
 import { AnimatePresence, motion } from "framer-motion";
-import {
-  fastExitAnimation,
-  midEnterAnimation,
-  midExitAnimation,
-} from "src/constants";
+import { fastExitAnimation, midEnterAnimation, maquinas } from "@constants";
 
 interface Props {
   setAssets: Dispatch<SetStateAction<boolean[]>>;
@@ -41,18 +37,18 @@ const MaquinaView: FC<Props> = (props: Props) => {
         {selected === 0 ? (
           <motion.div key="maquina" className="small-px" {...fastExitAnimation}>
             <h2 className="my-3">Xicano Futurism</h2>
-            <p className="intro-text text-container-width mt-8 mb-32">
+            <p className="intro-text text-container-width mt-8 mb-16 xl:mb-32">
               Maquina Muertes are chapters in a story that takes place in the
               Slimes world. This series depicts scenes from my subconscious.
               Memories, experiences, dreams and ideas all meet to form key plot
               points in the story unfolding.
             </p>
-            <div className="col-centered gap-10 w-">
-              <MaquinaImage index={0} />
-              <div className="row-between gap-5 lg:gap-10 w-full mt-10">
-                <MaquinaImage index={1} />
-                <MaquinaImage index={2} />
-                <MaquinaImage index={3} />
+            <div className="col-centered lg:gap-10">
+              <MaquinaImage index={0} maquina={maquinas[0]} />
+              <div className="flex flex-col md:flex-row md:justify-between gap-5 lg:gap-10 w-full mt-10">
+                <MaquinaImage index={1} maquina={maquinas[1]} />
+                <MaquinaImage index={2} maquina={maquinas[2]} />
+                <MaquinaImage index={3} maquina={maquinas[3]} />
               </div>
             </div>
           </motion.div>

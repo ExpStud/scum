@@ -9,3 +9,8 @@ export interface Collection {
   mintAddress: string;
   description: string;
 }
+
+export interface Maquina {
+  id: number;
+  href: string;
+}

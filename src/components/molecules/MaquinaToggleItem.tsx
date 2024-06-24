@@ -9,7 +9,9 @@ const MaquinaToggleItem: FC<ToggleProps> = (props: ToggleProps) => {
   return (
     <div
       className={`relative col-centered pb-4 text-lg lg:text-xl w-1/2 sm:w-[240px] whitespace-nowrap uppercase transition-200 cursor-pointer ${
-        selected ? "" : "text-scum-beige-600/60 hover:text-scum-beige-600/80"
+        selected
+          ? "text-scum-beige-600"
+          : "text-scum-beige-600/60 hover:text-scum-beige-600/80"
       }`}
       {...componentProps}
     >
