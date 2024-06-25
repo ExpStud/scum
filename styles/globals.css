@@ -208,8 +208,14 @@ html {
   @apply xl:pr-[250px] 2xl:pr-[340px] 3xl:pr-[680px]; 
 }
 .right-line {
-  @apply outer-right-spacing z-[10] hidden xl:block fixed  w-[1px] h-screen;
+  @apply outer-right-spacing z-[10] hidden xl:block fixed w-[1px] h-screen;
 }
+
+.absolute-x {
+  @apply absolute -left-5 xl:-left-[250px] 2xl:-left-[340px] 3xl:-left-[680px] -right-5 xl:-right-[250px] 2xl:-right-[340px] 3xl:-right-[680px];
+}
+
+/* other */
 
 .about-cards {
   @apply rounded-br-[150px] sm:rounded-br-[100px] w-[400px] sm:w-auto;

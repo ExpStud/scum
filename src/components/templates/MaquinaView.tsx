@@ -1,8 +1,16 @@
-import { Dispatch, SetStateAction, FC, HTMLAttributes, useState } from "react";
+import {
+  Dispatch,
+  SetStateAction,
+  FC,
+  HTMLAttributes,
+  useState,
+  useEffect,
+} from "react";
 import Image from "next/image";
 import { Heading, MaquinaImage, MaquinaToggleItem } from "@components";
 import { AnimatePresence, motion } from "framer-motion";
 import { fastExitAnimation, midEnterAnimation, maquinas } from "@constants";
+import { useWindowSize } from "src/hooks";
 
 interface Props {
   setAssets: Dispatch<SetStateAction<boolean[]>>;
@@ -13,6 +21,18 @@ const MaquinaView: FC<Props> = (props: Props) => {
 
   const [selected, setSelected] = useState<number>(0);
   const [worldSelected, setWorldSelected] = useState<number>(0);
+  const [charLength, setCharLength] = useState<number>(0);
+
+  const [winWidth] = useWindowSize();
+  useEffect(() => {
+    if (winWidth > 2160) {
+      setCharLength(13);
+    } else if (winWidth > 768) {
+      setCharLength(9);
+    } else {
+      setCharLength(5);
+    }
+  }, [winWidth]);
 
   return (
     <motion.div
@@ -91,15 +111,30 @@ const MaquinaView: FC<Props> = (props: Props) => {
                 </WorldToggleItem>
               </div>
             </div>
-            <div className="max-w-[500px] min-h-[500px] mt-20">
+            <div className="relative min-h-[500px] mt-8 lg:mt-14">
               <AnimatePresence mode="wait">
                 {worldSelected === 0 && (
                   <motion.div
                     key="characters"
-                    className="flex flex-col gap-5"
+                    className=" flex flex-col gap-5"
                     {...fastExitAnimation}
                   >
-                    <h3>Characters</h3>
+                    <div className="absolute-x inset-x-0 top-0 py-2.5 lg:py-5 flex overflow-hidden bg-scum-black-800/15">
+                      {new Array(charLength).fill(null).map((_, i) => (
+                        <div key={i} className="">
+                          <Image
+                            src={`/images/maquina/character-${i + 1}.jpg`}
+                            width={300}
+                            height={300}
+                            alt={`Character ${i + 1}`}
+                            className="rounded-br-[30px] md:rounded-br-[50px] lg:rounded-br-[100px] min-w-[100px] md:min-w-[150px] lg:min-w-[300px]"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                    <h3 className="mt-40 sm:mt-48 md:mt-60 lg:mt-[420px]">
+                      Characters
+                    </h3>
                     <p className="font-forma-medium">
                       The original My Slimes collection consists of 50 unique
                       characters. Some of these are inspired with direction by
