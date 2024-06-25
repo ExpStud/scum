@@ -27,6 +27,8 @@ const Socials = dynamic(() => import("./molecules/Socials"));
 const Heading = dynamic(() => import("./molecules/Heading"));
 const MaquinaToggleItem = dynamic(() => import("./molecules/MaquinaToggleItem"));
 const MaquinaImage = dynamic(() => import("./molecules/MaquinaImage"));
+const WorldToggleItem = dynamic(() => import("./molecules/WorldToggleItem"));
+const ImageBar = dynamic(() => import("./molecules/ImageBar"));
 //organisms
 const Header = dynamic(() => import("./organisms/Header"));
 const Footer = dynamic(() => import("./organisms/Footer"));
@@ -35,6 +37,9 @@ const ImageModal = dynamic(() => import("./organisms/ImageModal"));
 const SlimeGraphics = dynamic(() => import("./organisms/SlimeGraphics"));
 const SlimeNav = dynamic(() => import("./organisms/SlimeNav"));
 const SlimeItem = dynamic(() => import("./organisms/SlimeItem"));
+const MaquinaCharacters = dynamic(() => import("./organisms/MaquinaCharacters"));
+const MaquinaCollaborations = dynamic(() => import("./organisms/MaquinaCollaborations"));
+const MaquinaBranding = dynamic(() => import("./organisms/MaquinaBranding"));
 //templates
 const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
@@ -82,5 +87,10 @@ export {
   SlimeNav,
   SlimeItem,
   MaquinaToggleItem,
-  MaquinaImage
+  MaquinaImage,
+  WorldToggleItem,
+  ImageBar,
+  MaquinaCharacters,
+  MaquinaCollaborations,
+  MaquinaBranding
 }
