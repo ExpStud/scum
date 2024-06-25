@@ -10,7 +10,7 @@ const MaquinaCharacters: FC<Props> = (props: Props) => {
   return (
     <motion.div
       key="characters"
-      className=" flex flex-col gap-5"
+      className="max-w-[600px] flex flex-col gap-5"
       {...fastExitAnimation}
     >
       <h3 className="mt-40 sm:mt-48 md:mt-60 lg:mt-[420px]">Characters</h3>

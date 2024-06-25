@@ -10,7 +10,7 @@ const MaquinaCollaborations: FC<Props> = (props: Props) => {
   return (
     <motion.div
       key="collaboration"
-      className="flex flex-col gap-5"
+      className="flex flex-col gap-5 max-w-[600px]"
       {...fastExitAnimation}
     >
       <h3 className="mt-40 sm:mt-48 md:mt-60 lg:mt-[420px]">collaborations</h3>

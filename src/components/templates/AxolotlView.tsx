@@ -17,6 +17,18 @@ const AxolotlView: FC<Props> = (props: Props) => {
       {...midEnterAnimation}
     >
       <Heading />
+      <div className="intro-text-container mx-5 xl:!ml-0">
+        <h2>saving the axolotls</h2>
+        <p className="intro-text">
+          One of the primary pillars of the My Slimes collection has been too
+          funnel resources into Mexico City in the effort of preserving the
+          diminishing Axolotl population.
+        </p>
+        <p className="intro-text">
+          In just a years time, we have raised over $40,000 through My Slime
+          sales.
+        </p>
+      </div>
     </motion.div>
   );
 };

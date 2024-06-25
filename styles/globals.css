@@ -57,7 +57,7 @@ a {
     @apply text-5xl md:text-[72px];
   }
   h2 {
-    @apply  text-4xl md:text-[64px] uppercase font-forma-extrabold tracking-wide;
+    @apply  text-4xl md:text-6xl 2xl:text-7xl uppercase font-forma-extrabold tracking-wide;
   }
   h3 {
     @apply  text-2xl md:text-4xl uppercase;
@@ -173,46 +173,46 @@ html {
 
 /* lines */
 .outer-left-spacing {
-  @apply xl:left-[90px] 2xl:left-[120px] 3xl:left-[360px]; 
+  @apply xl:left-[90px] 2xl:left-[120px] ; 
 }
 .outer-left-margin {
-  @apply xl:ml-[90px] 2xl:ml-[120px] 3xl:ml-[360px]; 
+  @apply xl:ml-[90px] 2xl:ml-[120px] ; 
 }
 .outer-left-padding {
-  @apply xl:pl-[90px] 2xl:pl-[120px] 3xl:pl-[360px]; 
+  @apply xl:pl-[90px] 2xl:pl-[120px]; 
 }
 .outer-left-line {
   @apply outer-left-spacing z-[10] hidden xl:block fixed w-[1px] h-screen;
 }
 
 .inner-left-spacing {
-  @apply xl:left-[250px] 2xl:left-[340px] 3xl:left-[680px]; 
+  @apply xl:left-[250px] 2xl:left-[340px]; 
 }
 .inner-left-margin {
-  @apply xl:ml-[250px] 2xl:ml-[340px] 3xl:ml-[680px]; 
+  @apply xl:ml-[250px] 2xl:ml-[340px]; 
 }
 .inner-left-padding {
-  @apply xl:pl-[250px] 2xl:pl-[340px] 3xl:pl-[680px]; 
+  @apply xl:pl-[250px] 2xl:pl-[340px] ; 
 }
 .inner-left-line {
   @apply inner-left-spacing z-[10] hidden xl:block fixed w-[1px] h-screen;
 }
 
 .outer-right-spacing {
-  @apply xl:right-[250px] 2xl:right-[340px] 3xl:right-[680px]; 
+  @apply xl:right-[250px] 2xl:right-[340px] max:right-auto max:left-[1580px]; 
 }
 .outer-right-margin {
-  @apply xl:mr-[250px] 2xl:mr-[340px] 3xl:mr-[680px]; 
+  @apply xl:mr-[250px] 2xl:mr-[340px]; 
 }
 .outer-right-padding {
-  @apply xl:pr-[250px] 2xl:pr-[340px] 3xl:pr-[680px]; 
+  @apply xl:pr-[250px] 2xl:pr-[340px]; 
 }
 .right-line {
   @apply outer-right-spacing z-[10] hidden xl:block fixed w-[1px] h-screen;
 }
 
 .absolute-x {
-  @apply absolute -left-5 xl:-left-[250px] 2xl:-left-[340px] 3xl:-left-[680px] -right-5 xl:-right-[250px] 2xl:-right-[340px] 3xl:-right-[680px];
+  @apply absolute -left-5 xl:-left-[250px] 2xl:-left-[340px] -right-5 xl:-right-[250px] 2xl:-right-[340px];
 }
 
 /* other */
@@ -231,7 +231,7 @@ html {
   @apply col-start gap-8 my-10 mx-5 text-container-width;
 }
 .intro-text {
-  @apply text-lg md:text-xl xl:text-2xl tracking-wider;
+  @apply text-lg md:text-xl xl:text-2xl 2xl:text-4xl tracking-wide;
 }
 
 .slimes-button {
