@@ -8,6 +8,44 @@ interface Props {
   setAssets: Dispatch<SetStateAction<boolean[]>>;
 }
 
+type AxolotlInfo = {
+  title: string;
+  description: string[];
+  src: string;
+};
+const axolotlInfo: AxolotlInfo[] = [
+  {
+    title: "the axies need our help",
+    src: "",
+    description: [
+      "These filters will funnel water directly from the lake where it begins a 4 step filtration system through various plants, and volcanic rock.",
+      "The goal being to eventually amass a body of water clean enough to re-introduce the Axolotls held in captivation back into the wild.",
+    ],
+  },
+  {
+    title: "the axies need our help",
+    src: "",
+    description: [
+      "In order to preserve the species, many organizations like Somos Axolotl have begun to relocate these marvelous creatures into captivity where a consistent water quality, and safe environment can be provided.",
+    ],
+  },
+  {
+    title: "Preservation efforts",
+    src: "",
+    description: [
+      "In order to preserve the species, many organizations like Somos Axolotl have begun to relocate these marvelous creatures into captivity where a consistent water quality, and safe environment can be provided.",
+      "On the exact same Chinampa where the Axolotl Statues are installed, our team has begun the development of organic bio-filters.",
+      "These filters will funnel water directly from the lake where it begins a 4 step filtration system through various plants, and volcanic rock.",
+      "The goal being to eventually amass a body of water clean enough to re-introduce the Axolotls held in captivation back into the wild.",
+    ],
+  },
+  {
+    title: "moving the needle",
+    src: "",
+    description: [""],
+  },
+];
+
 const AxolotlView: FC<Props> = (props: Props) => {
   const { setAssets } = props;
 
@@ -30,6 +68,7 @@ const AxolotlView: FC<Props> = (props: Props) => {
         </p>
       </div>
       <hr className="flex-grow border-t border-dotted border-scum-beige/20 mr-2 w-full mt-5" />
+      {/* stats */}
       <div className="flex gap-20 uppercase mt-10 small-mx ">
         <div className="flex flex-col gap-5">
           <p className="text-4xl md:text-6xl 2xl:text-7xl font-forma-extrabold text-scum-teal">
@@ -48,31 +87,31 @@ const AxolotlView: FC<Props> = (props: Props) => {
           </p>
         </div>
       </div>
-
-      <div className="flex flex-wrap xl:flex-nowrap justify-center gap-5 xl:justify-between overflow-hidden pt-5">
+      {/* images */}
+      <div className="w-full flex flex-col xs:flex-row xl:flex-nowrap justify-center gap-5 xl:justify-between overflow-hidden pt-5">
         <Image
           src={`/images/about/card-5.jpg`}
           width={500}
           height={500}
           alt="Panda"
-          className="w-[32%] rounded-br-[75px] sm:rounded-br-[100px]"
+          className="xs:w-[32%] xs:rounded-br-[100px]"
         />
         <Image
           src={`/images/about/card-5.jpg`}
           width={500}
           height={500}
           alt="Panda"
-          className="w-[32%] rounded-br-[75px] sm:rounded-br-[100px]"
+          className="xs:w-[32%] xs:rounded-br-[100px]"
         />
         <Image
           src={`/images/about/card-5.jpg`}
           width={500}
           height={500}
           alt="Panda"
-          className="w-[32%] rounded-br-[75px] sm:rounded-br-[100px]"
+          className="xs:w-[32%] xs:rounded-br-[100px]"
         />
       </div>
-
+      {/* pattern svg */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="155"
@@ -142,8 +181,20 @@ const AxolotlView: FC<Props> = (props: Props) => {
           fillOpacity="0.5"
         />
       </svg>
+      {/* dropdown */}
+      <div className="flex w-full"></div>
     </motion.div>
   );
+};
+
+interface ItemProps {
+  title: string;
+  description: string[];
+  src: string;
+}
+const DropdownItem: FC<ItemProps> = (props: ItemProps) => {
+  const { title, description, src } = props;
+  return <div></div>;
 };
 
 export default AxolotlView;
