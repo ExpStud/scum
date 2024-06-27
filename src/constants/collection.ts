@@ -387,11 +387,3 @@ export const collection: Collection[] = [
   },
 ];
 
-  // {
-  //   id:,
-  //   name: "",
-  //   tag: "",
-  //   color: "#",
-  //   mintAddress : ""
-  //   description: "",
-  // },
