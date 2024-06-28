@@ -1,9 +1,8 @@
 import { Dispatch, SetStateAction, FC } from "react";
 import Image from "next/image";
 import { Heading } from "@components";
-import { motion } from "framer-motion";
-import { midEnterAnimation } from "src/constants";
-
+import { motion, useCycle } from "framer-motion";
+import { midEnterAnimation, expandHeight } from "@constants";
 interface Props {
   setAssets: Dispatch<SetStateAction<boolean[]>>;
 }
@@ -16,7 +15,7 @@ type AxolotlInfo = {
 const axolotlInfo: AxolotlInfo[] = [
   {
     title: "the axies need our help",
-    src: "",
+    src: "axolotl-1.jpg",
     description: [
       "These filters will funnel water directly from the lake where it begins a 4 step filtration system through various plants, and volcanic rock.",
       "The goal being to eventually amass a body of water clean enough to re-introduce the Axolotls held in captivation back into the wild.",
@@ -24,14 +23,14 @@ const axolotlInfo: AxolotlInfo[] = [
   },
   {
     title: "the axies need our help",
-    src: "",
+    src: "axolotl-1.jpg",
     description: [
       "In order to preserve the species, many organizations like Somos Axolotl have begun to relocate these marvelous creatures into captivity where a consistent water quality, and safe environment can be provided.",
     ],
   },
   {
     title: "Preservation efforts",
-    src: "",
+    src: "axolotl-1.jpg",
     description: [
       "In order to preserve the species, many organizations like Somos Axolotl have begun to relocate these marvelous creatures into captivity where a consistent water quality, and safe environment can be provided.",
       "On the exact same Chinampa where the Axolotl Statues are installed, our team has begun the development of organic bio-filters.",
@@ -41,7 +40,7 @@ const axolotlInfo: AxolotlInfo[] = [
   },
   {
     title: "moving the needle",
-    src: "",
+    src: "axolotl-1.jpg",
     description: [""],
   },
 ];
@@ -182,7 +181,16 @@ const AxolotlView: FC<Props> = (props: Props) => {
         />
       </svg>
       {/* dropdown */}
-      <div className="flex w-full"></div>
+      <div className="flex flex-col w-full">
+        {axolotlInfo.map((item, index) => (
+          <DropdownItem
+            key={index}
+            title={item.title}
+            description={item.description}
+            src={item.src}
+          />
+        ))}
+      </div>
     </motion.div>
   );
 };
@@ -194,7 +202,31 @@ interface ItemProps {
 }
 const DropdownItem: FC<ItemProps> = (props: ItemProps) => {
   const { title, description, src } = props;
-  return <div></div>;
+  const [open, cycleOpen] = useCycle(false, true);
+  return (
+    <div
+      className="flex jusitfy-between py-5 border-y border-scum-beige/25"
+      onClick={() => cycleOpen()}
+    >
+      <h3>{title}</h3>
+      <motion.div
+        className="flex w-full justify-between gap-5"
+        {...expandHeight(open)}
+      >
+        <div className="flex flex-col gap-6">
+          {description.map((d, i) => (
+            <p key={i}>{d}</p>
+          ))}
+        </div>
+        <Image
+          src={`/images/axolotl/${src}`}
+          width={480}
+          height={610}
+          alt={title}
+        />
+      </motion.div>
+    </div>
+  );
 };
 
 export default AxolotlView;

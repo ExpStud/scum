@@ -218,7 +218,7 @@ html {
 /* other */
 
 .about-cards {
-  @apply rounded-br-[150px] sm:rounded-br-[100px] w-[400px] sm:w-auto;
+  @apply rounded-br-[150px] sm:rounded-br-[100px] object-cover;
 }
 .about-cards-container {
   @apply flex flex-wrap xl:flex-nowrap justify-center xl:justify-between gap-5 my-5 px-5 xl:px-0 w-full;

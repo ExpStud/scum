@@ -12,8 +12,9 @@ interface Props {
 const AboutView: FC<Props> = (props: Props) => {
   const { setAssets } = props;
 
-  const [winWidht] = useWindowSize();
-  const isDekstop = winWidht > 1024;
+  const [winWidth] = useWindowSize();
+  const isDekstop = winWidth > 1024;
+
   return (
     <motion.div
       className="page-start gap-5 xl:gap-10 mt-[86px] xl:mt-0 lg:py-10"
@@ -47,28 +48,28 @@ const AboutView: FC<Props> = (props: Props) => {
           width={266}
           height={369}
           alt="All in Time"
-          className="about-cards"
+          className="about-cards sm:w-[23%]"
         />
         <Image
           src={`/images/about/card-2.jpg`}
           width={282}
           height={369}
           alt="All in Time 2"
-          className="about-cards"
+          className="about-cards sm:w-[23%]"
         />
         <Image
           src={`/images/about/card-3.jpg`}
           width={369}
           height={369}
           alt="New Slimes"
-          className="about-cards"
+          className="about-cards sm:w-[23%]"
         />
         <Image
           src={`/images/about/card-4.jpg`}
           width={278}
           height={369}
           alt="All in Time 3"
-          className="about-cards"
+          className="about-cards sm:w-[23%]"
         />
       </div>
 
@@ -95,21 +96,21 @@ const AboutView: FC<Props> = (props: Props) => {
           width={329}
           height={425}
           alt="Panda"
-          className="about-cards"
+          className="about-cards sm:w-[31.5%]"
         />
         <Image
           src={`/images/about/card-6.jpg`}
           width={425}
           height={425}
           alt="Slime"
-          className="about-cards"
+          className="about-cards sm:w-[31.5%]"
         />
         <Image
           src={`/images/about/card-7.jpg`}
           width={425}
           height={425}
           alt="Art"
-          className="about-cards"
+          className="about-cards sm:w-[31.5%]"
         />
       </div>
       <div className="self-center col-start gap-5 my-10 font-forma-medium max-w-[550px] text-lg lg:text-xl">
