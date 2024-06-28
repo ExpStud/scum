@@ -1,18 +1,44 @@
 import { Variants } from "framer-motion";
 
 
+export const dropdownParent = {
+  hidden: { opacity: 0},
+  visible: {
+    opacity: 1,
+    transition: {ease: "easeInOut", delay: 0.5, duration: 0.5 },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 0.3,
+    },
+  },
+};
+
+export const dropdownChild = {
+  hidden: { opacity: 0, x: 0 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.69 },
+  },
+  exit: { opacity: 0, x: 0, transition: { duration: 0.08 } },
+};
+
 export const expandHeight = ( 
   animate: boolean,
+  height?: number,
   duration?: number,
-  delay?: number
+  delay?: number,
 ) => ({
   initial: { height: 0 },
-  animate: { height: animate ? "auto" : 0 },
+  // animate: { height: animate ? "auto" : 0 },
+  animate: { height: animate ? height ?? "auto" : 0 },
   exit:{ height: 0 },
 
   transition: {
-    duration: duration && !animate ? duration * 0.5 : duration ?? 0.3,
-    ease: "easeOut",
+    duration: duration && !animate ? duration * 0.5 : duration ?? 0.5,
+    ease: "easeInOut",
     delay: animate ? 0 : delay ?? 0,
   },
 });

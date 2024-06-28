@@ -1,8 +1,13 @@
 import { Dispatch, SetStateAction, FC } from "react";
 import Image from "next/image";
-import { Heading } from "@components";
-import { motion, useCycle } from "framer-motion";
-import { midEnterAnimation, expandHeight } from "@constants";
+import { ArrowIcon, Heading } from "@components";
+import { AnimatePresence, motion, useCycle } from "framer-motion";
+import {
+  midEnterAnimation,
+  expandHeight,
+  dropdownParent,
+  dropdownChild,
+} from "@constants";
 interface Props {
   setAssets: Dispatch<SetStateAction<boolean[]>>;
 }
@@ -15,7 +20,7 @@ type AxolotlInfo = {
 const axolotlInfo: AxolotlInfo[] = [
   {
     title: "the axies need our help",
-    src: "axolotl-1.jpg",
+    src: "dropdown-1.jpg",
     description: [
       "These filters will funnel water directly from the lake where it begins a 4 step filtration system through various plants, and volcanic rock.",
       "The goal being to eventually amass a body of water clean enough to re-introduce the Axolotls held in captivation back into the wild.",
@@ -23,14 +28,14 @@ const axolotlInfo: AxolotlInfo[] = [
   },
   {
     title: "the axies need our help",
-    src: "axolotl-1.jpg",
+    src: "dropdown-1.jpg",
     description: [
       "In order to preserve the species, many organizations like Somos Axolotl have begun to relocate these marvelous creatures into captivity where a consistent water quality, and safe environment can be provided.",
     ],
   },
   {
     title: "Preservation efforts",
-    src: "axolotl-1.jpg",
+    src: "dropdown-1.jpg",
     description: [
       "In order to preserve the species, many organizations like Somos Axolotl have begun to relocate these marvelous creatures into captivity where a consistent water quality, and safe environment can be provided.",
       "On the exact same Chinampa where the Axolotl Statues are installed, our team has begun the development of organic bio-filters.",
@@ -40,8 +45,13 @@ const axolotlInfo: AxolotlInfo[] = [
   },
   {
     title: "moving the needle",
-    src: "axolotl-1.jpg",
-    description: [""],
+    src: "dropdown-1.jpg",
+    description: [
+      "In order to preserve the species, many organizations like Somos Axolotl have begun to relocate these marvelous creatures into captivity where a consistent water quality, and safe environment can be provided.",
+      "On the exact same Chinampa where the Axolotl Statues are installed, our team has begun the development of organic bio-filters.",
+      "These filters will funnel water directly from the lake where it begins a 4 step filtration system through various plants, and volcanic rock.",
+      "The goal being to eventually amass a body of water clean enough to re-introduce the Axolotls held in captivation back into the wild.",
+    ],
   },
 ];
 
@@ -181,7 +191,7 @@ const AxolotlView: FC<Props> = (props: Props) => {
         />
       </svg>
       {/* dropdown */}
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col w-full border-t border-scum-beige/25 mb-32">
         {axolotlInfo.map((item, index) => (
           <DropdownItem
             key={index}
@@ -205,25 +215,43 @@ const DropdownItem: FC<ItemProps> = (props: ItemProps) => {
   const [open, cycleOpen] = useCycle(false, true);
   return (
     <div
-      className="flex jusitfy-between py-5 border-y border-scum-beige/25"
+      className="flex flex-col py-5 border-b border-scum-beige/25 w-full small-px"
       onClick={() => cycleOpen()}
     >
-      <h3>{title}</h3>
-      <motion.div
-        className="flex w-full justify-between gap-5"
-        {...expandHeight(open)}
-      >
-        <div className="flex flex-col gap-6">
-          {description.map((d, i) => (
-            <p key={i}>{d}</p>
-          ))}
-        </div>
-        <Image
-          src={`/images/axolotl/${src}`}
-          width={480}
-          height={610}
-          alt={title}
-        />
+      <div className="flex justify-between items-center w-full xl:pr-5 pt-0.5 cursor-pointer">
+        <h4>{title}</h4>
+        <ArrowIcon animate={open} />
+      </div>
+      <motion.div {...expandHeight(open)}>
+        <AnimatePresence mode="wait">
+          {open && (
+            <motion.div
+              className="flex w-full justify-between gap-5"
+              variants={dropdownParent}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+            >
+              <div className="flex flex-col gap-6 max-w-[600px] pt-5">
+                {description.map((d, i) => (
+                  <motion.p
+                    key={i}
+                    className="font-forma-medium text-lg xl:text-2xl text-scum-beige/50"
+                  >
+                    {d}
+                  </motion.p>
+                ))}
+              </div>
+              <Image
+                src={`/images/axolotl/${src}`}
+                width={480}
+                height={610}
+                alt={title}
+                className="hidden md:block mt-5 max-w-[480px] max-h-[610px] object-cover rounded-br-[100px]"
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.div>
     </div>
   );
