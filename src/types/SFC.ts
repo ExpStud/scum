@@ -7,7 +7,6 @@ export interface SFC {
   twitter: string[];
   artist: string[];
   url: string;
-  width: number;
-  height: number;
   season: number;
+  aspect: "square" | "long" | "wide"
 }
