@@ -148,5 +148,56 @@ export const sfc: SFC[] = [
     season: 1,
     aspect : "wide"
   },
-
+  {
+    id: 12,
+    twitter: ["https://x.com/wetikos"],
+    src: "13-regeneration.jpg",
+    name: "Regeneration",
+    description:
+      "Digital outlines by Imrie, physical created traditionally by Wetiko. Marker, colored pencil, spray paint and paint marker on 14” x 14” illustration board.",
+    artist: ["wetiko"],
+    url: "https://exchange.art/editions/CCwcDA6p6NcV2CTBfXAfx5w91YXnoKg222kXkRUdA2bj",
+    season: 2,
+    aspect : "square"
+  },
+  {
+    id: 13,
+    twitter: ["https://x.com/HuansiFTS"],
+    src: "14-between-light.jpg",
+    name: "Between Light & Shadow",
+    description:
+      "In this vibrant and dynamic artwork, a lone figure stands at the center of a surreal confrontation between two mystical axolotls. The creature on the left, bathed in warm, luminescent tones, appears to be a guardian of light, exuding a sense of benevolence and protection. On the right, its counterpart is cloaked in darker, more intense hues, embodying an ominous and chaotic energy. The interplay of colors and shapes creates a dramatic and mesmerizing contrast, capturing the eternal struggle between opposing forces.",
+    artist: ["Huansi"],
+    url: "https://exchange.art/editions/2vhD1erwtaQtPHbQz9EF57dtpATByBvZH6REvaaDZEzN",
+    season: 2,
+    aspect : "wide"
+  },
+  {
+    id: 1,
+    twitter: ["https://x.com/benbauchau"],
+    src: "15-champions-of-tolaxa.jpg",
+    name: "Champions of Tolaxa",
+    description:
+      "A new threat is lurking, it can be felt in the air. But the Champions of Tulaxa stand their ground as always, generation after generation, to protect their temple, facing the sacred lake of the First Axolotl.",
+    artist: ["Ben Bauchau"],
+    url: "https://exchange.art/editions/",
+    season: 2,
+    aspect : "square"
+  },
 ];
+
+/*
+
+  {
+    id: 1,
+    twitter: ["https://x.com/"],
+    src: "1-.jpg",
+    name: "",
+    description:
+      "",
+    artist: [""],
+    url: "https://exchange.art/editions/",
+    season: 2,
+    aspect : "long"
+  },
+*/

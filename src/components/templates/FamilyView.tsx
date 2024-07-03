@@ -50,7 +50,7 @@ const FamilyView: FC<Props> = (props: Props) => {
 
       <Gallery
         header="season 2"
-        data={sfc.filter((item) => item.season === 1)}
+        data={sfc.filter((item) => item.season === 2)}
       />
 
       <Gallery
