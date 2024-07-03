@@ -43,7 +43,7 @@ const SlimeItem = dynamic(() => import("./organisms/SlimeItem"));
 const MaquinaCharacters = dynamic(() => import("./organisms/MaquinaCharacters"));
 const MaquinaCollaborations = dynamic(() => import("./organisms/MaquinaCollaborations"));
 const MaquinaBranding = dynamic(() => import("./organisms/MaquinaBranding"));
-const Gallery = dynamic(() => import("./organisms/MaquinaBranding"));
+const Gallery = dynamic(() => import("./organisms/Gallery"));
 //templates
 const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
