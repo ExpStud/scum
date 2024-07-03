@@ -125,7 +125,7 @@ const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
   };
 
   return (
-    <div className="small-mx relative w-full z-20 overflow-hidden">
+    <div className="pl-5 xl:pl-0 relative w-full z-20 overflow-hidden">
       <h4 className="mb-5">{header}</h4>
 
       <div className="w-full ">

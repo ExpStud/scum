@@ -30,6 +30,7 @@ const MaquinaToggleItem = dynamic(() => import("./molecules/MaquinaToggleItem"))
 const MaquinaImage = dynamic(() => import("./molecules/MaquinaImage"));
 const WorldToggleItem = dynamic(() => import("./molecules/WorldToggleItem"));
 const ImageBar = dynamic(() => import("./molecules/ImageBar"));
+const AnimateWrapper = dynamic(() => import("./molecules/AnimateWrapper"));
 //organisms
 const Header = dynamic(() => import("./organisms/Header"));
 const Footer = dynamic(() => import("./organisms/Footer"));
@@ -94,5 +95,6 @@ export {
   MaquinaCharacters,
   MaquinaCollaborations,
   MaquinaBranding,
-  AxolotlPattern
+  AxolotlPattern,
+  AnimateWrapper
 }
