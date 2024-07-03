@@ -1,7 +1,12 @@
-import { Dispatch, SetStateAction, FC } from "react";
+import { Dispatch, SetStateAction, FC, useRef } from "react";
 import Image from "next/image";
-import { ArrowIcon, AxolotlPattern, Heading } from "@components";
-import { AnimatePresence, motion, useCycle } from "framer-motion";
+import {
+  AnimateWrapper,
+  ArrowIcon,
+  AxolotlPattern,
+  Heading,
+} from "@components";
+import { AnimatePresence, motion, useCycle, useInView } from "framer-motion";
 import { midEnterAnimation, expandHeight, dropdownParent } from "@constants";
 interface Props {
   setAssets: Dispatch<SetStateAction<boolean[]>>;
@@ -53,81 +58,89 @@ const axolotlInfo: AxolotlInfo[] = [
 const AxolotlView: FC<Props> = (props: Props) => {
   const { setAssets } = props;
 
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, {
+    once: true,
+  });
+
   return (
     <motion.div
       className="page-start gap-5 xl:gap-10 mt-[86px] xl:mt-0 lg:py-10"
       {...midEnterAnimation}
+      ref={ref}
     >
-      <Heading />
-      <div className="intro-text-container mx-5 xl:!ml-0 !mt-12">
-        <h2>saving the axolotls</h2>
-        <p className="intro-text">
-          One of the primary pillars of the My Slimes collection has been too
-          funnel resources into Mexico City in the effort of preserving the
-          diminishing Axolotl population.
-        </p>
-        <p className="intro-text">
-          In just a years time, we have raised over $40,000 through My Slime
-          sales.
-        </p>
-      </div>
-      <hr className="flex-grow border-t border-dotted border-scum-beige/20 mr-2 w-full mt-5" />
-      {/* stats */}
-      <div className="flex gap-20 uppercase mt-10 small-mx ">
-        <div className="flex flex-col gap-5">
-          <p className="text-4xl md:text-6xl 2xl:text-7xl font-forma-extrabold text-scum-teal">
-            $40,000
+      <AnimateWrapper animate={isInView}>
+        <Heading />
+        <div className="intro-text-container mx-5 xl:!ml-0 !mt-12">
+          <h2>saving the axolotls</h2>
+          <p className="intro-text">
+            One of the primary pillars of the My Slimes collection has been too
+            funnel resources into Mexico City in the effort of preserving the
+            diminishing Axolotl population.
           </p>
-          <p className="text-scum-teal/70 text-sm sm:text-base">
-            donated till today
+          <p className="intro-text">
+            In just a years time, we have raised over $40,000 through My Slime
+            sales.
           </p>
         </div>
-        <div className="flex flex-col gap-5">
-          <p className="text-4xl md:text-6xl 2xl:text-7xl font-forma-extrabold text-scum-teal">
-            857
-          </p>
-          <p className="text-scum-teal/70 text-sm sm:text-base">
-            axolotls saved
-          </p>
+        <hr className="flex-grow border-t border-dotted border-scum-beige/20 mr-2 w-full mt-5" />
+        {/* stats */}
+        <div className="flex gap-20 uppercase mt-10 small-mx ">
+          <div className="flex flex-col gap-5">
+            <p className="text-4xl md:text-6xl 2xl:text-7xl font-forma-extrabold text-scum-teal">
+              $40,000
+            </p>
+            <p className="text-scum-teal/70 text-sm sm:text-base">
+              donated till today
+            </p>
+          </div>
+          <div className="flex flex-col gap-5">
+            <p className="text-4xl md:text-6xl 2xl:text-7xl font-forma-extrabold text-scum-teal">
+              857
+            </p>
+            <p className="text-scum-teal/70 text-sm sm:text-base">
+              axolotls saved
+            </p>
+          </div>
         </div>
-      </div>
-      {/* images */}
-      <div className="w-full flex flex-col xs:flex-row xl:flex-nowrap justify-center gap-5 xl:justify-between overflow-hidden pt-5">
-        <Image
-          src={`/images/about/card-5.jpg`}
-          width={500}
-          height={500}
-          alt="Panda"
-          className="xs:w-[32%] xs:rounded-br-[100px]"
-        />
-        <Image
-          src={`/images/about/card-5.jpg`}
-          width={500}
-          height={500}
-          alt="Panda"
-          className="xs:w-[32%] xs:rounded-br-[100px]"
-        />
-        <Image
-          src={`/images/about/card-5.jpg`}
-          width={500}
-          height={500}
-          alt="Panda"
-          className="xs:w-[32%] xs:rounded-br-[100px]"
-        />
-      </div>
-      {/* pattern svg */}
-      <AxolotlPattern />
-      {/* dropdown */}
-      <div className="flex flex-col w-full border-t border-scum-beige/25 mb-32">
-        {axolotlInfo.map((item, index) => (
-          <DropdownItem
-            key={index}
-            title={item.title}
-            description={item.description}
-            src={item.src}
+        {/* images */}
+        <div className="w-full flex flex-col xs:flex-row xl:flex-nowrap justify-center gap-5 xl:justify-between overflow-hidden pt-5">
+          <Image
+            src={`/images/about/card-5.jpg`}
+            width={500}
+            height={500}
+            alt="Panda"
+            className="xs:w-[32%] xs:rounded-br-[100px]"
           />
-        ))}
-      </div>
+          <Image
+            src={`/images/about/card-5.jpg`}
+            width={500}
+            height={500}
+            alt="Panda"
+            className="xs:w-[32%] xs:rounded-br-[100px]"
+          />
+          <Image
+            src={`/images/about/card-5.jpg`}
+            width={500}
+            height={500}
+            alt="Panda"
+            className="xs:w-[32%] xs:rounded-br-[100px]"
+          />
+        </div>
+        {/* pattern svg */}
+        <AxolotlPattern />
+        {/* dropdown */}
+        <div className="flex flex-col w-full border-t border-scum-beige/25 mb-32">
+          {axolotlInfo.map((item, index) => (
+            <DropdownItem
+              key={index}
+              title={item.title}
+              description={item.description}
+              src={item.src}
+            />
+          ))}
+        </div>
+      </AnimateWrapper>
     </motion.div>
   );
 };

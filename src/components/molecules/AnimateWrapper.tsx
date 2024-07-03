@@ -18,8 +18,8 @@ const AnimateWrapper: FC<AnimateWrapperProps> = (
     children,
     delay = 0,
     opacity,
-    height = 150,
-    duration = 0.59,
+    height = 75,
+    duration = 0.75,
     onAnimationComplete,
     ...componentProps
   } = props;
