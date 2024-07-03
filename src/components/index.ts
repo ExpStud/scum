@@ -31,6 +31,7 @@ const MaquinaImage = dynamic(() => import("./molecules/MaquinaImage"));
 const WorldToggleItem = dynamic(() => import("./molecules/WorldToggleItem"));
 const ImageBar = dynamic(() => import("./molecules/ImageBar"));
 const AnimateWrapper = dynamic(() => import("./molecules/AnimateWrapper"));
+const GalleryItem = dynamic(() => import("./molecules/GalleryItem"));
 //organisms
 const Header = dynamic(() => import("./organisms/Header"));
 const Footer = dynamic(() => import("./organisms/Footer"));
@@ -42,6 +43,7 @@ const SlimeItem = dynamic(() => import("./organisms/SlimeItem"));
 const MaquinaCharacters = dynamic(() => import("./organisms/MaquinaCharacters"));
 const MaquinaCollaborations = dynamic(() => import("./organisms/MaquinaCollaborations"));
 const MaquinaBranding = dynamic(() => import("./organisms/MaquinaBranding"));
+const Gallery = dynamic(() => import("./organisms/MaquinaBranding"));
 //templates
 const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
@@ -96,5 +98,7 @@ export {
   MaquinaCollaborations,
   MaquinaBranding,
   AxolotlPattern,
-  AnimateWrapper
+  AnimateWrapper,
+  Gallery,
+  GalleryItem
 }

@@ -76,12 +76,8 @@ interface GalleryProps {
 
 const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
   const { header, data } = props;
-  const diplayItems = data.length;
 
   const [galleryIndex, setGalleryIndex] = useState<number>(0);
-  const [items, setItems] = useState<SFC[]>(
-    data.slice(galleryIndex, galleryIndex + diplayItems)
-  );
 
   const [winWidth] = useWindowSize();
 
@@ -181,11 +177,6 @@ interface GalleryItemProps {
 }
 const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
   const { offset, item } = props;
-
-  console.log("offset ", offset);
-  // Calculate the offset based on the current item index
-  // const offset = currentItem * -500;
-
   return (
     <motion.div
       className="flex flex-col gap-5"
