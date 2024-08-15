@@ -1,17 +1,8 @@
-import {
-  Dispatch,
-  SetStateAction,
-  FC,
-  useState,
-  useRef,
-  useEffect,
-} from "react";
+import { Dispatch, SetStateAction, FC, useRef } from "react";
 import Image from "next/image";
 import { AnimateWrapper, Gallery, Heading } from "@components";
 import { motion, useInView } from "framer-motion";
 import { midEnterAnimation, sfc } from "@constants";
-import { SFC } from "@types";
-import { useWindowSize } from "src/hooks";
 
 interface Props {
   setAssets: Dispatch<SetStateAction<boolean[]>>;
@@ -54,15 +45,9 @@ const FamilyView: FC<Props> = (props: Props) => {
           />
         </div>
 
-        <Gallery
-          header="season 2"
-          data={sfc.filter((item) => item.season === 2)}
-        />
+        <Gallery header="season 2" initialData={sfc.two} />
 
-        <Gallery
-          header="season 1"
-          data={sfc.filter((item) => item.season === 1)}
-        />
+        <Gallery header="season 1" initialData={sfc.one} />
       </AnimateWrapper>
     </motion.div>
   );

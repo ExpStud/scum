@@ -12,4 +12,7 @@ const Slimes: NextPage = () => {
   );
 };
 
+// scum - infinite scroll on all galleries
+// somos - brief cta and sphere widget will get $750-1000
+
 export default Slimes;

@@ -1,6 +1,7 @@
 import { SFC } from "@types";
 
-export const sfc: SFC[] = [
+
+const seasonOne: SFC[] = [
   {
     id: 0,
     twitter: ["https://twitter.com/TrevElViz"],
@@ -148,8 +149,10 @@ export const sfc: SFC[] = [
     season: 1,
     aspect : "wide"
   },
+];
+const seasonTwo: SFC[] = [
   {
-    id: 12,
+    id: 0,
     twitter: ["https://x.com/wetikos"],
     src: "13-regeneration.jpg",
     name: "Regeneration",
@@ -161,7 +164,7 @@ export const sfc: SFC[] = [
     aspect : "square"
   },
   {
-    id: 13,
+    id: 1,
     twitter: ["https://x.com/HuansiFTS"],
     src: "14-between-light.jpg",
     name: "Between Light & Shadow",
@@ -173,7 +176,7 @@ export const sfc: SFC[] = [
     aspect : "wide"
   },
   {
-    id: 1,
+    id: 2,
     twitter: ["https://x.com/benbauchau"],
     src: "15-champions-of-tolaxa.jpg",
     name: "Champions of Tolaxa",
@@ -185,6 +188,16 @@ export const sfc: SFC[] = [
     aspect : "square"
   },
 ];
+
+interface SFCSeasons {
+  one: SFC[];
+  two: SFC[];
+}
+
+export const sfc: SFCSeasons = {
+  one: seasonOne,
+  two: seasonTwo
+}
 
 /*
 

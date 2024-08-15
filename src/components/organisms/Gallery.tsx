@@ -1,37 +1,64 @@
-import { FC, useState, useRef } from "react";
+import { FC, useState, useRef, useEffect } from "react";
 import { SFC } from "@types";
 import { useWindowSize } from "@hooks";
 import { GalleryItem } from "@components";
 
 interface GalleryProps {
   header: string;
-  data: SFC[];
+  initialData: SFC[];
 }
 
 const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
-  const { header, data } = props;
+  const { header, initialData } = props;
 
   const [galleryIndex, setGalleryIndex] = useState<number>(0);
+  const [data, setData] = useState<SFC[]>([]);
 
   const [winWidth] = useWindowSize();
 
   const imageHeight = winWidth >= 1280 ? 500 : winWidth >= 640 ? 400 : 300;
 
-  const prevIndex = useRef<number>(0);
+  const prevIndex = useRef<number>(galleryIndex);
+
+  useEffect(() => {
+    // Initialize with two sets of initial data
+    setData([...initialData, ...initialData]);
+  }, [initialData]);
 
   const handlePrevious = () => {
     setGalleryIndex((_prevIndex) => {
-      const newIndex = _prevIndex === 0 ? 0 : _prevIndex - 1;
+      const newIndex =
+        _prevIndex === 0 ? initialData.length - 1 : _prevIndex - 1;
+      // Prepend data if moving to the left and at the start
+      if (newIndex === initialData.length - 1) {
+        setData((prevData) => [...initialData, ...prevData]);
+      }
+
+      // Remove the last data set if more than two sets
+      // if (data.length > initialData.length * 2 + 3) {
+      //   setData((prevData) => prevData.slice(0, -initialData.length));
+      // }
+
       prevIndex.current = _prevIndex;
       return newIndex;
     });
   };
+
   const handleNext = () => {
     setGalleryIndex((_prevIndex) => {
       const newIndex =
         _prevIndex === data.length - 1 ? data.length - 1 : _prevIndex + 1;
 
-      prevIndex.current = _prevIndex;
+      // Append data if moving to the right and at the end
+      if (newIndex === data.length - 3) {
+        setData((prevData) => [...prevData, ...initialData]);
+      }
+
+      // Remove the first data set if more than two sets
+      // if (data.length > initialData.length * 2) {
+      //   setData((prevData) => prevData.slice(initialData.length));
+      // }
+
       return newIndex;
     });
   };
@@ -43,14 +70,13 @@ const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
     height: number
   ) => {
     let offset = 0;
-
     for (let i = 0; i < index; i++) {
       const item = items[i];
       let itemWidth;
 
-      if (item.aspect === "wide") {
+      if (item?.aspect === "wide") {
         itemWidth = 1.5 * imageHeight;
-      } else if (item.aspect === "long") {
+      } else if (item?.aspect === "long") {
         itemWidth = (1 / 1.75) * imageHeight;
       } else {
         itemWidth = imageHeight; // for "aspect-square"
@@ -76,7 +102,7 @@ const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
               ←
             </button>
             <button
-              className="slimes-button-round  "
+              className="slimes-button-round"
               onClick={() => handleNext()}
             >
               →
@@ -84,8 +110,8 @@ const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
           </div>
           <hr className="flex-grow border-t border-dotted border-black/40 mr-2 w-full" />
           <p className="font-forma-medium text-2xl xl:text-[40px] whitespace-nowrap w-[100px] flex items-end justify-end mr-2.5">
-            {galleryIndex + 1}
-            <span className="opacity-50">/{data.length}</span>
+            {(galleryIndex % initialData.length) + 1}
+            <span className="opacity-50">/{initialData.length}</span>
           </p>
         </div>
         <div className="flex gap-5 overflow-hidden">
@@ -94,7 +120,6 @@ const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
               key={index}
               item={item}
               direction={prevIndex.current > index ? "left" : "right"}
-              // currentItem={galleryIndex}
               offset={calculateOffset(galleryIndex, data, 20, imageHeight)}
             />
           ))}
