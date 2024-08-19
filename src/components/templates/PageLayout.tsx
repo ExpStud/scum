@@ -73,7 +73,7 @@ const PageLayout: FC<Props> = (props: Props) => {
   return (
     <ViewContext.Provider value={value}>
       <div
-        className={`flex flex-col min-h-[100svh] h-full justify-between overflow-none max-w-[1920px] ${
+        className={`flex flex-col min-h-[100svh] h-full justify-between overflow-none   ${
           fixed ? "fixed inset-0" : absolute ? "absolute inset-0" : "relative"
         }`}
       >
@@ -86,11 +86,11 @@ const PageLayout: FC<Props> = (props: Props) => {
 
         <Header type={headerType} />
         <main
-          className={`inner-left-padding outer-right-padding flex flex-col h-full w-full`}
+          className={`max-w-1920 inner-left-padding outer-right-padding flex flex-col h-full w-full`}
         >
           {children}
           <Socials
-            className={`hidden xl:block absolute outer-left-spacing  ${
+            className={`hidden xl:block absolute outer-left-spacing z-10 ${
               router.pathname === "/" ? "bottom-[140px]" : "top-[85vh]"
             }`}
           />

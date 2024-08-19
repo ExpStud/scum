@@ -138,7 +138,7 @@ html {
 .page-centered {
   @apply h-full w-full col-centered mb-16;
 }
-.page-start {
+.page-start { 
   @apply h-full w-full col-start mb-16;
 }
 
@@ -252,3 +252,6 @@ html {
 .small-px {
   @apply px-5 xl:px-0;
 }
+.max-w-1920 {
+  @apply max-w-[1920px];
+} 

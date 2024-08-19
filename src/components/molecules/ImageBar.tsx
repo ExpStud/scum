@@ -30,7 +30,7 @@ const ImageBar: FC<ImageProps> = (props: ImageProps) => {
             src={`${path}-${i + 1}.jpg`}
             width={300}
             height={300}
-            alt={`Character ${i + 1}`}
+            alt={`Image ${i + 1}`}
             className="rounded-br-[30px] md:rounded-br-[50px] lg:rounded-br-[100px] min-w-[100px] md:min-w-[150px] lg:min-w-[300px]"
           />
         </div>

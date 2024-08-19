@@ -111,13 +111,13 @@ const MaquinaView: FC<Props> = (props: Props) => {
                   </WorldToggleItem>
                 </div>
               </div>
-              <div className="relative min-h-[700px] mt-8 lg:mt-14">
+              <div className="relative min-h-[700px] mt-20 lg:mt-32">
                 <ImageBar
                   path={
                     worldSelected === 0
                       ? "/images/maquina/character"
                       : worldSelected === 1
-                      ? "/images/maquina/character"
+                      ? "/images/maquina/PFP"
                       : "/images/maquina/character"
                   }
                 />

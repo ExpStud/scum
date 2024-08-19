@@ -30,7 +30,7 @@ const AnimateWrapper: FC<AnimateWrapperProps> = (
       onAnimationComplete={() => {
         onAnimationComplete && onAnimationComplete();
       }}
-      className={componentProps.className}
+      className={`w-full h-full ${componentProps.className ?? ""}`}
     >
       {children}
     </motion.div>
