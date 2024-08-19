@@ -57,7 +57,7 @@ const MaquinaView: FC<Props> = (props: Props) => {
               className="small-px"
               {...fastExitAnimation}
             >
-              <h2 className="my-3">Xicano Futurism</h2>
+              <h2 className="my-12">Xicano Futurism</h2>
               <p className="intro-text text-container-width mt-8 mb-16 xl:mb-32">
                 Maquina Muertes are chapters in a story that takes place in the
                 Slimes world. This series depicts scenes from my subconscious.
@@ -79,8 +79,8 @@ const MaquinaView: FC<Props> = (props: Props) => {
               className="small-px w-full"
               {...fastExitAnimation}
             >
-              <h2 className="my-3">World Building</h2>
-              <p className="intro-text text-container-width mt-8  mb-16 xl:mb-32">
+              <h2 className="my-12">World Building</h2>
+              <p className="intro-text text-container-width mt-8 mb-16 xl:mb-40 2xl:32">
                 All of my collections stem from the same desire; a greater
                 understanding of myself. I started Slimes as a tool to explore
                 my heritage. I am a mixed, Mexican American from the border
@@ -111,16 +111,26 @@ const MaquinaView: FC<Props> = (props: Props) => {
                   </WorldToggleItem>
                 </div>
               </div>
-              <div className="relative min-h-[700px] mt-20 lg:mt-32">
-                <ImageBar
-                  path={
-                    worldSelected === 0
-                      ? "/images/maquina/character"
-                      : worldSelected === 1
-                      ? "/images/maquina/PFP"
-                      : "/images/maquina/character"
-                  }
-                />
+              <div
+                className={`relative min-h-[700px] transition-500 ${
+                  worldSelected < 2 ? "mt-20 lg:mt-32" : "mt-10 lg:mt-16"
+                }`}
+              >
+                <AnimatePresence mode="wait">
+                  {worldSelected < 2 && (
+                    <ImageBar
+                      path={
+                        worldSelected === 0
+                          ? "/images/maquina/character-"
+                          : worldSelected === 1
+                          ? "/images/maquina/PFP_"
+                          : "/images/maquina/character"
+                      }
+                      extension={worldSelected === 1 ? "png" : "jpg"}
+                      totalImages={worldSelected === 1 ? 6 : 13}
+                    />
+                  )}
+                </AnimatePresence>
                 <AnimatePresence mode="wait">
                   {worldSelected === 0 && <MaquinaCharacters />}
                   {worldSelected === 1 && <MaquinaCollaborations />}

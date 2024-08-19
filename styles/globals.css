@@ -215,7 +215,7 @@ html {
 }
 
 .absolute-x {
-  @apply absolute -left-5 xl:-left-[250px] 2xl:-left-[340px] -right-5 xl:-right-[250px] 2xl:-right-[340px];
+  @apply absolute -left-5 xl:-left-[250px] 2xl:-left-[340px] max:left-0 max:right-0 -right-5 xl:-right-[250px] 2xl:-right-[340px];
 }
 .absolute-x-padding {
   @apply absolute -left-5 xl:-left-[240px] 2xl:-left-[330px] -right-5 xl:-right-[240px] 2xl:-right-[330px];
@@ -255,3 +255,6 @@ html {
 .max-w-1920 {
   @apply max-w-[1920px];
 } 
+.maquina-dot {
+  @apply mx-4 lg:mx-3 mb-0.5 lg:mb-2 font-secondary;
+}
