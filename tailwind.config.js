@@ -15,6 +15,7 @@ module.exports = {
         "forma-medium": "Forma Medium",
         "forma-bold": "Forma Bold",
         "forma-extrabold": "Forma Extra Bold",
+        pangram: "Pangram",
       },
       fontWeight: {
         light: 300,

@@ -29,6 +29,26 @@
   font-weight: 800;
   font-style: normal;
 }
+
+
+@font-face {
+  font-family: 'Pangram';
+  src: url('../public/fonts/pangram/Pangram-Regular.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pangram';
+  src: url('../public/fonts/pangram/Pangram-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pangram';
+  src: url('../public/fonts/pangram/Pangram-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
 /* @font-face {
   font-family: 'Helvetica Neue Light Italic';
   src: url('/public/fonts/helveticaneue/HelveticaNeueIt.ttf') format('truetype');
@@ -257,4 +277,16 @@ html {
 } 
 .maquina-dot {
   @apply mx-4 lg:mx-3 mb-0.5 lg:mb-2 font-secondary;
+}
+.pg-black {
+  color: #FDC3AE;
+  text-align: center;
+  text-shadow: 4.011px 3.438px 0px #000;
+  -webkit-text-stroke-width: 2.2918646335601807;
+  -webkit-text-stroke-color: #2C2524;
+  font-family: Pangram;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: 1.862px;
 }

@@ -37,7 +37,7 @@ const ImageBar: FC<ImageProps> = (props: ImageProps) => {
 
   return (
     <motion.div
-      className="absolute-x inset-x-0 top-0 py-2.5 lg:py-5 flex overflow-hidden bg-scum-black-800/15"
+      className="absolute-x inset-x-0 top-0 py-2.5 lg:py-5 flex overflow-hidden bg-scum-black-800/15 z-20"
       {...fastExitAnimation}
     >
       {new Array(charLength).fill(null).map((_, i) => (
