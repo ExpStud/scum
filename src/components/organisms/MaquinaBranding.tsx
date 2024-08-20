@@ -83,7 +83,7 @@ const MaquinaBranding: FC<Props> = (props: Props) => {
           ))}
         </div>
         <BrandingHeader>Explorations</BrandingHeader>
-        <div className="flex flex-wrap justify-between gap-y-10 md:gap-y-14 pb-20">
+        <div className="flex flex-wrap justify-center lg:justify-between gap-x-5 lg:gap-x-0 gap-y-10 md:gap-y-14 pb-20">
           {Array.from({ length: 5 }).map((_, i) => (
             <div
               className={`relative h-[110px] ${
