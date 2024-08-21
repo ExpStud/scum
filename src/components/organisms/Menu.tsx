@@ -1,8 +1,9 @@
-import { FC, useEffect, useRef } from "react";
+import { FC } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { IconBar, NavItem } from "@components";
 import { useLockBodyScroll, useWindowSize } from "@hooks";
-import { fadeVariants } from "@constants";
+import { menuVariants, navChild } from "@constants";
+import { isMobile } from "react-device-detect";
 
 interface Props {
   toggleMenu: () => void;
@@ -23,21 +24,28 @@ const Menu: FC<Props> = (props: Props) => {
         <motion.aside
           key="main-menu"
           initial={{ width: 0, opacity: 0 }}
-          animate={{ width: isTablet ? 420 : winWidth, opacity: 1 }}
+          animate={{
+            width: isTablet ? 420 : winWidth,
+            opacity: 1,
+            transition: { duration: 0.5 },
+          }}
           exit={{
             width: 0,
-            transition: { duration: 0.5 },
+            transition: { duration: 0.2 },
             opacity: 1,
           }}
-          transition={{ duration: 0.7 }}
           className="xl:hidden bg-primary fixed top-0 right-0 z-50 h-screen"
         >
           <motion.div
             className={`relative mt-[15vh] px-6 sm:px-6 lg:px-10 py-6 flex flex-col gap-10`}
-            variants={fadeVariants}
-            initial="closed"
-            animate="open"
-            exit="closed"
+            // variants={fadeVariants}
+            // initial="closed"
+            // animate="open"
+            // exit="closed"
+            variants={menuVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
           >
             <div className="flex flex-col">
               <NavItem href="/about">About</NavItem>
@@ -48,25 +56,29 @@ const Menu: FC<Props> = (props: Props) => {
             </div>
 
             <div className="flex flex-col gap-1">
-              <a
+              <motion.a
                 href="https://exchange.art/scum/on-sale"
                 target="_blank"
                 rel="noreferrer"
                 className="opacity-40 hover-opacity-75"
+                variants={navChild(isMobile)}
               >
                 Exchange.art ↗
-              </a>
-              <a
+              </motion.a>
+              <motion.a
                 href="https://allintime.xyz/"
                 target="_blank"
                 rel="noreferrer"
                 className="opacity-40 hover-opacity-75"
+                variants={navChild(isMobile)}
               >
                 All In Time ↗
-              </a>
+              </motion.a>
             </div>
 
-            <IconBar />
+            <motion.div variants={navChild(isMobile)}>
+              <IconBar />
+            </motion.div>
           </motion.div>
         </motion.aside>
       )}

@@ -2,6 +2,9 @@ import { FC, ReactNode } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { navChild } from "src/constants";
+import { isMobile } from "react-device-detect";
 
 interface Props {
   children: ReactNode;
@@ -26,7 +29,7 @@ const NavItem: FC<Props> = (props: Props) => {
   );
 
   return (
-    <>
+    <motion.div variants={navChild(false)}>
       {disabled ? (
         <DisabledItem />
       ) : isExternal ? (
@@ -42,7 +45,7 @@ const NavItem: FC<Props> = (props: Props) => {
           </Item>
         </Link>
       )}
-    </>
+    </motion.div>
   );
 };
 
