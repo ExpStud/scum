@@ -1,12 +1,18 @@
 import { PageLayout, SlimesView } from "@components";
-import { NextPage } from "next";
+import { getTheme } from "@utils";
+import { GetServerSideProps, NextPage } from "next";
 import { useState } from "react";
+import { Theme } from "src/types";
 
-const Slimes: NextPage = () => {
+const Slimes: NextPage<{ initialTheme: Theme }> = ({ initialTheme }) => {
   const [assets, setAssets] = useState<boolean[]>([]);
-
+  console.log("index initialTheme", initialTheme);
   return (
-    <PageLayout headerType="absolute" assets={assets}>
+    <PageLayout
+      headerType="absolute"
+      assets={assets}
+      initialTheme={initialTheme}
+    >
       <SlimesView setAssets={setAssets} />
     </PageLayout>
   );
@@ -14,5 +20,16 @@ const Slimes: NextPage = () => {
 
 // scum - infinite scroll on all galleries
 // somos - brief cta and sphere widget will get $750-1000
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const pathname = context.resolvedUrl;
+  const initialTheme = getTheme(pathname);
+
+  return {
+    props: {
+      initialTheme,
+    },
+  };
+};
 
 export default Slimes;

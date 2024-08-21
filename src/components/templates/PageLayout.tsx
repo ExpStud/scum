@@ -13,6 +13,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ViewContext } from "@contexts";
 import { useRouter } from "next/router";
 import { changeTheme } from "@utils";
+import { GetServerSideProps } from "next";
+import { Theme } from "src/types";
 
 interface Props {
   children: ReactNode;
@@ -21,6 +23,7 @@ interface Props {
   absolute?: boolean; //allows scroll
   headerType?: string;
   assets?: boolean[];
+  initialTheme: Theme;
 }
 
 const PageLayout: FC<Props> = (props: Props) => {
@@ -30,6 +33,7 @@ const PageLayout: FC<Props> = (props: Props) => {
     headerType,
     children,
     assets = [],
+    initialTheme,
   } = props;
 
   //context for splash screen & modals
@@ -51,25 +55,13 @@ const PageLayout: FC<Props> = (props: Props) => {
       ? "bg-scum-beige/10"
       : "bg-scum-black/10";
 
-  //set page bg & font color
   useEffect(() => {
-    console.log("fired");
-    if (router.pathname.startsWith("/slimes")) {
-      changeTheme(theme[3]);
-      return;
+    // Set initial theme on the client side
+    if (typeof window !== "undefined" && initialTheme) {
+      console.log("PL initialTheme", initialTheme);
+      changeTheme(initialTheme);
     }
-
-    switch (router.pathname) {
-      case "/maquina":
-        changeTheme(theme[2]);
-        break;
-      case "/axolotl":
-        changeTheme(theme[1]);
-        break;
-      default:
-        changeTheme(theme[0]);
-    }
-  });
+  }, []);
 
   return (
     <ViewContext.Provider value={value}>
@@ -124,4 +116,5 @@ const PageLayout: FC<Props> = (props: Props) => {
     </ViewContext.Provider>
   );
 };
+
 export default PageLayout;

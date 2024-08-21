@@ -9,22 +9,24 @@ import {
 import { motion } from "framer-motion";
 import { midEnterAnimation, collection } from "@constants";
 import { GetServerSideProps, NextPage } from "next";
-import { Collection } from "@types";
+import { Collection, Theme } from "@types";
 import Image from "next/image";
+import { getTheme } from "@utils";
 
 type Props = {
   currentIndex: number;
   item: Collection;
+  initialTheme: Theme;
 };
 
 const SlimePage: NextPage<Props> = (props: Props) => {
-  const { currentIndex, item } = props;
+  const { currentIndex, item, initialTheme } = props;
 
   const router = useRouter();
   const { name } = router.query;
 
   return (
-    <PageLayout headerType="absolute">
+    <PageLayout headerType="absolute" initialTheme={initialTheme}>
       <motion.div
         className="page-start gap-5 xl:gap-10 mt-[86px] xl:mt-0 xl:pt-10 xl:pb-32"
         {...midEnterAnimation}
@@ -48,10 +50,13 @@ export const getServerSideProps: GetServerSideProps<Props> = async (
   const currentIndex = collection.findIndex((item) => item.tag === name);
   const item = currentIndex >= 0 ? collection[currentIndex] : collection[0];
 
+  const pathname = context.resolvedUrl;
+  const initialTheme = getTheme(pathname);
   return {
     props: {
       currentIndex,
       item,
+      initialTheme,
     },
   };
 };
