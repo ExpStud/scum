@@ -67,13 +67,14 @@ a {
 @layer base {
   html {
     /* beige theme */
-    /* --color-primary: "#F6EFD3";
+    --color-primary: "#F6EFD3";
     --color-secondary: "#2C2524";
-    --color-tertiary: "#2C2524"; 
-    
-     bg-primary */
-    @apply scroll-smooth bg-fixed font-primary transition-200 text-secondary ;
+    --color-tertiary: "#2C2524";  
+    @apply scroll-smooth font-primary bg-[#F6EFD3] transition-200 text-secondary ;
 
+  }
+  body {
+    @apply transition-200 bg-primary;
   }
   h1 {
     @apply text-5xl md:text-[72px];
