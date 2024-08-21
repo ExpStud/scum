@@ -8,7 +8,7 @@ const Home: NextPage<{ initialTheme: Theme }> = ({ initialTheme }) => {
   const [assets, setAssets] = useState<boolean[]>([false]);
 
   return (
-    <PageLayout absolute assets={assets} initialTheme={initialTheme}>
+    <PageLayout fixed assets={assets} initialTheme={initialTheme}>
       <LandingView setAssets={setAssets} />
     </PageLayout>
   );

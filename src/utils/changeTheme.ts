@@ -3,10 +3,15 @@ import { Theme } from "@types";
 import { theme } from "src/constants";
 
 export const changeTheme = (theme: Theme) => {
-  document.querySelector("html")?.setAttribute("color-theme", theme.color);
-  // document.documentElement.style.setProperty('--color', theme.color);
-  document.documentElement.style.setProperty('--primary', theme.primary);
-  document.documentElement.style.setProperty('--secondary', theme.secondary);
+
+  const htmlElement = document.querySelector("html");
+  if (htmlElement) {
+    htmlElement.setAttribute("color-theme", theme.color);
+    htmlElement.style.setProperty('--primary', theme.primary);
+    htmlElement.style.setProperty('--secondary', theme.secondary);
+    htmlElement.style.setProperty('--tertiary', theme.tertiary);
+    htmlElement.style.backgroundColor = theme.primary; // Set the background color
+  }
 };
 
 export const getTheme = (pathname:string) => {
