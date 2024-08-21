@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { navChild } from "src/constants";
-import { isMobile } from "react-device-detect";
 
 interface Props {
   children: ReactNode;

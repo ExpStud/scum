@@ -76,7 +76,7 @@ const Menu: FC<Props> = (props: Props) => {
               </motion.a>
             </div>
 
-            <motion.div variants={navChild(isMobile)}>
+            <motion.div variants={navChild(false)}>
               <IconBar />
             </motion.div>
           </motion.div>

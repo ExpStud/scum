@@ -35,7 +35,7 @@ export const menuVariants = {
     x: 0,
     transition: { 
       duration: 0.5,
-      staggerChildren: 0.1, 
+      staggerChildren: 0.05, 
       delayChildren: 0.4,
       staggerDirection: 1,
     },
@@ -52,11 +52,11 @@ export const menuVariants = {
 
 export const navChild = (isMobile = false) => ({
   hidden: { 
-    opacity:  0,  
+    opacity:  0, y: -15, x: 15
   },
   visible: {
-    opacity: 1, 
-    transition: { duration: isMobile ? 0 : 1 },
+    opacity: 1,  y: 0, x: 0,
+    transition: { duration: isMobile ? 0 : 0.3 },
   },
   exit: { opacity: 0, transition: { duration: 0.08 } },
 });
