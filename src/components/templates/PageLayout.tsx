@@ -23,7 +23,7 @@ interface Props {
   absolute?: boolean; //allows scroll
   headerType?: string;
   assets?: boolean[];
-  initialTheme: Theme;
+  initialTheme?: Theme;
 }
 
 const PageLayout: FC<Props> = (props: Props) => {
