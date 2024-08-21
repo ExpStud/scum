@@ -5,6 +5,7 @@ import { ViewContext } from "@contexts";
 import { useRouter } from "next/router";
 import { changeTheme } from "@utils";
 import { Theme } from "src/types";
+import { theme } from "src/constants";
 
 interface Props {
   children: ReactNode;
@@ -47,9 +48,10 @@ const PageLayout: FC<Props> = (props: Props) => {
 
   useEffect(() => {
     // Set initial theme on the client side
-    if (typeof window !== "undefined" && initialTheme) {
-      console.log("PL initialTheme", initialTheme);
+    if (initialTheme) {
       changeTheme(initialTheme);
+    } else {
+      changeTheme(theme[0]);
     }
   });
 
