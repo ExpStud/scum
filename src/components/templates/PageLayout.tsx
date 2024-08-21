@@ -51,7 +51,7 @@ const PageLayout: FC<Props> = (props: Props) => {
       console.log("PL initialTheme", initialTheme);
       changeTheme(initialTheme);
     }
-  }, []);
+  });
 
   return (
     <ViewContext.Provider value={value}>
