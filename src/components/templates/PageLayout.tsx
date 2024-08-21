@@ -1,19 +1,9 @@
 import { FC, ReactNode, useEffect, useState } from "react";
-import {
-  PageHead,
-  Header,
-  Footer,
-  SplashScreen,
-  ImageModal,
-  IconBar,
-  Socials,
-} from "@components";
-import { enterAnimation, theme } from "@constants";
-import { AnimatePresence, motion } from "framer-motion";
+import { PageHead, Header, Footer, ImageModal, Socials } from "@components";
+import { AnimatePresence } from "framer-motion";
 import { ViewContext } from "@contexts";
 import { useRouter } from "next/router";
 import { changeTheme } from "@utils";
-import { GetServerSideProps } from "next";
 import { Theme } from "src/types";
 
 interface Props {

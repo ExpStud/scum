@@ -1,16 +1,9 @@
 import { useRouter } from "next/router";
-import {
-  Heading,
-  ImageShimmer,
-  PageLayout,
-  SlimeGraphics,
-  SlimeNav,
-} from "@components";
+import { Heading, PageLayout, SlimeGraphics, SlimeNav } from "@components";
 import { motion } from "framer-motion";
 import { midEnterAnimation, collection } from "@constants";
 import { GetServerSideProps, NextPage } from "next";
 import { Collection, Theme } from "@types";
-import Image from "next/image";
 import { getTheme } from "@utils";
 
 type Props = {
