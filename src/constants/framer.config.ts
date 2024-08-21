@@ -52,11 +52,11 @@ export const menuVariants = {
 
 export const navChild = (isMobile = false) => ({
   hidden: { 
-    opacity:  0, y: -15, x: 15
+    opacity:  0, y: -0, x: 0
   },
   visible: {
     opacity: 1,  y: 0, x: 0,
-    transition: { duration: isMobile ? 0 : 0.3 },
+    transition: { duration: isMobile ? 0 : 1.3 },
   },
   exit: { opacity: 0, transition: { duration: 0.08 } },
 });

@@ -53,6 +53,7 @@ const PageLayout: FC<Props> = (props: Props) => {
 
   //set page bg & font color
   useEffect(() => {
+    console.log("fired");
     if (router.pathname.startsWith("/slimes")) {
       changeTheme(theme[3]);
       return;
