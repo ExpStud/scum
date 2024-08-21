@@ -3,13 +3,15 @@ import { Theme } from "@types";
 import { theme } from "src/constants";
 
 export const changeTheme = (theme: Theme) => {
-  console.log("THEME ", theme)
   document.querySelector("html")?.setAttribute("color-theme", theme.color);
+  // document.documentElement.style.setProperty('--color', theme.color);
+  document.documentElement.style.setProperty('--primary', theme.primary);
+  document.documentElement.style.setProperty('--secondary', theme.secondary);
 };
 
 export const getTheme = (pathname:string) => {
   let initialTheme = theme[0];
-  
+
   if (pathname.startsWith("/slimes")) {
     initialTheme = theme[3];
   } else {

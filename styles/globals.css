@@ -69,8 +69,8 @@ a {
     /* beige theme */
     --color-primary: "#F6EFD3";
     --color-secondary: "#2C2524";
-    --color-tertiaru: "#2C2524";
-    @apply scroll-smooth bg-fixed font-primary transition-200 bg-scum-beige-500 text-secondary ;
+    --color-tertiary: "#2C2524";
+    @apply scroll-smooth bg-fixed font-primary transition-200 bg-primary text-secondary ;
 
   }
   h1 {
