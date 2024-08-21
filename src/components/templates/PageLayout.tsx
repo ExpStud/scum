@@ -68,7 +68,7 @@ const PageLayout: FC<Props> = (props: Props) => {
       default:
         changeTheme(theme[0]);
     }
-  }, [router.pathname]);
+  });
 
   return (
     <ViewContext.Provider value={value}>
