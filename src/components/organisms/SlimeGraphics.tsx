@@ -1,76 +1,12 @@
-import { Collection } from "@types";
+import { AssetOption, Collection } from "@types";
 import Image from "next/image";
 import { FC, useState } from "react";
+import { options } from "src/constants";
+import { SlimeGraphicsItem } from "@components";
 
 type Props = {
   slime: Collection;
 };
-
-type AssetOption = {
-  name: string;
-  lowResPath: string;
-  highResPath: string;
-  width: number;
-  height: number;
-  className?: string;
-  extension: string;
-};
-const options: AssetOption[] = [
-  {
-    name: "Original Artwork",
-    lowResPath: "images/slimes/low-res",
-    highResPath: "images/slimes/high-res",
-    width: 64,
-    height: 64,
-    className: "rounded-lg border border-scum-black/30",
-    extension: "jpg",
-  },
-  {
-    name: "PFP",
-    lowResPath: "images/wallpapers/pfp-crop",
-    highResPath: "images/wallpapers/pfp-crop",
-    width: 64,
-    height: 64,
-    className: "rounded-lg border border-scum-black/30",
-    extension: "png",
-  },
-  {
-    name: "Desktop Wallpaper",
-    lowResPath: "images/wallpapers/desktop-display",
-    highResPath: "images/wallpapers/desktop-display",
-    width: 132,
-    height: 79,
-    className: "",
-    extension: "png",
-  },
-  {
-    name: "Mobile Wallpaper",
-    lowResPath: "images/wallpapers/mobile-display",
-    highResPath: "images/wallpapers/mobile-display",
-    width: 50,
-    height: 83,
-    className: "",
-    extension: "png",
-  },
-  {
-    name: "X Wallpaper",
-    lowResPath: "images/wallpapers/banner",
-    highResPath: "images/wallpapers/banner",
-    width: 192,
-    height: 64,
-    className: "scale-75 lg:scale-90 rounded-lg border border-scum-black/30",
-    extension: "png",
-  },
-  {
-    name: "X Wallpep",
-    lowResPath: "images/wallpapers/banner",
-    highResPath: "images/wallpapers/banner",
-    width: 192,
-    height: 64,
-    className: "scale-75 lg:scale-90 rounded-lg border border-scum-black/30",
-    extension: "png",
-  },
-];
 
 const SlimeGraphics: FC<Props> = (props: Props) => {
   const { slime } = props;
@@ -143,38 +79,6 @@ const SlimeGraphics: FC<Props> = (props: Props) => {
           ))}
         </div>
       </div>
-    </div>
-  );
-};
-interface SgiProps {
-  index: number;
-  slime: Collection;
-  option: AssetOption;
-  isSelected: boolean;
-  setSelected: (option: AssetOption) => void;
-}
-const SlimeGraphicsItem: FC<SgiProps> = (props: SgiProps) => {
-  const { index, slime, option, isSelected, setSelected } = props;
-
-  return (
-    <div
-      className={`col-centered gap-2 sm:min-w-[220px] xl:min-w-[100px] 1690:w-[240px] h-[135px] cursor-pointer border-[#79C7AD] transition-200 ${
-        index < 4 ? "border-b" : ""
-      } ${index % 2 === 0 ? "border-r" : ""} ${
-        isSelected ? "bg-[#79C7AD]/50" : ""
-      }`}
-      onClick={() => setSelected(option)}
-    >
-      <Image
-        src={`${process.env.CLOUDFLARE_STORAGE}/${option.lowResPath}/${slime.tag}.${option.extension}`}
-        width={option.width}
-        height={option.height}
-        alt={option.name}
-        className={option.className}
-      />
-      <p className={`text-sm transition-200 ${isSelected ? "" : "opacity-50"}`}>
-        {option.name}
-      </p>
     </div>
   );
 };

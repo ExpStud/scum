@@ -1,0 +1,58 @@
+import { AssetOption } from "src/types";
+
+export const options: AssetOption[] = [
+  {
+    name: "Original Artwork",
+    lowResPath: "images/slimes/low-res",
+    highResPath: "images/slimes/high-res",
+    width: 64,
+    height: 64,
+    className: "rounded-lg border border-scum-black/30",
+    extension: "jpg",
+  },
+  {
+    name: "PFP",
+    lowResPath: "images/wallpapers/pfp-crop",
+    highResPath: "images/wallpapers/pfp-crop",
+    width: 64,
+    height: 64,
+    className: "rounded-lg border border-scum-black/30",
+    extension: "png",
+  },
+  {
+    name: "Desktop Wallpaper",
+    lowResPath: "images/wallpapers/desktop-display",
+    highResPath: "images/wallpapers/desktop-display",
+    width: 132,
+    height: 79,
+    className: "",
+    extension: "png",
+  },
+  {
+    name: "Mobile Wallpaper",
+    lowResPath: "images/wallpapers/mobile-display",
+    highResPath: "images/wallpapers/mobile-display",
+    width: 50,
+    height: 83,
+    className: "",
+    extension: "png",
+  },
+  {
+    name: "X Wallpaper",
+    lowResPath: "images/wallpapers/banner",
+    highResPath: "images/wallpapers/banner",
+    width: 192,
+    height: 64,
+    className: "scale-75 lg:scale-90 rounded-lg border border-scum-black/30",
+    extension: "png",
+  },
+  {
+    name: "X Wallpep",
+    lowResPath: "images/wallpapers/banner",
+    highResPath: "images/wallpapers/banner",
+    width: 192,
+    height: 64,
+    className: "scale-75 lg:scale-90 rounded-lg border border-scum-black/30",
+    extension: "png",
+  },
+];

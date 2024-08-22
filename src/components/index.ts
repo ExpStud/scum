@@ -32,6 +32,7 @@ const WorldToggleItem = dynamic(() => import("./molecules/WorldToggleItem"));
 const ImageBar = dynamic(() => import("./molecules/ImageBar"));
 const AnimateWrapper = dynamic(() => import("./molecules/AnimateWrapper"));
 const GalleryItem = dynamic(() => import("./molecules/GalleryItem"));
+const SlimeGraphicsItem = dynamic(() => import("./molecules/SlimeGraphicsItem"));
 //organisms
 const Header = dynamic(() => import("./organisms/Header"));
 const Footer = dynamic(() => import("./organisms/Footer"));
@@ -100,5 +101,6 @@ export {
   AxolotlPattern,
   AnimateWrapper,
   Gallery,
-  GalleryItem
+  GalleryItem,
+  SlimeGraphicsItem
 }
