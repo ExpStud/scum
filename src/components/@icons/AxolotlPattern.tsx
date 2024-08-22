@@ -11,7 +11,6 @@ const AxolotlPattern: FC<Props> = (props: Props) => {
       height="155"
       viewBox="0 0 155 155"
       fill="none"
-      className="self-center"
     >
       <path
         d="M77.1621 85.855L88.5251 77.2512L77.1621 68.6765L65.7839 77.2509L77.1621 85.855Z"

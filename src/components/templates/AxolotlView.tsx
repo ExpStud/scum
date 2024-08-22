@@ -128,7 +128,9 @@ const AxolotlView: FC<Props> = (props: Props) => {
           />
         </div>
         {/* pattern svg */}
-        <AxolotlPattern />
+        <div className="w-full flex justify-center ">
+          <AxolotlPattern />
+        </div>
         {/* dropdown */}
         <div className="flex flex-col w-full border-t border-scum-beige/25 mb-32">
           {axolotlInfo.map((item, index) => (
