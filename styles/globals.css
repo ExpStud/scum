@@ -267,7 +267,7 @@ html {
   @apply font-forma-bold text-white bg-scum-black/30 row-centered text-base transition-200 hover:bg-scum-black/50 active:bg-scum-black/60
 }
 .slimes-button-round {
-  @apply slimes-button rounded-full w-[44px] h-[44px] pt-0.5;
+  @apply slimes-button rounded-full w-[44px] h-[44px] pt-0.5 !font-sans;
 }
 .small-mx {
   @apply mx-5 xl:mx-0;

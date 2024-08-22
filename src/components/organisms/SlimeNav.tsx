@@ -37,7 +37,7 @@ const SlimeNav: NextPage<Props> = (props: Props) => {
         className="slimes-button rounded-[22px] min-w-[166px] h-[44px]"
         onClick={() => router.push("/slimes")}
       >
-        ← Back to Gallery
+        <span className="font-sans mr-2">←</span> Back to Gallery
       </button>
       <hr className="flex-grow border-t border-dotted border-black/40 mr-2 w-full" />
       <div className="flex gap-2">
