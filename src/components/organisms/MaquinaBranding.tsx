@@ -32,7 +32,7 @@ const MaquinaBranding: FC<Props> = (props: Props) => {
         It&apos;s been riffed on, remixed and reimagined. But it&apos;s strong
         foundation has made it unmistakable at every step.
       </p>
-      <div className="flex items-center justify-center flex-wrap w-full h-20 bg-[#2c2524]/30 rounded-tl-[40px] rounded-br-[40px] my-20 font-forma-extrabold text-xs md:text-base 2xl:text-2xl whitespace-nowrap">
+      <div className="overflow-hidden flex items-center justify-center flex-wrap w-full h-20 p-5 md:px-0 bg-[#2c2524]/30 rounded-tl-[40px] rounded-br-[40px] my-20 font-forma-extrabold text-xs md:text-base 2xl:text-xl 1690:text-2xl whitespace-nowrap">
         <p>SLIMES DESIGN</p>
         <span className="maquina-dot">•</span>
         <p>MEXICAN MID-CENTURY</p>

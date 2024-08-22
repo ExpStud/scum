@@ -112,7 +112,7 @@ const MaquinaView: FC<Props> = (props: Props) => {
                 </div>
               </div>
               <div
-                className={`relative min-h-[700px] transition-500 ${
+                className={`relative min-h-[400px] lg:min-h-[700px] transition-500 ${
                   worldSelected < 2 ? "mt-20 lg:mt-32" : "mt-10 lg:mt-16"
                 }`}
               >
