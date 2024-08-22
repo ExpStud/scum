@@ -250,7 +250,7 @@ html {
   @apply rounded-br-[150px] sm:rounded-br-[100px] object-cover;
 }
 .about-cards-container {
-  @apply flex flex-wrap xl:flex-nowrap justify-center xl:justify-between gap-5 my-5 px-5 xl:px-0 w-full;
+  @apply flex flex-wrap xl:flex-nowrap justify-center lg:justify-between gap-5 my-5 px-5 xl:px-0 w-full;
 }
 .text-container-width {
   @apply max-w-[720px] 2xl:max-w-[920px];

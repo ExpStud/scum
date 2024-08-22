@@ -35,7 +35,7 @@ const AboutView: FC<Props> = (props: Props) => {
           alt="Scum"
           className={"md:px-5 xl:px-0 lg:rounded-br-[100px]"}
         />
-        <div className="intro-text-container self-center ">
+        <div className="intro-text-container mx-5 xl:!ml-0">
           <h2>scum</h2>
           <p className="intro-text">
             I am a Mexican-American artist from Arizona. I grew up drawing--
@@ -80,7 +80,7 @@ const AboutView: FC<Props> = (props: Props) => {
           />
         </div>
 
-        <div className="self-center col-start gap-8 my-10 mx-5 font-forma-medium max-w-[550px] text-lg lg:text-xl">
+        <div className="self-center col-start gap-8 my-10 mx-5 xl:!ml-0 font-forma-medium max-w-[550px] text-lg lg:text-xl">
           <p>
             My homies and I would screen print in a shed my dad built for us in
             the back yard. We&apos;d show up as a squad to swap-meets and car
@@ -120,7 +120,7 @@ const AboutView: FC<Props> = (props: Props) => {
             className="about-cards sm:w-[31.5%]"
           />
         </div>
-        <div className="self-center col-start gap-5 my-10 font-forma-medium max-w-[550px] text-lg lg:text-xl">
+        <div className="self-center col-start gap-5 my-10 mx-5 xl:!ml-0 font-forma-medium max-w-[550px] text-lg lg:text-xl">
           <p>
             In my short career in web3, I have had a successful 1:1 art career,
             I&apos;ve worked for the (former) top projects on solana and built a
