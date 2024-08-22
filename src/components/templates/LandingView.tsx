@@ -7,7 +7,7 @@ import {
   useState,
 } from "react";
 import Image from "next/image";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { exitAnimation, midEnterAnimation } from "src/constants";
 import { isMobile } from "react-device-detect";
 import { useWindowSize } from "src/hooks";
@@ -25,18 +25,10 @@ const LandingView: FC<Props> = (props: Props) => {
   const [winWidth] = useWindowSize();
   const mobileView = winWidth <= 1024;
   //refs
-  const scrollRef = useRef<HTMLDivElement>(null);
   const introRef = useRef<HTMLVideoElement>(null);
   const loopRef = useRef<HTMLVideoElement>(null);
   const introRefMobile = useRef<HTMLVideoElement>(null);
   const loopRefMobile = useRef<HTMLVideoElement>(null);
-  const innerRef = useRef<HTMLDivElement>(null);
-
-  const isInView = useInView(scrollRef);
-
-  // useEffect(() => {
-  //   setIsInView(isInView);
-  // }, [isInView, setIsInView]);
 
   useEffect(() => {
     if (showLoop && loopRef.current && introRef.current) {
@@ -51,13 +43,13 @@ const LandingView: FC<Props> = (props: Props) => {
   }, [showLoop]);
 
   return (
-    <motion.div className="page-centered" {...midEnterAnimation}>
+    <motion.div className="page-centered !mb-0" {...midEnterAnimation}>
       <Image
         src={`/images/graphics/landing${isMobile ? "-mobile" : ""}.png`}
         width={521}
         height={540}
         alt="Slimes"
-        className="px-5  lg:hidden"
+        className="px-5 lg:hidden"
       />
       <motion.video
         ref={introRef}
@@ -71,9 +63,6 @@ const LandingView: FC<Props> = (props: Props) => {
           !showLoop ? "visible" : "invisible"
         }`}
         style={{ objectFit: "cover" }}
-        // onLoadedData={() => {
-        //   setAssets && setAssets((prevState) => [true, ...prevState.slice(1)]);
-        // }}
         onEnded={() => {
           setShowLoop(true);
         }}
@@ -96,14 +85,6 @@ const LandingView: FC<Props> = (props: Props) => {
           showLoop ? "visible" : "invisible"
         }`}
         style={{ objectFit: "cover" }}
-        // onLoadedData={() => {
-        //   setAssets &&
-        //     setAssets((prevState) => [
-        //       ...prevState.slice(0, 0),
-        //       true,
-        //       ...prevState.slice(2),
-        //     ]);
-        // }}
       >
         <source
           src={`${process.env.CLOUDFLARE_STORAGE}/videos/desktop_loop.mp4`}

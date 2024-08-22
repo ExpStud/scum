@@ -6,7 +6,7 @@ import { Theme } from "src/types";
 
 const Slimes: NextPage<{ initialTheme: Theme }> = ({ initialTheme }) => {
   const [assets, setAssets] = useState<boolean[]>([]);
-  console.log("index initialTheme", initialTheme);
+
   return (
     <PageLayout
       headerType="absolute"

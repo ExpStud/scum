@@ -86,9 +86,9 @@ const SlimeGraphics: FC<Props> = (props: Props) => {
   };
 
   return (
-    <div className="relative flex flex-col gap-5 xl:gap-0 lg:flex-row justify-start w-full px-5 xl:px-0 my-5">
+    <div className="relative flex flex-col gap-5 xl:gap-5 lg:flex-row justify-start w-full px-5 xl:px-0 my-5">
       {/* main image */}
-      <div className="relative w-[300px] h-[342px] md:min-w-[450px] md:h-[513px] bg-white rounded-br-[60px] flex items-end">
+      <div className="relative w-[300px] h-[342px] md:min-w-[450px] xl:w-[300px] md:h-[513px] bg-white rounded-br-[60px] flex items-end">
         <Image
           src={`${process.env.CLOUDFLARE_STORAGE}/${selected.lowResPath}/${slime.tag}.${selected.extension}`}
           fill
@@ -129,7 +129,7 @@ const SlimeGraphics: FC<Props> = (props: Props) => {
         </div>
       </div>
       {/* image options */}
-      <div className="flex flex-col items-center w-full">
+      <div className="flex flex-col items-start lg:items-center w-full">
         <div className="grid grid-cols-2 border border-[#79C7AD] rounded-[10px] mr-5 xl:mr-0 h-min">
           {options.map((option, i) => (
             <SlimeGraphicsItem
@@ -158,7 +158,7 @@ const SlimeGraphicsItem: FC<SgiProps> = (props: SgiProps) => {
 
   return (
     <div
-      className={`col-centered gap-2 sm:min-w-[220px] xl:w-[240px] h-[135px] cursor-pointer border-[#79C7AD] transition-200 ${
+      className={`col-centered gap-2 sm:min-w-[220px] xl:min-w-[100px] 1690:w-[240px] h-[135px] cursor-pointer border-[#79C7AD] transition-200 ${
         index < 4 ? "border-b" : ""
       } ${index % 2 === 0 ? "border-r" : ""} ${
         isSelected ? "bg-[#79C7AD]/50" : ""
