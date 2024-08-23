@@ -12,6 +12,7 @@ module.exports = {
       fontFamily: {
         primary: "Forma Bold",
         secondary: "MK Hell",
+        "forma-regular": "Forma Regular",
         "forma-medium": "Forma Medium",
         "forma-bold": "Forma Bold",
         "forma-extrabold": "Forma Extra Bold",

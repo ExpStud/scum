@@ -25,14 +25,14 @@ const MaquinaBranding: FC<Props> = (props: Props) => {
         <div className="w-[300px] h-5 left-[300px] top-0 absolute bg-[#2c2524]" />
       </div>
       <h3 className="mt-20">branding</h3>
-      <p className="font-forma-medium">
+      <p className="maquina-copy ">
         Creating the Slimes branding is a labor of love.
       </p>
-      <p className="font-forma-medium max-w-[600px]">
+      <p className="maquina-copy  max-w-[600px]">
         It&apos;s been riffed on, remixed and reimagined. But it&apos;s strong
         foundation has made it unmistakable at every step.
       </p>
-      <div className="overflow-hidden flex items-center justify-center flex-wrap w-full h-20 p-5 md:px-0 bg-[#2c2524]/30 rounded-tl-[40px] rounded-br-[40px] my-20 font-forma-extrabold text-xs md:text-base 2xl:text-xl 1690:text-2xl whitespace-nowrap">
+      <div className="overflow-hidden flex items-center justify-center flex-wrap w-full h-20 p-5 md:px-0 bg-[#2c2524]/30 rounded-tl-[40px] rounded-br-[40px] my-10 xl:my-20 font-forma-extrabold text-xs md:text-base 2xl:text-xl 1690:text-2xl whitespace-nowrap">
         <p>SLIMES DESIGN</p>
         <span className="maquina-dot">•</span>
         <p>MEXICAN MID-CENTURY</p>

@@ -25,8 +25,10 @@ const MaquinaImage: FC<ImageProps> = (props: ImageProps) => {
             : "rounded-br-[30px] lg:rounded-br-[120px]"
         }`}
       />
-      <div className="flex items-center justify-between px-10 rounded-tl-3xl rounded-br-3xl bg-scum-black-800/30 h-12 w-full">
-        <p className="text-lg">MM # {maquina.id}</p>
+      <div className="flex items-center justify-between px-10 rounded-bl-3xl rounded-tr-3xl bg-scum-black-800/30 h-12 w-full">
+        <p className="text-lg font-forma-bold text-[15px] tracking-widest">
+          MM # - 0{maquina.id}
+        </p>
         <a
           href={maquina.href}
           target="_blank"

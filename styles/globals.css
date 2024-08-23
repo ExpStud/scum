@@ -12,6 +12,12 @@
   src: url('../public/fonts/MK-HELL-Regular.ttf') format('truetype');
 }
 @font-face {
+  font-family: 'Forma REgular';
+  src: url('../public/fonts/forma-djr/FormaDJRBanner-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
   font-family: 'Forma Medium';
   src: url('../public/fonts/forma-djr/FormaDJRBanner-Medium.ttf') format('truetype');
   font-weight: 500;
@@ -295,4 +301,7 @@ html {
 }
 .mobile-video {
   @apply h-[50vh] w-screen absolute overflow-visible inset-x-0 top-[50%] transform -translate-y-1/2 max-w-[600px] mx-auto;
+}
+.maquina-copy {
+  @apply font-forma-regular opacity-80 text-2xl;
 }
