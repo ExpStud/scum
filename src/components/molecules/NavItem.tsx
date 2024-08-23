@@ -58,7 +58,7 @@ const Item: FC<ItemProps> = (props: ItemProps) => {
   return (
     <p
       className={`text-secondary text-[40px] transition-200 ${
-        isHome ? "xl:text-7xl 2xl:text-8xl" : "xl:text-xl "
+        isHome ? "xl:text-6xl 2xl:text-7xl 1690:text-[84px]" : "xl:text-xl "
       } ${
         isCurrent
           ? "underline xl:no-underline opacity-100 cursor-default"

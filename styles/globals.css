@@ -67,7 +67,7 @@ a {
 @layer base {
   html {
     /* beige theme */
-    --color-primary: "#F6EFD3";
+    --color-primary: "#F7EFD3";
     --color-secondary: "#2C2524";
     --color-tertiary: "#2C2524";  
     @apply scroll-smooth font-primary bg-[#F6EFD3]  text-secondary ;
@@ -292,4 +292,7 @@ html {
   font-weight: 900;
   line-height: normal;
   letter-spacing: 1.862px;
+}
+.mobile-video {
+  @apply h-[50vh] w-screen absolute overflow-visible inset-x-0 top-[50%] transform -translate-y-1/2 max-w-[600px] mx-auto;
 }

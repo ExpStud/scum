@@ -6,10 +6,8 @@ import {
   useRef,
   useState,
 } from "react";
-import Image from "next/image";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { exitAnimation, midEnterAnimation } from "src/constants";
-import { isMobile } from "react-device-detect";
 import { useWindowSize } from "src/hooks";
 
 interface Props {
@@ -43,14 +41,41 @@ const LandingView: FC<Props> = (props: Props) => {
   }, [showLoop]);
 
   return (
-    <motion.div className="page-centered !mb-0" {...midEnterAnimation}>
-      <Image
+    <motion.div className="relative page-centered !mb-0" {...midEnterAnimation}>
+      {/* <Image
         src={`/images/graphics/landing${isMobile ? "-mobile" : ""}.png`}
         width={521}
         height={540}
         alt="Slimes"
         className="px-5 lg:hidden"
-      />
+      /> */}
+
+      {/* ait cta */}
+      <div className="w-[294px] h-12 bg-[#86e4c5] rounded-3xl absolute bottom-[8vh] md:bottom-20 z-10 flex justify-between items-center p-1">
+        <div className="ml-4 mt-1 font-forma-bold text-[19px]">
+          Shop All In Time
+        </div>
+        <a
+          className="w-[40px] h-[40px] rounded-full bg-scum-black row-centered"
+          href="https://allintime.xyz/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <svg
+            width="11"
+            height="11"
+            viewBox="0 0 11 11"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1.56445 10.623L0.321289 9.37988L7.80811 1.89307H2.06543L2.08398 0.176758H10.749V8.85107H9.03271V3.13623L1.56445 10.623Z"
+              fill="#F6EFD3"
+            />
+          </svg>
+        </a>
+      </div>
+      {/* videos */}
       <motion.video
         ref={introRef}
         autoPlay
@@ -88,6 +113,46 @@ const LandingView: FC<Props> = (props: Props) => {
       >
         <source
           src={`${process.env.CLOUDFLARE_STORAGE}/videos/desktop_loop.mp4`}
+          type="video/mp4"
+        />
+      </motion.video>
+
+      {/* mobile */}
+      <AnimatePresence mode="wait">
+        {!showLoop && (
+          <motion.video
+            ref={introRefMobile}
+            muted
+            autoPlay
+            playsInline
+            key="intro-mobile"
+            className={`mobile-video -z-10 ${!mobileView && "hidden"} ${
+              !showLoop ? "visible" : "invisible"
+            }`}
+            style={{ objectFit: "cover" }}
+            onEnded={() => setShowLoop(true)}
+            {...exitAnimation}
+          >
+            <source
+              src={`${process.env.CLOUDFLARE_STORAGE}/videos/mobile_intro.mp4`}
+              type="video/mp4"
+            />
+          </motion.video>
+        )}
+      </AnimatePresence>
+      <motion.video
+        ref={loopRefMobile}
+        muted
+        playsInline
+        key="loop-mobile"
+        loop
+        className={`mobile-video -z-20 ${!mobileView && "hidden"}  ${
+          showLoop ? "visible" : "invisible"
+        }`}
+        style={{ objectFit: "cover" }}
+      >
+        <source
+          src={`${process.env.CLOUDFLARE_STORAGE}/videos/mobile_loop.mp4`}
           type="video/mp4"
         />
       </motion.video>
