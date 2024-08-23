@@ -24,7 +24,7 @@ const SlimeGraphics: FC<Props> = (props: Props) => {
   return (
     <div className="relative flex flex-col gap-5 xl:gap-5 lg:flex-row justify-start w-full px-5 xl:px-0 my-5">
       {/* main image */}
-      <div className="relative w-[300px] h-[342px] md:min-w-[450px] xl:w-[300px] md:h-[513px] bg-white rounded-br-[60px] flex items-end">
+      <div className="relative w-full md:w-[300px] md:min-w-[450px] bg-white rounded-br-[60px] flex items-end aspect-[9/10]">
         <Image
           src={`${process.env.CLOUDFLARE_STORAGE}/${selected.lowResPath}/${slime.tag}.${selected.extension}`}
           fill
@@ -66,7 +66,7 @@ const SlimeGraphics: FC<Props> = (props: Props) => {
       </div>
       {/* image options */}
       <div className="flex flex-col items-start lg:items-center w-full">
-        <div className="grid grid-cols-2 border border-[#79C7AD] rounded-[10px] mr-5 xl:mr-0 h-min">
+        <div className="grid grid-cols-2 border border-[#79C7AD] rounded-[10px] mr-5 xl:mr-0 h-min w-full lg:max-w-[480px]">
           {options.map((option, i) => (
             <SlimeGraphicsItem
               key={i}

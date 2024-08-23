@@ -12,9 +12,19 @@ interface SgiProps {
 const SlimeGraphicsItem: FC<SgiProps> = (props: SgiProps) => {
   const { index, slime, option, isSelected, setSelected } = props;
 
+  const parentClass =
+    index === 0
+      ? "rounded-tl-[10px]"
+      : index === 1
+      ? "rounded-tr-[10px]"
+      : index === 5
+      ? "rounded-bl-[10px]"
+      : index === 6
+      ? "rounded-br-[10px]"
+      : "";
   return (
     <div
-      className={`col-centered gap-2 sm:min-w-[220px] xl:min-w-[100px] 1690:w-[240px] h-[135px] cursor-pointer border-[#79C7AD] transition-200 ${
+      className={`col-centered w-full gap-2 sm:min-w-[220px] xl:min-w-[100px] 1690:w-[240px] h-[135px] cursor-pointer border-[#79C7AD] transition-200 ${parentClass} ${
         index < 4 ? "border-b" : ""
       } ${index % 2 === 0 ? "border-r" : ""} ${
         isSelected ? "bg-[#79C7AD]/50" : ""
