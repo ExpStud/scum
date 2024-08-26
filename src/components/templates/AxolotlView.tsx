@@ -78,12 +78,7 @@ const AxolotlView: FC<Props> = (props: Props) => {
         {/* dropdown */}
         <div className="flex flex-col w-full border-t border-scum-beige/25 mb-32">
           {axolotlInfo.map((item, index) => (
-            <DropdownItem
-              key={index}
-              title={item.title}
-              description={item.description}
-              src={item.src}
-            />
+            <DropdownItem key={index} item={item}></DropdownItem>
           ))}
         </div>
       </AnimateWrapper>

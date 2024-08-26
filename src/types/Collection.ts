@@ -29,4 +29,6 @@ export type AxolotlInfo = {
   title: string;
   description: string[];
   src: string;
+  imgPosition: "left" | "right" | "bottom";
+  image: React.ReactNode
 };
