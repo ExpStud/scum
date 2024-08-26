@@ -103,7 +103,7 @@ const AboutView: FC<Props> = (props: Props) => {
             width={329}
             height={425}
             alt="Panda"
-            className="about-cards sm:w-[31.5%]"
+            className="about-cards w-screen sm:w-[31.5%]"
           />
           <Image
             src={`/images/about/card-6.jpg`}

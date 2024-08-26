@@ -30,12 +30,12 @@ const Footer: FC = () => {
             </div>
             <div className="outer-right-padding xl:-mr-3 flex flex-col items-end">
               <a
-                href="https://expstud.io"
+                href="https://sandbox.io"
                 target="_blank"
                 rel="noreferrer"
                 className={`transition-200 opacity-70 hover:opacity-90 ${expColor}`}
               >
-                Website by EXP
+                Website by Sandbox
               </a>
               <p className={`${textColor}`}>©{new Date().getFullYear()} SCUM</p>
             </div>
