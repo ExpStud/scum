@@ -24,3 +24,9 @@ export type AssetOption = {
   className?: string;
   extension: string;
 };
+
+export type AxolotlInfo = {
+  title: string;
+  description: string[];
+  src: string;
+};
