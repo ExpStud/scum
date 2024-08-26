@@ -52,31 +52,31 @@ const AboutView: FC<Props> = (props: Props) => {
         <div className="about-cards-container">
           <Image
             src={`/images/about/card-1.jpg`}
-            width={266}
+            width={400}
             height={369}
             alt="All in Time"
-            className="about-cards sm:w-[23%]"
+            className="about-cards-1"
           />
           <Image
             src={`/images/about/card-2.jpg`}
-            width={282}
+            width={400}
             height={369}
             alt="All in Time 2"
-            className="about-cards sm:w-[23%]"
+            className="about-cards-1"
           />
           <Image
             src={`/images/about/card-3.jpg`}
-            width={369}
+            width={400}
             height={369}
             alt="New Slimes"
-            className="about-cards sm:w-[23%]"
+            className="about-cards-1"
           />
           <Image
             src={`/images/about/card-4.jpg`}
-            width={278}
+            width={400}
             height={369}
             alt="All in Time 3"
-            className="about-cards sm:w-[23%]"
+            className="about-cards-1"
           />
         </div>
 
@@ -100,24 +100,24 @@ const AboutView: FC<Props> = (props: Props) => {
         <div className="about-cards-container">
           <Image
             src={`/images/about/card-5.jpg`}
-            width={329}
+            width={425}
             height={425}
             alt="Panda"
-            className="about-cards w-screen sm:w-[31.5%]"
+            className="about-cards-2"
           />
           <Image
             src={`/images/about/card-6.jpg`}
             width={425}
             height={425}
             alt="Slime"
-            className="about-cards sm:w-[31.5%]"
+            className="about-cards-2"
           />
           <Image
             src={`/images/about/card-7.jpg`}
             width={425}
             height={425}
             alt="Art"
-            className="about-cards sm:w-[31.5%]"
+            className="about-cards-2"
           />
         </div>
         <div className="self-center col-start gap-5 my-10 mx-5 xl:!ml-0 font-forma-medium max-w-[550px] text-lg lg:text-xl">
