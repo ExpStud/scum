@@ -50,12 +50,12 @@ export const menuVariants = {
   },
 };
 
-export const navChild = (isMobile = false) => ({
+export const navChild = (isMobile = false, opacity = 1) => ({
   hidden: { 
     opacity:  0, y: -0, x: 0
   },
   visible: {
-    opacity: 1,  y: 0, x: 0,
+    opacity: opacity,  y: 0, x: 0,
     transition: { duration: isMobile ? 0 : 1.3 },
   },
   exit: { opacity: 0, transition: { duration: 0.08 } },

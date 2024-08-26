@@ -44,7 +44,9 @@ const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
         className="text-sm lg:text-sm uppercase"
       >
         <span className="opacity-50">artist:</span>{" "}
-        <span className="text-[#FFB094]">{item.artist} ↗</span>
+        <span className="text-[#FFB094]">
+          {item.artist} <span className="font-sans">↗</span>
+        </span>
       </a>
     </motion.div>
   );

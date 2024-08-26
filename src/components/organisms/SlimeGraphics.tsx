@@ -60,7 +60,7 @@ const SlimeGraphics: FC<Props> = (props: Props) => {
                 fill="#2C2524"
               />
             </svg>
-            Exchange.art ↗
+            Exchange.art <span className="font-sans">↗</span>
           </a>
         </div>
       </div>

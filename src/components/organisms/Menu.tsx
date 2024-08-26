@@ -38,10 +38,6 @@ const Menu: FC<Props> = (props: Props) => {
         >
           <motion.div
             className={`relative mt-[15vh] px-6 sm:px-6 lg:px-10 py-6 flex flex-col gap-10`}
-            // variants={fadeVariants}
-            // initial="closed"
-            // animate="open"
-            // exit="closed"
             variants={menuVariants}
             initial="hidden"
             animate="visible"
@@ -56,24 +52,30 @@ const Menu: FC<Props> = (props: Props) => {
             </div>
 
             <div className="flex flex-col gap-1">
-              <motion.a
-                href="https://exchange.art/scum/on-sale"
-                target="_blank"
-                rel="noreferrer"
-                className="opacity-40 hover-opacity-75"
-                variants={navChild(isMobile)}
+              <motion.div
+                variants={navChild(isMobile)} //isMobile
               >
-                Exchange.art ↗
-              </motion.a>
-              <motion.a
-                href="https://allintime.xyz/"
-                target="_blank"
-                rel="noreferrer"
-                className="opacity-40 hover-opacity-75"
-                variants={navChild(isMobile)}
+                <a
+                  href="https://exchange.art/scum/on-sale"
+                  target="_blank"
+                  rel="noreferrer"
+                  className=" opacity-50 hover-opacity-75"
+                >
+                  Exchange.art <span className="font-sans">↗</span>
+                </a>
+              </motion.div>
+              <motion.div
+                variants={navChild(false)} //isMobile
               >
-                All In Time ↗
-              </motion.a>
+                <a
+                  href="https://allintime.xyz/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className=" opacity-50 hover-opacity-75"
+                >
+                  All In Time <span className="font-sans">↗</span>
+                </a>
+              </motion.div>
             </div>
 
             <motion.div variants={navChild(false)}>
