@@ -13,7 +13,7 @@ const seasonOne: SFC[] = [
     url: "https://exchange.art/editions/CgDCwz9adaZnMBJvY6eCptUw42KYAe9qF2seFaA1PtFa",
     season: 1,
     aspect : "wide",
-    edition: 10
+    edition: 50
   },
   {
     id: 1,
@@ -42,7 +42,7 @@ const seasonOne: SFC[] = [
     url: "https://exchange.art/editions/DHPBSCSTmWkAhVdFNWT3VngZBmL229iMwUMssiExkjn5",
     season: 1,
     aspect : "wide",
-    edition: 10
+    edition: 88
   },
   {
     id: 3,
@@ -55,7 +55,7 @@ const seasonOne: SFC[] = [
     url: "https://exchange.art/editions/4yT9KbwCREZBkJXC8d9kYvQesSRsV2ZXVwynW1BtRYn2",
     season: 1,
     aspect : "long",
-    edition: 10
+    edition: 100
   },
   {
     id: 4,
@@ -68,7 +68,7 @@ const seasonOne: SFC[] = [
     url: "https://exchange.art/editions/a6V8dwYwjVspJz3Yzb77BquHhzEf3uwKrHTJ4sXb9uB",
     season: 1,
     aspect : "long",
-    edition: 10
+    edition: 100
   },
   {
     id: 5,
@@ -81,7 +81,7 @@ const seasonOne: SFC[] = [
     url: "https://exchange.art/editions/bmXvSNRX1Pj6vFYf6pXRaU5zvPE7U7ZFU7m2pPq14sW",
     season: 1,
     aspect : "long",
-    edition: 10
+    edition: 88
   },
   {
     id: 6,
@@ -94,7 +94,7 @@ const seasonOne: SFC[] = [
     url: "https://exchange.art/editions/2rN4JDGDL5i3eBDsqhNP9pqZzcp7rPgahpPJLhGSKvGg",
     season: 1,
     aspect : "square",
-    edition: 10
+    edition: 100
   },
   {
     id: 7,
@@ -107,7 +107,7 @@ const seasonOne: SFC[] = [
     url: "https://exchange.art/editions/D4snVveqVWufj3k1yYnViLmkAZsQ1XTEVKDxv2oJtmX7",
     season: 1,
     aspect : "long",
-    edition: 10
+    edition: 69
   },
   {
     id: 8,
@@ -120,7 +120,7 @@ const seasonOne: SFC[] = [
     url: "https://exchange.art/editions/75Pb3rRUWj6SMMRoXKqp9yyrEP2cVZH9AMdMt2PMd2Te",
     season: 1,
     aspect : "square",
-    edition: 10
+    edition: 100
   },
   {
     id: 9,
@@ -133,7 +133,7 @@ const seasonOne: SFC[] = [
     url: "https://exchange.art/editions/3p6C9JAoVwbyhWriWvtYXBGx9PeijncNgAkoYhzzNaw6",
     season: 1,
     aspect : "square",
-    edition: 10
+    edition: 80
   },
   {
     id: 10,
@@ -146,7 +146,7 @@ const seasonOne: SFC[] = [
     url: "https://exchange.art/editions/62j1c6EmNqrrq4fSWGxDXGFddaNTYTVmx1kB6DNjNein",
     season: 1,
     aspect : "long",
-    edition: 10
+    edition: 77
   },
   {
     id: 11,
@@ -159,7 +159,7 @@ const seasonOne: SFC[] = [
     url: "https://exchange.art/editions/App4FLPecAFf2TFTPgeXrBD17DkhC2ysnbkiDnf8TKC9",
     season: 1,
     aspect : "wide",
-    edition: 10
+    edition: 80
   },
 ];
 const seasonTwo: SFC[] = [
@@ -174,7 +174,7 @@ const seasonTwo: SFC[] = [
     url: "https://exchange.art/editions/CCwcDA6p6NcV2CTBfXAfx5w91YXnoKg222kXkRUdA2bj",
     season: 2,
     aspect : "square",
-    edition: 10
+    edition: 150
   },
   {
     id: 1,
@@ -187,7 +187,7 @@ const seasonTwo: SFC[] = [
     url: "https://exchange.art/editions/2vhD1erwtaQtPHbQz9EF57dtpATByBvZH6REvaaDZEzN",
     season: 2,
     aspect : "wide",
-    edition: 10
+    edition: 100
   },
   {
     id: 2,
@@ -200,7 +200,7 @@ const seasonTwo: SFC[] = [
     url: "https://exchange.art/editions/",
     season: 2,
     aspect : "square",
-    edition: 10
+    edition: 150
   },
 ];
 

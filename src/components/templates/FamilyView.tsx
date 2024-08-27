@@ -1,8 +1,16 @@
-import { Dispatch, SetStateAction, FC, useRef } from "react";
+import {
+  Dispatch,
+  SetStateAction,
+  FC,
+  useRef,
+  useState,
+  use,
+  useEffect,
+} from "react";
 import Image from "next/image";
 import { AnimateWrapper, Gallery, Heading } from "@components";
 import { motion, useInView } from "framer-motion";
-import { midEnterAnimation, sfc } from "@constants";
+import { midEnterAnimation, midExitAnimation, sfc } from "@constants";
 
 interface Props {
   setAssets: Dispatch<SetStateAction<boolean[]>>;
@@ -16,6 +24,20 @@ const FamilyView: FC<Props> = (props: Props) => {
     once: true,
   });
 
+  //used to autplay video when in view
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const startVidRef = useRef<HTMLDivElement>(null);
+  const videoInView = useInView(startVidRef, {
+    once: true,
+  });
+
+  //auto play video when in view
+  useEffect(() => {
+    if (videoInView && videoRef.current) {
+      videoRef.current.play();
+    }
+  }, [videoInView]);
+
   return (
     <motion.div {...midEnterAnimation} ref={ref}>
       <AnimateWrapper
@@ -23,7 +45,7 @@ const FamilyView: FC<Props> = (props: Props) => {
         className="page-start mt-[86px] xl:mt-0 xl:py-10 gap-5 "
       >
         <Heading />
-        <div className="flex flex-col lg:flex-row justify-start w-full mb-10 xl:mb-20">
+        <div className="relative flex flex-col justify-start w-full mb-10">
           <div className="col-start gap-8 my-10 mx-5 xl:!ml-0 max-w-[530px] xl:min-w-[600px]">
             <h2 className="whitespace-nowrap">meet the family</h2>
             <p className="text-lg lg:text-xl 2xl:text-2xl  font-forma-medium tracking-wide">
@@ -36,13 +58,23 @@ const FamilyView: FC<Props> = (props: Props) => {
               axolotls and renditions of the characters themselves.
             </p>
           </div>
-          <Image
-            src="/images/family/hands.png"
-            width={300}
-            height={300}
-            alt="Hands"
-            className="rotate-6 lg:-mb-20 lg:ml-[10%] self-center lg:self-end"
-          />
+
+          <div className="relative">
+            <video
+              ref={videoRef}
+              key="vids"
+              playsInline
+              muted
+              style={{ objectFit: "cover" }}
+              className="border-b border-t border-scum-black/10"
+            >
+              <source
+                src={`${process.env.CLOUDFLARE_STORAGE}/videos/handshake.mp4`}
+                type="video/mp4"
+              />
+            </video>
+            <div className="absolute w-1 h-1 bottom-12" ref={startVidRef}></div>
+          </div>
         </div>
 
         <Gallery header="season 2" initialData={sfc.two} />
