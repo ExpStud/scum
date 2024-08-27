@@ -17,20 +17,20 @@ const FamilyView: FC<Props> = (props: Props) => {
   });
 
   return (
-    <motion.div className="" {...midEnterAnimation} ref={ref}>
+    <motion.div {...midEnterAnimation} ref={ref}>
       <AnimateWrapper
         animate={isInView}
         className="page-start mt-[86px] xl:mt-0 xl:py-10 gap-5 "
       >
         <Heading />
         <div className="flex flex-col lg:flex-row justify-start w-full mb-10 xl:mb-20">
-          <div className="col-start gap-8 my-10 mx-5 xl:!ml-0 max-w-[530px] 2xl:max-w-[600px]">
+          <div className="col-start gap-8 my-10 mx-5 xl:!ml-0 max-w-[530px] xl:min-w-[600px]">
             <h2 className="whitespace-nowrap">meet the family</h2>
-            <p className="text-lg lg:text-xl 2xl:text-2xl  font-forma-medium">
+            <p className="text-lg lg:text-xl 2xl:text-2xl  font-forma-medium tracking-wide">
               We have extended our community through a series of artworks
               lovingly known as the Slimes Family Collection.
             </p>
-            <p className="text-lg lg:text-xl 2xl:text-2xl font-forma-medium">
+            <p className="text-lg lg:text-xl 2xl:text-2xl font-forma-medium tracking-wide">
               We&apos;ve been blessed to have some of our favorite artists in
               the space creating beautiful works inspired by the slimes world,
               axolotls and renditions of the characters themselves.
@@ -46,7 +46,6 @@ const FamilyView: FC<Props> = (props: Props) => {
         </div>
 
         <Gallery header="season 2" initialData={sfc.two} />
-
         <Gallery header="season 1" initialData={sfc.one} />
       </AnimateWrapper>
     </motion.div>

@@ -12,7 +12,8 @@ const seasonOne: SFC[] = [
     artist: ["Trev El. Viz"],
     url: "https://exchange.art/editions/CgDCwz9adaZnMBJvY6eCptUw42KYAe9qF2seFaA1PtFa",
     season: 1,
-    aspect : "wide"
+    aspect : "wide",
+    edition: 10
   },
   {
     id: 1,
@@ -24,7 +25,8 @@ const seasonOne: SFC[] = [
     artist: ["nev.in.color."],
     url: "https://exchange.art/editions/CivhP1bew1TfUa55TJFmbBctbqNXm2pLi6KTgBgUzpnR",
     season: 1,
-    aspect : "square"
+    aspect : "square",
+    edition: 10
   },
   {
     id: 2,
@@ -39,7 +41,8 @@ const seasonOne: SFC[] = [
     artist: ["Aethur", "0xdxadkid"],
     url: "https://exchange.art/editions/DHPBSCSTmWkAhVdFNWT3VngZBmL229iMwUMssiExkjn5",
     season: 1,
-    aspect : "wide"
+    aspect : "wide",
+    edition: 10
   },
   {
     id: 3,
@@ -51,7 +54,8 @@ const seasonOne: SFC[] = [
     artist: ["Scum"],
     url: "https://exchange.art/editions/4yT9KbwCREZBkJXC8d9kYvQesSRsV2ZXVwynW1BtRYn2",
     season: 1,
-    aspect : "long"
+    aspect : "long",
+    edition: 10
   },
   {
     id: 4,
@@ -63,7 +67,8 @@ const seasonOne: SFC[] = [
     artist: ["Carbine"],
     url: "https://exchange.art/editions/a6V8dwYwjVspJz3Yzb77BquHhzEf3uwKrHTJ4sXb9uB",
     season: 1,
-    aspect : "long"
+    aspect : "long",
+    edition: 10
   },
   {
     id: 5,
@@ -75,7 +80,8 @@ const seasonOne: SFC[] = [
     artist: ["Duke"],
     url: "https://exchange.art/editions/bmXvSNRX1Pj6vFYf6pXRaU5zvPE7U7ZFU7m2pPq14sW",
     season: 1,
-    aspect : "long"
+    aspect : "long",
+    edition: 10
   },
   {
     id: 6,
@@ -87,7 +93,8 @@ const seasonOne: SFC[] = [
     artist: ["Skullface"],
     url: "https://exchange.art/editions/2rN4JDGDL5i3eBDsqhNP9pqZzcp7rPgahpPJLhGSKvGg",
     season: 1,
-    aspect : "square"
+    aspect : "square",
+    edition: 10
   },
   {
     id: 7,
@@ -99,7 +106,8 @@ const seasonOne: SFC[] = [
     artist: ["Artikude"],
     url: "https://exchange.art/editions/D4snVveqVWufj3k1yYnViLmkAZsQ1XTEVKDxv2oJtmX7",
     season: 1,
-    aspect : "long"
+    aspect : "long",
+    edition: 10
   },
   {
     id: 8,
@@ -111,7 +119,8 @@ const seasonOne: SFC[] = [
     artist: ["SHACK"],
     url: "https://exchange.art/editions/75Pb3rRUWj6SMMRoXKqp9yyrEP2cVZH9AMdMt2PMd2Te",
     season: 1,
-    aspect : "square"
+    aspect : "square",
+    edition: 10
   },
   {
     id: 9,
@@ -123,7 +132,8 @@ const seasonOne: SFC[] = [
     artist: ["Todd"],
     url: "https://exchange.art/editions/3p6C9JAoVwbyhWriWvtYXBGx9PeijncNgAkoYhzzNaw6",
     season: 1,
-    aspect : "square"
+    aspect : "square",
+    edition: 10
   },
   {
     id: 10,
@@ -135,7 +145,8 @@ const seasonOne: SFC[] = [
     artist: ["Joice Loo"],
     url: "https://exchange.art/editions/62j1c6EmNqrrq4fSWGxDXGFddaNTYTVmx1kB6DNjNein",
     season: 1,
-    aspect : "long"
+    aspect : "long",
+    edition: 10
   },
   {
     id: 11,
@@ -147,7 +158,8 @@ const seasonOne: SFC[] = [
     artist: ["septadenata"],
     url: "https://exchange.art/editions/App4FLPecAFf2TFTPgeXrBD17DkhC2ysnbkiDnf8TKC9",
     season: 1,
-    aspect : "wide"
+    aspect : "wide",
+    edition: 10
   },
 ];
 const seasonTwo: SFC[] = [
@@ -161,7 +173,8 @@ const seasonTwo: SFC[] = [
     artist: ["wetiko"],
     url: "https://exchange.art/editions/CCwcDA6p6NcV2CTBfXAfx5w91YXnoKg222kXkRUdA2bj",
     season: 2,
-    aspect : "square"
+    aspect : "square",
+    edition: 10
   },
   {
     id: 1,
@@ -173,7 +186,8 @@ const seasonTwo: SFC[] = [
     artist: ["Huansi"],
     url: "https://exchange.art/editions/2vhD1erwtaQtPHbQz9EF57dtpATByBvZH6REvaaDZEzN",
     season: 2,
-    aspect : "wide"
+    aspect : "wide",
+    edition: 10
   },
   {
     id: 2,
@@ -185,7 +199,8 @@ const seasonTwo: SFC[] = [
     artist: ["Ben Bauchau"],
     url: "https://exchange.art/editions/",
     season: 2,
-    aspect : "square"
+    aspect : "square",
+    edition: 10
   },
 ];
 
@@ -211,6 +226,7 @@ export const sfc: SFCSeasons = {
     artist: [""],
     url: "https://exchange.art/editions/",
     season: 2,
-    aspect : "long"
-  },
+    aspect : "long",
+    edition: 10
+    },
 */

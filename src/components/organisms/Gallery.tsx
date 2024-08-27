@@ -34,11 +34,6 @@ const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
         setData((prevData) => [...initialData, ...prevData]);
       }
 
-      // Remove the last data set if more than two sets
-      // if (data.length > initialData.length * 2 + 3) {
-      //   setData((prevData) => prevData.slice(0, -initialData.length));
-      // }
-
       prevIndex.current = _prevIndex;
       return newIndex;
     });
@@ -53,11 +48,6 @@ const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
       if (newIndex === data.length - 3) {
         setData((prevData) => [...prevData, ...initialData]);
       }
-
-      // Remove the first data set if more than two sets
-      // if (data.length > initialData.length * 2) {
-      //   setData((prevData) => prevData.slice(initialData.length));
-      // }
 
       return newIndex;
     });

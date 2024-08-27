@@ -34,20 +34,34 @@ const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
         />
       </div>
       <h3>{item.name}</h3>
+      <p className="opacity-60 text-sm lg:text-base uppercase -mt-4 font-forma-bold">
+        Edition of {item.edition}
+      </p>
       <p className="text-lg xl:text-2xl max-w-[500px] text-ellipsis mr-10 line-clamp-6">
         {item.description}
       </p>
-      <a
-        href={item.url}
-        target="_blank"
-        rel="noreferrer"
-        className="text-sm lg:text-sm uppercase"
-      >
-        <span className="opacity-50">artist:</span>{" "}
-        <span className="text-[#FFB094]">
-          {item.artist} <span className="font-sans">↗</span>
-        </span>
-      </a>
+      <div className="flex gap-2 text-sm lg:text-sm uppercase">
+        <a
+          href={item.url}
+          target="_blank"
+          rel="noreferrer"
+          className="hover:underline text-[#FFB094]"
+        >
+          <span className="text-scum-black/50">artist:</span>{" "}
+          <span className="text-[#FFB094]">
+            {item.artist} <span className="font-sans">↗</span>
+          </span>
+        </a>{" "}
+        <span className="font-sans text-[#FFB094]">•</span>
+        <a
+          href={item.url}
+          target="_blank"
+          rel="noreferrer"
+          className="hover:underline text-[#FFB094]"
+        >
+          buy on exchange.art <span className="font-sans">↗</span>
+        </a>
+      </div>
     </motion.div>
   );
 };

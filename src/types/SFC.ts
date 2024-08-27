@@ -9,4 +9,5 @@ export interface SFC {
   url: string;
   season: number;
   aspect: "square" | "long" | "wide"
+  edition?: number;
 }
