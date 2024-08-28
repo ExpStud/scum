@@ -127,9 +127,26 @@ const MaquinaView: FC<Props> = (props: Props) => {
                           : "/images/maquina/character"
                       }
                       extension={worldSelected === 1 ? "png" : "jpg"}
-                      totalImages={worldSelected === 1 ? 6 : 13}
+                      totalImages={worldSelected === 1 ? 6 : 8}
+                      selected={worldSelected}
                     />
                   )}
+                  {/* {worldSelected == 0 && (
+                    <ImageBar
+                      path={"/images/maquina/character-"}
+                      extension={"jpg"}
+                      totalImages={8}
+                      selected={worldSelected}
+                    />
+                  )}
+                  {worldSelected == 1 && (
+                    <ImageBar
+                      path={"/images/maquina/PFP_"}
+                      extension={"png"}
+                      totalImages={6}
+                      selected={worldSelected}
+                    />
+                  )} */}
                 </AnimatePresence>
                 <AnimatePresence mode="wait">
                   {worldSelected === 0 && <MaquinaCharacters />}

@@ -53,8 +53,8 @@ const MarqueeTextAnimation: FC = () => {
       </motion.div>
       <motion.div
         className="h-full overflow-hidden flex items-center font-karantina absolute top-0"
-        initial={{ x: "100%" }} // Start from the right edge of the text
-        animate={{ x: "0%" }} // Move to the left edge of the text
+        initial={{ x: "100%" }}
+        animate={{ x: "0%" }}
         transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
       >
         {Array(numRepeats)

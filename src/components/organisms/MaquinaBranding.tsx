@@ -8,21 +8,61 @@ interface Props extends HTMLAttributes<HTMLDivElement> {}
 const MaquinaBranding: FC<Props> = (props: Props) => {
   const { ...componentProps } = props;
 
+  const colors = [
+    "#73eec5",
+    "#2c2524",
+    "#ffb093",
+    "#f6efd3",
+    "#73eec5",
+    "#2c2524",
+    "#ffb093",
+    "#f6efd3",
+  ];
+  const totalWidth = colors.length * 300; // Each div is 300px wide
+
   return (
     <motion.div
       key="branding"
-      className="w-full flex flex-col gap-5"
+      className="w-full flex flex-col gap-5 overflow-hidden"
       {...fastExitAnimation}
     >
-      <div className="h-5 absolute-x overflow-hidden">
-        <div className="w-[300px] h-5 left-[600px] top-0 absolute bg-[#ffb093]" />
-        <div className="w-[300px] h-5 left-[900px] top-0 absolute bg-[#f6efd3]" />
-        <div className="w-[300px] h-5 left-[1800px] top-0 absolute bg-[#ffb093]" />
-        <div className="w-[300px] h-5 left-[2100px] top-0 absolute bg-[#f6efd3]" />
-        <div className="w-[300px] h-5 left-[1200px] top-0 absolute bg-[#73eec5]" />
-        <div className="w-[300px] h-5 left-[1500px] top-0 absolute bg-[#2c2524]" />
-        <div className="w-[300px] h-5 left-0 top-0 absolute bg-[#73eec5]" />
-        <div className="w-[300px] h-5 left-[300px] top-0 absolute bg-[#2c2524]" />
+      <div className="absolute-x inset-x-0 top-0 py-2.5 lg:py-5 flex overflow-hidden">
+        <motion.div
+          className="h-5 absolute-x"
+          initial={{ x: 0 }}
+          animate={{ x: -totalWidth }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        >
+          {colors.map((color, index) => (
+            <div
+              key={index}
+              className="w-[300px] h-5 absolute top-0"
+              style={{ left: `${index * 300}px`, backgroundColor: color }}
+            />
+          ))}
+        </motion.div>
+        <motion.div
+          className="h-5 absolute-x"
+          initial={{ x: totalWidth }}
+          animate={{ x: 0 }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        >
+          {colors.map((color, index) => (
+            <div
+              key={index}
+              className="w-[300px] h-5 absolute top-0"
+              style={{ left: `${index * 300}px`, backgroundColor: color }}
+            />
+          ))}
+        </motion.div>
       </div>
       <h3 className="mt-20">branding</h3>
       <p className="maquina-copy ">
