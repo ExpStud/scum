@@ -16,6 +16,7 @@ export interface Maquina {
 }
 
 export type AssetOption = {
+  id: number;
   name: string;
   lowResPath: string;
   highResPath: string;
@@ -23,6 +24,7 @@ export type AssetOption = {
   height: number;
   className?: string;
   extension: string;
+  isTinyDenise?: boolean
 };
 
 export type AxolotlInfo = {

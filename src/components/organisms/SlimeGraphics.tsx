@@ -1,8 +1,9 @@
 import { AssetOption, Collection } from "@types";
 import Image from "next/image";
 import { FC, useState } from "react";
-import { options } from "src/constants";
+import { slimesAssets } from "@constants";
 import { SlimeGraphicsItem } from "@components";
+import { formatSrc } from "@utils";
 
 type Props = {
   slime: Collection;
@@ -11,22 +12,24 @@ type Props = {
 const SlimeGraphics: FC<Props> = (props: Props) => {
   const { slime } = props;
 
-  const [selected, setSelected] = useState<AssetOption>(options[0]);
+  const [selected, setSelected] = useState<AssetOption>(slimesAssets[0]);
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = `${process.env.CLOUDFLARE_STORAGE}/${selected.highResPath}/${slime.tag}.${selected.extension}`;
+    // link.href = `${process.env.CLOUDFLARE_STORAGE}/${selected.highResPath}/${slime.tag}.${selected.extension}`;
+    link.href = formatSrc(selected, slime, true);
     link.target = "_blank";
     link.rel = "noopener noreferrer"; // This is for security reasons
     link.click();
   };
 
   return (
-    <div className="relative flex flex-col gap-5 xl:gap-5 lg:flex-row justify-start w-full px-5 xl:px-0 my-5">
+    <div className="relative flex flex-col gap-5 xl:gap-5 lg:flex-row justify-between w-full px-5 xl:px-0 my-5">
       {/* main image */}
-      <div className="relative w-full md:w-[300px] md:min-w-[450px] bg-white rounded-br-[60px] flex items-end aspect-[9/10]">
+      <div className="relative w-full md:w-[300px] md:min-w-[450px] h-min bg-white rounded-br-[60px] flex items-end aspect-[9/10]">
         <Image
-          src={`${process.env.CLOUDFLARE_STORAGE}/${selected.lowResPath}/${slime.tag}.${selected.extension}`}
+          // src={`${process.env.CLOUDFLARE_STORAGE}/${selected.lowResPath}/${slime.tag}.${selected.extension}`}
+          src={formatSrc(selected, slime, false)}
           fill
           alt={slime.name}
           className="object-contain px-5 md:px-10 pt-5 md:pt-10 pb-16 md:pb-28"
@@ -65,18 +68,43 @@ const SlimeGraphics: FC<Props> = (props: Props) => {
         </div>
       </div>
       {/* image options */}
-      <div className="flex flex-col items-start lg:items-center w-full">
-        <div className="grid grid-cols-2 border border-[#79C7AD] rounded-[10px] mr-5 xl:mr-0 h-min w-full lg:max-w-[480px]">
-          {options.map((option, i) => (
-            <SlimeGraphicsItem
-              key={i}
-              slime={slime}
-              index={i}
-              option={option}
-              isSelected={selected.name === option.name}
-              setSelected={setSelected}
-            />
-          ))}
+      <div className="col-centered w-full">
+        <div className="flex flex-col items-start lg:items-center justify-center w-full lg:w-auto">
+          <p className="font-forma-bold text-base self-start mb-1.5 ml-2">
+            Slime Assets
+          </p>
+          <div className="grid grid-cols-2 border border-[#79C7AD] rounded-[10px] mr-5 xl:mr-0 h-min w-full lg:max-w-[480px]">
+            {slimesAssets
+              .filter((option) => !option.isTinyDenise)
+              .map((option, i) => (
+                <SlimeGraphicsItem
+                  key={i}
+                  slime={slime}
+                  index={i}
+                  option={option}
+                  isSelected={selected.id === option.id}
+                  setSelected={setSelected}
+                />
+              ))}
+          </div>
+          <p className="font-forma-bold text-base self-start mb-1.5 ml-2 mt-5">
+            Tiny Denise Assets
+          </p>
+          <div className="grid grid-cols-2 border border-[#79C7AD] rounded-[10px] mr-5 xl:mr-0 h-min w-full lg:max-w-[480px]">
+            {slimesAssets
+              .filter((option) => option.isTinyDenise)
+              .map((option, i) => (
+                <SlimeGraphicsItem
+                  key={i}
+                  slime={slime}
+                  index={i}
+                  option={option}
+                  isSelected={selected.id === option.id}
+                  setSelected={setSelected}
+                  isTinyDenise={true}
+                />
+              ))}
+          </div>
         </div>
       </div>
     </div>
