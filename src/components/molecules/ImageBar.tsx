@@ -23,8 +23,6 @@ const ImageBar: FC<ImageProps> = (props: ImageProps) => {
 
   const duration = count * 3;
 
-  console.log("duration", duration);
-
   const images = new Array(count).fill(null).map((item, i) => (
     <div key={i}>
       <Image

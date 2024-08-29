@@ -294,7 +294,7 @@ html {
   @apply max-w-[1920px];
 } 
 .maquina-dot {
-  @apply mx-4 lg:mx-3 mb-0.5 lg:mb-2 font-secondary;
+  @apply mx-1 sm:mx-4 lg:mx-3 mb-0.5 lg:mb-2 font-secondary;
 }
 .pg-black {
   color: #FDC3AE;
@@ -313,4 +313,25 @@ html {
 }
 .maquina-copy {
   @apply font-forma-regular opacity-80 text-2xl;
+}
+
+/* Custom scrollbar styles for .custom-scrollbar class */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 12px; /* Width of the scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #89243c; /* Background of the scrollbar track */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #B12F4E; /* Color of the scrollbar thumb */
+  border-radius: 0px; /* Rounded corners of the scrollbar thumb */
+  border: 1px solid #89243c; /* Optional: border around the scrollbar thumb */
+}
+
+/* For Firefox */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #B12F4E #89243c;
 }

@@ -30,7 +30,7 @@ const Footer: FC = () => {
             </div>
             <div className="outer-right-padding xl:-mr-3 flex flex-col items-end">
               <a
-                href="https://sandbox.io"
+                href="https://sandboxstud.io"
                 target="_blank"
                 rel="noreferrer"
                 className={`transition-200 opacity-70 hover:opacity-90 ${expColor}`}

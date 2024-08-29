@@ -32,7 +32,7 @@ const MaquinaBranding: FC<Props> = (props: Props) => {
           initial={{ x: 0 }}
           animate={{ x: -totalWidth }}
           transition={{
-            duration: 20,
+            duration: 30,
             repeat: Infinity,
             ease: "linear",
           }}
@@ -50,7 +50,7 @@ const MaquinaBranding: FC<Props> = (props: Props) => {
           initial={{ x: totalWidth }}
           animate={{ x: 0 }}
           transition={{
-            duration: 20,
+            duration: 30,
             repeat: Infinity,
             ease: "linear",
           }}
@@ -64,7 +64,7 @@ const MaquinaBranding: FC<Props> = (props: Props) => {
           ))}
         </motion.div>
       </div>
-      <h3 className="mt-20">branding</h3>
+      <h3 className="mt-16 lg:mt-28">branding</h3>
       <p className="maquina-copy ">
         Creating the Slimes branding is a labor of love.
       </p>
@@ -72,7 +72,7 @@ const MaquinaBranding: FC<Props> = (props: Props) => {
         It&apos;s been riffed on, remixed and reimagined. But it&apos;s strong
         foundation has made it unmistakable at every step.
       </p>
-      <div className="overflow-hidden flex items-center justify-center flex-wrap w-full h-20 p-5 md:px-0 bg-[#2c2524]/30 rounded-tl-[40px] rounded-br-[40px] my-10 xl:my-20 font-forma-extrabold text-xs md:text-base 2xl:text-xl 1690:text-2xl whitespace-nowrap">
+      <div className="overflow-hidden flex items-center justify-center w-full h-14 sm:h-20 p-5 md:px-0 bg-[#2c2524]/30 rounded-tl-[40px] rounded-br-[40px] my-10 xl:my-20 font-forma-extrabold text-[8px] sm:text-xs md:text-base 2xl:text-xl 1690:text-2xl whitespace-nowrap">
         <p>SLIMES DESIGN</p>
         <span className="maquina-dot">•</span>
         <p>MEXICAN MID-CENTURY</p>
@@ -180,7 +180,7 @@ const BrandingHeader: FC<{ children: ReactNode }> = ({ children }) => {
 
 const SlimesSVG: FC = () => {
   return (
-    <div className="col-centered gap-8 px-5 pt-14 pb-20">
+    <div className="col-centered gap-8 px-5 pt-10 pb-14 scale-90">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="152"
