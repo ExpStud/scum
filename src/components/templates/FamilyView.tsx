@@ -77,8 +77,8 @@ const FamilyView: FC<Props> = (props: Props) => {
           </div>
         </div>
 
-        <Gallery header="season 2" initialData={sfc.two} />
-        <Gallery header="season 1" initialData={sfc.one} />
+        <Gallery header="series 2" initialData={sfc.two} />
+        <Gallery header="series 1" initialData={sfc.one} />
       </AnimateWrapper>
     </motion.div>
   );

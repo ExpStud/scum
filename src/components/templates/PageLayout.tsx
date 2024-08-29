@@ -75,9 +75,10 @@ const PageLayout: FC<Props> = (props: Props) => {
         >
           {children}
           <Socials
-            className={`hidden xl:block absolute outer-left-spacing z-10 ${
+            className={`hidden xl:block  outer-left-spacing z-10 ${
               router.pathname === "/" ? "bottom-[140px]" : "top-[85vh]"
-            }`}
+            }
+            ${router.pathname === "/maquina" ? "absolute" : "fixed"}`}
           />
         </main>
         <Footer />

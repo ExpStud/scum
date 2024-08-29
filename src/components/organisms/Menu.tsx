@@ -73,7 +73,7 @@ const Menu: FC<Props> = (props: Props) => {
                   rel="noreferrer"
                   className=" opacity-50 hover-opacity-75"
                 >
-                  All In Time <span className="font-sans">↗</span>
+                  Shop All In Time <span className="font-sans">↗</span>
                 </a>
               </motion.div>
             </div>

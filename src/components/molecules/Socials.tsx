@@ -19,7 +19,7 @@ const Socials: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
           rel="noreferrer"
           className="opacity-40 hover-opacity-75 text-secondary transition-200"
         >
-          All In Time <span className="font-sans">↗</span>
+          Shop All In Time <span className="font-sans">↗</span>
         </a>
       </div>
 
