@@ -40,7 +40,7 @@ const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
       <p className="text-lg xl:text-2xl max-w-[500px] text-ellipsis mr-10 line-clamp-6">
         {item.description}
       </p>
-      <div className="flex gap-2 text-sm lg:text-sm uppercase">
+      <div className="flex flex-col lg:flex-row lg:flex-wrap gap-2 text-sm lg:text-sm uppercase">
         <a
           href={item.url}
           target="_blank"
@@ -52,7 +52,7 @@ const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
             {item.artist} <span className="font-sans">↗</span>
           </span>
         </a>{" "}
-        <span className="font-sans text-[#FFB094]">•</span>
+        <span className="hidden lg:block font-sans text-[#FFB094]">•</span>
         <a
           href={item.url}
           target="_blank"

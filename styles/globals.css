@@ -315,23 +315,60 @@ html {
   @apply font-forma-regular opacity-80 text-2xl;
 }
 
-/* Custom scrollbar styles for .custom-scrollbar class */
-.custom-scrollbar::-webkit-scrollbar {
+/* Custom scrollbar styles for .maquina-scrollbar class */
+.maquina-scrollbar::-webkit-scrollbar {
   height: 12px; /* Width of the scrollbar */
 }
 
-.custom-scrollbar::-webkit-scrollbar-track {
+.maquina-scrollbar::-webkit-scrollbar-track {
   background: #89243c; /* Background of the scrollbar track */
 }
 
-.custom-scrollbar::-webkit-scrollbar-thumb {
+.maquina-scrollbar::-webkit-scrollbar-thumb {
   background-color: #B12F4E; /* Color of the scrollbar thumb */
   border-radius: 0px; /* Rounded corners of the scrollbar thumb */
   border: 1px solid #89243c; /* Optional: border around the scrollbar thumb */
 }
 
+
+
 /* For Firefox */
-.custom-scrollbar {
+.beige-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: #B12F4E #89243c;
+  scrollbar-color: #FFB094 #F6EFD3;
+}
+/* Custom scrollbar styles for .beige-scrollbar class */
+.beige-scrollbar::-webkit-scrollbar {
+  height: 12px; /* Width of the scrollbar */
+}
+
+.beige-scrollbar::-webkit-scrollbar-track {
+  background: #F6EFD3; /* Background of the scrollbar track */
+}
+
+.beige-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #FFB094; /* Color of the scrollbar thumb */
+  border-radius: 0px; /* Rounded corners of the scrollbar thumb */
+  border: 1px solid #F6EFD3; /* Optional: border around the scrollbar thumb */
+}
+
+/* For Firefox */
+.beige-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #FFB094 #F6EFD3;
+}
+
+/* Hide scrollbar for WebKit-based browsers (Chrome, Safari) */
+.invisible-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.invisible-scrollbar {
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Optional: Ensure the element is scrollable */
+.invisible-scrollbar {
+  overflow: auto;
 }

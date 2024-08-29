@@ -25,7 +25,7 @@ const MaquinaCollaborations: FC<Props> = (props: Props) => {
           my community and the world.
         </p>
       </div>
-      <div className="custom-scrollbar flex flex-col xl:flex-row w-full xl:overflow-x-scroll mt-5 lg:mt-10 pb-5 gap-5 lg:gap-10">
+      <div className="maquina-scrollbar flex flex-col xl:flex-row w-full xl:overflow-x-scroll mt-5 lg:mt-10 pb-5 gap-5 lg:gap-10">
         <VideoControls
           src={`${process.env.CLOUDFLARE_STORAGE}/videos/wacko-trailer.mp4`}
         />

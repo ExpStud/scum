@@ -2,6 +2,7 @@ import { FC, useState, useRef, useEffect } from "react";
 import { SFC } from "@types";
 import { useWindowSize } from "@hooks";
 import { GalleryItem } from "@components";
+import { isMobile, isTablet } from "react-device-detect";
 
 interface GalleryProps {
   header: string;
@@ -19,6 +20,7 @@ const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
   const imageHeight = winWidth >= 1280 ? 500 : winWidth >= 640 ? 400 : 300;
 
   const prevIndex = useRef<number>(galleryIndex);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Initialize with two sets of initial data
@@ -78,13 +80,40 @@ const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
     return -offset; // return as negative to move items to the left
   };
 
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      const { scrollLeft, scrollWidth, clientWidth } = container;
+
+      // Load more items when scrolling to the right end
+      if (scrollLeft + clientWidth >= scrollWidth - 10) {
+        setData((prevData) => [...prevData, ...initialData]);
+      }
+
+      // Load more items when scrolling to the left end
+      if (scrollLeft <= 10) {
+        setData((prevData) => [...initialData, ...prevData]);
+        container.scrollLeft += initialData.length * imageHeight; // Adjust scroll position
+      }
+    };
+
+    container.addEventListener("scroll", handleScroll);
+    return () => container.removeEventListener("scroll", handleScroll);
+  }, [initialData, imageHeight]);
+
   return (
     <div className="pl-5 xl:pl-0 relative w-full z-20 overflow-hidden">
       <h4 className="mb-5">{header}</h4>
 
-      <div className="w-full ">
-        <div className="flex justify-between items-center gap-2 w-full mb-5">
-          <div className="flex gap-2">
+      <div className="w-full">
+        <div
+          className={`justify-between items-center gap-2 w-full mb-5 ${
+            isMobile || isTablet ? "hidden" : "flex"
+          }`}
+        >
+          <div className="flex gap-2 ">
             <button
               className="slimes-button-round"
               onClick={() => handlePrevious()}
@@ -104,7 +133,10 @@ const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
             <span className="opacity-50">/{initialData.length}</span>
           </p>
         </div>
-        <div className="flex gap-5 overflow-hidden">
+        <div
+          className="invisible-scrollbar flex gap-5 overflow-x-auto lg:overflow-hidden"
+          ref={containerRef}
+        >
           {data.map((item, index) => (
             <GalleryItem
               key={index}
