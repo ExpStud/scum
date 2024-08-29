@@ -28,7 +28,7 @@ const Footer: FC = () => {
                 ALL IN TIME. <br /> WITH MY SLIMES.
               </p>
             </div>
-            <div className="outer-right-padding xl:-mr-3 flex flex-col items-end">
+            <div className="outer-right-padding xl:-mr-3 flex flex-col items-end text-[10px] sm:text-sm lg:text-base">
               <a
                 href="https://sandboxstud.io"
                 target="_blank"
