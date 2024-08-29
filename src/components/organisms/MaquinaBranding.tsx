@@ -27,15 +27,15 @@ const MaquinaBranding: FC<Props> = (props: Props) => {
       {...fastExitAnimation}
     >
       <div className="absolute-x inset-x-0 top-0 py-2.5 lg:py-5 flex overflow-hidden">
-        <motion.div
+        <div
           className="h-5 absolute-x"
-          initial={{ x: 0 }}
-          animate={{ x: -totalWidth }}
-          transition={{
-            duration: 30,
-            repeat: Infinity,
-            ease: "linear",
-          }}
+          // initial={{ x: 0 }}
+          // animate={{ x: -totalWidth }}
+          // transition={{
+          //   duration: 30,
+          //   repeat: Infinity,
+          //   ease: "linear",
+          // }}
         >
           {colors.map((color, index) => (
             <div
@@ -44,8 +44,8 @@ const MaquinaBranding: FC<Props> = (props: Props) => {
               style={{ left: `${index * 300}px`, backgroundColor: color }}
             />
           ))}
-        </motion.div>
-        <motion.div
+        </div>
+        {/* <motion.div
           className="h-5 absolute-x"
           initial={{ x: totalWidth }}
           animate={{ x: 0 }}
@@ -62,7 +62,7 @@ const MaquinaBranding: FC<Props> = (props: Props) => {
               style={{ left: `${index * 300}px`, backgroundColor: color }}
             />
           ))}
-        </motion.div>
+        </motion.div> */}
       </div>
       <h3 className="mt-16 lg:mt-28">branding</h3>
       <p className="maquina-copy ">

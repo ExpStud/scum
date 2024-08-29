@@ -42,17 +42,17 @@ const FamilyView: FC<Props> = (props: Props) => {
     <motion.div {...midEnterAnimation} ref={ref}>
       <AnimateWrapper
         animate={isInView}
-        className="page-start mt-[86px] xl:mt-0 xl:py-10 gap-5 "
+        className="page-start mt-[86px] xl:mt-0 xl:py-10 gap-0 "
       >
         <Heading />
-        <div className="relative flex flex-col justify-start w-full mb-10">
+        <div className="relative flex flex-col justify-start w-full mb-10 -mt-20">
           <div className="col-start gap-8 my-10 mx-5 xl:!ml-0 max-w-[530px] xl:min-w-[600px]">
             <h2 className="whitespace-nowrap">meet the family</h2>
-            <p className="text-lg lg:text-xl 2xl:text-2xl  font-forma-medium tracking-wide">
+            <p className="intro-text  font-forma-medium tracking-wide">
               We have extended our community through a series of artworks
               lovingly known as the Slimes Family Collection.
             </p>
-            <p className="text-lg lg:text-xl 2xl:text-2xl font-forma-medium tracking-wide">
+            <p className="intro-text font-forma-medium tracking-wide">
               We&apos;ve been blessed to have some of our favorite artists in
               the space creating beautiful works inspired by the slimes world,
               axolotls and renditions of the characters themselves.

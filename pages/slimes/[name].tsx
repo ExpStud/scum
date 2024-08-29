@@ -21,7 +21,7 @@ const SlimePage: NextPage<Props> = (props: Props) => {
   return (
     <PageLayout headerType="absolute" initialTheme={initialTheme}>
       <motion.div
-        className="page-start gap-5 xl:gap-10 mt-[86px] xl:mt-0 xl:pt-10 xl:pb-32"
+        className="page-start gap-5 xl:gap-10 mt-[86px] xl:mt-0 xl:pt-10 xl:pb-24"
         {...midEnterAnimation}
       >
         <Heading />

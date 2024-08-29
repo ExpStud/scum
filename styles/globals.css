@@ -275,7 +275,7 @@ html {
   @apply col-start gap-8 my-10 mx-5 text-container-width;
 }
 .intro-text {
-  @apply text-lg md:text-xl xl:text-2xl 2xl:text-4xl tracking-wide;
+  @apply text-lg lg:text-xl 2xl:text-2xl;
 }
 
 .slimes-button {
