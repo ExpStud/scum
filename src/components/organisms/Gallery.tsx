@@ -2,7 +2,6 @@ import { FC, useState, useRef, useEffect } from "react";
 import { SFC } from "@types";
 import { useWindowSize } from "@hooks";
 import { GalleryItem } from "@components";
-import { isMobile, isTablet } from "react-device-detect";
 
 interface GalleryProps {
   header: string;
@@ -103,15 +102,21 @@ const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
     return () => container.removeEventListener("scroll", handleScroll);
   }, [initialData, imageHeight]);
 
+  useEffect(() => {
+    // Reset data when screen width crosses the lg breakpoint (1024px)
+    if (winWidth >= 1024) {
+      setData([...initialData, ...initialData]);
+      setGalleryIndex(0);
+    }
+  }, [winWidth, initialData]);
+
   return (
     <div className="pl-5 xl:pl-0 relative w-full z-20 overflow-hidden">
       <h4 className="mb-5">{header}</h4>
 
       <div className="w-full">
         <div
-          className={`justify-between items-center gap-2 w-full mb-5 ${
-            isMobile || isTablet ? "hidden" : "flex"
-          }`}
+          className={`hidden lg:flex justify-between items-center gap-2 w-full mb-5`}
         >
           <div className="flex gap-2 ">
             <button
@@ -134,7 +139,7 @@ const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
           </p>
         </div>
         <div
-          className="invisible-scrollbar flex gap-5 overflow-x-auto lg:overflow-hidden"
+          className={`invisible-scrollbar overflow-x-auto lg:overflow-hidden flex gap-5`}
           ref={containerRef}
         >
           {data.map((item, index) => (
