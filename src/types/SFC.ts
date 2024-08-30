@@ -8,6 +8,6 @@ export interface SFC {
   artist: string[];
   url: string;
   season: number;
-  aspect: "square" | "long" | "wide"
+  aspect: "square" | "long" | "longer" | "wide"
   edition?: number;
 }

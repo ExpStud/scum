@@ -68,6 +68,8 @@ const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
       if (item?.aspect === "wide") {
         itemWidth = 1.5 * imageHeight;
       } else if (item?.aspect === "long") {
+        itemWidth = (1 / 1.25) * imageHeight;
+      } else if (item?.aspect === "longer") {
         itemWidth = (1 / 1.75) * imageHeight;
       } else {
         itemWidth = imageHeight; // for "aspect-square"

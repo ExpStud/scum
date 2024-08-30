@@ -22,6 +22,8 @@ const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
           item.aspect === "wide"
             ? "aspect-square md:aspect-[1.5/1]"
             : item.aspect === "long"
+            ? "aspect-square md:aspect-[1/1.25]"
+            : item.aspect === "longer"
             ? "aspect-square md:aspect-[1/1.75]"
             : "aspect-square"
         }`}

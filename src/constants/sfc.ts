@@ -14,7 +14,7 @@ const seasonOne: SFC[] = [
     season: 1,
     aspect : "wide",
     edition: 50
-  },
+  }, 
   {
     id: 1,
     twitter: ["https://twitter.com/nev_in_color"],
@@ -80,7 +80,7 @@ const seasonOne: SFC[] = [
     artist: ["Duke"],
     url: "https://exchange.art/editions/bmXvSNRX1Pj6vFYf6pXRaU5zvPE7U7ZFU7m2pPq14sW",
     season: 1,
-    aspect : "long",
+    aspect : "longer",
     edition: 88
   },
   {
@@ -93,7 +93,7 @@ const seasonOne: SFC[] = [
     artist: ["Skullface"],
     url: "https://exchange.art/editions/2rN4JDGDL5i3eBDsqhNP9pqZzcp7rPgahpPJLhGSKvGg",
     season: 1,
-    aspect : "square",
+    aspect : "long",
     edition: 100
   },
   {
@@ -119,7 +119,7 @@ const seasonOne: SFC[] = [
     artist: ["SHACK"],
     url: "https://exchange.art/editions/75Pb3rRUWj6SMMRoXKqp9yyrEP2cVZH9AMdMt2PMd2Te",
     season: 1,
-    aspect : "square",
+    aspect : "long",
     edition: 100
   },
   {
@@ -132,7 +132,7 @@ const seasonOne: SFC[] = [
     artist: ["Todd"],
     url: "https://exchange.art/editions/3p6C9JAoVwbyhWriWvtYXBGx9PeijncNgAkoYhzzNaw6",
     season: 1,
-    aspect : "square",
+    aspect : "long",
     edition: 80
   },
   {
@@ -145,7 +145,7 @@ const seasonOne: SFC[] = [
     artist: ["Joice Loo"],
     url: "https://exchange.art/editions/62j1c6EmNqrrq4fSWGxDXGFddaNTYTVmx1kB6DNjNein",
     season: 1,
-    aspect : "long",
+    aspect : "longer",
     edition: 77
   },
   {
@@ -199,8 +199,21 @@ const seasonTwo: SFC[] = [
     artist: ["Ben Bauchau"],
     url: "https://exchange.art/editions/",
     season: 2,
-    aspect : "square",
+    aspect : "long",
     edition: 150
+  },
+  {
+    id: 3,
+    twitter: ["https://x.com/CalderMoore_"],
+    src: "16-ascension.webp",
+    name: "Ascension",
+    description:
+      "As the seasoned explorer makes his way through the dense mist, clothes still wet from the long journey through the thick cloud which have now parted to reveal the ancient ziggurat towering above the sky itself. Its ominously calm up hear except for the slight hum of an ancient energy the surrounding stone emits and the faint flaps from nearby birds that have taken roost up here...",
+    artist: ["Calder Moore"],
+    url: "https://exchange.art/editions/27LvBQ6FaNnpmHcnf96Ypn2jN2Wre6KGuHNp3T9jhbpV",
+    season: 2,
+    aspect : "wide",
+    edition: 175
   },
 ];
 
