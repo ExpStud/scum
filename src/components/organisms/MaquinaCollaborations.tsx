@@ -8,6 +8,16 @@ interface Props extends HTMLAttributes<HTMLDivElement> {}
 const MaquinaCollaborations: FC<Props> = (props: Props) => {
   const { ...componentProps } = props;
 
+  const [playingVideo, setPlayingVideo] = useState<string | null>(null);
+
+  const handlePlay = (src: string) => {
+    if (src === playingVideo) {
+      setPlayingVideo(null);
+    } else {
+      setPlayingVideo(src);
+    }
+  };
+
   return (
     <motion.div
       key="collaboration"
@@ -28,25 +38,37 @@ const MaquinaCollaborations: FC<Props> = (props: Props) => {
       <div className="maquina-scrollbar flex flex-col xl:flex-row w-full xl:overflow-x-scroll mt-5 lg:mt-10 pb-5 gap-5 lg:gap-10">
         <VideoControls
           src={`${process.env.CLOUDFLARE_STORAGE}/videos/wacko-trailer.mp4`}
+          isPlaying={
+            playingVideo ===
+            `${process.env.CLOUDFLARE_STORAGE}/videos/wacko-trailer.mp4`
+          }
+          onPlay={handlePlay}
         />
         <VideoControls
           src={`${process.env.CLOUDFLARE_STORAGE}/videos/first-auctions.mp4`}
+          isPlaying={
+            playingVideo ===
+            `${process.env.CLOUDFLARE_STORAGE}/videos/first-auctions.mp4`
+          }
+          onPlay={handlePlay}
         />
       </div>
     </motion.div>
   );
 };
 
-interface VideoProps extends HTMLAttributes<HTMLDivElement> {
+interface VideoProps {
   src: string;
-  videoClass?: string;
+  isPlaying: boolean;
+  onPlay: (src: string) => void;
 }
 const VideoControls: FC<VideoProps> = (props: VideoProps) => {
-  const { src, videoClass, ...divProps } = props;
+  const { src, isPlaying, onPlay } = props;
 
-  const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
+  //handle video play/pause
   useEffect(() => {
     if (videoRef.current) {
       if (isPlaying) {
@@ -57,23 +79,43 @@ const VideoControls: FC<VideoProps> = (props: VideoProps) => {
     }
   }, [isPlaying]);
 
+  //scroll video into view on click
+  const handleClick = () => {
+    // if (containerRef.current) {
+    //   containerRef.current.scrollIntoView({
+    //     behavior: "smooth",
+    //     block: "nearest",
+    //     inline: "center",
+    //   });
+    // }
+    // setIsPlaying(!isPlaying);
+    onPlay(src);
+    if (containerRef.current) {
+      containerRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
+    }
+  };
+
   return (
-    <div className={`relative ${divProps.className ?? ""}`} {...divProps}>
+    <div
+      ref={containerRef}
+      className="relative cursor-pointer"
+      onClick={handleClick}
+    >
       <video
         ref={videoRef}
         key="vids"
         playsInline
         style={{ objectFit: "cover" }}
-        className={`w-[825px] xl:min-w-[825px] rounded-br-[50px] lg:rounded-br-[100px] object-cover ${videoClass}`}
-        onClick={() => setIsPlaying(false)}
+        className={`w-[825px] xl:min-w-[825px] rounded-br-[50px] lg:rounded-br-[100px] object-cover`}
       >
         <source src={src} type="video/mp4" />
       </video>
       {!isPlaying && (
-        <div
-          className="absolute inset-0 flex items-center justify-center cursor-pointer bg-scum-black/50 rounded-br-[50px] lg:rounded-br-[100px] max-w-[825px]"
-          onClick={() => setIsPlaying(true)}
-        >
+        <div className="absolute inset-0 flex items-center justify-center cursor-pointer bg-scum-black/50 rounded-br-[50px] lg:rounded-br-[100px] max-w-[825px]">
           <Image
             src="/images/icons/play.svg"
             width={40}
