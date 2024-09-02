@@ -6,10 +6,20 @@ import { Theme } from "src/types";
 
 const Home: NextPage<{ initialTheme: Theme }> = ({ initialTheme }) => {
   const [assets, setAssets] = useState<boolean[]>([false]);
+  const [showView, setShowView] = useState<boolean>(false);
 
   return (
-    <PageLayout fixed assets={assets} initialTheme={initialTheme}>
-      <LandingView setAssets={setAssets} />
+    <PageLayout
+      fixed
+      assets={assets}
+      initialTheme={initialTheme}
+      header={showView}
+    >
+      <LandingView
+        setAssets={setAssets}
+        showView={showView}
+        setShowView={setShowView}
+      />
     </PageLayout>
   );
 };

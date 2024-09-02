@@ -9,6 +9,7 @@ import { theme } from "src/constants";
 
 interface Props {
   children: ReactNode;
+  header?: boolean;
   footer?: boolean;
   fixed?: boolean; //prevents scroll
   absolute?: boolean; //allows scroll
@@ -25,6 +26,8 @@ const PageLayout: FC<Props> = (props: Props) => {
     children,
     assets = [],
     initialTheme,
+    header = true,
+    footer = true,
   } = props;
 
   //context for splash screen & modals
@@ -69,18 +72,20 @@ const PageLayout: FC<Props> = (props: Props) => {
           twitter="twitterhandle"
         />
 
-        <Header type={headerType} />
+        {header && <Header type={headerType} />}
         <main
           className={`max-w-1920 inner-left-padding outer-right-padding flex flex-col h-full w-full`}
         >
           {children}
-          <Socials
-            className={`hidden xl:block absolute outer-left-spacing z-10 ${
-              router.pathname === "/" ? "bottom-[140px]" : "top-[85vh]"
-            }`}
-          />
+          {footer && (
+            <Socials
+              className={`hidden xl:block absolute outer-left-spacing z-10 ${
+                router.pathname === "/" ? "bottom-[140px]" : "top-[85vh]"
+              }`}
+            />
+          )}
         </main>
-        <Footer />
+        {footer && <Footer />}
 
         {/* load screen */}
         {/* {assets && <SplashScreen assets={assets} />} */}

@@ -1,9 +1,14 @@
 import { FC, HTMLAttributes } from "react";
 import { IconBar } from "@components";
+import { fastEnterAnimation } from "src/constants";
+import { motion } from "framer-motion";
 
 const Socials: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
   return (
-    <div className={`flex flex-col ${props.className}`}>
+    <motion.div
+      className={`flex flex-col ${props.className}`}
+      {...fastEnterAnimation}
+    >
       <div className="absolute -left-40 -top-5 -rotate-90 text-secondary text-sm font-normal font-secondary leading-[18px]">
         el arte es un exprecíon de vida,
         <br />
@@ -29,7 +34,7 @@ const Socials: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
       </div>
 
       <IconBar />
-    </div>
+    </motion.div>
   );
 };
 

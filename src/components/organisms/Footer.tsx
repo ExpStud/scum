@@ -3,6 +3,7 @@ import { FC, useRef } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { AnimateWrapper } from "@components";
+import { fastEnterAnimation } from "src/constants";
 
 const Footer: FC = () => {
   const router = useRouter();
@@ -19,7 +20,7 @@ const Footer: FC = () => {
     once: true,
   });
   return (
-    <footer ref={ref}>
+    <motion.footer ref={ref} {...fastEnterAnimation}>
       <AnimateWrapper animate={isInView} height={20}>
         <div className="h-[50px] md:h-[100px] transition-200 bg-tertiary rounded-tl-[25px] md:rounded-tl-[50px] rounded-br-[25px] md:rounded-br-[50px] mb-2 md:mb-5 mx-2 md:mx-5">
           <div className="max-w-[1880px] relative w-full h-full flex items-center justify-between text-xs md:text-lg lg:text-xl 2xl:text-2xl px-6 md:px-10 xl:px-0">
@@ -87,7 +88,7 @@ const Footer: FC = () => {
           </div>
         </div>
       </AnimateWrapper>
-    </footer>
+    </motion.footer>
   );
 };
 
