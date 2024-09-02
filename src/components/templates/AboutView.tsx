@@ -22,7 +22,7 @@ const AboutView: FC<Props> = (props: Props) => {
 
   return (
     <motion.div
-      className="page-start gap-5 xl:gap-10 mt-[86px] xl:mt-0 lg:py-10"
+      className="page-start gap-5 xl:gap-10 mt-[86px] xl:mt-0 lg:pt-10 lg:pb-32"
       {...midEnterAnimation}
       ref={ref}
     >
@@ -33,7 +33,7 @@ const AboutView: FC<Props> = (props: Props) => {
           width={1240}
           height={661}
           alt="Scum"
-          className={"md:px-5 xl:px-0 lg:rounded-br-[100px]"}
+          className={"md:px-5 xl:px-0 lg:rounded-br-[100px] lg:pt-20"}
         />
         <div className="intro-text-container mx-5 xl:!ml-0">
           <h2>scum</h2>

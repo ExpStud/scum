@@ -17,7 +17,7 @@ const SlimesView: FC<Props> = (props: Props) => {
 
   return (
     <motion.div
-      className="page-start gap-5 xl:gap-10 mt-[86px] xl:mt-0 xl:pt-10 xl:pb-24"
+      className="page-start gap-5 lg:gap-10 mt-[86px] xl:mt-0 lg:pt-10 lg:pb-24"
       {...midEnterAnimation}
       ref={ref}
     >
