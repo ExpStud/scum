@@ -30,14 +30,14 @@ const MaquinaView: FC<Props> = (props: Props) => {
 
   return (
     <motion.div
-      className="page-start gap-5 xl:gap-10 mt-[86px] xl:mt-0 lg:py-10"
+      className="page-start gap-5 xl:gap-10 mt-[86px] xl:mt-0 lg:pt-10 lg:pb-32"
       {...midEnterAnimation}
       ref={ref}
     >
       <AnimateWrapper animate={isInView}>
         <Heading />
         {/* toggle */}
-        <div className="flex w-full border-b border-scum-beige-600/40">
+        <div className="flex w-full border-b border-scum-beige-600/40 lg:pt-5 lg:mb-20">
           <MaquinaToggleItem
             label="Maquina Muertes"
             selected={selected === 0}
@@ -57,7 +57,7 @@ const MaquinaView: FC<Props> = (props: Props) => {
               className="small-px"
               {...fastExitAnimation}
             >
-              <h2 className="my-12">Xicano Futurism</h2>
+              <h2 className="mt-12 mb:8">Xicano Futurism</h2>
               <p className="intro-text text-container-width mt-8 mb-16 xl:mb-32">
                 Maquina Muertes are chapters in a story that takes place in the
                 Slimes world. This series depicts scenes from my subconscious.
@@ -79,8 +79,8 @@ const MaquinaView: FC<Props> = (props: Props) => {
               className="small-px w-full"
               {...fastExitAnimation}
             >
-              <h2 className="my-12">World Building</h2>
-              <p className="intro-text text-container-width mt-8 mb-16 xl:mb-40 2xl:32">
+              <h2 className="mt-12 mb:8">World Building</h2>
+              <p className="intro-text text-container-width mt-8 mb-16 xl:mb-40">
                 All of my collections stem from the same desire; a greater
                 understanding of myself. I started Slimes as a tool to explore
                 my heritage. I am a mixed, Mexican American from the border
@@ -113,7 +113,7 @@ const MaquinaView: FC<Props> = (props: Props) => {
               </div>
               <div
                 className={`relative min-h-[400px] lg:min-h-[700px] transition-500 ${
-                  worldSelected < 2 ? "mt-20 lg:mt-32" : "mt-10 lg:mt-16"
+                  worldSelected < 2 ? "mt-20 lg:mt -32" : "mt-10 lg:mt-14"
                 }`}
               >
                 <AnimatePresence mode="wait">

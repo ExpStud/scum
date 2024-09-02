@@ -26,7 +26,7 @@ const MaquinaImage: FC<ImageProps> = (props: ImageProps) => {
         }`}
       />
       <div className="flex items-center justify-between px-10 rounded-bl-3xl rounded-tr-3xl bg-scum-black-800/30 h-12 w-full">
-        <p className="text-lg font-forma-bold text-[15px] tracking-widest">
+        <p className="text-lg font-forma-medium text-[15px] tracking-widest">
           MM # - 0{maquina.id}
         </p>
         <a
