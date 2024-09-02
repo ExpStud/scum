@@ -13,6 +13,7 @@ const Home: NextPage<{ initialTheme: Theme }> = ({ initialTheme }) => {
       fixed
       assets={assets}
       initialTheme={initialTheme}
+      footer={showView}
       header={showView}
     >
       <LandingView

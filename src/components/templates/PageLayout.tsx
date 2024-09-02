@@ -85,7 +85,7 @@ const PageLayout: FC<Props> = (props: Props) => {
             />
           )}
         </main>
-        {footer && <Footer />}
+        <Footer show={footer} />
 
         {/* load screen */}
         {/* {assets && <SplashScreen assets={assets} />} */}
