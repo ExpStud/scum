@@ -13,6 +13,16 @@ export const slimesAssets: AssetOption[] = [
   },
   {
     id: 1,
+    name: "Desktop Wallpaper",
+    lowResPath: "images/wallpapers/desktop-display",
+    highResPath: "images/wallpapers/desktop-display",
+    width: 132,
+    height: 79,
+    className: "",
+    extension: "png",
+  },
+  {
+    id: 2,
     name: "X Wallpaper",
     lowResPath: "images/wallpapers/banner",
     highResPath: "images/wallpapers/banner",
@@ -30,16 +40,6 @@ export const slimesAssets: AssetOption[] = [
   //   className: "rounded-lg border border-scum-black/30",
   //   extension: "png",
   // },
-  {
-    id: 2,
-    name: "Desktop Wallpaper",
-    lowResPath: "images/wallpapers/desktop-display",
-    highResPath: "images/wallpapers/desktop-display",
-    width: 132,
-    height: 79,
-    className: "",
-    extension: "png",
-  },
   {
     id: 3,
     name: "Mobile Wallpaper",
