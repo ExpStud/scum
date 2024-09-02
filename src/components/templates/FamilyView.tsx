@@ -45,7 +45,7 @@ const FamilyView: FC<Props> = (props: Props) => {
         className="page-start mt-[86px] xl:mt-0 xl:py-10 gap-0 "
       >
         <Heading />
-        <div className="relative flex flex-col justify-start w-full mb-10 -mt-20">
+        <div className="relative flex flex-col justify-start w-full mb-10 -mt-10">
           <div className="col-start gap-8 my-10 mx-5 xl:!ml-0 max-w-[530px] xl:min-w-[600px]">
             <h2 className="whitespace-nowrap">meet the family</h2>
             <p className="intro-text  font-forma-medium tracking-wide">
