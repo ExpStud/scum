@@ -29,7 +29,7 @@ const Footer: FC<{ show: boolean }> = ({ show }) => {
                 ALL IN TIME. <br /> WITH MY SLIMES.
               </p>
             </div>
-            <div className="outer-right-padding xl:-mr-3 flex flex-col items-end text-[10px] sm:text-sm lg:text-base">
+            <div className="outer-right-padding xl:-mr-3 flex flex-col items-end text-[10px] sm:text-sm uppercase font-forma-medium tracking-widest">
               <a
                 href="https://sandboxstud.io"
                 target="_blank"

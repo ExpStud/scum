@@ -1,7 +1,5 @@
 import { FC, HTMLAttributes } from "react";
 import { AnimateWrapper, IconBar } from "@components";
-import { fastEnterAnimation } from "src/constants";
-import { motion } from "framer-motion";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   show: boolean;
@@ -12,7 +10,7 @@ const Socials: FC<Props> = (props: Props) => {
     <div className={`${divProps.className}`}>
       <AnimateWrapper animate={show} opacity={true}>
         <div className="flex flex-col ">
-          <div className="absolute -left-40 -top-5 -rotate-90 text-secondary text-sm font-normal font-secondary leading-[18px]">
+          <div className="absolute -left-44 -top-5 -rotate-90 text-secondary text-sm font-normal font-secondary leading-[18px]">
             el arte es un exprecíon de vida,
             <br />
             no lo cambias.
