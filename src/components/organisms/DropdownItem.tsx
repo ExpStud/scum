@@ -12,7 +12,7 @@ const DropdownItem: FC<ItemProps> = (props: ItemProps) => {
   const [open, cycleOpen] = useCycle(false, true);
   return (
     <div
-      className="flex flex-col py-5 border-b border-scum-beige/25 w-full small-px"
+      className="flex flex-col py-5 lg:py-7 border-b border-scum-beige/25 w-full small-px"
       onClick={() => cycleOpen()}
     >
       <div className="flex justify-between items-center w-full xl:pr-5 pt-0.5 cursor-pointer">
