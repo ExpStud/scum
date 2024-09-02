@@ -35,11 +35,11 @@ const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
           className={`about-cards w-full`}
         />
       </div>
-      <h3>{item.name}</h3>
+      <h3 className="line-clamp-1">{item.name}</h3>
       <p className="opacity-60 text-sm lg:text-base uppercase -mt-4 font-forma-bold">
         Edition of {item.edition}
       </p>
-      <p className="text-lg xl:text-2xl max-w-[500px] text-ellipsis mr-10 line-clamp-6">
+      <p className="text-lg xl:text-2xl max-w-[500px] text-ellipsis mr-10 line-clamp-3">
         {item.description}
       </p>
       <div className="flex flex-col lg:flex-row lg:flex-wrap gap-2 text-sm lg:text-sm uppercase">
