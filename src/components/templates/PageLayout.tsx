@@ -10,6 +10,7 @@ import { theme } from "src/constants";
 interface Props {
   children: ReactNode;
   header?: boolean;
+  animateHeader?: boolean;
   footer?: boolean;
   fixed?: boolean; //prevents scroll
   absolute?: boolean; //allows scroll
@@ -27,6 +28,7 @@ const PageLayout: FC<Props> = (props: Props) => {
     assets = [],
     initialTheme,
     header = true,
+    animateHeader = false,
     footer = true,
   } = props;
 
@@ -72,7 +74,11 @@ const PageLayout: FC<Props> = (props: Props) => {
           twitter="twitterhandle"
         />
 
-        {header && <Header type={headerType} />}
+        <Header
+          type={headerType}
+          showHeader={header}
+          animateHeader={animateHeader}
+        />
         <main
           className={`max-w-1920 inner-left-padding outer-right-padding flex flex-col h-full w-full`}
         >

@@ -15,6 +15,7 @@ const Home: NextPage<{ initialTheme: Theme }> = ({ initialTheme }) => {
       initialTheme={initialTheme}
       footer={showView}
       header={showView}
+      animateHeader={true}
     >
       <LandingView
         setAssets={setAssets}
