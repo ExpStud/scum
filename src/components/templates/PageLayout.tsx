@@ -82,6 +82,7 @@ const PageLayout: FC<Props> = (props: Props) => {
               className={`hidden xl:block absolute outer-left-spacing z-10 ${
                 router.pathname === "/" ? "bottom-[140px]" : "top-[85vh]"
               }`}
+              show={footer}
             />
           )}
         </main>

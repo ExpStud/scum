@@ -7,11 +7,7 @@ import {
   useState,
 } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import {
-  exitAnimation,
-  fastEnterAnimation,
-  midEnterAnimation,
-} from "src/constants";
+import { exitAnimation, slideUp, midEnterAnimation } from "src/constants";
 import { useWindowSize } from "src/hooks";
 
 interface Props {
@@ -52,35 +48,33 @@ const LandingView: FC<Props> = (props: Props) => {
   return (
     <motion.div className="relative page-centered !mb-0" {...midEnterAnimation}>
       {/* ait cta */}
-      {showView && (
-        <motion.div
-          {...fastEnterAnimation}
-          className="w-[294px] h-12 bg-[#86e4c5] rounded-3xl absolute bottom-[8vh] md:bottom-20 z-10 flex justify-between items-center p-1"
+      <motion.div
+        {...slideUp(showView, 0, 0.75)}
+        className="w-[294px] h-12 bg-[#86e4c5] rounded-3xl absolute bottom-[8vh] md:bottom-20 z-10 flex justify-between items-center p-1"
+      >
+        <div className="ml-4 mt-1 font-forma-bold text-[19px]">
+          Shop All In Time
+        </div>
+        <a
+          className="w-[40px] h-[40px] rounded-full bg-scum-black row-centered"
+          href="https://allintime.xyz/"
+          target="_blank"
+          rel="noreferrer"
         >
-          <div className="ml-4 mt-1 font-forma-bold text-[19px]">
-            Shop All In Time
-          </div>
-          <a
-            className="w-[40px] h-[40px] rounded-full bg-scum-black row-centered"
-            href="https://allintime.xyz/"
-            target="_blank"
-            rel="noreferrer"
+          <svg
+            width="11"
+            height="11"
+            viewBox="0 0 11 11"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              width="11"
-              height="11"
-              viewBox="0 0 11 11"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M1.56445 10.623L0.321289 9.37988L7.80811 1.89307H2.06543L2.08398 0.176758H10.749V8.85107H9.03271V3.13623L1.56445 10.623Z"
-                fill="#F6EFD3"
-              />
-            </svg>
-          </a>
-        </motion.div>
-      )}
+            <path
+              d="M1.56445 10.623L0.321289 9.37988L7.80811 1.89307H2.06543L2.08398 0.176758H10.749V8.85107H9.03271V3.13623L1.56445 10.623Z"
+              fill="#F6EFD3"
+            />
+          </svg>
+        </a>
+      </motion.div>
       {/* videos */}
       <motion.video
         ref={introRef}
