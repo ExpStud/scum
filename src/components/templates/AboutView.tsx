@@ -49,35 +49,39 @@ const AboutView: FC<Props> = (props: Props) => {
           </p>
         </div>
 
-        <div className="about-cards-container">
-          <Image
-            src={`/images/about/card-1.jpg`}
-            width={400}
-            height={369}
-            alt="All in Time"
-            className="about-cards-1"
-          />
-          <Image
-            src={`/images/about/card-2.jpg`}
-            width={400}
-            height={369}
-            alt="All in Time 2"
-            className="about-cards-1"
-          />
-          <Image
-            src={`/images/about/card-3.jpg`}
-            width={400}
-            height={369}
-            alt="New Slimes"
-            className="about-cards-1"
-          />
-          <Image
-            src={`/images/about/card-4.jpg`}
-            width={400}
-            height={369}
-            alt="All in Time 3"
-            className="about-cards-1"
-          />
+        <div className="about-cards-container !gap-2">
+          <div className="relative w-full xs:w-[266px] h-[550px] xs:h-auto xs:aspect-[266/369]">
+            <Image
+              src={`/images/about/card-4.jpg`}
+              fill
+              alt="All in Time 3"
+              className="about-cards-1"
+            />
+          </div>
+          <div className="relative w-full xs:w-[282px] h-[550px] xs:h-auto xs:aspect-[282/369]">
+            <Image
+              src={`/images/about/card-2.jpg`}
+              fill
+              alt="All in Time 2"
+              className="about-cards-1"
+            />
+          </div>
+          <div className="relative w-full xs:w-[369px] h-[550px] xs:h-auto xs:aspect-square">
+            <Image
+              src={`/images/about/card-3.jpg`}
+              fill
+              alt="New Slimes"
+              className="about-cards-1"
+            />
+          </div>
+          <div className="relative w-full xs:w-[276px] h-[550px] xs:h-auto xs:aspect-[275/369]">
+            <Image
+              src={`/images/about/card-1.jpg`}
+              fill
+              alt="All in Time"
+              className="about-cards-1"
+            />
+          </div>
         </div>
 
         <div className="self-center col-start gap-8 my-10 mx-5 xl:!ml-0 font-forma-medium max-w-[550px] text-lg lg:text-xl">
@@ -98,27 +102,30 @@ const AboutView: FC<Props> = (props: Props) => {
         </div>
 
         <div className="about-cards-container">
-          <Image
-            src={`/images/about/card-5.jpg`}
-            width={425}
-            height={425}
-            alt="Panda"
-            className="about-cards-2"
-          />
-          <Image
-            src={`/images/about/card-6.jpg`}
-            width={425}
-            height={425}
-            alt="Slime"
-            className="about-cards-2"
-          />
-          <Image
-            src={`/images/about/card-7.jpg`}
-            width={425}
-            height={425}
-            alt="Art"
-            className="about-cards-2"
-          />
+          <div className="relative w-full xs:w-[329px] h-[550px] xs:h-auto xs:aspect-[329/425]">
+            <Image
+              src={`/images/about/card-5.jpg`}
+              fill
+              alt="Panda"
+              className="about-cards-2"
+            />
+          </div>
+          <div className="relative w-full xs:w-[425px] h-[550px] xs:h-auto xs:aspect-square">
+            <Image
+              src={`/images/about/card-6.jpg`}
+              fill
+              alt="Slime"
+              className="about-cards-2"
+            />
+          </div>
+          <div className="relative w-full xs:w-[425px] h-[550px] xs:h-auto xs:aspect-square">
+            <Image
+              src={`/images/about/card-7.jpg`}
+              fill
+              alt="Art"
+              className="about-cards-2"
+            />
+          </div>
         </div>
         <div className="self-center col-start gap-5 my-10 mx-5 xl:!ml-0 font-forma-medium max-w-[550px] text-lg lg:text-xl">
           <p>
