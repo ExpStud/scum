@@ -13,7 +13,7 @@ export const axolotlInfo: AxolotlInfo[] = [
     imgPosition: "bottom",
     image: (
       <Image
-        src="/images/scum/axolotl/dropdown-1.png"
+        src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/axolotl/dropdown-1.png`}
         width={1240}
         height={540}
         alt="Axolotl Art"
@@ -31,7 +31,7 @@ export const axolotlInfo: AxolotlInfo[] = [
     imgPosition: "right",
     image: (
       <Image
-        src="/images/scum/axolotl/dropdown-2.png"
+        src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/axolotl/dropdown-2.png`}
         width={469}
         height={511}
         alt="Axolotl"
@@ -50,7 +50,7 @@ export const axolotlInfo: AxolotlInfo[] = [
     imgPosition: "left",
     image: (
       <Image
-        src="/images/scum/axolotl/dropdown-3.png"
+        src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/axolotl/dropdown-3.png`}
         width={480}
         height={610}
         alt="Xoximilco"
@@ -70,13 +70,13 @@ export const axolotlInfo: AxolotlInfo[] = [
     image: (
       <div className="flex flex-col h-full items-start justify-start gap-8 my-7 min-w-[281px]">
         <Image
-          src="/images/scum/axolotl/solana-foundation.svg"
+          src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/axolotl/solana-foundation.svg`}
           width={281}
           height={48}
           alt="Axolotl"
         />
         <Image
-          src="/images/scum/axolotl/sphere.svg"
+          src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/axolotl/sphere.svg`}
           width={204}
           height={48}
           alt="Sphere"

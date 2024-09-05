@@ -22,7 +22,7 @@ const NavItem: FC<Props> = (props: Props) => {
     <div className="flex gap-2 justify-center items-center">
       <div className={`opacity-0`}>
         <Image
-          src="/images/scum/arrow.png"
+          src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/arrow.png`}
           alt="arrow"
           width={14}
           height={22}

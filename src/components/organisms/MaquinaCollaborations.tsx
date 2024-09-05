@@ -117,7 +117,7 @@ const VideoControls: FC<VideoProps> = (props: VideoProps) => {
       {!isPlaying && (
         <div className="absolute inset-0 flex items-center justify-center cursor-pointer bg-scum-black/50 rounded-br-[50px] lg:rounded-br-[100px] max-w-[825px]">
           <Image
-            src="/images/scum/icons/play.svg"
+            src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/icons/play.svg`}
             width={40}
             height={40}
             alt="Play"

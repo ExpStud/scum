@@ -33,7 +33,7 @@ const Modal: FC<Props> = (props: Props) => {
           {...midClickAnimation}
         >
           <Image
-            src="/images/scum/icons/close.png"
+            src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/icons/close.png`}
             height={40}
             width={40}
             alt="close"

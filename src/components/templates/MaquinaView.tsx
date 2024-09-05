@@ -121,32 +121,16 @@ const MaquinaView: FC<Props> = (props: Props) => {
                     <ImageBar
                       path={
                         worldSelected === 0
-                          ? "/images/scum/maquina/character-"
+                          ? `${process.env.CLOUDFLARE_STORAGE}/images/scum/maquina/character-`
                           : worldSelected === 1
-                          ? "/images/scum/maquina/PFP_"
-                          : "/images/scum/maquina/character"
+                          ? `${process.env.CLOUDFLARE_STORAGE}/images/scum/maquina/PFP_`
+                          : `${process.env.CLOUDFLARE_STORAGE}/images/scum/maquina/character`
                       }
                       extension={worldSelected === 1 ? "png" : "jpg"}
                       totalImages={worldSelected === 1 ? 6 : 8}
                       selected={worldSelected}
                     />
                   )}
-                  {/* {worldSelected == 0 && (
-                    <ImageBar
-                      path={"/images/scum/maquina/character-"}
-                      extension={"jpg"}
-                      totalImages={8}
-                      selected={worldSelected}
-                    />
-                  )}
-                  {worldSelected == 1 && (
-                    <ImageBar
-                      path={"/images/scum/maquina/PFP_"}
-                      extension={"png"}
-                      totalImages={6}
-                      selected={worldSelected}
-                    />
-                  )} */}
                 </AnimatePresence>
                 <AnimatePresence mode="wait">
                   {worldSelected === 0 && <MaquinaCharacters />}

@@ -12,7 +12,7 @@ const Heading: FC<Props> = (props: Props) => {
     <div className={`p-5 xl:p-0 lg:mb-16 lg:mt-6  ${className ?? ""}`}>
       {router.pathname === "/about" && (
         <Image
-          src="/images/scum/other/about.svg"
+          src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/other/about.svg`}
           width={666}
           height={232}
           alt="About"
@@ -20,7 +20,7 @@ const Heading: FC<Props> = (props: Props) => {
       )}
       {router.pathname.startsWith("/slimes") && (
         <Image
-          src="/images/scum/other/slimes.svg"
+          src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/other/slimes.svg`}
           width={786}
           height={246}
           alt="Slimes"
@@ -28,7 +28,7 @@ const Heading: FC<Props> = (props: Props) => {
       )}
       {router.pathname === "/maquina" && (
         <Image
-          src="/images/scum/other/maquina.svg"
+          src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/other/maquina.svg`}
           width={1062}
           height={279}
           alt="Maquina"
@@ -36,7 +36,7 @@ const Heading: FC<Props> = (props: Props) => {
       )}
       {router.pathname === "/family" && (
         <Image
-          src="/images/scum/other/family.svg"
+          src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/other/family.svg`}
           width={792}
           height={285}
           alt="Family"
@@ -44,7 +44,7 @@ const Heading: FC<Props> = (props: Props) => {
       )}
       {router.pathname === "/axolotl" && (
         <Image
-          src="/images/scum/other/axolotl.svg"
+          src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/other/axolotl.svg`}
           width={821}
           height={232}
           alt="Family"

@@ -15,7 +15,7 @@ const MaquinaImage: FC<ImageProps> = (props: ImageProps) => {
   return (
     <div className="flex flex-col gap-5" {...componentProps}>
       <Image
-        src={`/images/scum/maquina/maquina-${maquina.id}.jpg`}
+        src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/maquina/maquina-${maquina.id}.jpg`}
         width={width}
         height={height}
         alt={`Maquina ${maquina.id}`}
