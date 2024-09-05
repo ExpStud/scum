@@ -62,7 +62,7 @@ const AxolotlView: FC<Props> = (props: Props) => {
           {Array.from({ length: 3 }).map((_, i) => (
             <div key={i} className="sm:w-[32%]">
               <Image
-                src={`/images/axolotl/col-${i + 1}.jpg`}
+                src={`/images/scum/axolotl/col-${i + 1}.jpg`}
                 width={500}
                 height={500}
                 alt="Panda"

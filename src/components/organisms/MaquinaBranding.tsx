@@ -86,7 +86,7 @@ const MaquinaBranding: FC<Props> = (props: Props) => {
           {Array.from({ length: 8 }).map((_, i) => (
             <div className={` ${i === 3 || i === 7 ? "" : "w-1/4"}`} key={i}>
               <Image
-                src={`/images/maquina/ic-${i + 1}.svg`}
+                src={`/images/scum/maquina/ic-${i + 1}.svg`}
                 width={80}
                 height={80}
                 alt={`Icon ${i + 1}`}
@@ -97,32 +97,9 @@ const MaquinaBranding: FC<Props> = (props: Props) => {
         </div>
         <BrandingHeader>Explorations</BrandingHeader>
         <div className="flex flex-wrap lg:flex-nowrap items-end justify-center lg:justify-between gap-10 lg:gap-12 2xl:gap-20 pb-20 -mt-5">
-          {/* {Array.from({ length: 5 }).map((_, i) => (
-            <div
-              className={`relative h-[110px] ${
-                i === 0
-                  ? "w-[270px] "
-                  : i === 1
-                  ? "w-[120px] "
-                  : i === 2
-                  ? "w-[135px] "
-                  : i === 3
-                  ? "w-[220px] "
-                  : "w-[110px] "
-              }`}
-              key={i}
-            >
-              <Image
-                src={`/images/maquina/ex-${i + 1}.png`}
-                fill
-                alt={`Icon ${i + 1}`}
-                className="object-cover overfl"
-              />
-            </div>
-          ))} */}
           <div>
             <Image
-              src="/images/maquina/ex-1.png"
+              src="/images/scum/maquina/ex-1.png"
               width={271}
               height={113}
               alt="Slimes"
@@ -131,7 +108,7 @@ const MaquinaBranding: FC<Props> = (props: Props) => {
           </div>
           <div>
             <Image
-              src="/images/maquina/ex-2.png"
+              src="/images/scum/maquina/ex-2.png"
               width={128}
               height={113}
               alt="Hands"
@@ -140,7 +117,7 @@ const MaquinaBranding: FC<Props> = (props: Props) => {
           </div>
           <div>
             <Image
-              src="/images/maquina/ex-3.png"
+              src="/images/scum/maquina/ex-3.png"
               width={174}
               height={154}
               alt="Slimes 1"
@@ -149,7 +126,7 @@ const MaquinaBranding: FC<Props> = (props: Props) => {
           </div>
           <div>
             <Image
-              src="/images/maquina/ex-4.png"
+              src="/images/scum/maquina/ex-4.png"
               width={219}
               height={113}
               alt="Slimes 2"
@@ -158,7 +135,7 @@ const MaquinaBranding: FC<Props> = (props: Props) => {
           </div>
           <div>
             <Image
-              src="/images/maquina/ex-5.png"
+              src="/images/scum/maquina/ex-5.png"
               width={113}
               height={113}
               alt="Slimes 3"

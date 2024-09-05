@@ -21,7 +21,12 @@ const NavItem: FC<Props> = (props: Props) => {
   const DisabledItem = () => (
     <div className="flex gap-2 justify-center items-center">
       <div className={`opacity-0`}>
-        <Image src="/images/arrow.png" alt="arrow" width={14} height={22} />
+        <Image
+          src="/images/scum/arrow.png"
+          alt="arrow"
+          width={14}
+          height={22}
+        />
       </div>
       <div className={`py-5 opacity-10 cursor-default `}>{children}</div>
     </div>

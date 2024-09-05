@@ -12,7 +12,6 @@ module.exports = {
         "266/369": "266 / 369",
       },
       backgroundImage: {
-        // main: "url('/images/background.png')",
         "white-gradient": `linear-gradient(360.58deg, #FFFFFF 43.76%, rgba(255, 255, 255, 0) 106.82%)`,
       },
       fontFamily: {

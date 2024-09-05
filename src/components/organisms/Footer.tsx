@@ -43,7 +43,7 @@ const Footer: FC<{ show: boolean }> = ({ show }) => {
             {/* centered image */}
             <div className="left-centered -top-[60px] transition-200 bg-primary rounded-full border-[6px] border-tertiary scale-50 md:scale-75 lg:scale-100 h-[128px] w-[128px]">
               <Image
-                src="/images/footer/hands.png"
+                src="/images/scum/footer/hands.png"
                 width={100}
                 height={100}
                 alt="Slimes"
@@ -51,7 +51,7 @@ const Footer: FC<{ show: boolean }> = ({ show }) => {
               />
               {router.pathname === "/maquina" && (
                 <Image
-                  src="/images/footer/lines-brown.svg"
+                  src="/images/scum/footer/lines-brown.svg"
                   width={131}
                   height={132}
                   alt="Lines"
@@ -61,7 +61,7 @@ const Footer: FC<{ show: boolean }> = ({ show }) => {
               )}
               {router.pathname === "/axolotl" && (
                 <Image
-                  src="/images/footer/lines-teal.svg"
+                  src="/images/scum/footer/lines-teal.svg"
                   width={131}
                   height={132}
                   alt="Lines"
@@ -74,7 +74,7 @@ const Footer: FC<{ show: boolean }> = ({ show }) => {
               router.pathname === "/slimes" ||
               router.pathname === "/family" ? (
                 <Image
-                  src="/images/footer/lines-brown.svg"
+                  src="/images/scum/footer/lines-brown.svg"
                   width={131}
                   height={132}
                   alt="Lines"

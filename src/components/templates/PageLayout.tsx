@@ -68,9 +68,9 @@ const PageLayout: FC<Props> = (props: Props) => {
         }`}
       >
         <PageHead
-          title="Name"
-          description="Description"
-          url="https://addurl.xyz" // no backslash at the end
+          title="Scum"
+          description="A scum project by art"
+          url="https://scum.art" // no backslash at the end
           twitter="twitterhandle"
         />
 

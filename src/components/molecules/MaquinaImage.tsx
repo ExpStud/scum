@@ -15,7 +15,7 @@ const MaquinaImage: FC<ImageProps> = (props: ImageProps) => {
   return (
     <div className="flex flex-col gap-5" {...componentProps}>
       <Image
-        src={`/images/maquina/maquina-${maquina.id}.jpg`}
+        src={`/images/scum/maquina/maquina-${maquina.id}.jpg`}
         width={width}
         height={height}
         alt={`Maquina ${maquina.id}`}

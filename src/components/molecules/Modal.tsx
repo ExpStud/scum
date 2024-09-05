@@ -33,7 +33,7 @@ const Modal: FC<Props> = (props: Props) => {
           {...midClickAnimation}
         >
           <Image
-            src="/images/icons/close.png"
+            src="/images/scum/icons/close.png"
             height={40}
             width={40}
             alt="close"

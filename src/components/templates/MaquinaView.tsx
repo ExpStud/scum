@@ -121,10 +121,10 @@ const MaquinaView: FC<Props> = (props: Props) => {
                     <ImageBar
                       path={
                         worldSelected === 0
-                          ? "/images/maquina/character-"
+                          ? "/images/scum/maquina/character-"
                           : worldSelected === 1
-                          ? "/images/maquina/PFP_"
-                          : "/images/maquina/character"
+                          ? "/images/scum/maquina/PFP_"
+                          : "/images/scum/maquina/character"
                       }
                       extension={worldSelected === 1 ? "png" : "jpg"}
                       totalImages={worldSelected === 1 ? 6 : 8}
@@ -133,7 +133,7 @@ const MaquinaView: FC<Props> = (props: Props) => {
                   )}
                   {/* {worldSelected == 0 && (
                     <ImageBar
-                      path={"/images/maquina/character-"}
+                      path={"/images/scum/maquina/character-"}
                       extension={"jpg"}
                       totalImages={8}
                       selected={worldSelected}
@@ -141,7 +141,7 @@ const MaquinaView: FC<Props> = (props: Props) => {
                   )}
                   {worldSelected == 1 && (
                     <ImageBar
-                      path={"/images/maquina/PFP_"}
+                      path={"/images/scum/maquina/PFP_"}
                       extension={"png"}
                       totalImages={6}
                       selected={worldSelected}
