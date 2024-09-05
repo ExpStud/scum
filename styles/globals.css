@@ -83,16 +83,16 @@ a {
     @apply bg-primary;
   }
   h1 {
-    @apply text-5xl md:text-[72px];
+    @apply text-5xl md:text-[72px] font-forma-extrabold;
   }
   h2 {
-    @apply text-4xl md:text-5xl 2xl:text-[55px] uppercase font-forma-extrabold tracking-wide;
+    @apply text-4xl md:text-5xl 2xl:text-[52px] uppercase font-forma-extrabold tracking-wide;
   }
   h3 {
-    @apply  text-2xl md:text-3xl xl:text-4xl uppercase font-forma-extrabold;
+    @apply  text-2xl md:text-3xl xl:text-3xl uppercase font-forma-extrabold;
   }
   h4 {
-    @apply  text-xl md:text-xl xl:text-3xl uppercase font-forma-extrabold;
+    @apply  text-xl md:text-xl xl:text-2xl uppercase font-forma-extrabold;
   }
   p {
     @apply tracking-wider;
@@ -274,13 +274,13 @@ html {
   @apply max-w-[720px] 2xl:max-w-[920px];
 }
 .text-container-width {
-  @apply max-w-[720px] 2xl:max-w-[700px];
+  @apply max-w-[720px] 2xl:max-w-[920px];
 }
 .intro-text-container {
-  @apply col-start gap-8 my-10 mx-5 text-container-width;
+  @apply col-start gap-8 my-10 mx-5 text-container-width-old;
 }
 .intro-text {
-  @apply text-lg lg:text-xl 2xl:text-2xl;
+  @apply text-lg lg:text-3xl;
 }
 
 .slimes-button {
