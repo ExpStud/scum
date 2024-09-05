@@ -5,22 +5,19 @@ import { motion } from "framer-motion";
 import { fastExitAnimation } from "src/constants";
 
 interface ImageProps extends HTMLAttributes<HTMLDivElement> {
-  path: string;
-  extension?: string;
-  totalImages: number;
   selected: number;
 }
 
 const ImageBar: FC<ImageProps> = (props: ImageProps) => {
-  const { path, extension = "jpg", totalImages, selected } = props;
+  const { selected } = props;
 
-  const [count, setCount] = useState<number>(totalImages);
-  const [winWidth] = useWindowSize();
+  const path =
+    selected === 0
+      ? `${process.env.CLOUDFLARE_STORAGE}/images/scum/maquina/character-`
+      : `${process.env.CLOUDFLARE_STORAGE}/images/scum/maquina/PFP_`;
 
-  useEffect(() => {
-    setCount(totalImages);
-  }, [selected, totalImages]);
-
+  const extension = selected === 0 ? "jpg" : "png";
+  const count = selected === 0 ? 8 : 6;
   const duration = count * 3;
 
   const images = new Array(count).fill(null).map((item, i) => (
@@ -32,7 +29,6 @@ const ImageBar: FC<ImageProps> = (props: ImageProps) => {
         alt={`Image ${i + 1}`}
         className="rounded-br-[30px] md:rounded-br-[50px] lg:rounded-br-[100px] min-w-[100px] md:min-w-[150px] lg:min-w-[300px] max-h-[300px]"
       />
-      {/* <div className="absolute top-4 p-3 rounded-full bg-black ml-10">{i}</div> */}
     </div>
   ));
 

@@ -18,7 +18,7 @@ const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
       transition={{ duration: 0.4 }}
     >
       <div
-        className={`relative w-[90vw] sm:w-auto sm:h-[400px] xl:h-[500px] ${
+        className={`relative w-[300px] sm:w-auto sm:h-[400px] xl:h-[500px] ${
           item.aspect === "wide"
             ? "aspect-square md:aspect-[1.5/1]"
             : item.aspect === "long"

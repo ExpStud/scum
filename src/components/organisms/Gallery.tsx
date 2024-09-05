@@ -54,29 +54,30 @@ const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
     });
   };
 
-  const calculateOffset = (
-    index: number,
-    items: SFC[],
-    gap: number,
-    height: number
-  ) => {
+  const calculateOffset = (index: number, items: SFC[], gap: number) => {
     let offset = 0;
+
     for (let i = 0; i < index; i++) {
       const item = items[i];
       let itemWidth;
 
-      if (item?.aspect === "wide") {
-        itemWidth = 1.5 * imageHeight;
-      } else if (item?.aspect === "long") {
-        itemWidth = (1 / 1.25) * imageHeight;
-      } else if (item?.aspect === "longer") {
-        itemWidth = (1 / 1.75) * imageHeight;
+      if (winWidth < 640) {
+        itemWidth = 300;
       } else {
-        itemWidth = imageHeight; // for "aspect-square"
+        if (item?.aspect === "wide") {
+          itemWidth = 1.5 * imageHeight;
+        } else if (item?.aspect === "long") {
+          itemWidth = (1 / 1.25) * imageHeight;
+        } else if (item?.aspect === "longer") {
+          itemWidth = (1 / 1.75) * imageHeight;
+        } else {
+          itemWidth = imageHeight; // for "aspect-square"
+        }
       }
 
       offset += itemWidth + gap;
     }
+    console.log("offset", offset);
 
     return -offset; // return as negative to move items to the left
   };
@@ -121,9 +122,7 @@ const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
       <h4 className="mb-12 tracking-widest">{header}</h4>
 
       <div className="w-full">
-        <div
-          className={`hidden lg:flex justify-between items-center gap-2 w-full mb-8`}
-        >
+        <div className={`flex justify-between items-center gap-2 w-full mb-8`}>
           <div className="flex gap-2 ">
             <button
               className="slimes-button-round"
@@ -145,7 +144,7 @@ const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
           </p>
         </div>
         <div
-          className={`invisible-scrollbar overflow-x-auto lg:overflow-hidden flex gap-5`}
+          className={`invisible-scrollbar overflow-x-auto overflow-hidden flex gap-5`}
           ref={containerRef}
         >
           {data.map((item, index) => (
@@ -153,7 +152,7 @@ const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
               key={index}
               item={item}
               direction={prevIndex.current > index ? "left" : "right"}
-              offset={calculateOffset(galleryIndex, data, 20, imageHeight)}
+              offset={calculateOffset(galleryIndex, data, 20)}
             />
           ))}
         </div>

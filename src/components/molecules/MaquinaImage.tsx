@@ -13,16 +13,16 @@ const MaquinaImage: FC<ImageProps> = (props: ImageProps) => {
   const height = index === 0 ? 698 : 686;
 
   return (
-    <div className="flex flex-col gap-5" {...componentProps}>
+    <div className={`flex flex-col gap-5`} {...componentProps}>
       <Image
         src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/maquina/maquina-${maquina.id}.jpg`}
         width={width}
         height={height}
         alt={`Maquina ${maquina.id}`}
-        className={` ${
+        className={`${
           index === 0
             ? "rounded-br-[50px] lg:rounded-br-[100px]"
-            : "rounded-br-[30px] lg:rounded-br-[120px]"
+            : "rounded-br-[30px] lg:rounded-br-[120px] w-full"
         }`}
       />
       <div className="flex items-center justify-between px-10 rounded-bl-3xl rounded-tr-3xl bg-scum-black-800/30 h-12 w-full">

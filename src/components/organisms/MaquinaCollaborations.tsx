@@ -35,7 +35,7 @@ const MaquinaCollaborations: FC<Props> = (props: Props) => {
           my community and the world.
         </p>
       </div>
-      <div className="maquina-scrollbar flex flex-col xl:flex-row w-full xl:overflow-x-scroll mt-5 lg:mt-10 pb-5 gap-5 lg:gap-10">
+      <div className="maquina-scrollbar flex flex-row w-full overflow-x-scroll mt-5 lg:mt-10 pb-5 gap-5 lg:gap-10">
         <VideoControls
           src={`${process.env.CLOUDFLARE_STORAGE}/videos/wacko-trailer.mp4`}
           isPlaying={
@@ -110,7 +110,7 @@ const VideoControls: FC<VideoProps> = (props: VideoProps) => {
         key="vids"
         playsInline
         style={{ objectFit: "cover" }}
-        className={`w-[825px] xl:min-w-[825px] rounded-br-[50px] lg:rounded-br-[100px] object-cover`}
+        className={`min-w-[80vw] md:w-[825px] xl:min-w-[825px] rounded-br-[50px] lg:rounded-br-[100px] object-cover`}
       >
         <source src={src} type="video/mp4" />
       </video>

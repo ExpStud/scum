@@ -268,7 +268,7 @@ html {
 } */
 
 .about-cards-container {
-  @apply flex flex-col xs:flex-row items-center xs:items-start justify-between gap-5 my-10 xl:my-24 px-5 xl:px-0 w-full;
+  @apply flex flex-row items-center xs:items-start justify-between gap-5 my-10 xl:my-24 px-5 xl:px-0 w-full;
 }
 .text-container-width-old {
   @apply max-w-[720px] 2xl:max-w-[920px];

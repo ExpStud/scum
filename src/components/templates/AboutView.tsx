@@ -29,8 +29,8 @@ const AboutView: FC<Props> = (props: Props) => {
       <AnimateWrapper animate={isInView}>
         <Heading />
         <Image
-          src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/about/scum${
-            !isDekstop ? "-sm" : ""
+          src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/about/scum-${
+            !isDekstop ? "lg" : "lg"
           }.jpg`}
           width={1240}
           height={661}
@@ -52,7 +52,7 @@ const AboutView: FC<Props> = (props: Props) => {
         </div>
 
         <div className="about-cards-container !gap-2">
-          <div className="relative w-full xs:w-[266px] h-[550px] xs:h-auto xs:aspect-[266/369]">
+          <div className="relative w-full xs:w-[266px] h-[369px] xs:h-auto xs:aspect-[266/369]">
             <Image
               src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/about/card-4.jpg`}
               fill
@@ -60,7 +60,7 @@ const AboutView: FC<Props> = (props: Props) => {
               className="about-cards-1"
             />
           </div>
-          <div className="relative w-full xs:w-[282px] h-[550px] xs:h-auto xs:aspect-[282/369]">
+          <div className="relative w-full xs:w-[282px] h-[369px] xs:h-auto xs:aspect-[282/369]">
             <Image
               src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/about/card-2.jpg`}
               fill
@@ -68,7 +68,7 @@ const AboutView: FC<Props> = (props: Props) => {
               className="about-cards-1"
             />
           </div>
-          <div className="relative w-full xs:w-[369px] h-[550px] xs:h-auto xs:aspect-square">
+          <div className="relative w-full xs:w-[369px] h-[369px] xs:h-auto xs:aspect-square hidden sm:flex">
             <Image
               src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/about/card-3.jpg`}
               fill
@@ -76,7 +76,7 @@ const AboutView: FC<Props> = (props: Props) => {
               className="about-cards-1"
             />
           </div>
-          <div className="relative w-full xs:w-[276px] h-[550px] xs:h-auto xs:aspect-[275/369]">
+          <div className="relative w-full xs:w-[276px] h-[369px] xs:h-auto xs:aspect-[275/369] hidden md:flex">
             <Image
               src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/about/card-1.jpg`}
               fill
@@ -104,7 +104,7 @@ const AboutView: FC<Props> = (props: Props) => {
         </div>
 
         <div className="about-cards-container">
-          <div className="relative w-full xs:w-[329px] h-[550px] xs:h-auto xs:aspect-[329/425]">
+          <div className="relative w-full xs:w-[329px] h-[425px] xs:h-auto xs:aspect-[329/425]">
             <Image
               src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/about/card-5.jpg`}
               fill
@@ -112,7 +112,7 @@ const AboutView: FC<Props> = (props: Props) => {
               className="about-cards-2"
             />
           </div>
-          <div className="relative w-full xs:w-[425px] h-[550px] xs:h-auto xs:aspect-square">
+          <div className="relative w-full xs:w-[425px] h-[425px] xs:h-auto xs:aspect-square">
             <Image
               src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/about/card-6.jpg`}
               fill
@@ -120,7 +120,7 @@ const AboutView: FC<Props> = (props: Props) => {
               className="about-cards-2"
             />
           </div>
-          <div className="relative w-full xs:w-[425px] h-[550px] xs:h-auto xs:aspect-square">
+          <div className="relative w-full xs:w-[425px] h-[425px] xs:h-auto xs:aspect-square hidden sm:flex">
             <Image
               src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/about/card-7.jpg`}
               fill

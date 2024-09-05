@@ -58,7 +58,7 @@ const AxolotlView: FC<Props> = (props: Props) => {
           </div>
         </div>
         {/* images */}
-        <div className="w-full flex flex-col sm:flex-row xl:flex-nowrap justify-center gap-5 xl:justify-between overflow-hidden pt-5 px-5 xl:px-0">
+        <div className="w-full flex flex-row xl:flex-nowrap justify-center gap-3 md:gap-5 xl:justify-between overflow-hidden pt-5 px-5 xl:px-0">
           {Array.from({ length: 3 }).map((_, i) => (
             <div key={i} className="sm:w-[32%]">
               <Image
@@ -68,7 +68,9 @@ const AxolotlView: FC<Props> = (props: Props) => {
                 width={500}
                 height={500}
                 alt="Panda"
-                className="rounded-br-[100px] sm:rounded-br-[60px] lg:rounded-br-[100px]"
+                className={`rounded-br-[46px] sm:rounded-br-[60px] lg:rounded-br-[100px] ${
+                  i === 2 ? "hidden sm:flex" : "flex"
+                }`}
               />
             </div>
           ))}
