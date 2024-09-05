@@ -85,8 +85,10 @@ const PageLayout: FC<Props> = (props: Props) => {
           {children}
           {footer && (
             <Socials
-              className={`hidden xl:block absolute outer-left-spacing z-10 ${
-                router.pathname === "/" ? "bottom-[140px]" : "top-[85vh]"
+              className={`hidden xl:block absolute outer-left-spacing z-20 ${
+                router.pathname === "/"
+                  ? "bottom-[140px]"
+                  : "top-[95svh] 1420:top-[105vh]"
               }`}
               show={footer}
             />

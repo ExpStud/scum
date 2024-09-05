@@ -23,20 +23,11 @@ const MaquinaBranding: FC<Props> = (props: Props) => {
   return (
     <motion.div
       key="branding"
-      className="w-full flex flex-col gap-5 overflow-hidden"
+      className="w-full flex flex-col gap-5 overflow-hidden -mb-10"
       {...fastExitAnimation}
     >
-      <div className="absolute-x inset-x-0 top-0 py-2.5 lg:py-5 flex overflow-hidden">
-        <div
-          className="h-5 absolute-x"
-          // initial={{ x: 0 }}
-          // animate={{ x: -totalWidth }}
-          // transition={{
-          //   duration: 30,
-          //   repeat: Infinity,
-          //   ease: "linear",
-          // }}
-        >
+      <div className="absolute-x inset-x-0 top-0 py-2.5 lg:py-5 flex overflow-hidden z-20">
+        <div className="h-5 absolute-x">
           {colors.map((color, index) => (
             <div
               key={index}
@@ -45,24 +36,6 @@ const MaquinaBranding: FC<Props> = (props: Props) => {
             />
           ))}
         </div>
-        {/* <motion.div
-          className="h-5 absolute-x"
-          initial={{ x: totalWidth }}
-          animate={{ x: 0 }}
-          transition={{
-            duration: 30,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        >
-          {colors.map((color, index) => (
-            <div
-              key={index}
-              className="w-[300px] h-5 absolute top-0"
-              style={{ left: `${index * 300}px`, backgroundColor: color }}
-            />
-          ))}
-        </motion.div> */}
       </div>
       <h3 className="mt-16 lg:mt-28">branding</h3>
       <p className="maquina-copy ">
@@ -85,7 +58,7 @@ const MaquinaBranding: FC<Props> = (props: Props) => {
         <BrandingHeader>Primary Wordmark</BrandingHeader>
         <SlimesSVG />
         <BrandingHeader>Fonts and use cases</BrandingHeader>
-        <div className="flex flex-col gap-8 pb-20 text-base md:text-lg lg:text-[28px]">
+        <div className="flex flex-col gap-12 pb-28 text-base md:text-lg lg:text-[28px]">
           <div className="flex items-center w-full font-secondary">
             <div className="whitespace-nowrap">mk-Hell</div>
             <DottedLine />
@@ -123,8 +96,8 @@ const MaquinaBranding: FC<Props> = (props: Props) => {
           ))}
         </div>
         <BrandingHeader>Explorations</BrandingHeader>
-        <div className="flex flex-wrap justify-center lg:justify-between gap-x-5 lg:gap-x-0 gap-y-10 md:gap-y-14 pb-20">
-          {Array.from({ length: 5 }).map((_, i) => (
+        <div className="flex flex-wrap lg:flex-nowrap items-end justify-center lg:justify-between gap-10 lg:gap-12 2xl:gap-20 pb-20 -mt-5">
+          {/* {Array.from({ length: 5 }).map((_, i) => (
             <div
               className={`relative h-[110px] ${
                 i === 0
@@ -146,7 +119,52 @@ const MaquinaBranding: FC<Props> = (props: Props) => {
                 className="object-cover overfl"
               />
             </div>
-          ))}
+          ))} */}
+          <div>
+            <Image
+              src="/images/maquina/ex-1.png"
+              width={271}
+              height={113}
+              alt="Slimes"
+              className="object-cover"
+            />
+          </div>
+          <div>
+            <Image
+              src="/images/maquina/ex-2.png"
+              width={128}
+              height={113}
+              alt="Hands"
+              className="object-cover"
+            />
+          </div>
+          <div>
+            <Image
+              src="/images/maquina/ex-3.png"
+              width={174}
+              height={154}
+              alt="Slimes 1"
+              className="object-cover"
+            />
+          </div>
+          <div>
+            <Image
+              src="/images/maquina/ex-4.png"
+              width={219}
+              height={113}
+              alt="Slimes 2"
+              className="object-cover"
+            />
+          </div>
+          <div>
+            <Image
+              src="/images/maquina/ex-5.png"
+              width={113}
+              height={113}
+              alt="Slimes 3"
+              className="object-cover"
+            />
+          </div>
         </div>
       </div>
     </motion.div>
@@ -171,7 +189,7 @@ const DottedLine: FC = () => {
 };
 const BrandingHeader: FC<{ children: ReactNode }> = ({ children }) => {
   return (
-    <div className="flex flex-col gap-5 font-forma-medium w-full pb-6">
+    <div className="flex flex-col gap-8 font-forma-medium w-full pb-16">
       <div className="text-2xl">{children}</div>
       <div className="w-full border-2 border-scum-beige/30"></div>
     </div>
@@ -180,7 +198,7 @@ const BrandingHeader: FC<{ children: ReactNode }> = ({ children }) => {
 
 const SlimesSVG: FC = () => {
   return (
-    <div className="col-centered gap-8 px-5 pt-10 pb-14 scale-90">
+    <div className="col-centered gap-8 px-5 -mt-4 pb-24 scale-90">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="152"

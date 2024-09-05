@@ -270,9 +270,11 @@ html {
 .about-cards-container {
   @apply flex flex-col xs:flex-row items-center xs:items-start justify-between gap-5 my-10 xl:my-24 px-5 xl:px-0 w-full;
 }
-.text-container-width {
+.text-container-width-old {
   @apply max-w-[720px] 2xl:max-w-[920px];
-
+}
+.text-container-width {
+  @apply max-w-[720px] 2xl:max-w-[700px];
 }
 .intro-text-container {
   @apply col-start gap-8 my-10 mx-5 text-container-width;
@@ -300,16 +302,16 @@ html {
   @apply mx-1 sm:mx-4 lg:mx-3 mb-0.5 lg:mb-2 font-secondary;
 }
 .pg-black {
-  color: #FDC3AE;
+  color: #FDC3AE; 
   text-align: center;
-  text-shadow: 4.011px 3.438px 0px #000;
-  -webkit-text-stroke-width: 2.2918646335601807;
-  -webkit-text-stroke-color: #2C2524;
-  font-family: Pangram;
-  font-style: normal;
-  font-weight: 900;
-  line-height: normal;
-  letter-spacing: 1.862px;
+  text-shadow: 4.011px 3.438px 0px #000; /* Shadow effect */
+  -webkit-text-stroke-width: 2px; /* Stroke width */
+  -webkit-text-stroke-color: #000; /* Stroke color */
+  font-family: Pangram;  
+  font-style: normal; 
+  font-weight: 900;  
+  line-height: normal; 
+  letter-spacing: 1.862px;  
 }
 .mobile-video {
   @apply h-[50vh] w-screen absolute overflow-visible inset-x-0 top-[50%] transform -translate-y-1/2 max-w-[600px] mx-auto;

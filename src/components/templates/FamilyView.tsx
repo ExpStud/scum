@@ -42,7 +42,7 @@ const FamilyView: FC<Props> = (props: Props) => {
     <motion.div {...midEnterAnimation} ref={ref}>
       <AnimateWrapper
         animate={isInView}
-        className="page-start mt-[86px] xl:mt-0 xl:py-10 gap-0 "
+        className="page-start mt-[86px] xl:mt-0 xl:py-10 gap-10 "
       >
         <Heading />
         <div className="relative flex flex-col justify-start w-full mb-10 -mt-10">
@@ -77,8 +77,8 @@ const FamilyView: FC<Props> = (props: Props) => {
           </div>
         </div>
 
-        <Gallery header="series 2" initialData={sfc.two} />
-        <Gallery header="series 1" initialData={sfc.one} />
+        <Gallery header="series 2" initialData={sfc.two} className="mt-10" />
+        <Gallery header="series 1" initialData={sfc.one} className="mt-20" />
       </AnimateWrapper>
     </motion.div>
   );

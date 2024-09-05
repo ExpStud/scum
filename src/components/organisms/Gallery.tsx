@@ -1,15 +1,15 @@
-import { FC, useState, useRef, useEffect } from "react";
+import { FC, useState, useRef, useEffect, HTMLAttributes } from "react";
 import { SFC } from "@types";
 import { useWindowSize } from "@hooks";
 import { GalleryItem } from "@components";
 
-interface GalleryProps {
+interface GalleryProps extends HTMLAttributes<HTMLDivElement> {
   header: string;
   initialData: SFC[];
 }
 
 const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
-  const { header, initialData } = props;
+  const { header, initialData, className } = props;
 
   const [galleryIndex, setGalleryIndex] = useState<number>(0);
   const [data, setData] = useState<SFC[]>([]);
@@ -113,12 +113,16 @@ const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
   }, [winWidth, initialData]);
 
   return (
-    <div className="pl-5 xl:pl-0 relative w-full z-20 overflow-hidden">
-      <h4 className="mb-5">{header}</h4>
+    <div
+      className={`pl-5 xl:pl-0 relative w-full z-20 overflow-hidden ${
+        className ?? ""
+      }`}
+    >
+      <h4 className="mb-12 tracking-widest">{header}</h4>
 
       <div className="w-full">
         <div
-          className={`hidden lg:flex justify-between items-center gap-2 w-full mb-5`}
+          className={`hidden lg:flex justify-between items-center gap-2 w-full mb-8`}
         >
           <div className="flex gap-2 ">
             <button

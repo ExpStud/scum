@@ -70,7 +70,8 @@ const SlimeGraphics: FC<Props> = (props: Props) => {
       {/* image options */}
       <div className="col-centered w-full">
         <div className="flex flex-col items-start lg:items-center justify-center w-full lg:w-auto">
-          <p className="font-forma-bold text-base self-start mb-1.5 ml-2">
+          <hr className="h-[1px] w-full border-t border-[#79C7AD] mb-2" />
+          <p className="font-forma-bold text-base self-start mb-3">
             Slime Assets
           </p>
           <div className="grid grid-cols-2 border border-[#79C7AD] rounded-[10px] mr-5 xl:mr-0 h-min w-full lg:max-w-[480px]">
@@ -87,7 +88,8 @@ const SlimeGraphics: FC<Props> = (props: Props) => {
                 />
               ))}
           </div>
-          <p className="font-forma-bold text-base self-start mb-1.5 ml-2 mt-5">
+          <hr className="h-[1px] w-full border-t border-[#79C7AD] mb-2 mt-8" />
+          <p className="font-forma-bold text-base self-start mb-3">
             Tiny Denise Assets
           </p>
           <div className="grid grid-cols-2 border border-[#79C7AD] rounded-[10px] mr-5 xl:mr-0 h-min w-full lg:max-w-[480px]">

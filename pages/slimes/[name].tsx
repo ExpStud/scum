@@ -18,6 +18,8 @@ const SlimePage: NextPage<Props> = (props: Props) => {
   const router = useRouter();
   const { name } = router.query;
 
+  const formatId = (id: number) => String(id).padStart(3, "0");
+
   return (
     <PageLayout headerType="absolute" initialTheme={initialTheme}>
       <motion.div
@@ -28,8 +30,11 @@ const SlimePage: NextPage<Props> = (props: Props) => {
         <SlimeNav currentIndex={currentIndex} />
         {/* content */}
         <div className="flex flex-col gap-5 xl:gap-10 mx-5 xl:mx-0 text-container-width mt-10">
-          <h2>{name}</h2>
-          <p className="intro-text max-w-[920px]">{item?.description}</p>
+          <div>
+            <h2>{name}</h2>
+            <h2 className="opacity-20">My Slime {formatId(item.id + 1)}</h2>
+          </div>
+          <p className="intro-text max-w-[850px]">{item?.description}</p>
         </div>
         <SlimeGraphics slime={item} />
       </motion.div>
