@@ -62,15 +62,16 @@ const Item: FC<ItemProps> = (props: ItemProps) => {
   const { children, isCurrent, isHome } = props;
   return (
     <p
-      className={`text-secondary text-[40px] transition-200 ${
+      className={`flip-animate text-secondary text-[40px] transition-200 ${
         isHome ? "xl:text-6xl 2xl:text-7xl 1860:text-[78px]" : "xl:text-xl "
       } ${
         isCurrent
-          ? "underline xl:no-underline opacity-100 cursor-default"
-          : "text-gray-400 hover:opacity-50 xl:hover:opacity-80 xl:opacity-50  cursor-pointer"
+          ? "opacity-100 cursor-default"
+          : "text-gray-400 hover:opacity-50 xl:hover:opacity-80 opacity-50  cursor-pointer"
       }`}
     >
       {children}
+      {/* <span data-hover={children}>{children}</span> */}
     </p>
   );
 };

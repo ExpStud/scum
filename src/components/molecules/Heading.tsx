@@ -9,7 +9,7 @@ const Heading: FC<Props> = (props: Props) => {
   const router = useRouter();
 
   return (
-    <div className={`p-5 xl:p-0 lg:mb-16 lg:mt-6  ${className ?? ""}`}>
+    <div className={`p-5 xl:p-0 xl:pr-56 lg:mb-16 lg:mt-6  ${className ?? ""}`}>
       {router.pathname === "/about" && (
         <Image
           src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/other/about.svg`}
