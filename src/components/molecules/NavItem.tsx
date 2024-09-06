@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { navChild } from "src/constants";
+import { useWindowSize } from "src/hooks";
 
 interface Props {
   children: ReactNode;
@@ -62,7 +63,7 @@ const Item: FC<ItemProps> = (props: ItemProps) => {
   const { children, isCurrent, isHome } = props;
 
   const [hover, setHover] = useState(false);
-  console.log("hover", hover);
+  const [winWidth] = useWindowSize();
   return (
     <>
       {isHome ? (
@@ -79,8 +80,8 @@ const Item: FC<ItemProps> = (props: ItemProps) => {
             }`}
             initial={{ y: 0 }}
             animate={{
-              y: hover ? -10 : 0,
-              rotateX: hover ? -90 : 0,
+              y: hover ? 40 : 0,
+              rotateX: hover ? 90 : 0,
               transition: { duration: 0.25, ease: "linear" },
             }}
             style={{ transformStyle: "preserve-3d", transformOrigin: "50% 0" }}
