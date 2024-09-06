@@ -2,6 +2,7 @@ import { HTMLAttributes, FC, ReactNode } from "react";
 import { motion } from "framer-motion";
 import { fastExitAnimation } from "src/constants";
 import Image from "next/image";
+import { useWindowSize } from "src/hooks";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {}
 
@@ -18,7 +19,9 @@ const MaquinaBranding: FC<Props> = (props: Props) => {
     "#ffb093",
     "#f6efd3",
   ];
-  const totalWidth = colors.length * 300; // Each div is 300px wide
+
+  const [winWidth] = useWindowSize();
+  const lineWidth = winWidth < 768 ? 120 : 300;
 
   return (
     <motion.div
@@ -32,7 +35,7 @@ const MaquinaBranding: FC<Props> = (props: Props) => {
             <div
               key={index}
               className="w-[300px] h-5 absolute top-0"
-              style={{ left: `${index * 300}px`, backgroundColor: color }}
+              style={{ left: `${index * lineWidth}px`, backgroundColor: color }}
             />
           ))}
         </div>
@@ -170,7 +173,7 @@ const BrandingHeader: FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <div className="flex flex-col gap-8 font-forma-medium w-full pb-16">
       <div className="text-2xl">{children}</div>
-      <div className="w-full border-2 border-scum-beige/30"></div>
+      <div className="w-full border-[3px] border-scum-beige/30"></div>
     </div>
   );
 };

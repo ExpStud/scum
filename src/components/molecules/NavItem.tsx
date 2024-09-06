@@ -67,7 +67,7 @@ const Item: FC<ItemProps> = (props: ItemProps) => {
       } ${
         isCurrent
           ? "opacity-100 cursor-default"
-          : "text-gray-400 hover:opacity-50 xl:hover:opacity-80 opacity-50  cursor-pointer"
+          : "text-gray-400 hover:opacity-50 xl:hover:opacity-80 opacity-50 cursor-pointer"
       }`}
     >
       {children}

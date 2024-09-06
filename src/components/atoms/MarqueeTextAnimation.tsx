@@ -4,6 +4,7 @@ import { useWindowSize } from "src/hooks";
 
 const MarqueeTextAnimation: FC = () => {
   const [numRepeats, setNumRepeats] = useState(0);
+  const [duration, setDuration] = useState<number | null>(null);
   const textWidth = 150; // Approximate width of the text in pixels
   const gap = 50; // Gap between each instance of the text
 
@@ -13,17 +14,23 @@ const MarqueeTextAnimation: FC = () => {
     // Calculate the number of times the text should be repeated
     const width = winWidth;
     setNumRepeats(Math.ceil(width / (textWidth + gap)));
+
+    if (width > 0) {
+      setDuration(width < 768 ? 25 : 50);
+    }
   }, [winWidth]);
 
   const marqueeText = "THE WHOLE SQUAD HERE AND EVERYBODY EATS";
 
+  if (!duration) return <></>;
+
   return (
-    <div className="relative opacity-50 font-forma-medium text-sm pt-2 h-8 overflow-hidden">
+    <div className="relative opacity-50 font-forma-medium text-sm pt-2 h-8 overflow-hidden  ">
       <motion.div
         className="h-full flex items-center justify-center absolute top-0"
         initial={{ x: "0%" }} // Start from the right edge of the text
         animate={{ x: "-100%" }} // Move to the left edge of the text
-        transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: duration, repeat: Infinity, ease: "linear" }}
       >
         {Array(numRepeats)
           .fill(marqueeText)
@@ -55,7 +62,7 @@ const MarqueeTextAnimation: FC = () => {
         className="h-full overflow-hidden flex items-center font-karantina absolute top-0"
         initial={{ x: "100%" }}
         animate={{ x: "0%" }}
-        transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: duration, repeat: Infinity, ease: "linear" }}
       >
         {Array(numRepeats)
           .fill(marqueeText)
