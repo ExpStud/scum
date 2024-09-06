@@ -80,7 +80,7 @@ const Item: FC<ItemProps> = (props: ItemProps) => {
             initial={{ y: 0 }}
             animate={{
               y: hover ? -80 : 0,
-              transition: { duration: 0.2, ease: "linear" },
+              transition: { duration: 0.4, ease: "linear" },
             }}
           >
             {children}
@@ -95,7 +95,7 @@ const Item: FC<ItemProps> = (props: ItemProps) => {
             animate={{
               bottom: hover ? 0 : -80,
               opacity: 1,
-              transition: { duration: 0.2, ease: "linear" },
+              transition: { duration: 0.4, ease: "linear" },
             }}
             style={{ pointerEvents: "none" }}
           >
