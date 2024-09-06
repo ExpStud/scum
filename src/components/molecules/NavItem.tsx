@@ -79,9 +79,11 @@ const Item: FC<ItemProps> = (props: ItemProps) => {
             }`}
             initial={{ y: 0 }}
             animate={{
-              y: hover ? -80 : 0,
-              transition: { duration: 0.3, ease: "linear" },
+              y: hover ? -10 : 0,
+              rotateX: hover ? -90 : 0,
+              transition: { duration: 0.25, ease: "linear" },
             }}
+            style={{ transformStyle: "preserve-3d", transformOrigin: "50% 0" }}
           >
             {children}
           </motion.p>
@@ -91,26 +93,28 @@ const Item: FC<ItemProps> = (props: ItemProps) => {
                 ? "opacity-100 cursor-default"
                 : "text-gray-400 opacity-50 cursor-pointer"
             }`}
-            initial={{ bottom: -80, opacity: 0 }}
+            initial={{ bottom: -80, opacity: 0, rotateX: 90 }}
             animate={{
-              bottom: hover ? 0 : -80,
+              bottom: hover ? 0 : -30,
+              rotateX: hover ? 0 : -90,
               opacity: 1,
-              transition: { duration: 0.3, ease: "linear" },
+              transition: { duration: 0.25, ease: "linear" },
             }}
-            style={{ pointerEvents: "none" }}
+            style={{ pointerEvents: "none", transformStyle: "preserve-3d" }}
           >
             {children}
           </motion.p>
         </div>
       ) : (
         <p
-          className={`text-secondary text-[40px] transition-200 xl:text-xl ${
+          className={`flip-animate text-secondary text-[40px] xl:text-xl  ${
             isCurrent
               ? "opacity-100 cursor-default"
               : "text-gray-400 hover:opacity-50 xl:hover:opacity-80 opacity-50 cursor-pointer"
           }`}
         >
           {children}
+          {/* <span data-hover={children}>{children}</span> */}
         </p>
       )}
     </>
