@@ -63,7 +63,7 @@ const Item: FC<ItemProps> = (props: ItemProps) => {
   const { children, isCurrent, isHome } = props;
 
   const [hover, setHover] = useState(false);
-  const [winWidth] = useWindowSize();
+
   return (
     <>
       {isHome ? (
@@ -81,7 +81,7 @@ const Item: FC<ItemProps> = (props: ItemProps) => {
             initial={{ y: 0 }}
             animate={{
               y: hover ? 0 : 0,
-              rotateX: hover ? -90 : 0,
+              // rotateX: hover ? -90 : 0,
               transition: { duration: 0.15, ease: "linear" },
             }}
             style={{ transformStyle: "preserve-3d", transformOrigin: "50% 0" }}
