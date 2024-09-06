@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { FC, ReactNode, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
@@ -60,19 +60,60 @@ interface ItemProps {
 }
 const Item: FC<ItemProps> = (props: ItemProps) => {
   const { children, isCurrent, isHome } = props;
+
+  const [hover, setHover] = useState(false);
+  console.log("hover", hover);
   return (
-    <p
-      className={`flip-animate text-secondary text-[40px] transition-200 ${
-        isHome ? "xl:text-6xl 2xl:text-7xl 1860:text-[78px]" : "xl:text-xl "
-      } ${
-        isCurrent
-          ? "opacity-100 cursor-default"
-          : "text-gray-400 hover:opacity-50 xl:hover:opacity-80 opacity-50 cursor-pointer"
-      }`}
-    >
-      {children}
-      {/* <span data-hover={children}>{children}</span> */}
-    </p>
+    <>
+      {isHome ? (
+        <div
+          className="relative overflow-hidden"
+          onMouseEnter={() => setHover(true)}
+          onMouseLeave={() => setHover(false)}
+        >
+          <motion.p
+            className={`text-secondary text-[40px] xl:text-6xl 2xl:text-7xl 1860:text-[78px] ${
+              isCurrent
+                ? "opacity-100 cursor-default"
+                : "text-gray-400 opacity-50 cursor-pointer"
+            }`}
+            initial={{ y: 0 }}
+            animate={{
+              y: hover ? -80 : 0,
+              transition: { duration: 0.2, ease: "linear" },
+            }}
+          >
+            {children}
+          </motion.p>
+          <motion.p
+            className={`absolute text-secondary text-[40px] xl:text-6xl 2xl:text-7xl 1860:text-[78px] ${
+              isCurrent
+                ? "opacity-100 cursor-default"
+                : "text-gray-400 opacity-50 cursor-pointer"
+            }`}
+            initial={{ bottom: -80, opacity: 0 }}
+            animate={{
+              bottom: hover ? 0 : -80,
+              opacity: 1,
+              transition: { duration: 0.2, ease: "linear" },
+            }}
+            style={{ pointerEvents: "none" }}
+          >
+            {children}
+          </motion.p>
+        </div>
+      ) : (
+        <p
+          className={`text-secondary text-[40px] transition-200 xl:text-xl ${
+            isCurrent
+              ? "opacity-100 cursor-default"
+              : "text-gray-400 hover:opacity-50 xl:hover:opacity-80 opacity-50 cursor-pointer"
+          }`}
+        >
+          {children}
+        </p>
+      )}
+    </>
   );
 };
 
