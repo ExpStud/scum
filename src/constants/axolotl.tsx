@@ -17,16 +17,17 @@ export const axolotlInfo: AxolotlInfo[] = [
         width={1240}
         height={540}
         alt="Axolotl Art"
+        className="object-contain"
       />
     ),
   },
   {
-    title: "the axies need our help",
+    title: "Web 3 + Donations",
     src: "dropdown-1.png",
     description: [
-      "Lake Xochimilco is home to hundreds of tourists a day, and has been for quite some time now.",
-      "While it's a beautiful experience, this is the last part of the world where Axolotls are known to inhabit.",
-      "Due to the lakes heavy pollution, and introduction of foreign fish species, over time the Axolotl's population has nearly vanished.",
+      "Blockchain and cryptocurrency are often mentioned in the same breath, leading to a common misconception that they are one and the same. While they are interrelated, it’s crucial to distinguish between them to fully understand their unique potentials and the positive changes blockchain technology can bring to various sectors.",
+      "At its core, blockchain is a decentralized ledger technology that ensures secure, transparent, and immutable recording of transactions. It operates without a central authority, making it highly resistant to tampering and fraud. Think of blockchain as the foundational technology that supports various applications, including but not limited to cryptocurrencies. Blockchain’s potential extends far beyond the realm of cryptocurrencies.",
+      "The charitable sector can benefit immensely from blockchain’s transparency and traceability. Donors can track their contributions to ensure they are used effectively and reach the intended recipients. This can enhance trust in charitable organizations and potentially increase the volume of donations.",
     ],
     imgPosition: "right",
     image: (
@@ -35,6 +36,7 @@ export const axolotlInfo: AxolotlInfo[] = [
         width={469}
         height={511}
         alt="Axolotl"
+        className="object-contain"
       />
     ),
   },

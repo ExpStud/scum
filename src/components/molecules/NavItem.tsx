@@ -62,63 +62,18 @@ interface ItemProps {
 const Item: FC<ItemProps> = (props: ItemProps) => {
   const { children, isCurrent, isHome } = props;
 
-  const [hover, setHover] = useState(false);
-
   return (
-    <>
-      {isHome ? (
-        <div
-          className="relative overflow-hidden"
-          onMouseEnter={() => setHover(true)}
-          onMouseLeave={() => setHover(false)}
-        >
-          <motion.p
-            className={`text-secondary text-[40px] xl:text-6xl 2xl:text-7xl 1860:text-[78px] ${
-              isCurrent
-                ? "opacity-100 cursor-default"
-                : "text-gray-400 opacity-50 cursor-pointer"
-            }`}
-            initial={{ y: 0 }}
-            animate={{
-              y: hover ? 0 : 0,
-              // rotateX: hover ? -90 : 0,
-              transition: { duration: 0.15, ease: "linear" },
-            }}
-            style={{ transformStyle: "preserve-3d", transformOrigin: "50% 0" }}
-          >
-            {children}
-          </motion.p>
-          <motion.p
-            className={`absolute text-secondary text-[40px] xl:text-6xl 2xl:text-7xl 1860:text-[78px] ${
-              isCurrent
-                ? "opacity-100 cursor-default"
-                : "text-gray-400 opacity-50 cursor-pointer"
-            }`}
-            initial={{ bottom: -80, opacity: 0, rotateX: 90 }}
-            animate={{
-              bottom: hover ? 0 : -30,
-              rotateX: hover ? 0 : 90,
-              opacity: 1,
-              transition: { duration: 0.15, ease: "linear" },
-            }}
-            style={{ pointerEvents: "none", transformStyle: "preserve-3d" }}
-          >
-            {children}
-          </motion.p>
-        </div>
-      ) : (
-        <p
-          className={`flip-animate text-secondary text-[40px] xl:text-xl  ${
-            isCurrent
-              ? "opacity-100 cursor-default"
-              : "text-gray-400 hover:opacity-50 xl:hover:opacity-80 opacity-50 cursor-pointer"
-          }`}
-        >
-          {children}
-          {/* <span data-hover={children}>{children}</span> */}
-        </p>
-      )}
-    </>
+    <p
+      className={`flip-animate text-secondary text-[40px] transition-200 ${
+        isHome ? "xl:text-6xl 2xl:text-7xl 1860:text-[78px]" : "xl:text-xl "
+      } ${
+        isCurrent
+          ? "opacity-100 cursor-default"
+          : "text-gray-400 hover:opacity-50 xl:hover:opacity-80 opacity-50 cursor-pointer"
+      }`}
+    >
+      {children}
+    </p>
   );
 };
 
