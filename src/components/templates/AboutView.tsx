@@ -40,14 +40,18 @@ const AboutView: FC<Props> = (props: Props) => {
         <div className="intro-text-container mx-5 xl:!ml-0">
           <h2>scum</h2>
           <p className="intro-text">
-            I am a Mexican-American artist from Arizona. I grew up drawing--
-            Robots, aliens, space battles and monsters. In my teens I graduated
-            to spray painting canals and street signs in a small drug addled
-            rural town just outside Tucson. Later I became more integrated with
-            the graffiti scene. Learning from and rubbing elbows with UK and RBK
-            members. My outlet was primarily stickers, markers and screen
-            printing. But after my first arrest I gave up vandalism for graphic
-            design.
+            Matt “Scum” Martinez is a Mexican-American artist from Arizona. He
+            grew up with a pencil in his hands, drawing robots, aliens, space
+            battles, and monsters. In his teens, he graduated to graffiti,
+            spray-painting canals and street signs in the small, drug-addled
+            rural town just outside of Tucson where he grew up. After eventually
+            being arrested, he turned his passion for visual communication to
+            graphic design for nearly a decade.
+          </p>
+          <p className="intro-text">
+            Today, he is an accomplished illustrator and designer, exploring
+            through his art his past, childhood, and ethnicity, seeking answers
+            to one of life’s biggest questions: Where do we belong?
           </p>
         </div>
 
@@ -88,18 +92,11 @@ const AboutView: FC<Props> = (props: Props) => {
 
         <div className="self-center col-start gap-8 my-10 mx-5 xl:!ml-0 font-forma-medium max-w-[550px] text-lg lg:text-xl">
           <p>
-            My homies and I would screen print in a shed my dad built for us in
-            the back yard. We&apos;d show up as a squad to swap-meets and car
-            shows. But as most businesses do, we ultimately gave up after a
-            while. What followed was about a decade of freelance graphic design
-            and photography.
-          </p>
-
-          <p>
-            In the years leading up to my introduction to web3 I was a
+            In the years leading up to my introduction to Web3, I was a
             self-employed freelance designer specializing in brand development
-            and marketing. Here I grew my understanding of communication,
-            effective design and a fascination with the philosophy of design.
+            and marketing. During this time, I grew my understanding of
+            communication, effective design, and developed a fascination with
+            the philosophy of design.
           </p>
         </div>
 
@@ -131,15 +128,17 @@ const AboutView: FC<Props> = (props: Props) => {
         </div>
         <div className="self-center col-start gap-5 my-10 mx-5 xl:!ml-0 font-forma-medium max-w-[550px] text-lg lg:text-xl">
           <p>
-            In my short career in web3, I have had a successful 1:1 art career,
-            I&apos;ve worked for the (former) top projects on solana and built a
-            large platform and following for my illustrations.
+            Since discovering Solana, NFTs, and Web3, I have finally begun to
+            find my voice in what I would consider my first real passion:
+            illustration.
           </p>
 
           <p>
-            Now I own an art firm (Slimes Studio), manage a large community (My
-            Slimes) and work with a tech and environmental company that I
-            founded in Mexico City (Somos Axolotl).
+            During this journey, I have been able to bring a group of friends
+            together into a collective we call Slimes Studio, taking on clients
+            who want unique branding, brand voice, and illustrative work. I’ve
+            also started a clothing brand called All In Time, as well as an NGO
+            and sculpture series in Mexico City called Somos Axolotl.
           </p>
         </div>
       </AnimateWrapper>
