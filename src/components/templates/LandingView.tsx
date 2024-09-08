@@ -132,8 +132,8 @@ const LandingView: FC<Props> = (props: Props) => {
             {...exitAnimation}
           >
             <source
-              src={`${process.env.CLOUDFLARE_STORAGE}/videos/mobile_intro.webm`}
-              type="video/webm"
+              src={`${process.env.CLOUDFLARE_STORAGE}/videos/mobile_intro.mp4`}
+              type="video/mp4"
             />
           </motion.video>
         )}
@@ -150,8 +150,8 @@ const LandingView: FC<Props> = (props: Props) => {
         style={{ objectFit: "cover" }}
       >
         <source
-          src={`${process.env.CLOUDFLARE_STORAGE}/videos/mobile_loop.webm`}
-          type="video/webm"
+          src={`${process.env.CLOUDFLARE_STORAGE}/videos/mobile_loop.mp4`}
+          type="video/mp4"
         />
       </motion.video>
     </motion.div>
