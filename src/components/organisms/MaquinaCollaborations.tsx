@@ -17,9 +17,6 @@ const MaquinaCollaborations: FC<Props> = (props: Props) => {
       setPlayingVideo(src);
     }
   };
-  console.log(
-    `${process.env.CLOUDFLARE_STORAGE}/images/scum/maquina/first-auctions.png`
-  );
 
   return (
     <motion.div

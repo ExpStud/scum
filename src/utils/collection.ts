@@ -20,13 +20,21 @@ export const formatSrc = (
   slime: Collection,
   highResPath: boolean
 ): string => {
-  if (!option.isTinyDenise) {
+
+  if (!option.isTinyDenise && !highResPath) {
     return `${process.env.CLOUDFLARE_STORAGE}/${option.lowResPath}/${slime.tag}.${option.extension}`;
+  }
+  if (!option.isTinyDenise && highResPath) {
+    let ext = option.extension
+    if (option.name === "Original Artwork") ext = "png";
+    
+    return `${process.env.CLOUDFLARE_STORAGE}/${option.highResPath}/${slime.tag}.${ext}`;
   }
 
   const prefix = `${process.env.CLOUDFLARE_STORAGE}/${
     highResPath ? option.highResPath : option.lowResPath
   }`;
+ 
 
   switch (option.name) {
     case "Original Artwork":

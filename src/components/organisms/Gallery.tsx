@@ -77,7 +77,6 @@ const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
 
       offset += itemWidth + gap;
     }
-    console.log("offset", offset);
 
     return -offset; // return as negative to move items to the left
   };
