@@ -49,6 +49,7 @@ const Menu: FC<Props> = (props: Props) => {
               <NavItem href="/maquina">Maquina Muertes</NavItem>
               <NavItem href="/family">Family</NavItem>
               <NavItem href="/axolotl">Axolotls</NavItem>
+              <NavItem href="/slimes-studio">Slimes Studio</NavItem>
             </div>
 
             <div className="flex flex-col gap-1">

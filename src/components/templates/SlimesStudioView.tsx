@@ -26,20 +26,13 @@ const FamilyView: FC<Props> = (props: Props) => {
     >
       <AnimateWrapper animate={isInView}>
         <Heading className="!mb-12 md:!mb-24 xl:!mb-40" />
-        <StudioList />
+        <div className="flex flex-col gap-5 w-full px-5 xl:px-0">
+          {slimesStudio.map((item: SlimesStudio) => (
+            <StudioListItem item={item} key={item.title} />
+          ))}
+        </div>
       </AnimateWrapper>
     </motion.div>
-  );
-};
-
-interface StudioProps {}
-const StudioList: FC<StudioProps> = (props: StudioProps) => {
-  return (
-    <div className="flex flex-col gap-5 w-full px-5 xl:px-0">
-      {slimesStudio.map((item: SlimesStudio) => (
-        <StudioListItem item={item} key={item.title} />
-      ))}
-    </div>
   );
 };
 
