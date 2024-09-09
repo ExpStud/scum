@@ -17,6 +17,9 @@ const MaquinaCollaborations: FC<Props> = (props: Props) => {
       setPlayingVideo(src);
     }
   };
+  console.log(
+    `${process.env.CLOUDFLARE_STORAGE}/images/scum/maquina/first-auctions.png`
+  );
 
   return (
     <motion.div
@@ -43,6 +46,7 @@ const MaquinaCollaborations: FC<Props> = (props: Props) => {
             `${process.env.CLOUDFLARE_STORAGE}/videos/wacko-trailer.mp4`
           }
           onPlay={handlePlay}
+          poster={`${process.env.CLOUDFLARE_STORAGE}/images/scum/maquina/wacko-trailer.png`}
         />
         <VideoControls
           src={`${process.env.CLOUDFLARE_STORAGE}/videos/first-auctions.mp4`}
@@ -51,6 +55,7 @@ const MaquinaCollaborations: FC<Props> = (props: Props) => {
             `${process.env.CLOUDFLARE_STORAGE}/videos/first-auctions.mp4`
           }
           onPlay={handlePlay}
+          poster={`${process.env.CLOUDFLARE_STORAGE}/images/scum/maquina/first-auctions.png`}
         />
       </div>
     </motion.div>
@@ -61,9 +66,10 @@ interface VideoProps {
   src: string;
   isPlaying: boolean;
   onPlay: (src: string) => void;
+  poster: string;
 }
 const VideoControls: FC<VideoProps> = (props: VideoProps) => {
-  const { src, isPlaying, onPlay } = props;
+  const { src, isPlaying, onPlay, poster } = props;
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -81,14 +87,6 @@ const VideoControls: FC<VideoProps> = (props: VideoProps) => {
 
   //scroll video into view on click
   const handleClick = () => {
-    // if (containerRef.current) {
-    //   containerRef.current.scrollIntoView({
-    //     behavior: "smooth",
-    //     block: "nearest",
-    //     inline: "center",
-    //   });
-    // }
-    // setIsPlaying(!isPlaying);
     onPlay(src);
     if (containerRef.current) {
       containerRef.current.scrollIntoView({
@@ -109,13 +107,14 @@ const VideoControls: FC<VideoProps> = (props: VideoProps) => {
         ref={videoRef}
         key="vids"
         playsInline
+        poster={poster}
         style={{ objectFit: "cover" }}
         className={`min-w-[80vw] md:w-[825px] xl:min-w-[825px] rounded-br-[50px] lg:rounded-br-[100px] object-cover`}
       >
         <source src={src} type="video/mp4" />
       </video>
       {!isPlaying && (
-        <div className="absolute inset-0 flex items-center justify-center cursor-pointer bg-scum-black/50 rounded-br-[50px] lg:rounded-br-[100px] max-w-[825px]">
+        <div className="absolute inset-0 flex items-center justify-center cursor-pointer bg-scum-black/50 rounded-br-[50px] lg:rounded-br-[100px]">
           <Image
             src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/icons/play.svg`}
             width={40}
