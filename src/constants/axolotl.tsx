@@ -6,9 +6,8 @@ export const axolotlInfo: AxolotlInfo[] = [
     title: "the axies need our help",
     src: "dropdown-1.png",
     description: [
-      "Lake Xochimilco is home to hundreds of tourists a day, and has been for quite some time now.",
-      "While it's a beautiful experience, this is the last part of the world where Axolotls are known to inhabit.",
-      "Due to the lakes heavy pollution, and introduction of foreign fish species, over time the Axolotl's population has nearly vanished.",
+      "Lake Xochimilco is visited by thousands of tourists each day and has been for decades. Pollution, single-use plastics, gas-powered boats, and runoff from improper city drainage after heavy rains have led to a dramatic decline in axolotl populations.",
+      "We are focused on supporting organizations that are working to create safe and clean enclaves within the lake to reintroduce and hopefully proliferate the species.",
     ],
     imgPosition: "bottom",
     image: (
@@ -44,10 +43,8 @@ export const axolotlInfo: AxolotlInfo[] = [
     title: "Preservation efforts",
     src: "dropdown-1.png",
     description: [
-      "In order to preserve the species, many organizations like Somos Axolotl have begun to relocate these marvelous creatures into captivity where a consistent water quality, and safe environment can be provided.",
-      "On the exact same Chinampa where the Axolotl Statues are installed, our team has begun the development of organic bio-filters.",
-      "These filters will funnel water directly from the lake where it begins a 4 step filtration system through various plants, and volcanic rock.",
-      "The goal being to eventually amass a body of water clean enough to re-introduce the Axolotls held in captivation back into the wild.",
+      "There are upwards of 30 separate organizations in Xochimilco working in parallel, but not yet together. Our aim is to help build a network of these stakeholders and lake residents through our sculpture series. The recipient of each sculpture will be a designated member of our network. Each sculpture will provide a geolocation on an interactive map, a spot on tours focused on sustainable practices, and will be a recipient of donations generated through these activities.",
+      "We are currently exploring ways to turn the sculptures into revenue-generating nodes on a decentralized wireless network.",
     ],
     imgPosition: "left",
     image: (
@@ -64,9 +61,8 @@ export const axolotlInfo: AxolotlInfo[] = [
     title: "moving the needle",
     src: "dropdown-1.png",
     description: [
-      "In collaboration with the Solana Foundation and Sphere we have begun development on a donation system that accepts major currencies including crypto through Solana.",
-      "By the simple scan of a QR code installed on the Axolotl statues, you will be able to send funds within seconds to everyone involved.",
-      "These donations are automatically split 3 ways and distributed in real time to the Somos Axolotl organization, the owners and drivers of the boats on Lake Xochimilco, and the Chinampa owners.",
+      "In collaboration with the Solana Foundation and Sphere, we have begun development on a donation system that accepts fiat and cryptocurrencies, built on top of the very efficient Solana network.",
+      "Through our partners in the lake, every tour guide can accept donations and, in turn, be a direct recipient of a percentage of the funds received. Once funds are accepted, they are automatically split and sent to designated recipients in our network within minutes. We can also safely and truthfully share the path of every single dollar accepted through this system, thanks to the power of blockchain.",
     ],
     imgPosition: "left",
     image: (

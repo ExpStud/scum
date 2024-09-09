@@ -28,13 +28,11 @@ const AxolotlView: FC<Props> = (props: Props) => {
         <div className="intro-text-container mx-5 xl:!ml-0 !mt-28">
           <h2>saving the axolotls</h2>
           <p className="intro-text">
-            One of the primary pillars of the My Slimes collection has been too
-            funnel resources into Mexico City in the effort of preserving the
-            diminishing Axolotl population.
-          </p>
-          <p className="intro-text">
-            In just a years time, we have raised over $40,000 through My Slime
-            sales.
+            One of our goals is to help preserve and regenerate what is left of
+            the Axolotl population in Lake Xochimilco. In less than a year we
+            raised over $40k, created 12 sculptures and are now developing
+            technology to safely and transparently accept and disperse donations
+            to the many people working on this effort every day.
           </p>
         </div>
         <hr className="flex-grow border-t border-dotted border-scum-beige/20 mr-2 w-full mt-20 mb-12" />
@@ -42,18 +40,18 @@ const AxolotlView: FC<Props> = (props: Props) => {
         <div className="flex flex-wrap gap-20 uppercase mt-10 small-mx mb-10 lg:mb-20">
           <div className="flex flex-col gap-5">
             <p className="text-4xl md:text-6xl 2xl:text-7xl font-forma-extrabold text-scum-teal">
-              $40,000
+              $75,000
             </p>
             <p className="text-scum-teal/70 text-sm sm:text-base">
-              donated till today
+              raised to date
             </p>
           </div>
           <div className="flex flex-col gap-5">
             <p className="text-4xl md:text-6xl 2xl:text-7xl font-forma-extrabold text-scum-teal">
-              857
+              12
             </p>
             <p className="text-scum-teal/70 text-sm sm:text-base">
-              axolotls saved
+              statues made
             </p>
           </div>
         </div>
