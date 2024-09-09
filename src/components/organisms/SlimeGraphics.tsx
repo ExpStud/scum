@@ -26,9 +26,8 @@ const SlimeGraphics: FC<Props> = (props: Props) => {
   return (
     <div className="relative flex flex-col gap-5 xl:gap-5 lg:flex-row justify-between w-full px-5 xl:px-0 my-5">
       {/* main image */}
-      <div className="relative w-full md:w-[300px] md:min-w-[450px] h-min bg-white rounded-br-[60px] flex items-end aspect-[9/10]">
+      <div className="relative w-full md:w-[300px] md:min-w-[450px] 1860:min-w-[600px] h-min bg-white rounded-br-[60px] flex items-end aspect-[9/10]">
         <Image
-          // src={`${process.env.CLOUDFLARE_STORAGE}/${selected.lowResPath}/${slime.tag}.${selected.extension}`}
           src={formatSrc(selected, slime, false)}
           fill
           alt={slime.name}
