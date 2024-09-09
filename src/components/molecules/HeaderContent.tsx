@@ -34,6 +34,7 @@ const HeaderContent: FC = () => {
           <NavItem href="/maquina">Maquina Muertes</NavItem>
           <NavItem href="/family">Family</NavItem>
           <NavItem href="/axolotl">Axolotls</NavItem>
+          <NavItem href="/slimes-studio">Slimes Studio</NavItem>
         </div>
 
         {/* scum text */}

@@ -54,6 +54,7 @@ const SlimesView = dynamic(() => import("./templates/SlimesView"));
 const MaquinaView = dynamic(() => import("./templates/MaquinaView"));
 const FamilyView = dynamic(() => import("./templates/FamilyView"));
 const AxolotlView = dynamic(() => import("./templates/AxolotlView"));
+const SlimesStudioView = dynamic(() => import("./templates/SlimesStudioView"));
 
 export {
   PageHead,
@@ -104,5 +105,6 @@ export {
   Gallery,
   GalleryItem,
   SlimeGraphicsItem,
-  DropdownItem
+  DropdownItem,
+  SlimesStudioView
 }

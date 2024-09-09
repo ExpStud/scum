@@ -18,7 +18,8 @@ const Heading: FC<Props> = (props: Props) => {
           alt="About"
         />
       )}
-      {router.pathname.startsWith("/slimes") && (
+      {(router.pathname === "/slimes" ||
+        router.pathname.startsWith("/slimes/")) && (
         <Image
           src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/other/slimes.svg`}
           width={786}
@@ -47,6 +48,14 @@ const Heading: FC<Props> = (props: Props) => {
           src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/other/axolotl.svg`}
           width={821}
           height={232}
+          alt="Family"
+        />
+      )}
+      {router.pathname.startsWith("/slimes-studio") && (
+        <Image
+          src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/other/slimes-studio.svg`}
+          width={1065}
+          height={159}
           alt="Family"
         />
       )}

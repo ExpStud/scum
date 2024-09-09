@@ -1,16 +1,7 @@
-import {
-  Dispatch,
-  SetStateAction,
-  FC,
-  useRef,
-  useState,
-  use,
-  useEffect,
-} from "react";
-import Image from "next/image";
+import { Dispatch, SetStateAction, FC, useRef, useEffect } from "react";
 import { AnimateWrapper, Gallery, Heading } from "@components";
 import { motion, useInView } from "framer-motion";
-import { midEnterAnimation, midExitAnimation, sfc } from "@constants";
+import { midEnterAnimation, sfc } from "@constants";
 
 interface Props {
   setAssets: Dispatch<SetStateAction<boolean[]>>;

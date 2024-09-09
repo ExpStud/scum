@@ -17,7 +17,7 @@ export const changeTheme = (theme: Theme) => {
 export const getTheme = (pathname:string) => {
   let initialTheme = theme[0];
 
-  if (pathname.startsWith("/slimes")) {
+  if (pathname === "/slimes" || pathname.startsWith("/slimes/")) {
     initialTheme = theme[3];
   } else {
     switch (pathname) {
