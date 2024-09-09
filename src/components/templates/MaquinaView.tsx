@@ -66,11 +66,16 @@ const MaquinaView: FC<Props> = (props: Props) => {
               </p>
               <div className="col-centered lg:gap-10">
                 <MaquinaImage index={0} maquina={maquinas[0]} />
-                <div className="flex flex-col md:flex-row md:justify-between gap-5 lg:gap-10 w-full mt-10">
+                <div className="grid gird-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 lg:gap-10 w-full mt-10">
                   <MaquinaImage index={1} maquina={maquinas[1]} />
                   <MaquinaImage index={2} maquina={maquinas[2]} />
                   <MaquinaImage index={3} maquina={maquinas[3]} />
+                  <MaquinaImage index={4} maquina={maquinas[4]} />
                 </div>
+                {/* <div className="flex flex-col md:flex-row md:justify-between gap-5 lg:gap-10 w-full mt-10">
+                  <div className="w-[386px]"></div>
+                  <div className="w-[386px]"></div>
+                </div> */}
               </div>
             </motion.div>
           ) : (

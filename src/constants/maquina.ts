@@ -18,6 +18,10 @@ export const maquinas: Maquina[] = [
     id: 1,
     href: "https://exchange.art/single/8XNVDopgTc2DGrvoivPzZjkF27GEBknHD94bCJ9bz87W",
   },
+  {
+    id: 5,
+    href: "https://exchange.art/single/0x02442f38e2a92229540db5be92a5c92364513b68-1",
+  },
 ]
 
 

@@ -67,7 +67,7 @@ const SlimeGraphics: FC<Props> = (props: Props) => {
         </div>
       </div>
       {/* image options */}
-      <div className="col-centered w-full">
+      <div className="flex flex-col items-center  w-full">
         <div className="flex flex-col items-start lg:items-center justify-center w-full lg:w-auto">
           <hr className="h-[1px] w-full border-t border-[#79C7AD] mb-2" />
           <p className="font-forma-bold text-base self-start mb-3">
@@ -87,25 +87,29 @@ const SlimeGraphics: FC<Props> = (props: Props) => {
                 />
               ))}
           </div>
-          <hr className="h-[1px] w-full border-t border-[#79C7AD] mb-2 mt-8" />
-          <p className="font-forma-bold text-base self-start mb-3">
-            Tiny Denise Assets
-          </p>
-          <div className="grid grid-cols-2 border border-[#79C7AD] rounded-[10px] mr-5 xl:mr-0 h-min w-full lg:max-w-[480px]">
-            {slimesAssets
-              .filter((option) => option.isTinyDenise)
-              .map((option, i) => (
-                <SlimeGraphicsItem
-                  key={i}
-                  slime={slime}
-                  index={i}
-                  option={option}
-                  isSelected={selected.id === option.id}
-                  setSelected={setSelected}
-                  isTinyDenise={true}
-                />
-              ))}
-          </div>
+          {!slime.hideTinyDenise && (
+            <>
+              <hr className="h-[1px] w-full border-t border-[#79C7AD] mb-2 mt-8" />
+              <p className="font-forma-bold text-base self-start mb-3">
+                Tiny Denise Assets
+              </p>
+              <div className="grid grid-cols-2 border border-[#79C7AD] rounded-[10px] mr-5 xl:mr-0 h-min w-full lg:max-w-[480px]">
+                {slimesAssets
+                  .filter((option) => option.isTinyDenise)
+                  .map((option, i) => (
+                    <SlimeGraphicsItem
+                      key={i}
+                      slime={slime}
+                      index={i}
+                      option={option}
+                      isSelected={selected.id === option.id}
+                      setSelected={setSelected}
+                      isTinyDenise={true}
+                    />
+                  ))}
+              </div>
+            </>
+          )}
         </div>
       </div>
     </div>

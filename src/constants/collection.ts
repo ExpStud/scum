@@ -364,5 +364,14 @@ export const collection: Collection[] = [
     mintAddress : "kSwQFLjpSzPJ8exqW1PCh8PxDGBpYJKYYuhXo2SKhRq",
     description: "Obsidian lord of the night. God of stone. Has 3 pomeranians, 2 axolotls and makes tamales with his mom every Christmas. Sibling to the god of the underworld, Mictlan."
   },
+  {
+    id:45,
+    name: "Paco",
+    tag: "paco",
+    color: "#FF4601",
+    mintAddress : "",
+    description: "",
+    hideTinyDenise: true,
+  },
 ];
 

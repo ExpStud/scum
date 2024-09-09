@@ -8,6 +8,7 @@ export interface Collection {
   doublePfp?: boolean;
   mintAddress: string;
   description: string;
+  hideTinyDenise?: boolean;
 }
 
 export interface Maquina {
