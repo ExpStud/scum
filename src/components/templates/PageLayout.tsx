@@ -17,6 +17,7 @@ interface Props {
   headerType?: string;
   assets?: boolean[];
   initialTheme?: Theme;
+  showLines?: boolean;
 }
 
 const PageLayout: FC<Props> = (props: Props) => {
@@ -30,6 +31,7 @@ const PageLayout: FC<Props> = (props: Props) => {
     header = true,
     animateHeader = false,
     footer = true,
+    showLines = true,
   } = props;
 
   //context for splash screen & modals
@@ -86,9 +88,7 @@ const PageLayout: FC<Props> = (props: Props) => {
           {footer && (
             <Socials
               className={`hidden xl:block absolute outer-left-spacing z-20 ${
-                router.pathname === "/"
-                  ? "bottom-[140px]"
-                  : "top-[95svh] 1420:top-[105vh]"
+                router.pathname === "/" ? "bottom-[140px]" : "top-[85vh]"
               }`}
               show={footer}
             />
@@ -111,13 +111,17 @@ const PageLayout: FC<Props> = (props: Props) => {
         </AnimatePresence>
 
         {/* lines */}
-        <div className={`outer-left-line ${borderColor}`} />
-        <div
-          className={`inner-left-line ${borderColor} ${
-            router.pathname === "/" ? "opacity-0" : ""
-          }`}
-        />
-        <div className={`right-line ${borderColor}`} />
+        {showLines && (
+          <>
+            <div className={`outer-left-line ${borderColor}`} />
+            <div
+              className={`inner-left-line ${borderColor} ${
+                router.pathname === "/" ? "opacity-0" : ""
+              }`}
+            />
+            <div className={`right-line ${borderColor}`} />
+          </>
+        )}
       </div>
     </ViewContext.Provider>
   );
