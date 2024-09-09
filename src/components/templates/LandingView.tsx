@@ -9,6 +9,7 @@ import {
 import { AnimatePresence, motion } from "framer-motion";
 import { exitAnimation, slideUp, midEnterAnimation } from "src/constants";
 import { useWindowSize } from "src/hooks";
+import { isMobile, isTablet } from "react-device-detect";
 
 interface Props {
   setAssets: Dispatch<SetStateAction<boolean[]>>;
@@ -44,6 +45,10 @@ const LandingView: FC<Props> = (props: Props) => {
       setShowView(true);
     }
   }, [setShowView, showLoop]);
+
+  useEffect(() => {
+    if (isMobile || isTablet) setShowView(true);
+  }, [isMobile, isTablet]);
 
   return (
     <motion.div className="relative page-centered !mb-0" {...midEnterAnimation}>
