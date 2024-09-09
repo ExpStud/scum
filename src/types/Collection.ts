@@ -34,3 +34,10 @@ export type AxolotlInfo = {
   imgPosition: "left" | "right" | "bottom";
   image: React.ReactNode
 };
+
+export type SlimesStudio = {
+  title: string;
+  description: string;
+  images: string[]
+  pathname: string;
+}

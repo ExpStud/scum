@@ -51,7 +51,7 @@ const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
         >
           <span className="text-scum-black/50">artist:</span>{" "}
           <span className="text-[#FFB094]">
-            {item.artist} <span className="font-sans">↗</span>
+            {item.artist} <span className="font-inter">↗</span>
           </span>
         </a>{" "}
         <span className="hidden lg:block font-sans text-[#FFB094]">•</span>
@@ -61,7 +61,7 @@ const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
           rel="noreferrer"
           className="hover:underline text-[#FFB094]"
         >
-          buy on exchange.art <span className="font-sans">↗</span>
+          buy on exchange.art <span className="font-inter">↗</span>
         </a>
       </div>
     </motion.div>

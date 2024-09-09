@@ -22,7 +22,7 @@ const Socials: FC<Props> = (props: Props) => {
               rel="noreferrer"
               className="opacity-40 hover-opacity-75 text-secondary transition-200 "
             >
-              Exchange.art <span className="font-sans">↗</span>
+              Exchange.art <span className="font-inter">↗</span>
             </a>
             <a
               href="https://allintime.xyz/"
@@ -30,7 +30,7 @@ const Socials: FC<Props> = (props: Props) => {
               rel="noreferrer"
               className="opacity-40 hover-opacity-75 text-secondary transition-200"
             >
-              Shop All In Time <span className="font-sans">↗</span>
+              Shop All In Time <span className="font-inter">↗</span>
             </a>
           </div>
 

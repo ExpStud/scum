@@ -49,6 +49,7 @@ const Menu: FC<Props> = (props: Props) => {
               <NavItem href="/maquina">Maquina Muertes</NavItem>
               <NavItem href="/family">Family</NavItem>
               <NavItem href="/axolotl">Axolotls</NavItem>
+              <NavItem href="/slimes-studio">Slimes Studio</NavItem>
             </div>
 
             <div className="flex flex-col gap-1">
@@ -61,7 +62,7 @@ const Menu: FC<Props> = (props: Props) => {
                   rel="noreferrer"
                   className=" opacity-50 hover-opacity-75"
                 >
-                  Exchange.art <span className="font-sans">↗</span>
+                  Exchange.art <span className="font-inter">↗</span>
                 </a>
               </motion.div>
               <motion.div
@@ -73,7 +74,7 @@ const Menu: FC<Props> = (props: Props) => {
                   rel="noreferrer"
                   className=" opacity-50 hover-opacity-75"
                 >
-                  Shop All In Time <span className="font-sans">↗</span>
+                  Shop All In Time <span className="font-inter">↗</span>
                 </a>
               </motion.div>
             </div>

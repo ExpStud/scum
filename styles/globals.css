@@ -8,6 +8,10 @@
 @import "themes/teal.css";
 
 @font-face {
+  font-family: 'Inter';
+  src: url('../public/fonts/inter/Inter_18pt-Bold.ttf') format('truetype');
+}
+@font-face {
   font-family: 'MK Hell';
   src: url('../public/fonts/MK-HELL-Regular.ttf') format('truetype');
 }
@@ -35,7 +39,6 @@
   font-weight: 800;
   font-style: normal;
 }
-
 
 @font-face {
   font-family: 'Pangram';
