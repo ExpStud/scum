@@ -1,21 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Collection } from "src/types";
-import { Heading, SlimeGraphics, SlimeNav } from "@components";
+import { SlimesStudio } from "src/types";
+import { Heading } from "@components";
 import { midEnterAnimation } from "src/constants";
 
 type SlimesItemViewProps = {
   currentIndex: number;
-  item: Collection;
-  name: string | string[] | undefined;
-  formatId: (id: number) => string;
+  item: SlimesStudio;
 };
 
 const SlimesItemView: React.FC<SlimesItemViewProps> = ({
   currentIndex,
   item,
-  name,
-  formatId,
 }) => {
   return (
     <motion.div
@@ -23,15 +19,7 @@ const SlimesItemView: React.FC<SlimesItemViewProps> = ({
       {...midEnterAnimation}
     >
       <Heading />
-      <SlimeNav currentIndex={currentIndex} />
-      <div className="flex flex-col gap-5 xl:gap-10 mx-5 xl:mx-0 text-container-width mt-10">
-        <div>
-          <h2>{name}</h2>
-          <h2 className="opacity-20">My Slime {formatId(item.id + 1)}</h2>
-        </div>
-        <p className="intro-text max-w-[850px]">{item?.description}</p>
-      </div>
-      <SlimeGraphics slime={item} />
+      <h3>{item.title}</h3>
     </motion.div>
   );
 };

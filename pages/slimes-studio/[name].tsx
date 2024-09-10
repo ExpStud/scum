@@ -1,7 +1,5 @@
-import { useRouter } from "next/router";
-import { Heading, PageLayout } from "@components";
-import { motion } from "framer-motion";
-import { midEnterAnimation, slimesStudio } from "@constants";
+import { PageLayout, SlimesStudioItemView } from "@components";
+import { slimesStudio } from "@constants";
 import { GetServerSideProps, NextPage } from "next";
 import { SlimesStudio, Theme } from "@types";
 import { getTheme } from "@utils";
@@ -15,21 +13,13 @@ type Props = {
 const SlimePage: NextPage<Props> = (props: Props) => {
   const { currentIndex, item, initialTheme } = props;
 
-  const router = useRouter();
-  const { name } = router.query;
-
   return (
     <PageLayout headerType="absolute" initialTheme={initialTheme}>
-      <motion.div
-        className="page-start gap-5 lg:gap-10 mt-[86px] lg:mt-0 lg:pt-10 lg:pb-44"
-        {...midEnterAnimation}
-      >
-        <Heading />
-        name: {name}
-      </motion.div>
+      <SlimesStudioItemView currentIndex={currentIndex} item={item} />
     </PageLayout>
   );
 };
+
 export const getServerSideProps: GetServerSideProps<Props> = async (
   context
 ) => {

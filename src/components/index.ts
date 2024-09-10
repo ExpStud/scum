@@ -26,7 +26,7 @@ const SplashScreen = dynamic(() => import("./molecules/SplashScreen"));
 const HeaderContent = dynamic(() => import("./molecules/HeaderContent"));
 const Socials = dynamic(() => import("./molecules/Socials"));
 const Heading = dynamic(() => import("./molecules/Heading"));
-const MaquinaToggleItem = dynamic(() => import("./molecules/MaquinaToggleItem"));
+const ToggleItem = dynamic(() => import("./molecules/ToggleItem"));
 const MaquinaImage = dynamic(() => import("./molecules/MaquinaImage"));
 const WorldToggleItem = dynamic(() => import("./molecules/WorldToggleItem"));
 const ImageBar = dynamic(() => import("./molecules/ImageBar"));
@@ -46,6 +46,7 @@ const MaquinaCollaborations = dynamic(() => import("./organisms/MaquinaCollabora
 const MaquinaBranding = dynamic(() => import("./organisms/MaquinaBranding"));
 const Gallery = dynamic(() => import("./organisms/Gallery"));
 const DropdownItem = dynamic(() => import("./organisms/DropdownItem"));
+const Toggle = dynamic(() => import("./organisms/Toggle"));
 //templates
 const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
@@ -95,7 +96,7 @@ export {
   SlimeGraphics,
   SlimeNav,
   SlimeItem,
-  MaquinaToggleItem,
+  ToggleItem,
   MaquinaImage,
   WorldToggleItem,
   ImageBar,
@@ -110,5 +111,6 @@ export {
   DropdownItem,
   SlimesStudioView,
   SlimesItemView,
-  SlimesStudioItemView
+  SlimesStudioItemView,
+  Toggle
 }
