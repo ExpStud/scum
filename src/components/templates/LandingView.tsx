@@ -9,7 +9,11 @@ import {
 import { AnimatePresence, motion } from "framer-motion";
 import { exitAnimation, slideUp, midEnterAnimation } from "src/constants";
 import { useWindowSize } from "src/hooks";
-import { isMobile, isTablet } from "react-device-detect";
+import {
+  isMobile,
+  isTablet,
+  browserName as detectedBrowserName,
+} from "react-device-detect";
 
 interface Props {
   setAssets: Dispatch<SetStateAction<boolean[]>>;
@@ -20,6 +24,12 @@ interface Props {
 const LandingView: FC<Props> = (props: Props) => {
   const { showView, setShowView } = props;
   const [showLoop, setShowLoop] = useState<boolean>(false);
+  const [browserName, setBrowserName] = useState("");
+
+  useEffect(() => {
+    setBrowserName(detectedBrowserName);
+  }, []);
+
   const [winWidth] = useWindowSize();
   const mobileView = winWidth <= 1024;
   //refs
@@ -60,7 +70,7 @@ const LandingView: FC<Props> = (props: Props) => {
         target="_blank"
         rel="noreferrer"
       >
-        <div className="ml-4 mt-1 font-forma-bold text-[19px] group-hover:text-white transition-300">
+        <div className="ml-4 lg:mt-0.5 font-forma-bold text-[19px] group-hover:text-white transition-300">
           Shop All In Time
         </div>
         <div className="w-[40px] h-[40px] rounded-full bg-scum-black group-hover:bg-scum-teal transition-300 row-centered">
@@ -78,87 +88,106 @@ const LandingView: FC<Props> = (props: Props) => {
           </svg>
         </div>
       </motion.a>
-      {/* videos */}
-      <motion.video
-        ref={introRef}
-        autoPlay
-        muted
-        playsInline
-        key="intro desktop"
-        className={`${
-          mobileView && "hidden"
-        } h-full w-screen absolute inset-0 -z-10 ${
-          !showLoop ? "visible" : "invisible"
-        }`}
-        style={{ objectFit: "cover" }}
-        onEnded={() => {
-          setShowLoop(true);
-        }}
-        {...exitAnimation}
-      >
-        <source
-          src={`${process.env.CLOUDFLARE_STORAGE}/videos/desktop_intro.webm`}
-          type="video/webm"
-        />
-      </motion.video>
-      <motion.video
-        ref={loopRef}
-        muted
-        playsInline
-        key="loop desktop"
-        loop
-        className={`${
-          mobileView && "hidden"
-        } h-full w-screen absolute inset-0 -z-20 ${
-          showLoop ? "visible" : "invisible"
-        }`}
-        style={{ objectFit: "cover" }}
-      >
-        <source
-          src={`${process.env.CLOUDFLARE_STORAGE}/videos/desktop_loop.webm`}
-          type="video/webm"
-        />
-      </motion.video>
-
-      {/* mobile */}
-      <AnimatePresence mode="wait">
-        {!showLoop && (
+      {browserName !== "" && (
+        <>
+          {/* videos */}
           <motion.video
-            ref={introRefMobile}
-            muted
+            ref={introRef}
             autoPlay
+            muted
             playsInline
-            key="intro-mobile"
-            className={`mobile-video -z-10 ${!mobileView && "hidden"} ${
+            key="intro desktop"
+            className={`${
+              mobileView && "hidden"
+            } h-full w-screen absolute inset-0 -z-10 ${
               !showLoop ? "visible" : "invisible"
             }`}
             style={{ objectFit: "cover" }}
-            onEnded={() => setShowLoop(true)}
+            onEnded={() => {
+              setShowLoop(true);
+            }}
             {...exitAnimation}
           >
+            {browserName !== "Safari" && (
+              <source
+                src={`${process.env.CLOUDFLARE_STORAGE}/videos/desktop_intro.webm`}
+                type="video/webm"
+              />
+            )}
             <source
-              src={`${process.env.CLOUDFLARE_STORAGE}/videos/mobile_intro.mp4`}
+              src={`${process.env.CLOUDFLARE_STORAGE}/videos/desktop_intro.mp4`}
               type="video/mp4"
             />
+            Your browser does not support the video tag.
           </motion.video>
-        )}
-      </AnimatePresence>
-      <motion.video
-        ref={loopRefMobile}
-        muted
-        playsInline
-        key="loop-mobile"
-        loop
-        className={`mobile-video -z-20 ${!mobileView && "hidden"}  ${
-          showLoop ? "visible" : "invisible"
-        }`}
-        style={{ objectFit: "cover" }}
-      >
-        <source
-          src={`${process.env.CLOUDFLARE_STORAGE}/videos/mobile_loop.mp4`}
-          type="video/mp4"
-        />
-      </motion.video>
+          <motion.video
+            ref={loopRef}
+            muted
+            playsInline
+            key="loop desktop"
+            loop
+            className={`${
+              mobileView && "hidden"
+            } h-full w-screen absolute inset-0 -z-20 ${
+              showLoop ? "visible" : "invisible"
+            }`}
+            style={{ objectFit: "cover" }}
+          >
+            {browserName !== "Safari" && (
+              <source
+                src={`${process.env.CLOUDFLARE_STORAGE}/videos/desktop_loop.webm`}
+                type="video/webm"
+              />
+            )}
+            <source
+              src={`${process.env.CLOUDFLARE_STORAGE}/videos/desktop_loop.mp4`}
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </motion.video>
+
+          {/* mobile */}
+          <AnimatePresence mode="wait">
+            {!showLoop && (
+              <motion.video
+                ref={introRefMobile}
+                muted
+                autoPlay
+                playsInline
+                key="intro-mobile"
+                className={`mobile-video -z-10 ${!mobileView && "hidden"} ${
+                  !showLoop ? "visible" : "invisible"
+                }`}
+                style={{ objectFit: "cover" }}
+                onEnded={() => setShowLoop(true)}
+                {...exitAnimation}
+              >
+                <source
+                  src={`${process.env.CLOUDFLARE_STORAGE}/videos/mobile_intro.mp4`}
+                  type="video/mp4"
+                />
+              </motion.video>
+            )}
+          </AnimatePresence>
+          <motion.video
+            ref={loopRefMobile}
+            muted
+            playsInline
+            key="loop-mobile"
+            loop
+            className={`mobile-video -z-20 ${!mobileView && "hidden"}  ${
+              showLoop ? "visible" : "invisible"
+            }`}
+            style={{ objectFit: "cover" }}
+          >
+            <source
+              src={`${process.env.CLOUDFLARE_STORAGE}/videos/mobile_loop.mp4`}
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </motion.video>
+        </>
+      )}
     </motion.div>
   );
 };
