@@ -41,5 +41,5 @@ export type SlimesStudio = {
   description: string;
   images: string[]
   pathname: string;
-  tabs: string[];
+  tabs: string[]; 
 }

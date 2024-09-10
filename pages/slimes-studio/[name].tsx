@@ -5,17 +5,16 @@ import { SlimesStudio, Theme } from "@types";
 import { getTheme } from "@utils";
 
 type Props = {
-  currentIndex: number;
   item: SlimesStudio;
   initialTheme: Theme;
 };
 
 const SlimePage: NextPage<Props> = (props: Props) => {
-  const { currentIndex, item, initialTheme } = props;
+  const { item, initialTheme } = props;
 
   return (
     <PageLayout headerType="absolute" initialTheme={initialTheme}>
-      <SlimesStudioItemView currentIndex={currentIndex} item={item} />
+      <SlimesStudioItemView item={item} />
     </PageLayout>
   );
 };
@@ -31,7 +30,6 @@ export const getServerSideProps: GetServerSideProps<Props> = async (
   const initialTheme = getTheme(pathname);
   return {
     props: {
-      currentIndex,
       item,
       initialTheme,
     },
