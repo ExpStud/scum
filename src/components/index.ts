@@ -51,10 +51,12 @@ const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
 const AboutView = dynamic(() => import("./templates/AboutView"));
 const SlimesView = dynamic(() => import("./templates/SlimesView"));
+const SlimesItemView = dynamic(() => import("./templates/SlimesItemView"));
 const MaquinaView = dynamic(() => import("./templates/MaquinaView"));
 const FamilyView = dynamic(() => import("./templates/FamilyView"));
 const AxolotlView = dynamic(() => import("./templates/AxolotlView"));
 const SlimesStudioView = dynamic(() => import("./templates/SlimesStudioView"));
+const SlimesStudioItemView = dynamic(() => import("./templates/SlimesStudioItemView"));
 
 export {
   PageHead,
@@ -106,5 +108,7 @@ export {
   GalleryItem,
   SlimeGraphicsItem,
   DropdownItem,
-  SlimesStudioView
+  SlimesStudioView,
+  SlimesItemView,
+  SlimesStudioItemView
 }
