@@ -1,0 +1,31 @@
+import React, { FC } from "react";
+
+type Props = {
+  date: string;
+  descriptions: string[];
+  children: React.ReactNode;
+};
+
+const SlimesStudioToggleLayout: FC<Props> = ({
+  date,
+  descriptions,
+  children,
+}) => {
+  return (
+    <div className="flex flex-col md:flex-row gap-5 md:justify-between">
+      <div className="flex flex-col gap-4 max-w-[441px]">
+        <p className="text-scum-black/70 text-[15px] uppercase">{date}</p>
+        {descriptions.map((description, index) => (
+          <p
+            key={index}
+            className="text-scum-black text-xl lg:text-2xl font-forma-medium leading-8 mb-3"
+          >
+            {description}
+          </p>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default SlimesStudioToggleLayout;
