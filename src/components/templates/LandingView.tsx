@@ -58,7 +58,16 @@ const LandingView: FC<Props> = (props: Props) => {
 
   useEffect(() => {
     if (isMobile || isTablet) setShowView(true);
-  }, [isMobile, isTablet]);
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowView(true);
+    }, 5000);
+
+    // Cleanup the timer if the component unmounts
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <motion.div className="relative page-centered !mb-0" {...midEnterAnimation}>
