@@ -5,12 +5,12 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        hostname: "images.slimes.xyz",
+        hostname: "images.scum.art",
       },
     ],
   },
   env: {
-    CLOUDFLARE_STORAGE: "https://images.slimes.xyz",
+    CLOUDFLARE_STORAGE: "https://images.scum.art",
   },
 };
 
