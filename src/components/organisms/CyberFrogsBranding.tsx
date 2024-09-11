@@ -12,7 +12,7 @@ const CyberFrogsBranding: FC<Props> = ({ ...divProps }) => {
         "By Scum, Shack and Toddy",
       ]}
     >
-      <></>
+      <div className="flex flex-col"> </div>
     </SlimesStudioToggleLayout>
   );
 };

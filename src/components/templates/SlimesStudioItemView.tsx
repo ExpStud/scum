@@ -17,6 +17,7 @@ type SlimesItemViewProps = {
 const SlimesItemView: React.FC<SlimesItemViewProps> = ({ item }) => {
   const [selected, setSelected] = useState<number>(0);
 
+  //dynamically import the component based on the pathname
   const componentMap: { [key: string]: React.ReactNode[] } = {
     "cyber-frogs": [
       <CyberFrogsBranding key={0} />,
@@ -31,14 +32,14 @@ const SlimesItemView: React.FC<SlimesItemViewProps> = ({ item }) => {
       className="page-start gap-5 lg:gap-10 mt-[86px] xl:mt-0 lg:pt-10 lg:pb-44"
       {...midEnterAnimation}
     >
-      <Heading className="!mb-12 md:!mb-24 xl:!mb-40" />
-      <div className="flex flex-col px-5 xl:px-0 w-full">
-        <h3>{item.title}</h3>
+      <div className="flex flex-col w-full">
+        <Heading className="!mb-12 md:!mb-24 xl:!mb-40 " />
+        <h3 className="pb-6 lg:pb-0 px-5 xl:px-0 md:-mb-11">{item.title}</h3>
         <Toggle
           labels={item.tabs}
           selected={selected}
           setSelected={setSelected}
-          className="justify-end"
+          className="justify-end mb-6"
         />
 
         <AnimatePresence mode="wait">

@@ -12,7 +12,7 @@ const SlimesStudioToggleLayout: FC<Props> = ({
   children,
 }) => {
   return (
-    <div className="flex flex-col md:flex-row gap-5 md:justify-between">
+    <div className="flex flex-col md:flex-row gap-5 md:justify-between px-5 xl:px-0 ">
       <div className="flex flex-col gap-4 max-w-[441px]">
         <p className="text-scum-black/70 text-[15px] uppercase">{date}</p>
         {descriptions.map((description, index) => (
@@ -24,6 +24,7 @@ const SlimesStudioToggleLayout: FC<Props> = ({
           </p>
         ))}
       </div>
+      <div>{children}</div>
     </div>
   );
 };
