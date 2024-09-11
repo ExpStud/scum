@@ -27,21 +27,23 @@ const CyberFrogsBranding: FC<Props> = ({ ...divProps }) => {
           alt="Logos"
         />
       </div>
-      <div className="flex gap-3">
-        <Image
-          src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/cyber-frogs/branding/3-upgrade.png`}
-          width={375}
-          height={428.6}
-          alt="Upgrade"
-          className="w-1/2"
-        />
-        <Image
-          src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/cyber-frogs/branding/4-clan.png`}
-          width={375}
-          height={428.6}
-          alt="Clan"
-          className="w-1/2"
-        />
+      <div className="flex justify-between gap-2 md:gap-3">
+        <div className="w-1/2">
+          <Image
+            src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/cyber-frogs/branding/3-upgrade.png`}
+            width={375}
+            height={428.6}
+            alt="Upgrade"
+          />
+        </div>
+        <div className="w-1/2">
+          <Image
+            src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/cyber-frogs/branding/4-clan.png`}
+            width={375}
+            height={428.6}
+            alt="Clan"
+          />
+        </div>
       </div>
       <div className="flex">
         <Image
@@ -104,38 +106,42 @@ const CyberFrogsBranding: FC<Props> = ({ ...divProps }) => {
         />
       </div>
 
-      <div className="flex gap-3">
-        <Image
-          src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/cyber-frogs/branding/13-hammer.jpg`}
-          width={375}
-          height={375}
-          alt="hammer"
-          className="w-1/2"
-        />
-        <Image
-          src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/cyber-frogs/branding/14-hammer.jpg`}
-          width={375}
-          height={375}
-          alt="hammer"
-          className="w-1/2"
-        />
+      <div className="flex gap-2 md:gap-3">
+        <div className="w-1/2">
+          <Image
+            src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/cyber-frogs/branding/13-hammer.jpg`}
+            width={375}
+            height={375}
+            alt="hammer"
+          />
+        </div>
+        <div className="w-1/2">
+          <Image
+            src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/cyber-frogs/branding/14-hammer.jpg`}
+            width={375}
+            height={375}
+            alt="hammer"
+          />
+        </div>
       </div>
 
-      <div className="flex gap-3">
-        <Image
-          src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/cyber-frogs/branding/15-chest.jpg`}
-          width={375}
-          height={375}
-          alt="chest"
-          className="w-1/2"
-        />
-        <Image
-          src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/cyber-frogs/branding/16-squad.jpg`}
-          width={375}
-          height={375}
-          alt="squad"
-          className="w-1/2"
-        />
+      <div className="flex gap-2 md:gap-3">
+        <div className="w-1/2">
+          <Image
+            src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/cyber-frogs/branding/15-chest.jpg`}
+            width={375}
+            height={375}
+            alt="chest"
+          />
+        </div>
+        <div className="w-1/2">
+          <Image
+            src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/cyber-frogs/branding/16-squad.jpg`}
+            width={375}
+            height={375}
+            alt="squad"
+          />
+        </div>
       </div>
 
       <Image

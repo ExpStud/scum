@@ -24,7 +24,7 @@ const SlimesStudioToggleLayout: FC<Props> = ({
           </p>
         ))}
       </div>
-      <div className="flex flex-col gap-3 max-w-[760px] overflow-hidden">
+      <div className="flex flex-col gap-2 md:gap-3 max-w-[760px]">
         {children}
       </div>
     </div>
