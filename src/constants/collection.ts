@@ -371,7 +371,6 @@ export const collection: Collection[] = [
     color: "#FF4601",
     mintAddress : "D8FjHoio1BoJPy4d4XKqzyRMAcatZ5qsKYX4bqEBeR5Y",
     description: "Paco is another cast out from the astral planes. We assume he works closely with Guac (the other amphibious Slime) like some twisted buddy cop duo with no law to enforce. Most believe they're here seeking cleaner waters for their families at home. Sure, their methods are bizarre and often border on grotesque—think of them as the eco-warriors who don’t quite grasp the meaning of “clean.” He’s got refined tastes: a connoisseur of panko-fried flies, washed down with cheap beer and thrills ignited by the violence of lucha wrestling.",
-    hideTinyDenise: true,
   },
   {
     id:46,
@@ -382,14 +381,14 @@ export const collection: Collection[] = [
     description: "Masked Gangster? Or big softee? If you don't know already, you'll never know.",
     hideTinyDenise: true,
   },
-  // {
-  //   id:47,
-  //   name: "Shack",
-  //   tag: "shack",
-  //   color: "#FF4601",
-  //   mintAddress : "DRnZHWr8jScdsHTByrvYkBTzhTHzR4G2qxtS5wh3Wfpm",
-  //   description: "A true One of One. Enjoys shower steaks, his best friend Garfield and putting maple syrup on everything. Recently discovered Tapatio and Birria Tacos though, so the slimes let him hang. He'll earn that mask soon.",
-  //   hideTinyDenise: true,
-  // },
+  {
+    id:47,
+    name: "Shack",
+    tag: "shack",
+    color: "#FF4601",
+    mintAddress : "DRnZHWr8jScdsHTByrvYkBTzhTHzR4G2qxtS5wh3Wfpm",
+    description: "A true One of One. Enjoys shower steaks, his best friend Garfield and putting maple syrup on everything. Recently discovered Tapatio and Birria Tacos though, so the slimes let him hang. He'll earn that mask soon.",
+    hideTinyDenise: true,
+  },
 ];
 
