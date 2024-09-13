@@ -7,7 +7,7 @@ import {
   MaquinaCharacters,
   MaquinaCollaborations,
   MaquinaImage,
-  MaquinaToggleItem,
+  Toggle,
   WorldToggleItem,
 } from "@components";
 import { AnimatePresence, motion, useInView } from "framer-motion";
@@ -37,18 +37,11 @@ const MaquinaView: FC<Props> = (props: Props) => {
       <AnimateWrapper animate={isInView}>
         <Heading />
         {/* toggle */}
-        <div className="flex w-full border-b border-scum-beige-600/40 lg:pt-5 lg:mb-20">
-          <MaquinaToggleItem
-            label="Maquina Muertes"
-            selected={selected === 0}
-            onClick={() => setSelected(0)}
-          />
-          <MaquinaToggleItem
-            label="World Building"
-            selected={selected === 1}
-            onClick={() => setSelected(1)}
-          />
-        </div>
+        <Toggle
+          labels={["Maquina Muertes", "World Building"]}
+          selected={selected}
+          setSelected={setSelected}
+        />
         {/* content */}
         <AnimatePresence mode="wait">
           {selected === 0 ? (

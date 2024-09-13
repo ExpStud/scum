@@ -26,13 +26,14 @@ const SplashScreen = dynamic(() => import("./molecules/SplashScreen"));
 const HeaderContent = dynamic(() => import("./molecules/HeaderContent"));
 const Socials = dynamic(() => import("./molecules/Socials"));
 const Heading = dynamic(() => import("./molecules/Heading"));
-const MaquinaToggleItem = dynamic(() => import("./molecules/MaquinaToggleItem"));
+const ToggleItem = dynamic(() => import("./molecules/ToggleItem"));
 const MaquinaImage = dynamic(() => import("./molecules/MaquinaImage"));
 const WorldToggleItem = dynamic(() => import("./molecules/WorldToggleItem"));
 const ImageBar = dynamic(() => import("./molecules/ImageBar"));
 const AnimateWrapper = dynamic(() => import("./molecules/AnimateWrapper"));
 const GalleryItem = dynamic(() => import("./molecules/GalleryItem"));
 const SlimeGraphicsItem = dynamic(() => import("./molecules/SlimeGraphicsItem"));
+const SlimesStudioToggleLayout = dynamic(() => import("./molecules/SlimesStudioToggleLayout"));
 //organisms
 const Header = dynamic(() => import("./organisms/Header"));
 const Footer = dynamic(() => import("./organisms/Footer"));
@@ -46,15 +47,21 @@ const MaquinaCollaborations = dynamic(() => import("./organisms/MaquinaCollabora
 const MaquinaBranding = dynamic(() => import("./organisms/MaquinaBranding"));
 const Gallery = dynamic(() => import("./organisms/Gallery"));
 const DropdownItem = dynamic(() => import("./organisms/DropdownItem"));
+const Toggle = dynamic(() => import("./organisms/Toggle"));
+const CyberFrogsBranding = dynamic(() => import("./organisms/CyberFrogsBranding"));
+const CyberFrogsArt = dynamic(() => import("./organisms/CyberFrogsArt"));
+const CyberFrogsWebsite = dynamic(() => import("./organisms/CyberFrogsWebsite"));
 //templates
 const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
 const AboutView = dynamic(() => import("./templates/AboutView"));
 const SlimesView = dynamic(() => import("./templates/SlimesView"));
+const SlimesItemView = dynamic(() => import("./templates/SlimesItemView"));
 const MaquinaView = dynamic(() => import("./templates/MaquinaView"));
 const FamilyView = dynamic(() => import("./templates/FamilyView"));
 const AxolotlView = dynamic(() => import("./templates/AxolotlView"));
 const SlimesStudioView = dynamic(() => import("./templates/SlimesStudioView"));
+const SlimesStudioItemView = dynamic(() => import("./templates/SlimesStudioItemView"));
 
 export {
   PageHead,
@@ -93,7 +100,7 @@ export {
   SlimeGraphics,
   SlimeNav,
   SlimeItem,
-  MaquinaToggleItem,
+  ToggleItem,
   MaquinaImage,
   WorldToggleItem,
   ImageBar,
@@ -106,5 +113,12 @@ export {
   GalleryItem,
   SlimeGraphicsItem,
   DropdownItem,
-  SlimesStudioView
+  SlimesStudioView,
+  SlimesItemView,
+  SlimesStudioItemView,
+  Toggle,
+  CyberFrogsArt,
+  CyberFrogsBranding,
+  CyberFrogsWebsite,
+  SlimesStudioToggleLayout
 }

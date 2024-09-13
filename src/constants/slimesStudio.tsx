@@ -7,8 +7,9 @@ export const slimesStudio: SlimesStudio[] = [
     images: [
       "cyber-frogs/cf-1.png",
       "cyber-frogs/cf-2.png",
-      "cyber-frogs/cf-3.png"
+      "cyber-frogs/cf-3.png",
     ],
-    pathname: "cyber-frogs"
-  }
-]
+    pathname: "cyber-frogs",
+    tabs: ["Branding", "Art", "Website"],
+  },
+];
