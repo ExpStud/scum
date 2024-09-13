@@ -231,6 +231,14 @@ const CyberFrogsArt: FC<Props> = ({ ...divProps }) => {
             alt="custom"
           />
         </div>
+        <div className="w-1/5">
+          <Image
+            src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/cyber-frogs/art/26-custom.jpg`}
+            width={152}
+            height={152}
+            alt="custom"
+          />
+        </div>
       </div>
       {/* base process */}
       <h4 className="mt-10 mb-5 uppercase">base process</h4>
