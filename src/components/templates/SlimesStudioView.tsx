@@ -52,7 +52,7 @@ const StudioListItem: FC<StudioItemProps> = (props: StudioItemProps) => {
         </div>
         <Link
           href={`/slimes-studio/${item.pathname}`}
-          className="row-centered min-w-[166px] h-11 bg-scum-black rounded-[22px] text-white text-base transition-300 hover:bg-scum-teal hover:text-scum-black font-inter tracking-[0.015em]"
+          className="black-hover row-centered min-w-[166px] h-11"
         >
           Project Details <span className="font-inter ml-1"> →</span>
         </Link>

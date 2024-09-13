@@ -418,3 +418,7 @@ p.flip-animate {
     opacity: 1; /* Show the text during animation */
   }
 }
+
+.black-hover {
+  @apply bg-scum-black rounded-[22px] text-white text-base transition-300 hover:bg-scum-teal hover:text-scum-black font-inter tracking-[0.015em];
+}
