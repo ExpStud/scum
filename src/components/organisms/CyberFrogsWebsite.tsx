@@ -10,6 +10,7 @@ const CyberFrogsWebsite: FC<Props> = ({ ...divProps }) => {
       date={"October 2023 - September 2024"}
       descriptions={[
         "Complete overhaul of the Cyber Frogs website to be in line with their new branding and character artwork.",
+        "By Darth and Otablem",
       ]}
     >
       <Image
