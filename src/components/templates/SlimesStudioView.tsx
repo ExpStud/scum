@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, FC, useRef, useEffect } from "react";
+import { Dispatch, SetStateAction, FC, useRef } from "react";
 import { AnimateWrapper, Heading } from "@components";
 import { motion, useInView } from "framer-motion";
 import { midEnterAnimation, slimesStudio } from "@constants";
@@ -60,17 +60,19 @@ const StudioListItem: FC<StudioItemProps> = (props: StudioItemProps) => {
       <div className="flex gap-2 md:gap-5 justify-between">
         {item.images.map((image: string, index) => (
           <div
-            className={`relative w-1/2 sm:w-1/3 aspect-square ${
+            className={`relative overflow-hidden w-1/2 sm:w-1/3 aspect-square rounded-br-[50px] sm:rounded-br-[100px]  ${
               index === 2 ? "hidden sm:block" : ""
             }`}
             key={index}
           >
-            <Image
-              src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/${image}`}
-              alt={item.title}
-              fill
-              className="rounded-br-[50px] sm:rounded-br-[100px]"
-            />
+            <Link href={`/slimes-studio/${item.pathname}`}>
+              <Image
+                src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/${image}`}
+                alt={item.title}
+                fill
+                className="transition-200 hover:scale-110"
+              />
+            </Link>
           </div>
         ))}
       </div>

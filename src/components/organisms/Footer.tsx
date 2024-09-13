@@ -42,13 +42,29 @@ const Footer: FC<{ show: boolean }> = ({ show }) => {
             </div>
             {/* centered image */}
             <div className="left-centered -top-[60px] transition-200 bg-primary rounded-full border-[6px] border-tertiary scale-50 md:scale-75 lg:scale-100 h-[128px] w-[128px]">
-              <Image
-                src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/footer/hands.png`}
-                width={100}
-                height={100}
-                alt="Slimes"
-                className="centered"
-              />
+              {router.pathname.startsWith("/slimes-studio") ? (
+                <Image
+                  src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/footer/slimes-studio-3.png`}
+                  width={120}
+                  height={120}
+                  alt="Slimes"
+                  className={`centered z-10 ${
+                    router.pathname.startsWith("/slimes-studio") ? "" : ""
+                  }`}
+                />
+              ) : (
+                <Image
+                  src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/footer/hands.png`}
+                  width={100}
+                  height={100}
+                  alt="Slimes"
+                  className={`centered z-10 ${
+                    router.pathname.startsWith("/slimes-studio")
+                      ? "rounded-full"
+                      : ""
+                  }`}
+                />
+              )}
               {router.pathname === "/maquina" && (
                 <Image
                   src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/footer/lines-brown.svg`}
