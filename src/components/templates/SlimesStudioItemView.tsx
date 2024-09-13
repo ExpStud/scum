@@ -47,7 +47,7 @@ const SlimesItemView: React.FC<SlimesItemViewProps> = ({ item }) => {
 
         <div className="flex items-center gap-2 w-full px-5 xl:px-0 mb-10">
           <button
-            className="slimes-button black-hover rounded-[22px] min-w-[170px] h-[44px]"
+            className="slimes-button black-hover rounded-[22px] min-w-[190px] h-[44px]"
             onClick={() => router.push("/slimes-studio")}
           >
             <span className="font-inter mr-2">←</span> Back to Summary
