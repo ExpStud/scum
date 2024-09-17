@@ -378,8 +378,7 @@ export const collection: Collection[] = [
     tag: "toddy",
     color: "#FF4601",
     mintAddress : "3CF6sxc31D63eVrTpPrytPPMYbJkrCfA9AM56TXM1KDj",
-    description: "Masked Gangster? Or big softee? If you don't know already, you'll never know.",
-    hideTinyDenise: true,
+    description: "Masked Gangster? Or big softee? If you don't know already, you'll never know.", 
   },
   {
     id:47,
