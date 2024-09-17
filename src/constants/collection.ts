@@ -387,7 +387,6 @@ export const collection: Collection[] = [
     color: "#FF4601",
     mintAddress : "DRnZHWr8jScdsHTByrvYkBTzhTHzR4G2qxtS5wh3Wfpm",
     description: "A true One of One. Enjoys shower steaks, his best friend Garfield and putting maple syrup on everything. Recently discovered Tapatio and Birria Tacos though, so the slimes let him hang. He'll earn that mask soon.",
-    hideTinyDenise: true,
   },
 ];
 
