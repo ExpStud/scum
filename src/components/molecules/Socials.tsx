@@ -32,6 +32,14 @@ const Socials: FC<Props> = (props: Props) => {
             >
               Shop All In Time <span className="font-inter">↗</span>
             </a>
+            <a
+              href="https://somosaxolotl.com"
+              target="_blank"
+              rel="noreferrer"
+              className="opacity-40 hover-opacity-75 text-secondary transition-200"
+            >
+              Somos Axolotl <span className="font-inter">↗</span>
+            </a>
           </div>
 
           <IconBar />

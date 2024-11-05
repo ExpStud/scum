@@ -32,7 +32,16 @@ const AxolotlView: FC<Props> = (props: Props) => {
             the Axolotl population in Lake Xochimilco. In less than a year we
             raised over $40k, created 12 sculptures and are now developing
             technology to safely and transparently accept and disperse donations
-            to the many people working on this effort every day.
+            to the many people working on this effort every day. Visit our{" "}
+            <a
+              href="https://somosaxolotl.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="underline"
+            >
+              website
+            </a>{" "}
+            to learn more.
           </p>
         </div>
         <hr className="flex-grow border-t border-dotted border-scum-beige/20 mr-2 w-full mt-20 mb-12" />
