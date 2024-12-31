@@ -7,7 +7,7 @@ const IconBar: FC<Props> = (props: Props) => {
   return (
     <div className={`flex gap-4 ${className}`}>
       <TwitterIcon url={"https://x.com/SCUMSOL"} />
-      <DiscordIcon url={"https://discord.com/invite/scumdotsol"} />
+      {/* <DiscordIcon url={"https://discord.com/invite/scumdotsol"} /> */}
     </div>
   );
 };
