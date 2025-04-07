@@ -1,4 +1,11 @@
-import { Dispatch, SetStateAction, FC, useRef } from "react";
+import {
+  Dispatch,
+  SetStateAction,
+  FC,
+  useRef,
+  useEffect,
+  useState,
+} from "react";
 import { AnimateWrapper, Heading, SlimeItem } from "@components";
 import { motion, useInView } from "framer-motion";
 import { midEnterAnimation, collection } from "src/constants";
@@ -10,10 +17,25 @@ interface Props {
 const SlimesView: FC<Props> = (props: Props) => {
   const { setAssets } = props;
 
+  const [didMount, setDidMount] = useState(false);
+
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, {
     once: true,
   });
+
+  useEffect(() => {
+    setDidMount(true);
+  }, []);
+
+  useEffect(() => {
+    // Retrieve the scroll position from local storage
+    const scrollPosition = sessionStorage.getItem("slimesScrollPosition");
+    if (scrollPosition) {
+      window.scrollTo(0, JSON.parse(scrollPosition)); // Restore the scroll position
+      sessionStorage.removeItem("slimesScrollPosition"); // Clear the stored position
+    }
+  }, [didMount]);
 
   return (
     <motion.div

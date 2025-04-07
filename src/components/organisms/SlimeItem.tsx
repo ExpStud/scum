@@ -14,12 +14,22 @@ const SlimeItem: FC<SlimeItemProps> = (props: SlimeItemProps) => {
 
   const formatId = (id: number) => String(id).padStart(3, "0");
 
+  const handleClick = () => {
+    // Store the current scroll position in local storage
+    const scrollPosition = window.scrollY;
+    sessionStorage.setItem(
+      "slimesScrollPosition",
+      JSON.stringify(scrollPosition)
+    );
+  };
+
   return (
     <Link
       href={`/slimes/${item.tag}`}
       className="relative flex flex-col items-center cursor-pointer"
       onMouseEnter={() => setDidHover(true)}
       onMouseLeave={() => setDidHover(false)}
+      onClick={handleClick}
     >
       <ImageShimmer
         src={`${process.env.CLOUDFLARE_STORAGE}/images/slimes/low-res/${item.tag}.jpg`}
