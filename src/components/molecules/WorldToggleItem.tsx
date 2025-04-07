@@ -9,7 +9,7 @@ const WorldToggleItem: FC<ToggleProps> = (props: ToggleProps) => {
 
   return (
     <div
-      className={`w-1/3 col-centered cursor-pointer text-[10px] sm:text-xs md:text-sm uppercase rounded-[22px] transition-200 ${
+      className={`w-1/2 col-centered cursor-pointer text-[10px] sm:text-xs md:text-sm uppercase rounded-[22px] transition-200 ${
         selected
           ? "text-scum-black bg-scum-beige-600"
           : "text-scum-beige-600/60"
