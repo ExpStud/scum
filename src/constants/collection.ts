@@ -98,14 +98,22 @@ export const collection: Collection[] = [
     mintAddress: "3SeqwjmtXHhzupPoMfQMVBYEghaAYksCY8jaYG7WJ5DV",
     description: "Flea and his Shadow Axolotl live at the border of the living and the not quite dead yet. Every gate needs it's keeper."
   },
+  // {
+  //   id: 12,
+  //   name: "Lindo",
+  //   burned: true,
+  //   tag: "lindo",
+  //   color: "#B93D29",
+  //   mintAddress: "4eb1TajEfpRngXLCdRgn9sMSYvKPWM1jW87TEHRjQ1e1",
+  //   description: "Lindo is quite lovely once you get to know him. Avid collector of the ornaments of religion. Not really a heretic, just more of a heathen. Lindo is a member of the old tribe."
+  // },
   {
     id: 12,
-    name: "Lindo",
-    burned: true,
-    tag: "lindo",
-    color: "#B93D29",
-    mintAddress: "4eb1TajEfpRngXLCdRgn9sMSYvKPWM1jW87TEHRjQ1e1",
-    description: "Lindo is quite lovely once you get to know him. Avid collector of the ornaments of religion. Not really a heretic, just more of a heathen. Lindo is a member of the old tribe."
+    name: "Bravo", 
+    tag: "bravo",
+    color: "",
+    mintAddress: "DXcAcgJhgWEj2wfgaAP9RzFL2xbWwK1cRsGKw1rngwTa",
+    description: "Bravo is a distant (distant) relative of Coyote. A more direct descendant from the northern people. A trixter and a thief. Not out of greed or malice, but merely by nature. Will drink beer from a shoe, subsist on quesadillas and never works weekends."
   },
   {
     id: 13,
@@ -395,6 +403,14 @@ export const collection: Collection[] = [
     color: "#FF4601",
     mintAddress : "",
     description: "",
+  },
+  {
+    id:49,
+    name: "Lago",
+    tag: "lago",
+    color: "",
+    mintAddress : "7LogGWSYwDybqadneKrwzzUEDQ2s4Tyeec9Gq9hM1unV",
+    description: "The last of the legion appointed by Xolotl himself. Tasked with monitoring and defending the seals beneath the lake. Lago has been slumbering for centuries, but echoes from the conflicts above have pulled him back to his post.",
   },
 ];
 
