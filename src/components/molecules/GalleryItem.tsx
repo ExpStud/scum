@@ -61,7 +61,8 @@ const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
           rel="noreferrer"
           className="hover:underline text-[#FFB094]"
         >
-          buy on exchange.art <span className="font-inter">↗</span>
+          buy on {item.url.includes("3.land") ? "exchange.art" : "3.land"}{" "}
+          <span className="font-inter">↗</span>
         </a>
       </div>
     </motion.div>
