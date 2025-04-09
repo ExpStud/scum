@@ -210,7 +210,8 @@ export const collection: Collection[] = [
     tag: "kai",
     color: "#58C1BF",
     mintAddress: "GhfmfuTG4zqtf1bPuJA655jgM1DSaMQyhq6wttsc4m29",
-    description: "A revolutionary. Timeless and hard. Kai has a dark side. No one knows quite where he came from, but everyone knows he's from somewhere else. Family nonetheless."
+    description: "A revolutionary. Timeless and hard. Kai has a dark side. No one knows quite where he came from, but everyone knows he's from somewhere else. Family nonetheless.",
+    assetToggle: true
   },
   {
     id: 25,
@@ -370,7 +371,8 @@ export const collection: Collection[] = [
     tag: "itztli",
     color: "#FF4601",
     mintAddress : "kSwQFLjpSzPJ8exqW1PCh8PxDGBpYJKYYuhXo2SKhRq",
-    description: "Obsidian lord of the night. God of stone. Has 3 pomeranians, 2 axolotls and makes tamales with his mom every Christmas. Sibling to the god of the underworld, Mictlan."
+    description: "Obsidian lord of the night. God of stone. Has 3 pomeranians, 2 axolotls and makes tamales with his mom every Christmas. Sibling to the god of the underworld, Mictlan.",
+    assetToggle: true
   },
   {
     id:45,

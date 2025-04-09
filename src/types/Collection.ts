@@ -9,6 +9,7 @@ export interface Collection {
   mintAddress: string;
   description: string;
   hideTinyDenise?: boolean;
+  assetToggle?: boolean;
 }
 
 export interface Maquina {

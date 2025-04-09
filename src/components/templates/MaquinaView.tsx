@@ -101,12 +101,6 @@ const MaquinaView: FC<Props> = (props: Props) => {
                   >
                     collaborations
                   </WorldToggleItem>
-                  {/* <WorldToggleItem
-                    selected={worldSelected === 2}
-                    onClick={() => setWorldSelected(2)}
-                  >
-                    Branding
-                  </WorldToggleItem> */}
                 </div>
               </div>
               <div
