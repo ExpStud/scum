@@ -27,7 +27,7 @@ const SlimeGraphicsItem: FC<SgiProps> = (props: SgiProps) => {
 
   return (
     <div
-      className={`col-centered w-full gap-2 sm:min-w-[220px] xl:min-w-[100px] 1690:w-[240px] h-[135px] cursor-pointer border-[#79C7AD] transition-200 ${parentClass} ${
+      className={`col-centered w-full gap-2 sm:min-w-[220px] xl:min-w-[100px] 1690:w-[240px] h-[135px] max-w-[300px] cursor-pointer border-[#79C7AD] transition-200 ${parentClass} ${
         index < 2 ? "border-b" : ""
       } ${index % 2 === 0 ? "border-r" : ""} ${
         isSelected ? "bg-[#79C7AD]/50" : ""

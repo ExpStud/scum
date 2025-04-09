@@ -26,13 +26,36 @@ const SlimeGraphics: FC<Props> = (props: Props) => {
     link.click();
   };
 
+  const renderSlimeGraphicsItems = (
+    filterCondition: (option: AssetOption) => boolean,
+    isTinyDenise: boolean = false
+  ) => {
+    return (
+      <div className="grid grid-cols-2 border border-[#79C7AD] rounded-[10px] mr-5 xl:mr-0 h-min w-full max-w-[600px] lg:max-w-[480px]">
+        {slimesAssets.filter(filterCondition).map((option, i) => (
+          <SlimeGraphicsItem
+            key={i}
+            slime={slime}
+            index={i}
+            option={option}
+            isSelected={selected.id === option.id}
+            setSelected={setSelected}
+            isTinyDenise={isTinyDenise}
+          />
+        ))}
+      </div>
+    );
+  };
+
   return (
-    <div>
-      <Toggle
-        labels={["Slimes Assets", "Tiny Denise Assets"]}
-        selected={toggleTiny}
-        setSelected={setToggleTiny}
-      />
+    <div className="w-full">
+      {!slime.hideTinyDenise && (
+        <Toggle
+          labels={["Slimes Assets", "Tiny Denise Assets"]}
+          selected={toggleTiny}
+          setSelected={setToggleTiny}
+        />
+      )}
 
       <div className="relative flex flex-col gap-5 xl:gap-5 lg:flex-row justify-between w-full px-5 xl:px-0 my-5">
         {/* main image */}
@@ -78,9 +101,9 @@ const SlimeGraphics: FC<Props> = (props: Props) => {
         </div>
         {/* image options */}
         <div className="flex flex-col items-center w-full">
-          <div className="flex flex-col gap-8 items-start lg:items-center justify-center w-full lg:w-auto">
-            {slime.assetToggle && (
-              <div className="flex gap-2 w-full bg-scum-black-800/30 rounded-[22px] h-11 p-1">
+          <div className="flex flex-col gap-6 xl:gap-8 items-start lg:items-center justify-center w-full lg:w-auto">
+            {((toggleTiny === 0 && slime.assetToggle) || toggleTiny === 1) && (
+              <div className="flex gap-2 w-full bg-scum-black-800/30 rounded-[22px] h-11 p-1 max-w-[600px]">
                 <WorldToggleItem
                   selected={toggleAsset === 0}
                   onClick={() => setToggleAsset(0)}
@@ -97,40 +120,11 @@ const SlimeGraphics: FC<Props> = (props: Props) => {
                 </WorldToggleItem>
               </div>
             )}
-
-            <div className="grid grid-cols-2 border border-[#79C7AD] rounded-[10px] mr-5 xl:mr-0 h-min w-full lg:max-w-[480px]">
-              {slimesAssets
-                .filter((option) => !option.isTinyDenise)
-                .map((option, i) => (
-                  <SlimeGraphicsItem
-                    key={i}
-                    slime={slime}
-                    index={i}
-                    option={option}
-                    isSelected={selected.id === option.id}
-                    setSelected={setSelected}
-                  />
-                ))}
-            </div>
-            {!slime.hideTinyDenise && (
-              <>
-                <div className="grid grid-cols-2 border border-[#79C7AD] rounded-[10px] mr-5 xl:mr-0 h-min w-full lg:max-w-[480px]">
-                  {slimesAssets
-                    .filter((option) => option.isTinyDenise)
-                    .map((option, i) => (
-                      <SlimeGraphicsItem
-                        key={i}
-                        slime={slime}
-                        index={i}
-                        option={option}
-                        isSelected={selected.id === option.id}
-                        setSelected={setSelected}
-                        isTinyDenise={true}
-                      />
-                    ))}
-                </div>
-              </>
-            )}
+            {toggleTiny === 0 &&
+              renderSlimeGraphicsItems((option) => !option.isTinyDenise)}
+            {toggleTiny === 1 &&
+              !slime.hideTinyDenise &&
+              renderSlimeGraphicsItems((option) => !!option.isTinyDenise, true)}
           </div>
         </div>
       </div>

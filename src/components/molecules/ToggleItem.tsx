@@ -25,6 +25,8 @@ const MaquinaToggleItem: FC<ToggleProps> = (props: ToggleProps) => {
   const width =
     router.pathname === "/maquina"
       ? "w-1/2 sm:w-[240px]"
+      : router.pathname.includes("/slimes/")
+      ? "w-1/2 sm:w-[280px]"
       : "w-1/3 sm:w-[172px]";
 
   return (
