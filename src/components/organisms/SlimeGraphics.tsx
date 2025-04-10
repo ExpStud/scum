@@ -17,6 +17,10 @@ const SlimeGraphics: FC<Props> = (props: Props) => {
   const [toggleTiny, setToggleTiny] = useState<number>(0);
   const [toggleAsset, setToggleAsset] = useState<0 | 1>(0);
 
+  const isExchangeArt =
+    !slime.mintAddress.includes("mallow") &&
+    !slime.mintAddress.includes("tensor");
+
   const handleDownload = () => {
     const link = document.createElement("a");
     // link.href = `${process.env.CLOUDFLARE_STORAGE}/${selected.highResPath}/${slime.tag}.${selected.extension}`;
@@ -76,7 +80,7 @@ const SlimeGraphics: FC<Props> = (props: Props) => {
             </button>
             <a
               href={
-                slime.mintAddress.includes("mallow")
+                !isExchangeArt
                   ? slime.mintAddress
                   : `https://exchange.art/single/${slime.mintAddress}`
               }
@@ -84,7 +88,7 @@ const SlimeGraphics: FC<Props> = (props: Props) => {
               rel="noreferrer"
               className="opacity-50 hover-opacity-75 row-centered gap-2 scale-75 md:scale-90 lg:scale-100"
             >
-              {!slime.mintAddress.includes("mallow") && (
+              {isExchangeArt && (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="19"
@@ -104,6 +108,8 @@ const SlimeGraphics: FC<Props> = (props: Props) => {
               )}
               {slime.mintAddress.includes("mallow")
                 ? "Mallow.art"
+                : slime.mintAddress.includes("tensor")
+                ? "Tensor.trade"
                 : "Exchange.art"}{" "}
               <span className="font-inter">↗</span>
             </a>

@@ -403,7 +403,7 @@ export const collection: Collection[] = [
     name: "Leo",
     tag: "leo",
     color: "#FF4601",
-    mintAddress : "",
+    mintAddress : "https://www.tensor.trade/item/rad6pfhH5cwmgQLwu979C2cEQZfbQns8YEXtxLsfKHi",
     description: "",
   },
   {
