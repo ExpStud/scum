@@ -112,7 +112,7 @@ export const collection: Collection[] = [
     name: "Bravo", 
     tag: "bravo",
     color: "",
-    mintAddress: "DXcAcgJhgWEj2wfgaAP9RzFL2xbWwK1cRsGKw1rngwTa",
+    mintAddress: "https://www.mallow.art/artwork/DXcAcgJhgWEj2wfgaAP9RzFL2xbWwK1cRsGKw1rngwTa",
     description: "Bravo is a distant (distant) relative of Coyote. A more direct descendant from the northern people. A trixter and a thief. Not out of greed or malice, but merely by nature. Will drink beer from a shoe, subsist on quesadillas and never works weekends."
   },
   {
@@ -136,7 +136,7 @@ export const collection: Collection[] = [
     name: "El Santo",
     tag: "el-santo",
     color: "#3969A2",
-    mintAddress: "F49BxnaUJeGRnb3kAxqLyRTiQ9MVKZr8HQhME6AHyxjw",
+    mintAddress: "https://www.mallow.art/artwork/t1Uwb42aNsT5cTSvW2Tib75NeJ4KfnhnFdwMGD7Cguv",
     description: "El santo smells like fresh chopped wood and your first kiss. Once defeated a bear in combat with a well timed wink. Often mistaken for a bronze statue of himself. Has elemental powers. Axolotl companion has never met a safe it couldn't crack."
   },
   {
@@ -411,7 +411,7 @@ export const collection: Collection[] = [
     name: "Lago",
     tag: "lago",
     color: "",
-    mintAddress : "7LogGWSYwDybqadneKrwzzUEDQ2s4Tyeec9Gq9hM1unV",
+    mintAddress : "https://www.mallow.art/artwork/7LogGWSYwDybqadneKrwzzUEDQ2s4Tyeec9Gq9hM1unV",
     description: "The last of the legion appointed by Xolotl himself. Tasked with monitoring and defending the seals beneath the lake. Lago has been slumbering for centuries, but echoes from the conflicts above have pulled him back to his post.",
   },
 ];
