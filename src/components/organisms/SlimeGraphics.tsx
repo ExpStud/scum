@@ -15,12 +15,12 @@ const SlimeGraphics: FC<Props> = (props: Props) => {
   const [selected, setSelected] = useState<AssetOption>(slimesAssets[0]);
 
   const [toggleTiny, setToggleTiny] = useState<number>(0);
-  const [toggleAsset, setToggleAsset] = useState<number>(0);
+  const [toggleAsset, setToggleAsset] = useState<0 | 1>(0);
 
   const handleDownload = () => {
     const link = document.createElement("a");
     // link.href = `${process.env.CLOUDFLARE_STORAGE}/${selected.highResPath}/${slime.tag}.${selected.extension}`;
-    link.href = formatSrc(selected, slime, true);
+    link.href = formatSrc(selected, slime, true, toggleAsset === 1);
     link.target = "_blank";
     link.rel = "noopener noreferrer"; // This is for security reasons
     link.click();
@@ -41,6 +41,7 @@ const SlimeGraphics: FC<Props> = (props: Props) => {
             isSelected={selected.id === option.id}
             setSelected={setSelected}
             isTinyDenise={isTinyDenise}
+            toggleAsset={toggleAsset}
           />
         ))}
       </div>
@@ -61,7 +62,7 @@ const SlimeGraphics: FC<Props> = (props: Props) => {
         {/* main image */}
         <div className="relative w-full md:w-[300px] md:min-w-[450px] 1860:min-w-[600px] h-min bg-white rounded-br-[60px] flex items-end aspect-[9/10]">
           <Image
-            src={formatSrc(selected, slime, false)}
+            src={formatSrc(selected, slime, false, toggleAsset === 1)}
             fill
             alt={slime.name}
             className="object-contain px-5 md:px-10 pt-5 md:pt-10 pb-16 md:pb-28"
@@ -118,14 +119,14 @@ const SlimeGraphics: FC<Props> = (props: Props) => {
                   onClick={() => setToggleAsset(0)}
                   isSlimes={true}
                 >
-                  dark
+                  light
                 </WorldToggleItem>
                 <WorldToggleItem
                   selected={toggleAsset === 1}
                   onClick={() => setToggleAsset(1)}
                   isSlimes={true}
                 >
-                  light
+                  dark
                 </WorldToggleItem>
               </div>
             )}

@@ -10,9 +10,10 @@ interface SgiProps {
   isSelected: boolean;
   setSelected: (option: AssetOption) => void;
   isTinyDenise?: boolean;
+  toggleAsset: 0 | 1;
 }
 const SlimeGraphicsItem: FC<SgiProps> = (props: SgiProps) => {
-  const { index, slime, option, isSelected, setSelected, isTinyDenise } = props;
+  const { index, slime, option, isSelected, setSelected, toggleAsset } = props;
 
   const parentClass =
     index === 0
@@ -35,7 +36,7 @@ const SlimeGraphicsItem: FC<SgiProps> = (props: SgiProps) => {
       onClick={() => setSelected(option)}
     >
       <Image
-        src={formatSrc(option, slime, false)}
+        src={formatSrc(option, slime, false, toggleAsset === 1)}
         width={option.width}
         height={option.height}
         alt={option.name}

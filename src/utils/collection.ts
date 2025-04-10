@@ -18,17 +18,20 @@ const formatUrl = (url: string): string => {
 export const formatSrc = ( 
   option: AssetOption,
   slime: Collection,
-  highResPath: boolean
+  highResPath: boolean,
+  isVariation?: boolean
 ): string => {
 
+  //low res slime
   if (!option.isTinyDenise && !highResPath) {
-    return `${process.env.CLOUDFLARE_STORAGE}/${option.lowResPath}/${slime.tag}.${option.extension}`;
+    return `${process.env.CLOUDFLARE_STORAGE}/${option.lowResPath}/${isVariation ? "dark-" : ""}${slime.tag}.${option.extension}`;
   }
+  //high res slime
   if (!option.isTinyDenise && highResPath) {
     let ext = option.extension
     if (option.name === "Original Artwork") ext = "png";
     
-    return `${process.env.CLOUDFLARE_STORAGE}/${option.highResPath}/${slime.tag}.${ext}`;
+    return `${process.env.CLOUDFLARE_STORAGE}/${option.highResPath}/${isVariation ? "dark-" : ""}${slime.tag}.${ext}`;
   }
 
   const prefix = `${process.env.CLOUDFLARE_STORAGE}/${
