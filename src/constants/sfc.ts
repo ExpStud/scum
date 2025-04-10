@@ -217,7 +217,7 @@ const seasonTwo: SFC[] = [
   },
   {
     id: 4,
-    twitter: [""],
+    twitter: ["RicardoCavolo"],
     src: "Ricardo Cavolo.jpg",
     name: "Powerful Empire of the Axolotls",
     description: "",
@@ -228,7 +228,7 @@ const seasonTwo: SFC[] = [
   },
   {
     id: 5,
-    twitter: [""],
+    twitter: ["The_SolCat"],
     src: "Solcat.gif",
     name: "14-15",
     description: "Let me start with a memory. I was about 7 years old, recovering from the flu, and had the day off from school. I remember still having a slight fever, but I was well enough to enjoy a day at home with my parents. Dad put on a movie, and Mom brought me a bowl of chicken noodle soup. This piece is meant to capture that tranquil feeling of being sick but on the mend, knowing that things are getting better and a fresh start is on the horizon. This is similar to my experience of burnout: I push myself too hard, lose energy, and then take time to rest before beginning again. Sometimes, this period of rest leads to a reinvention, that allows me to return with renewed vigor and a fresh perspective.",
@@ -239,7 +239,7 @@ const seasonTwo: SFC[] = [
   },
   {
     id: 6,
-    twitter: [""],
+    twitter: ["sia_skatesonNFT"],
     src: "Sia.jpg",
     name: "Mexicolotls",
     description: "If we listen closely, they are calling for our help and we humans ought to learn to listen to the calls of our fragile ecosystem and its inhabitants. Together we can make world a better place for all, including the cutest Axolotls. I hope one day i will have an Axolotl on my shoulder like Nausica has Teto.",
@@ -250,7 +250,7 @@ const seasonTwo: SFC[] = [
   },
   {
     id: 7,
-    twitter: [""],
+    twitter: ["MantisGio"],
     src: "Gio Mantis.jpg",
     name: "The Goddess of Maize",
     description: "Goddess of the Maize is the representation of a wise and powerful Nahuatl chamán who, alongside the axolotl, safeguards and nourishes the soil and waters of Lake Xochimilco. She tends to the crops that flourish on the lake's floating islands, ensuring the maize chicuarote and other plants of the chinampa system thrive, free from harm. This piece served as the inspiration for painting one of the Somos Axolotl Sculptures, now on display in Mexico City.",
@@ -262,7 +262,7 @@ const seasonTwo: SFC[] = [
   },
   {
     id: 8,
-    twitter: [""],
+    twitter: ["penzartist"],
     src: "Penz.jpg",
     name: "The Mind of Slime",
     description: "The slimes universe is ever growing and it all comes from somewhere. This is my rendition of what it looks like inside the mind of Scum. A vast ether full of wild ideas and inspiration pulled from past life experiences, ancient culture and current world happenings. Ideas float around up there like a carousel of innovation and degeneracy, from a diverse family of 50 Luchadores leaving the wrestling ring to embark on new adventures, to the waters of Lake Xochimilco to help save the population of the Axolotls, to the deep dark depths of a Hollywood basement to pull creativity from trauma, to the web3 R-wordedness that we all have to endure, with a fair share of dirty thoughts too, i'm sure. Which are all carefully plucked from this ether one by one to build the Slimes World that we can all see slowly come to life. Slowly, then all at once.",
@@ -274,9 +274,9 @@ const seasonTwo: SFC[] = [
   },
   {
     id: 9,
-    twitter: ["Arcane Rebirth"],
+    twitter: ["agil8"],
     src: "Agil8.gif",
-    name: "",
+    name: "Arcane Rebirth",
     description: `In dark waters, she swims away,
       From arrows aimed, from threats that stay.
       The poisoned depths, a silent snare,
@@ -298,7 +298,7 @@ const seasonTwo: SFC[] = [
   },
   {
     id: 10,
-    twitter: [""],
+    twitter: ["aintweallgods"],
     src: "Awag.jpg",
     name: "Space Cowboy",
     description: "PORTRAIT OF A SPACE COWBOY AND HIS AXOLOTL COMPANIONS DIGITAL ART AWAG 2024",
@@ -309,7 +309,7 @@ const seasonTwo: SFC[] = [
   },
   {
     id: 11,
-    twitter: [""],
+    twitter: ["Gossip_Goblin"],
     src: "Gossip Goblin.jpg",
     name: "Xolotl's Reflection",
     description: "",
@@ -320,7 +320,7 @@ const seasonTwo: SFC[] = [
   },
   {
     id: 12,
-    twitter: [""],
+    twitter: ["basketNFT"],
     src: "BSKT.jpg",
     name: "The Champion",
     description: "BSKT 2024 - Part of the Slimes Family Collection.",
@@ -331,7 +331,7 @@ const seasonTwo: SFC[] = [
   },
   {
     id: 14,
-    twitter: [""],
+    twitter: ["Pearlyrex"],
     src: "Pearly.jpg",
     name: "Era of Offering",
     description: "The Axolotl god descends to Earth to claim his sacrifices. In exchange for his blessings, he demands prayers, rituals, and offerings of all kinds. A reminder of the delicate balance between nature, spirit, and humanity.",

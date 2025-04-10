@@ -41,6 +41,7 @@ export const slimesAssets: AssetOption[] = [
     className: "",
     extension: "png",
   }, 
+  //tiny denise
   {
     isTinyDenise: true,
     id: 4,
