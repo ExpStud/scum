@@ -34,35 +34,47 @@ export const formatSrc = (
     return `${process.env.CLOUDFLARE_STORAGE}/${option.highResPath}/${isVariation ? "dark-" : ""}${slime.tag}.${ext}`;
   }
 
+  //tiny denise assets 
   const prefix = `${process.env.CLOUDFLARE_STORAGE}/${
     highResPath ? option.highResPath : option.lowResPath
-  }`;
+  }`; 
+
+  const formattedID = formatId(slime.id + 1)
+  const tinyPath = `${process.env.CLOUDFLARE_STORAGE}/${option.path}/${formattedID}_${slime.name}` 
  
 
   switch (option.name) {
     case "Original Artwork":
+      // images/tiny-assets/01_Scum/PFPs/PFP_01.png
       return formatUrl(
-        `${prefix}/original/PFP_${formatId(slime.id + 1)}.${option.extension}`
+        `${tinyPath}/PFPs/PFP_${formattedID}.png`
       );
+      case "PFP":
+        // images/tiny-assets/01_Scum/PFPs/PFP_01 (1).png
+        return formatUrl(
+        `${tinyPath}/PFPs/PFP_${formattedID} (1).png`
+        );
+
     case "X Wallpaper":
+      // 01_Scum_BG Twitter Banner.png
+      // 01_Scum_OG_BG Twitter Banner.png
       return formatUrl(
-        `${prefix}/banner/${formatId(slime.id + 1)}_${
+        `${tinyPath}/${formattedID}_${
           slime.name
-        }_BG Twitter Banner.${option.extension}`
+        }_${isVariation ? "OG_" : ""}BG Twitter Banner.png`
       );
-    case "PFP":
-      return formatUrl(
-        `${prefix}/pfp/PFP_${formatId(slime.id + 1)}.${option.extension}`
-      );
+
     case "Mobile Wallpaper":
+      //01_Scum_BG Phone Wallpaper.png
+      //01_Scum_OG_BG Phone Wallpaper.png
       return formatUrl(
-        `${prefix}/mobile/${formatId(slime.id + 1)}_${
+        `${tinyPath}/${formattedID}_${
           slime.name
-        } Phone Wallpaper.${option.extension}`
+        }${isVariation ? "_OG_BG" : slime.id === 0 ? "_BG" : ""} Phone Wallpaper.png`
       );
     default:
       return formatUrl(
-        `${prefix}/PFP_${formatId(slime.id + 1)}.${option.extension}`
+        `${prefix}/PFP_${formattedID}.png`
       );
   }
 };

@@ -22,6 +22,7 @@ export type AssetOption = {
   name: string;
   lowResPath: string;
   highResPath: string;
+  path?: string;
   width: number;
   height: number;
   className?: string;

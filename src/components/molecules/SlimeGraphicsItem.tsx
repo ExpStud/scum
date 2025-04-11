@@ -13,7 +13,15 @@ interface SgiProps {
   toggleAsset: 0 | 1;
 }
 const SlimeGraphicsItem: FC<SgiProps> = (props: SgiProps) => {
-  const { index, slime, option, isSelected, setSelected, toggleAsset } = props;
+  const {
+    index,
+    slime,
+    option,
+    isSelected,
+    setSelected,
+    toggleAsset,
+    isTinyDenise,
+  } = props;
 
   const parentClass =
     index === 0
@@ -26,6 +34,8 @@ const SlimeGraphicsItem: FC<SgiProps> = (props: SgiProps) => {
       ? "rounded-br-[10px]"
       : "";
 
+  console.log("option", option);
+  console.log("slime", slime);
   return (
     <div
       className={`col-centered w-full gap-2 sm:min-w-[220px] xl:min-w-[100px] 1690:w-[240px] h-[135px] max-w-[300px] cursor-pointer border-[#79C7AD] transition-200 ${parentClass} ${
