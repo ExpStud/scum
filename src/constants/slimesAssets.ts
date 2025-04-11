@@ -52,7 +52,7 @@ export const slimesAssets: AssetOption[] = [
 
     width: 64,
     height: 64, 
-    extension: "jpg",
+    extension: "",
     className: "rounded-lg border border-scum-black/30",
   },
   {
@@ -65,7 +65,7 @@ export const slimesAssets: AssetOption[] = [
 
     width: 64,
     height: 64, 
-    extension: "jpg",
+    extension: "",
     className: "rounded-lg border border-scum-black/30",
   },
   {
@@ -78,7 +78,7 @@ export const slimesAssets: AssetOption[] = [
 
     width: 192,
     height: 64, 
-    extension: "jpg",
+    extension: "",
     className: "scale-75 lg:scale-90 rounded-lg border border-scum-black/30",
   }, 
   {
@@ -91,7 +91,7 @@ export const slimesAssets: AssetOption[] = [
 
     width: 50,
     height: 83, 
-    extension: "jpg",
+    extension: "",
     className: "scale-75 lg:scale-90 rounded-lg border border-scum-black/30",
   }, 
 ];
