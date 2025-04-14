@@ -1,6 +1,6 @@
 import { AssetOption, Collection } from "@types";
 import Image from "next/image";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { slimesAssets } from "@constants";
 import { SlimeGraphicsItem, Toggle, WorldToggleItem } from "@components";
 import { formatSrc } from "@utils";
@@ -12,9 +12,12 @@ type Props = {
 const SlimeGraphics: FC<Props> = (props: Props) => {
   const { slime } = props;
 
-  const [selected, setSelected] = useState<AssetOption>(slimesAssets[0]);
+  const [selectedImage, setSelectedImage] = useState<AssetOption>(
+    slimesAssets[0]
+  );
 
-  const [toggleTiny, setToggleTiny] = useState<number>(0);
+  const [mainToggle, setMainToggle] = useState<number>(0);
+  //toggle light/dark or variation 1 / variation 2
   const [toggleAsset, setToggleAsset] = useState<0 | 1>(0);
 
   const isExchangeArt =
@@ -23,8 +26,8 @@ const SlimeGraphics: FC<Props> = (props: Props) => {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    // link.href = `${process.env.CLOUDFLARE_STORAGE}/${selected.highResPath}/${slime.tag}.${selected.extension}`;
-    link.href = formatSrc(selected, slime, true, toggleAsset === 1);
+    // link.href = `${process.env.CLOUDFLARE_STORAGE}/${selectedImage.highResPath}/${slime.tag}.${selectedImage.extension}`;
+    link.href = formatSrc(selectedImage, slime, true, toggleAsset === 1);
     link.target = "_blank";
     link.rel = "noopener noreferrer"; // This is for security reasons
     link.click();
@@ -42,8 +45,8 @@ const SlimeGraphics: FC<Props> = (props: Props) => {
             slime={slime}
             index={i}
             option={option}
-            isSelected={selected.id === option.id}
-            setSelected={setSelected}
+            isSelected={selectedImage.id === option.id}
+            setSelected={setSelectedImage}
             isTinyDenise={isTinyDenise}
             toggleAsset={toggleAsset}
           />
@@ -52,13 +55,20 @@ const SlimeGraphics: FC<Props> = (props: Props) => {
     );
   };
 
+  useEffect(() => {
+    if (mainToggle === 0) setSelectedImage(slimesAssets[0]);
+    else setSelectedImage(slimesAssets[4]);
+
+    setToggleAsset(0);
+  }, [mainToggle]);
+
   return (
     <div className="w-full">
       {!slime.hideTinyDenise && (
         <Toggle
           labels={["Slimes Assets", "Tiny Denise Assets"]}
-          selected={toggleTiny}
-          setSelected={setToggleTiny}
+          selected={mainToggle}
+          setSelected={setMainToggle}
         />
       )}
 
@@ -66,7 +76,7 @@ const SlimeGraphics: FC<Props> = (props: Props) => {
         {/* main image */}
         <div className="relative w-full md:w-[300px] md:min-w-[450px] 1860:min-w-[600px] h-min bg-white rounded-br-[60px] flex items-end aspect-[9/10]">
           <Image
-            src={formatSrc(selected, slime, false, toggleAsset === 1)}
+            src={formatSrc(selectedImage, slime, false, toggleAsset === 1)}
             fill
             alt={slime.name}
             className="object-contain px-5 md:px-10 pt-5 md:pt-10 pb-16 md:pb-28"
@@ -118,27 +128,27 @@ const SlimeGraphics: FC<Props> = (props: Props) => {
         {/* image options */}
         <div className="flex flex-col items-center w-full">
           <div className="flex flex-col gap-6 xl:gap-8 items-start lg:items-center justify-center w-full lg:w-auto">
-            {((toggleTiny === 0 && slime.assetToggle) || toggleTiny === 1) && (
+            {((mainToggle === 0 && slime.assetToggle) || mainToggle === 1) && (
               <div className="flex gap-2 w-full bg-scum-black-800/30 rounded-[22px] h-11 p-1 max-w-[600px]">
                 <WorldToggleItem
                   selected={toggleAsset === 0}
                   onClick={() => setToggleAsset(0)}
                   isSlimes={true}
                 >
-                  light
+                  {mainToggle === 0 ? "light" : "variation 1"}
                 </WorldToggleItem>
                 <WorldToggleItem
                   selected={toggleAsset === 1}
                   onClick={() => setToggleAsset(1)}
                   isSlimes={true}
                 >
-                  dark
+                  {mainToggle === 0 ? "dark" : "variation 2"}
                 </WorldToggleItem>
               </div>
             )}
-            {toggleTiny === 0 &&
+            {mainToggle === 0 &&
               renderSlimeGraphicsItems((option) => !option.isTinyDenise)}
-            {toggleTiny === 1 &&
+            {mainToggle === 1 &&
               !slime.hideTinyDenise &&
               renderSlimeGraphicsItems((option) => !!option.isTinyDenise, true)}
           </div>

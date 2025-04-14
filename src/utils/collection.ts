@@ -14,6 +14,10 @@ const formatUrl = (url: string): string => {
     .replace(/%3A/g, ":");
 };
 
+const formatName = (url: string): string => {
+  return url.replace("ñ", "n"); 
+};
+
 //used to format slimes item src
 export const formatSrc = ( 
   option: AssetOption,
@@ -40,38 +44,69 @@ export const formatSrc = (
   }`; 
 
   const formattedID = formatId(slime.id + 1)
-  const tinyPath = `${process.env.CLOUDFLARE_STORAGE}/${option.path}/${formattedID}_${slime.name}` 
+  let tinyPath = `${process.env.CLOUDFLARE_STORAGE}/${option.path}/${formattedID}_${slime.name}` 
+  tinyPath = slime.id === 35 ? tinyPath.replace("_Camila", "_Camilla") : tinyPath;
+  tinyPath = slime.id === 33 ? tinyPath.replace("_Cucuy", "_Cucoy") : tinyPath; 
  
+  //missing pfps: 15 canelo, 22 kahlo,  
+  //missing wallpapers: 33 el niño,  
 
   switch (option.name) {
     case "Original Artwork":
-      // images/tiny-assets/01_Scum/PFPs/PFP_01.png
+      if (slime.id === 12 || slime.id === 15) {
+        return formatUrl(
+          `${tinyPath}/PFPs/PFP_50.png`
+        );
+      }
+      if (slime.id === 49) {
+        return formatUrl(
+          `${tinyPath}/PFPs/PFP_${slime.id}.png`
+          );
+      }
       return formatUrl(
         `${tinyPath}/PFPs/PFP_${formattedID}.png`
       );
-      case "PFP":
-        // images/tiny-assets/01_Scum/PFPs/PFP_01 (1).png
+
+    case "PFP":
+      if (slime.id === 12 || slime.id === 15) {
         return formatUrl(
-        `${tinyPath}/PFPs/PFP_${formattedID} (1).png`
+          `${tinyPath}/PFPs/PFP_50-1.png`
         );
+      }
+      if (slime.id === 49) {
+        return formatUrl(
+          `${tinyPath}/PFPs/PFP_${slime.id}-1.png`
+          );
+      }
+      if (slime.id >= 14 && slime.id !== 42 ) {
+        return formatUrl(
+          `${tinyPath}/PFPs/PFP_${formattedID}-1.png`
+          );
+      }
+      return formatUrl(
+      `${tinyPath}/PFPs/PFP_${formattedID} (1).png`
+      );
 
     case "X Wallpaper":
-      // 01_Scum_BG Twitter Banner.png
-      // 01_Scum_OG_BG Twitter Banner.png
+      if (slime.id === 42) {
+        return formatUrl(
+          `${tinyPath}/${formattedID}_${
+            slime.name
+          } Twitter Banner${isVariation ? "-1" : ""}.png`
+        );}
       return formatUrl(
         `${tinyPath}/${formattedID}_${
-          slime.name
+          formatName(slime.name)
         }_${isVariation ? "OG_" : ""}BG Twitter Banner.png`
       );
 
     case "Mobile Wallpaper":
-      //01_Scum_BG Phone Wallpaper.png
-      //01_Scum_OG_BG Phone Wallpaper.png
       return formatUrl(
         `${tinyPath}/${formattedID}_${
-          slime.name
+          formatName(slime.name)
         }${isVariation ? "_OG_BG" : slime.id === 0 ? "_BG" : ""} Phone Wallpaper.png`
       );
+
     default:
       return formatUrl(
         `${prefix}/PFP_${formattedID}.png`
