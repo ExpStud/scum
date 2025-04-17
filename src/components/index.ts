@@ -62,6 +62,7 @@ const FamilyView = dynamic(() => import("./templates/FamilyView"));
 const AxolotlView = dynamic(() => import("./templates/AxolotlView"));
 const SlimesStudioView = dynamic(() => import("./templates/SlimesStudioView"));
 const SlimesStudioItemView = dynamic(() => import("./templates/SlimesStudioItemView"));
+const BrandKitView = dynamic(() => import("./templates/BrandKitView"));
 
 export {
   PageHead,
@@ -120,5 +121,6 @@ export {
   CyberFrogsArt,
   CyberFrogsBranding,
   CyberFrogsWebsite,
-  SlimesStudioToggleLayout
+  SlimesStudioToggleLayout,
+  BrandKitView
 }
