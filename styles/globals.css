@@ -237,13 +237,13 @@ html {
 }
 
 .outer-right-spacing {
-  @apply xl:right-[250px] 2xl:right-[340px] max:right-auto max:left-[1580px]; 
+  @apply xl:right-[250px] 2xl:right-[320px] 1915:right-[325px] max:right-auto max:left-[1580px]; 
 }
 .outer-right-margin {
-  @apply xl:mr-[250px] 2xl:mr-[340px]; 
+  @apply xl:mr-[250px] 2xl:mr-[320px]; 
 }
 .outer-right-padding {
-  @apply xl:pr-[250px] 2xl:pr-[340px]; 
+  @apply xl:pr-[250px] 2xl:pr-[320px]; 
 }
 .right-line {
   @apply outer-right-spacing z-[10] hidden xl:block fixed w-[1px] h-screen;
@@ -301,8 +301,11 @@ html {
 .small-px {
   @apply px-5 xl:px-0;
 }
+.small-pl {
+  @apply pl-5 xl:pl-0;
+}
 .max-w-1920 {
-  @apply max-w-[1920px];
+  @apply max-w-[1900px] xl:!min-w-[1240px];
 } 
 .maquina-dot {
   @apply mx-1 sm:mx-4 lg:mx-3 mb-0.5 lg:mb-2 font-secondary;
@@ -346,7 +349,7 @@ html {
 /* For Firefox */
 .beige-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: #FFB094 #F6EFD3;
+  scrollbar-color: rgba(44, 37, 36, 0.20) #F6EFD3;
 }
 /* Custom scrollbar styles for .beige-scrollbar class */
 .beige-scrollbar::-webkit-scrollbar {
@@ -358,7 +361,7 @@ html {
 }
 
 .beige-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #FFB094; /* Color of the scrollbar thumb */
+  background-color: rgba(44, 37, 36, 0.20); /* Color of the scrollbar thumb */
   border-radius: 0px; /* Rounded corners of the scrollbar thumb */
   border: 1px solid #F6EFD3; /* Optional: border around the scrollbar thumb */
 }
@@ -366,7 +369,7 @@ html {
 /* For Firefox */
 .beige-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: #FFB094 #F6EFD3;
+  scrollbar-color: rgba(44, 37, 36, 0.20) #F6EFD3;
 }
 
 /* Hide scrollbar for WebKit-based browsers (Chrome, Safari) */

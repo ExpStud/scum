@@ -1,4 +1,12 @@
-import { Dispatch, SetStateAction, FC, useRef, HTMLAttributes } from "react";
+import {
+  Dispatch,
+  SetStateAction,
+  FC,
+  useRef,
+  HTMLAttributes,
+  useState,
+  useEffect,
+} from "react";
 import { AnimateWrapper, Heading } from "@components";
 import { motion, useInView } from "framer-motion";
 import { midEnterAnimation, brandKit } from "src/constants";
@@ -24,36 +32,36 @@ const BrandKitView: FC<Props> = (props: Props) => {
     >
       <AnimateWrapper animate={isInView}>
         <Heading />
-        <div className="flex flex-col gap-5">
+        <div className=" flex flex-col gap-5">
           {brandKit.map((category, index) => (
             <div key={index} className="flex flex-col gap-5 mb-14 xl:mb-32">
-              <h3 className="border-b border-scum-black/20 pb-5 mb-10">
+              <h3 className="small-pl border-b border-scum-black/20 pb-5 mb-10">
                 {category.name}
               </h3>
-              <div className="flex flex-col gap-y-10 w-full overflow-x-auto">
+              <div className="beige-scrollbar small-pl flex flex-col gap-10 pb-4 w-full overflow-x-auto">
                 {category.name === "Slimes" ? (
                   <>
                     {/* First row with 3 items */}
-                    <div className="grid grid-cols-3 gap-x-10 gap-y-10 max-w-[920px]">
+                    <div className="flex gap-10 max-w-[920px]">
                       {category.items.slice(0, 3).map((item, index) => (
                         <BrandKitItem key={index} data={item} />
                       ))}
                     </div>
                     {/* Second row with 3 items */}
-                    <div className="grid grid-cols-3 gap-x-10 gap-y-10 max-w-[920px]">
+                    <div className="flex gap-10 max-w-[920px]">
                       {category.items.slice(3, 6).map((item, index) => (
                         <BrandKitItem key={index} data={item} />
                       ))}
                     </div>
                     {/* Third row with 4 items */}
-                    <div className="grid grid-cols-4 gap-x-10 gap-y-10">
+                    <div className="grid grid-cols-4 gap-x-10 gap-y-10 min-w-[1240px]">
                       {category.items.slice(6).map((item, index) => (
                         <BrandKitItem key={index} data={item} />
                       ))}
                     </div>
                   </>
                 ) : (
-                  <div className="grid grid-cols-4 gap-x-10 gap-y-10 w-full">
+                  <div className="flex gap-10 w-full">
                     {category.items.map((item, index) => (
                       <BrandKitItem key={index} data={item} />
                     ))}
@@ -75,6 +83,10 @@ interface ItemProps extends HTMLAttributes<HTMLDivElement> {
 const BrandKitItem: FC<ItemProps> = (props: ItemProps) => {
   const { data, ...divProps } = props;
 
+  const [showCheckmark, setShowCheckmark] = useState(false);
+  const [buttonText, setButtonText] = useState<string>(data.action);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
   const isBlack = data.backgroundColor === "bg-scum-black-750";
   const isRed = data.backgroundColor === "bg-scum-red";
   const isBeige = data.backgroundColor === "bg-scum-beige";
@@ -85,19 +97,44 @@ const BrandKitItem: FC<ItemProps> = (props: ItemProps) => {
   const handleClick = () => {
     if (isDownload) {
       // Handle download action
-      console.log("Download action triggered");
+      const fileUrl = data.value; // Assuming `data.value` contains the file URL
+      const anchor = document.createElement("a");
+      anchor.href = fileUrl;
+      anchor.target = "_blank"; // Open in a new tab
+      anchor.rel = "noopener noreferrer"; // Security best practice
+      anchor.click();
     } else {
       // Handle copy action
-      console.log("Copy action triggered");
+      navigator.clipboard.writeText(data.value); // Copy to clipboard
+
+      // Temporarily show the checkmark
+      setShowCheckmark(true);
+      setButtonText("copied");
+      timeoutRef.current = setTimeout(() => {
+        setShowCheckmark(false);
+        setButtonText(data.action);
+      }, 2000);
     }
+    // Reset after 2 seconds
   };
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current !== null) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
     <div
-      className={`w-[280px] h-[400px] border-2 border-scum-black/30 rounded-br-[100px] flex flex-col justify-between p-4  ${data.backgroundColor}`}
+      className={`min-w-[280px] h-[400px] rounded-br-[100px] flex flex-col justify-between p-4  ${
+        data.backgroundColor
+      } ${isBeige ? "border-2 border-scum-black/30" : ""}`}
       {...divProps}
       onClick={() => handleClick()}
     >
+      <div>{data.content}</div>
       <button
         className={`w-[138px] h-[44px] rounded-[22px] font-inter text-base transition-200 bg-opacity-20 
         ${" "}${
@@ -106,7 +143,7 @@ const BrandKitItem: FC<ItemProps> = (props: ItemProps) => {
             : "bg-scum-black-750 hover:bg-opacity-35 active:bg-opacity-45"
         }`}
       >
-        {isDownload && "↓"} {data.action}
+        {showCheckmark ? "✔" : isDownload ? "↓" : " "} {buttonText}
       </button>
     </div>
   );
