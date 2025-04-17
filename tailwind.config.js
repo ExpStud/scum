@@ -50,6 +50,7 @@ module.exports = {
         "scum-red": "#B12F4E",
         "scum-black": {
           DEFAULT: "#2C2524",
+          750: "#302F2F",
           800: "#1D201F",
           900: "#2C2524",
           950: "#072018",
