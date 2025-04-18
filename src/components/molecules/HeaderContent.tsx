@@ -31,7 +31,6 @@ const HeaderContent: FC = () => {
         <div className="absolute outer-left-spacing top-[58px] hidden xl:flex flex-col">
           <NavItem href="/about">About</NavItem>
           <NavItem href="/slimes">Slimes</NavItem>
-          <NavItem href="/brand">Brand Kit</NavItem>
           <NavItem href="/maquina">Maquina Muertes</NavItem>
           <NavItem href="/slimes-studio">Slimes Studio</NavItem>
           <NavItem href="/axolotl">Axolotls</NavItem>
