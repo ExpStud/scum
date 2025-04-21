@@ -88,7 +88,7 @@ const MaquinaView: FC<Props> = (props: Props) => {
                 Mexican descent and share that with the world.
               </p>
               <div className="col-centered lg:gap-10 w-full">
-                <div className="flex gap-2 w-full sm:w-[600px] bg-scum-black-800/30 rounded-[22px] h-11 p-1">
+                <div className="flex gap-2 w-full sm:w-[400px] bg-scum-black-800/30 rounded-[22px] h-11 p-1">
                   <WorldToggleItem
                     selected={worldSelected === 0}
                     onClick={() => setWorldSelected(0)}
@@ -100,12 +100,6 @@ const MaquinaView: FC<Props> = (props: Props) => {
                     onClick={() => setWorldSelected(1)}
                   >
                     collaborations
-                  </WorldToggleItem>
-                  <WorldToggleItem
-                    selected={worldSelected === 2}
-                    onClick={() => setWorldSelected(2)}
-                  >
-                    Branding
                   </WorldToggleItem>
                 </div>
               </div>

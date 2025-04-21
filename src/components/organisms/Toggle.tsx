@@ -6,12 +6,14 @@ interface ToggleProps extends HTMLAttributes<HTMLDivElement> {
   labels: string[];
   selected: number;
   setSelected: (index: number) => void;
+  isSlimes?: boolean;
 }
 
 const Toggle: FC<ToggleProps> = ({
   labels,
   selected,
   setSelected,
+
   ...divProps
 }) => {
   const router = useRouter();

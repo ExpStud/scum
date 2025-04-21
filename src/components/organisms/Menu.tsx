@@ -4,6 +4,7 @@ import { IconBar, NavItem } from "@components";
 import { useLockBodyScroll, useWindowSize } from "@hooks";
 import { menuVariants, navChild } from "@constants";
 import { isMobile } from "react-device-detect";
+import Link from "next/link";
 
 interface Props {
   toggleMenu: () => void;
@@ -89,6 +90,17 @@ const Menu: FC<Props> = (props: Props) => {
                 >
                   Somos Axolotl <span className="font-inter">↗</span>
                 </a>
+              </motion.div>
+
+              <motion.div
+                variants={navChild(false)} //isMobile
+              >
+                <Link
+                  href="/brand"
+                  className="opacity-40 hover-opacity-75 text-secondary transition-200"
+                >
+                  Brand Kit <span className="font-inter">↗</span>
+                </Link>
               </motion.div>
             </div>
 

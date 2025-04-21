@@ -1,5 +1,6 @@
 import { FC, HTMLAttributes } from "react";
 import { AnimateWrapper, IconBar } from "@components";
+import Link from "next/link";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   show: boolean;
@@ -40,8 +41,13 @@ const Socials: FC<Props> = (props: Props) => {
             >
               Somos Axolotl <span className="font-inter">↗</span>
             </a>
+            <Link
+              href="/brand"
+              className="opacity-40 hover-opacity-75 text-secondary transition-200"
+            >
+              Brand Kit <span className="font-inter">↗</span>
+            </Link>
           </div>
-
           <IconBar />
         </div>
       </AnimateWrapper>

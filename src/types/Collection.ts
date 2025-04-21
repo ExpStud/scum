@@ -9,6 +9,7 @@ export interface Collection {
   mintAddress: string;
   description: string;
   hideTinyDenise?: boolean;
+  assetToggle?: boolean;
 }
 
 export interface Maquina {
@@ -21,6 +22,7 @@ export type AssetOption = {
   name: string;
   lowResPath: string;
   highResPath: string;
+  path?: string;
   width: number;
   height: number;
   className?: string;

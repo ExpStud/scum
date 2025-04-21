@@ -98,14 +98,22 @@ export const collection: Collection[] = [
     mintAddress: "3SeqwjmtXHhzupPoMfQMVBYEghaAYksCY8jaYG7WJ5DV",
     description: "Flea and his Shadow Axolotl live at the border of the living and the not quite dead yet. Every gate needs it's keeper."
   },
+  // {
+  //   id: 12,
+  //   name: "Lindo",
+  //   burned: true,
+  //   tag: "lindo",
+  //   color: "#B93D29",
+  //   mintAddress: "4eb1TajEfpRngXLCdRgn9sMSYvKPWM1jW87TEHRjQ1e1",
+  //   description: "Lindo is quite lovely once you get to know him. Avid collector of the ornaments of religion. Not really a heretic, just more of a heathen. Lindo is a member of the old tribe."
+  // },
   {
     id: 12,
-    name: "Lindo",
-    burned: true,
-    tag: "lindo",
-    color: "#B93D29",
-    mintAddress: "4eb1TajEfpRngXLCdRgn9sMSYvKPWM1jW87TEHRjQ1e1",
-    description: "Lindo is quite lovely once you get to know him. Avid collector of the ornaments of religion. Not really a heretic, just more of a heathen. Lindo is a member of the old tribe."
+    name: "Bravo", 
+    tag: "bravo",
+    color: "",
+    mintAddress: "https://www.mallow.art/artwork/DXcAcgJhgWEj2wfgaAP9RzFL2xbWwK1cRsGKw1rngwTa",
+    description: "Bravo is a distant (distant) relative of Coyote. A more direct descendant from the northern people. A trixter and a thief. Not out of greed or malice, but merely by nature. Will drink beer from a shoe, subsist on quesadillas and never works weekends."
   },
   {
     id: 13,
@@ -128,7 +136,7 @@ export const collection: Collection[] = [
     name: "El Santo",
     tag: "el-santo",
     color: "#3969A2",
-    mintAddress: "F49BxnaUJeGRnb3kAxqLyRTiQ9MVKZr8HQhME6AHyxjw",
+    mintAddress: "https://www.mallow.art/artwork/t1Uwb42aNsT5cTSvW2Tib75NeJ4KfnhnFdwMGD7Cguv",
     description: "El santo smells like fresh chopped wood and your first kiss. Once defeated a bear in combat with a well timed wink. Often mistaken for a bronze statue of himself. Has elemental powers. Axolotl companion has never met a safe it couldn't crack."
   },
   {
@@ -202,7 +210,8 @@ export const collection: Collection[] = [
     tag: "kai",
     color: "#58C1BF",
     mintAddress: "GhfmfuTG4zqtf1bPuJA655jgM1DSaMQyhq6wttsc4m29",
-    description: "A revolutionary. Timeless and hard. Kai has a dark side. No one knows quite where he came from, but everyone knows he's from somewhere else. Family nonetheless."
+    description: "A revolutionary. Timeless and hard. Kai has a dark side. No one knows quite where he came from, but everyone knows he's from somewhere else. Family nonetheless.",
+    assetToggle: true
   },
   {
     id: 25,
@@ -362,7 +371,8 @@ export const collection: Collection[] = [
     tag: "itztli",
     color: "#FF4601",
     mintAddress : "kSwQFLjpSzPJ8exqW1PCh8PxDGBpYJKYYuhXo2SKhRq",
-    description: "Obsidian lord of the night. God of stone. Has 3 pomeranians, 2 axolotls and makes tamales with his mom every Christmas. Sibling to the god of the underworld, Mictlan."
+    description: "Obsidian lord of the night. God of stone. Has 3 pomeranians, 2 axolotls and makes tamales with his mom every Christmas. Sibling to the god of the underworld, Mictlan.",
+    assetToggle: true
   },
   {
     id:45,
@@ -393,8 +403,16 @@ export const collection: Collection[] = [
     name: "Leo",
     tag: "leo",
     color: "#FF4601",
-    mintAddress : "",
+    mintAddress : "https://www.tensor.trade/item/rad6pfhH5cwmgQLwu979C2cEQZfbQns8YEXtxLsfKHi",
     description: "",
+  },
+  {
+    id:49,
+    name: "Lago",
+    tag: "lago",
+    color: "",
+    mintAddress : "https://www.mallow.art/artwork/7LogGWSYwDybqadneKrwzzUEDQ2s4Tyeec9Gq9hM1unV",
+    description: "The last of the legion appointed by Xolotl himself. Tasked with monitoring and defending the seals beneath the lake. Lago has been slumbering for centuries, but echoes from the conflicts above have pulled him back to his post.",
   },
 ];
 

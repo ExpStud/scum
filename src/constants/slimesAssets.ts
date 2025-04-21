@@ -41,15 +41,18 @@ export const slimesAssets: AssetOption[] = [
     className: "",
     extension: "png",
   }, 
+  //tiny denise
   {
     isTinyDenise: true,
     id: 4,
     name: "Original Artwork",
     lowResPath: "images/tiny-denise/low-res",
     highResPath: "images/tiny-denise/high-res",
+    path:"images/tiny-assets",
+
     width: 64,
     height: 64, 
-    extension: "jpg",
+    extension: "",
     className: "rounded-lg border border-scum-black/30",
   },
   {
@@ -58,9 +61,11 @@ export const slimesAssets: AssetOption[] = [
     name: "PFP",
     lowResPath: "images/tiny-denise/low-res",
     highResPath: "images/tiny-denise/high-res",
+    path:"images/tiny-assets",
+
     width: 64,
     height: 64, 
-    extension: "jpg",
+    extension: "",
     className: "rounded-lg border border-scum-black/30",
   },
   {
@@ -69,9 +74,11 @@ export const slimesAssets: AssetOption[] = [
     name: "X Wallpaper",
     lowResPath: "images/tiny-denise/low-res",
     highResPath: "images/tiny-denise/high-res",
+    path:"images/tiny-assets",
+
     width: 192,
     height: 64, 
-    extension: "jpg",
+    extension: "",
     className: "scale-75 lg:scale-90 rounded-lg border border-scum-black/30",
   }, 
   {
@@ -80,9 +87,11 @@ export const slimesAssets: AssetOption[] = [
     name: "Mobile Wallpaper",
     lowResPath: "images/tiny-denise/low-res",
     highResPath: "images/tiny-denise/high-res",
+    path:"images/tiny-assets",
+
     width: 50,
     height: 83, 
-    extension: "jpg",
+    extension: "",
     className: "scale-75 lg:scale-90 rounded-lg border border-scum-black/30",
   }, 
 ];

@@ -59,6 +59,14 @@ const Heading: FC<Props> = (props: Props) => {
           alt="Family"
         />
       )}
+      {router.pathname === "/brand" && (
+        <Image
+          src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/other/brand.svg`}
+          width={754}
+          height={161}
+          alt="Family"
+        />
+      )}
     </div>
   );
 };
