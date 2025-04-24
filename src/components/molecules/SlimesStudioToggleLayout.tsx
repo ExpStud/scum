@@ -24,7 +24,7 @@ const SlimesStudioToggleLayout: FC<Props> = ({
               <div>
                 By{" "}
                 <a
-                  href="htpps://sandboxstud.io"
+                  href="https://sandboxstud.io/"
                   target="_blank"
                   rel="noreferrer"
                   className="underline"
