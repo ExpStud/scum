@@ -20,7 +20,21 @@ const SlimesStudioToggleLayout: FC<Props> = ({
             key={index}
             className="text-scum-black text-xl lg:text-2xl font-forma-medium leading-8 mb-3"
           >
-            {description}
+            {description.includes("By Sandbox Studio") ? (
+              <div>
+                By{" "}
+                <a
+                  href="htpps://sandboxstud.io"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline"
+                >
+                  Sandbox Studio
+                </a>
+              </div>
+            ) : (
+              description
+            )}
           </p>
         ))}
       </div>
