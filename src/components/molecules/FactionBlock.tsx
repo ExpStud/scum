@@ -21,7 +21,7 @@ const FactionBlock: FC<FactionBlockProps> = ({
       {/* <h4 className="mb-2 uppercase text-xl font-semibold">{header}</h4> */}
       <div className="flex flex-col md:flex-row gap-6">
         {/* Left: Logo */}
-        <div className="self-center">
+        <div className="">
           <Image
             src={factionLogo}
             alt={`${header} Logo`}
