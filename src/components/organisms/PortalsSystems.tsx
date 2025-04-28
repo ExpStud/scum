@@ -30,7 +30,7 @@ const PortalsSystems: FC<Props> = ({ ...divProps }) => {
             width={1168}
             height={578}
             alt="logic tree"
-            className="!min-w-[1168px] origin-top-left"
+            className="xl:!min-w-[1168px] origin-top-left"
           />
         </div>
       </div>

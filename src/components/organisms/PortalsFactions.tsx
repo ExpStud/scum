@@ -43,11 +43,16 @@ const PortalsFactions: FC<Props> = ({ ...divProps }) => {
         factionLogo={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/c-logo.png`}
         characteristics="Nurturing / curious / inventive"
         attributes="Leaf-patterns / embedded solar panels / Breathable mesh / durable materials / embroidery / apron with multi-pocket design / leather / canvas / Helmet with built-in oxygen supply / utilitarian / Mechanic headlamp / jackets / tools / Poncho / gardening / outdoor use / hydration reservoir / Safety glasses with integrated heads-up display / advanced tech"
-        factionCharacters={
-          [
-            // `${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/char1.png`,
-          ]
-        }
+        factionCharacters={[
+          `${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/c1.png`,
+          `${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/c2.png`,
+          `${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/c3.png`,
+          `${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/c4.png`,
+          `${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/c5.png`,
+          `${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/c6.png`,
+          `${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/c7.png`,
+          `${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/c8.png`,
+        ]}
       />
       {/* strider */}
       <h4 className="mt-10 uppercase">strider</h4>
@@ -56,11 +61,16 @@ const PortalsFactions: FC<Props> = ({ ...divProps }) => {
         factionLogo={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/s-logo.png`}
         characteristics="Brave / loyal / resilient"
         attributes="Helmet / armor / tactical vest / Camouflage / tech and desert / poncho / Tactical headlamp / exploration / techwear / Helmet with oxygen tube / harsh environment resilient / stealth / flexible / stylish / Ballistic jacket / lights built in / swat / kevlar / stylish / Exploration jumpsuit with reinforced padding for extra durability / futuristic"
-        factionCharacters={
-          [
-            // `${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/char1.png`,
-          ]
-        }
+        factionCharacters={[
+          `${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/s1.png`,
+          `${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/s2.png`,
+          `${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/s3.png`,
+          `${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/s4.png`,
+          `${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/s5.png`,
+          `${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/s6.png`,
+          `${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/s7.png`,
+          `${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/s8.png`,
+        ]}
       />
       {/* operator */}
       <h4 className="mt-10 uppercase">operator</h4>
@@ -69,11 +79,16 @@ const PortalsFactions: FC<Props> = ({ ...divProps }) => {
         factionLogo={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/o-logo.png`}
         characteristics="Visionary / creative / precise"
         attributes="Futuristic, elegant technology / Neural interface / Cybernetic - Advanced Tech / Tailored suit with geometric patterns for a professional yet stylish look / Flowing cloak for an air of mystery and grandeur / Renaissance-inspired / historical elegance / Lab coat / light / laser glasses / Monocles"
-        factionCharacters={
-          [
-            // `${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/char1.png`,
-          ]
-        }
+        factionCharacters={[
+          `${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/o1.png`,
+          `${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/o2.png`,
+          `${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/o3.png`,
+          `${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/o4.png`,
+          `${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/o5.png`,
+          `${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/o6.png`,
+          `${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/o7.png`,
+          `${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/o8.png`,
+        ]}
       />
     </SlimesStudioToggleLayout>
   );

@@ -17,11 +17,11 @@ const FactionBlock: FC<FactionBlockProps> = ({
   factionCharacters,
 }) => {
   return (
-    <div className="mt-5 flex flex-col gap-5">
+    <div className="mt-5 flex flex-col gap-5 md:min-w-[450px]">
       {/* <h4 className="mb-2 uppercase text-xl font-semibold">{header}</h4> */}
       <div className="flex flex-col md:flex-row gap-6">
         {/* Left: Logo */}
-        <div className="flex-shrink-0">
+        <div className="self-center">
           <Image
             src={factionLogo}
             alt={`${header} Logo`}
@@ -32,7 +32,7 @@ const FactionBlock: FC<FactionBlockProps> = ({
         </div>
 
         {/* Right: Details */}
-        <div className="flex-1 max-w-[435px] self-center 2xl:ml-4 1860:pl-10 ">
+        <div className="flex-1 max-w-[435px] self-center 2xl:ml-4 1860:pl-10 min-w-[200px]">
           <div className="mb-6">
             <h5 className="text-[rgba(44,37,36,0.70)] text-sm tracking-wide uppercase mb-1">
               Characteristics
