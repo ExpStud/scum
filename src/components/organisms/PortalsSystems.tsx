@@ -17,107 +17,33 @@ const PortalsSystems: FC<Props> = ({ ...divProps }) => {
         Trait hierarchies and color coding systems
       </h4>
       <Image
-        src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/cyber-frogs/art/1-frog.png`}
-        width={182.5}
-        height={182.5}
-        alt="Frog"
+        src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/systems/s-1.png`}
+        width={760}
+        height={467}
+        alt="color coding"
       />
       <h4 className="mt-10 mb-5 uppercase">LOGIC TREE FOR GENERATIONS</h4>
-      <Image
-        src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/cyber-frogs/art/1-frog.png`}
-        width={182.5}
-        height={182.5}
-        alt="Frog"
-      />
+      <div className="max-w-[760px] overflow-x-auto">
+        <div className="relative">
+          <Image
+            src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/systems/s-2.svg`}
+            width={1168}
+            height={578}
+            alt="logic tree"
+            className="!min-w-[1168px] origin-top-left"
+          />
+        </div>
+      </div>
 
       <h4 className="mt-10 mb-5 uppercase">
         Trait Hierarchy to solve for hair/eye layering
       </h4>
-
-      <div className="flex gap-0">
-        <div className="w-1/5">
-          <Image
-            src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/cyber-frogs/art/17-custom.jpg`}
-            width={152}
-            height={152}
-            alt="custom"
-          />
-        </div>
-        <div className="w-1/5">
-          <Image
-            src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/cyber-frogs/art/18-custom.jpg`}
-            width={152}
-            height={152}
-            alt="custom"
-          />
-        </div>
-        <div className="w-1/5">
-          <Image
-            src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/cyber-frogs/art/19-custom.jpg`}
-            width={152}
-            height={152}
-            alt="custom"
-          />
-        </div>
-        <div className="w-1/5">
-          <Image
-            src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/cyber-frogs/art/20-custom.jpg`}
-            width={152}
-            height={152}
-            alt="custom"
-          />
-        </div>
-        <div className="w-1/5">
-          <Image
-            src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/cyber-frogs/art/21-custom.jpg`}
-            width={152}
-            height={152}
-            alt="custom"
-          />
-        </div>
-      </div>
-      <div className="flex gap-0 -mt-3">
-        <div className="w-1/5">
-          <Image
-            src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/cyber-frogs/art/22-custom.jpg`}
-            width={152}
-            height={152}
-            alt="custom"
-          />
-        </div>
-        <div className="w-1/5">
-          <Image
-            src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/cyber-frogs/art/23-custom.jpg`}
-            width={152}
-            height={152}
-            alt="custom"
-          />
-        </div>
-        <div className="w-1/5">
-          <Image
-            src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/cyber-frogs/art/24-custom.jpg`}
-            width={152}
-            height={152}
-            alt="custom"
-          />
-        </div>
-        <div className="w-1/5">
-          <Image
-            src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/cyber-frogs/art/25-custom.jpg`}
-            width={152}
-            height={152}
-            alt="custom"
-          />
-        </div>
-        <div className="w-1/5">
-          <Image
-            src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/cyber-frogs/art/26-custom.jpg`}
-            width={152}
-            height={152}
-            alt="custom"
-          />
-        </div>
-      </div>
+      <Image
+        src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/systems/s3@6x.png`}
+        width={760}
+        height={175}
+        alt="hair/eye layering"
+      />
     </SlimesStudioToggleLayout>
   );
 };
