@@ -34,6 +34,7 @@ const AnimateWrapper = dynamic(() => import("./molecules/AnimateWrapper"));
 const GalleryItem = dynamic(() => import("./molecules/GalleryItem"));
 const SlimeGraphicsItem = dynamic(() => import("./molecules/SlimeGraphicsItem"));
 const SlimesStudioToggleLayout = dynamic(() => import("./molecules/SlimesStudioToggleLayout"));
+const FactionBlock = dynamic(() => import("./molecules/FactionBlock"));
 //organisms
 const Header = dynamic(() => import("./organisms/Header"));
 const Footer = dynamic(() => import("./organisms/Footer"));
@@ -129,4 +130,5 @@ export {
   PortalsSystems,
   PortalsArt,
   PortalsFactions,
+  FactionBlock,
 }
