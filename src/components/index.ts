@@ -51,6 +51,9 @@ const Toggle = dynamic(() => import("./organisms/Toggle"));
 const CyberFrogsBranding = dynamic(() => import("./organisms/CyberFrogsBranding"));
 const CyberFrogsArt = dynamic(() => import("./organisms/CyberFrogsArt"));
 const CyberFrogsWebsite = dynamic(() => import("./organisms/CyberFrogsWebsite"));
+const PortalsSystems = dynamic(() => import("./organisms/PortalsSystems"));
+const PortalsArt = dynamic(() => import("./organisms/PortalsArt"));
+const PortalsFactions = dynamic(() => import("./organisms/PortalsFactions"));
 //templates
 const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
@@ -122,5 +125,8 @@ export {
   CyberFrogsBranding,
   CyberFrogsWebsite,
   SlimesStudioToggleLayout,
-  BrandKitView
+  BrandKitView,
+  PortalsSystems,
+  PortalsArt,
+  PortalsFactions,
 }

@@ -6,6 +6,9 @@ import {
   CyberFrogsBranding,
   CyberFrogsWebsite,
   Heading,
+  PortalsArt,
+  PortalsFactions,
+  PortalsSystems,
   Toggle,
 } from "@components";
 import { fastExitAnimation, midEnterAnimation } from "@constants";
@@ -26,6 +29,11 @@ const SlimesItemView: React.FC<SlimesItemViewProps> = ({ item }) => {
       <CyberFrogsBranding key={0} />,
       <CyberFrogsArt key={1} />,
       <CyberFrogsWebsite key={2} />,
+    ],
+    portals: [
+      <PortalsSystems key={0} />,
+      <PortalsArt key={1} />,
+      <PortalsFactions key={2} />,
     ],
   };
   const components = componentMap[item.pathname] || [];
