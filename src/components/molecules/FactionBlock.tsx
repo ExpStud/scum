@@ -21,13 +21,12 @@ const FactionBlock: FC<FactionBlockProps> = ({
       {/* <h4 className="mb-2 uppercase text-xl font-semibold">{header}</h4> */}
       <div className="flex flex-col md:flex-row gap-6">
         {/* Left: Logo */}
-        <div className="">
+        <div className="relative w-[90px] lg:w-[180px] h-[161px] lg:h-[322px] ">
           <Image
             src={factionLogo}
             alt={`${header} Logo`}
-            width={190}
-            height={323}
-            className="rounded-md object-cover"
+            fill
+            className="object-cover"
           />
         </div>
 
