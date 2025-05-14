@@ -26,7 +26,7 @@ const PortalsSystems: FC<Props> = ({ ...divProps }) => {
       <div className="max-w-[760px] overflow-x-auto">
         <div className="relative">
           <Image
-            src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/systems/s-2-new.svg`}
+            src={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/systems/s-2-new2.svg`}
             width={1168}
             height={578}
             alt="logic tree"
