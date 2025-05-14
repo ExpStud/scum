@@ -34,6 +34,7 @@ const AnimateWrapper = dynamic(() => import("./molecules/AnimateWrapper"));
 const GalleryItem = dynamic(() => import("./molecules/GalleryItem"));
 const SlimeGraphicsItem = dynamic(() => import("./molecules/SlimeGraphicsItem"));
 const SlimesStudioToggleLayout = dynamic(() => import("./molecules/SlimesStudioToggleLayout"));
+const FactionBlock = dynamic(() => import("./molecules/FactionBlock"));
 //organisms
 const Header = dynamic(() => import("./organisms/Header"));
 const Footer = dynamic(() => import("./organisms/Footer"));
@@ -51,6 +52,9 @@ const Toggle = dynamic(() => import("./organisms/Toggle"));
 const CyberFrogsBranding = dynamic(() => import("./organisms/CyberFrogsBranding"));
 const CyberFrogsArt = dynamic(() => import("./organisms/CyberFrogsArt"));
 const CyberFrogsWebsite = dynamic(() => import("./organisms/CyberFrogsWebsite"));
+const PortalsSystems = dynamic(() => import("./organisms/PortalsSystems"));
+const PortalsArt = dynamic(() => import("./organisms/PortalsArt"));
+const PortalsFactions = dynamic(() => import("./organisms/PortalsFactions"));
 //templates
 const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
@@ -122,5 +126,9 @@ export {
   CyberFrogsBranding,
   CyberFrogsWebsite,
   SlimesStudioToggleLayout,
-  BrandKitView
+  BrandKitView,
+  PortalsSystems,
+  PortalsArt,
+  PortalsFactions,
+  FactionBlock,
 }
