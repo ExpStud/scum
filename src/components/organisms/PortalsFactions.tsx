@@ -23,6 +23,7 @@ const PortalsFactions: FC<Props> = ({ ...divProps }) => {
       <FactionBlock
         header="Explorer"
         factionLogo={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/e-logo.png`}
+        factionLogoSm={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/e-logo-sm.png`}
         characteristics="Resourceful / adventurous / curious"
         attributes="Explorers are the civilian class, a mixture of hand me downs from the faction leaders, work clothes and future fashion."
         factionCharacters={[
@@ -41,6 +42,7 @@ const PortalsFactions: FC<Props> = ({ ...divProps }) => {
       <FactionBlock
         header="Collector"
         factionLogo={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/c-logo.png`}
+        factionLogoSm={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/c-logo-sm.png`}
         characteristics="Nurturing / curious / inventive"
         attributes="Leaf-patterns / embedded solar panels / Breathable mesh / durable materials / embroidery / apron with multi-pocket design / leather / canvas / Helmet with built-in oxygen supply / utilitarian / Mechanic headlamp / jackets / tools / Poncho / gardening / outdoor use / hydration reservoir / Safety glasses with integrated heads-up display / advanced tech"
         factionCharacters={[
@@ -59,6 +61,7 @@ const PortalsFactions: FC<Props> = ({ ...divProps }) => {
       <FactionBlock
         header="Strider"
         factionLogo={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/s-logo.png`}
+        factionLogoSm={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/s-logo-sm.png`}
         characteristics="Brave / loyal / resilient"
         attributes="Helmet / armor / tactical vest / Camouflage / tech and desert / poncho / Tactical headlamp / exploration / techwear / Helmet with oxygen tube / harsh environment resilient / stealth / flexible / stylish / Ballistic jacket / lights built in / swat / kevlar / stylish / Exploration jumpsuit with reinforced padding for extra durability / futuristic"
         factionCharacters={[
@@ -77,6 +80,7 @@ const PortalsFactions: FC<Props> = ({ ...divProps }) => {
       <FactionBlock
         header="Operator"
         factionLogo={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/o-logo.png`}
+        factionLogoSm={`${process.env.CLOUDFLARE_STORAGE}/images/scum/slimes-studio/portals/factions/o-logo-sm.png`}
         characteristics="Visionary / creative / precise"
         attributes="Futuristic, elegant technology / Neural interface / Cybernetic - Advanced Tech / Tailored suit with geometric patterns for a professional yet stylish look / Flowing cloak for an air of mystery and grandeur / Renaissance-inspired / historical elegance / Lab coat / light / laser glasses / Monocles"
         factionCharacters={[

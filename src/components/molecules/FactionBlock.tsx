@@ -1,9 +1,11 @@
 import React, { FC } from "react";
 import Image from "next/image";
+import { useWindowSize } from "@hooks";
 
 interface FactionBlockProps {
   header: string;
   factionLogo: string;
+  factionLogoSm: string;
   characteristics: string;
   attributes: string;
   factionCharacters: string[]; // array of image URLs
@@ -15,15 +17,19 @@ const FactionBlock: FC<FactionBlockProps> = ({
   characteristics,
   attributes,
   factionCharacters,
+  factionLogoSm,
 }) => {
+  const [winWidth] = useWindowSize();
+  const isMobile = winWidth < 1024;
+
   return (
     <div className="mt-5 flex flex-col gap-5 md:min-w-[450px]">
       {/* <h4 className="mb-2 uppercase text-xl font-semibold">{header}</h4> */}
       <div className="flex flex-col md:flex-row gap-6">
         {/* Left: Logo */}
-        <div className="relative w-[90px] lg:w-[180px] h-[161px] lg:h-[322px] ">
+        <div className="relative w-[182px] lg:w-[180px] h-[203px] lg:h-[322px] ">
           <Image
-            src={factionLogo}
+            src={isMobile ? factionLogoSm : factionLogo}
             alt={`${header} Logo`}
             fill
             className="object-cover"
