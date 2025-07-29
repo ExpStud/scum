@@ -71,6 +71,7 @@ const LandingView: FC<Props> = (props: Props) => {
 
   return (
     <motion.div className="relative page-centered !mb-0" {...midEnterAnimation}>
+      <h1 className="sr-only">Scum - All In Time</h1>
       {/* ait cta */}
       <motion.a
         {...slideUp(showView, 0, 0.75)}

@@ -26,7 +26,7 @@ const SlimesItemView: React.FC<SlimesItemViewProps> = ({
       <SlimeNav currentIndex={currentIndex} />
       <div className="flex flex-col gap-5 xl:gap-10 mx-5 xl:mx-0 text-container-width mt-10">
         <div>
-          <h2>{name}</h2>
+          <h1>{name}</h1>
           <h2 className="opacity-20">My Slime {formatId(item.id + 1)}</h2>
         </div>
         <p className="intro-text max-w-[850px]">{item?.description}</p>

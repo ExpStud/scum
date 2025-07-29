@@ -43,6 +43,7 @@ const SlimesView: FC<Props> = (props: Props) => {
       {...midEnterAnimation}
       ref={ref}
     >
+      <h1 className="sr-only">My Slimes Art Collection</h1>
       <AnimateWrapper animate={isInView}>
         <Heading />
         <div className="intro-text-container mx-5 xl:!ml-0 pt-10">

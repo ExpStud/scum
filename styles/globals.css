@@ -86,7 +86,7 @@ a {
     @apply bg-primary;
   }
   h1 {
-    @apply text-5xl md:text-[72px] font-forma-extrabold;
+    @apply text-4xl md:text-5xl 2xl:text-[52px] uppercase font-forma-extrabold tracking-wider;
   }
   h2 {
     @apply text-4xl md:text-5xl 2xl:text-[52px] uppercase font-forma-extrabold tracking-wider;
@@ -427,4 +427,16 @@ p.flip-animate {
 
 .black-hover {
   @apply bg-scum-black rounded-[22px] text-white text-base transition-300 hover:bg-scum-teal hover:text-scum-black font-inter tracking-[0.015em];
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
 }

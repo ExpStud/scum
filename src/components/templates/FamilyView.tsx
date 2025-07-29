@@ -31,6 +31,7 @@ const FamilyView: FC<Props> = (props: Props) => {
 
   return (
     <motion.div {...midEnterAnimation} ref={ref}>
+      <h1 className="sr-only">Slimes Family Collection</h1>
       <AnimateWrapper
         animate={isInView}
         className="page-start mt-[86px] xl:mt-0 xl:py-10 gap-10 "

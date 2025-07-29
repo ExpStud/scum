@@ -24,6 +24,9 @@ const FamilyView: FC<Props> = (props: Props) => {
       ref={ref}
       className="page-start gap-5 xl:gap-10 mt-[86px] xl:mt-0 lg:pt-10 lg:pb-44"
     >
+      <h1 className="sr-only">
+        Slimes Studio - Art & Creative Direction, Design, Branding, Development
+      </h1>
       <AnimateWrapper animate={isInView}>
         <Heading className="!mb-12 md:!mb-24 xl:!mb-40" />
         <div className="flex flex-col gap-5 w-full px-5 xl:px-0">

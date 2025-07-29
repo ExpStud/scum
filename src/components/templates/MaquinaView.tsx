@@ -34,6 +34,7 @@ const MaquinaView: FC<Props> = (props: Props) => {
       {...midEnterAnimation}
       ref={ref}
     >
+      <h1 className="sr-only">Maquina Muertes artwork and world building</h1>
       <AnimateWrapper animate={isInView}>
         <Heading />
         {/* toggle */}

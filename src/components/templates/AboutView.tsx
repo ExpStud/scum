@@ -26,6 +26,7 @@ const AboutView: FC<Props> = (props: Props) => {
       {...midEnterAnimation}
       ref={ref}
     >
+      <h1 className="sr-only">About</h1>
       <AnimateWrapper animate={isInView}>
         <Heading />
         <Image
