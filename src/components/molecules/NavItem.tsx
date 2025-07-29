@@ -61,19 +61,30 @@ interface ItemProps {
 }
 const Item: FC<ItemProps> = (props: ItemProps) => {
   const { children, isCurrent, isHome } = props;
+  if (isHome) {
+    return (
+      <h2
+        className={`flip-animate text-secondary text-[40px] transition-200 !normal-case !font-primary xl:text-6xl 2xl:text-7xl 1860:text-[78px] ${
+          isCurrent
+            ? "opacity-100 cursor-default"
+            : "text-gray-400 hover:opacity-50 xl:hover:opacity-80 opacity-50 cursor-pointer"
+        }`}
+      >
+        {children}
+      </h2>
+    );
+  }
 
   return (
-    <p
-      className={`flip-animate text-secondary text-[40px] transition-200 ${
-        isHome ? "xl:text-6xl 2xl:text-7xl 1860:text-[78px]" : "xl:text-xl "
-      } ${
+    <span
+      className={`flip-animate text-secondary text-[40px] transition-200 !normal-case !font-primary xl:text-xl ${
         isCurrent
           ? "opacity-100 cursor-default"
           : "text-gray-400 hover:opacity-50 xl:hover:opacity-80 opacity-50 cursor-pointer"
       }`}
     >
       {children}
-    </p>
+    </span>
   );
 };
 
