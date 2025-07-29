@@ -12,6 +12,8 @@ const About: NextPage<{ initialTheme: Theme }> = ({ initialTheme }) => {
       headerType="absolute"
       assets={assets}
       initialTheme={initialTheme}
+      metatitle="Scum - About Matt Martinez"
+      metadescription="Learn about Scum, the art project by Matt Martinez, featuring Slimes, Maquina Muertes, and more."
     >
       <AboutView setAssets={setAssets} />
     </PageLayout>

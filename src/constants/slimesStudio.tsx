@@ -9,7 +9,7 @@ export const slimesStudio: SlimesStudio[] = [
     tabs: ["Systems", "Art", "Factions"],
   },
   {
-    title: "cyber frogs",
+    title: "Cyber Frogs",
     description: "Art & Creative Direction, Design, Branding, Development",
     images: [
       "cyber-frogs/cf-1.png",

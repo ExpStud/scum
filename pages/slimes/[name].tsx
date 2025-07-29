@@ -27,7 +27,12 @@ const SlimePage: NextPage<Props> = (props: Props) => {
   const formatId = (id: number) => String(id).padStart(3, "0");
 
   return (
-    <PageLayout headerType="absolute" initialTheme={initialTheme}>
+    <PageLayout
+      headerType="absolute"
+      initialTheme={initialTheme}
+      metatitle={`Scum - ${item.name} | My Slimes Collection`}
+      metadescription={`Explore the ${item.name} slime from Scum's collection. Discover its unique features, history, and more.`}
+    >
       <SlimesItemView
         currentIndex={currentIndex}
         item={item}

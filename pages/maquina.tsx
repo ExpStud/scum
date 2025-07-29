@@ -8,7 +8,12 @@ const Maquina: NextPage<{ initialTheme: Theme }> = ({ initialTheme }) => {
   const [assets, setAssets] = useState<boolean[]>([]);
 
   return (
-    <PageLayout assets={assets} initialTheme={initialTheme}>
+    <PageLayout
+      assets={assets}
+      initialTheme={initialTheme}
+      metatitle="Scum - Maquina Muertes and World Building"
+      metadescription="Learn about Scum's Maquina Muertes project, a creative exploration of his subconscious."
+    >
       <MaquinaView setAssets={setAssets} />
     </PageLayout>
   );

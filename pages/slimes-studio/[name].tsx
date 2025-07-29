@@ -13,7 +13,12 @@ const SlimePage: NextPage<Props> = (props: Props) => {
   const { item, initialTheme } = props;
 
   return (
-    <PageLayout headerType="absolute" initialTheme={initialTheme}>
+    <PageLayout
+      headerType="absolute"
+      initialTheme={initialTheme}
+      metatitle={`Scum - ${item.title} | Slimes Studio`}
+      metadescription={`Explore ${item.title} from Scum's Slimes Studio. Discover its unique features, history, and more.`}
+    >
       <SlimesStudioItemView item={item} />
     </PageLayout>
   );

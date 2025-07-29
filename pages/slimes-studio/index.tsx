@@ -12,6 +12,8 @@ const Family: NextPage<{ initialTheme: Theme }> = ({ initialTheme }) => {
       headerType="absolute"
       assets={assets}
       initialTheme={initialTheme}
+      metatitle="Scum - Slimes Studio | Explore the Slimes Studio and its unique creations."
+      metadescription="Discover Scum's Slimes Studio, a showcase of unique digital art pieces on Solana. Explore the art and learn about the creative process behind each piece."
     >
       <SlimesStudioView setAssets={setAssets} />
     </PageLayout>

@@ -18,6 +18,8 @@ interface Props {
   assets?: boolean[];
   initialTheme?: Theme;
   showLines?: boolean;
+  metatitle?: string;
+  metadescription?: string;
 }
 
 const PageLayout: FC<Props> = (props: Props) => {
@@ -32,6 +34,8 @@ const PageLayout: FC<Props> = (props: Props) => {
     animateHeader = false,
     footer = true,
     showLines = true,
+    metatitle = "Scum - Living Portfolio | Slimes, Maquina Muertes, and more",
+    metadescription = "An art project by scum. A living portfolio of digital art, collaborations, and experiments.",
   } = props;
 
   //context for splash screen & modals
@@ -70,8 +74,8 @@ const PageLayout: FC<Props> = (props: Props) => {
         }`}
       >
         <PageHead
-          title="Scum"
-          description="A scum project by art"
+          title={metatitle}
+          description={metadescription}
           url="https://scum.art" // no backslash at the end
           twitter="twitterhandle"
         />

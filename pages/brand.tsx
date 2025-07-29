@@ -12,6 +12,8 @@ const Brand: NextPage<{ initialTheme: Theme }> = ({ initialTheme }) => {
       headerType="absolute"
       assets={assets}
       initialTheme={initialTheme}
+      metatitle="Scum - Brand Kit | Slimes Studio, All in Time, and more."
+      metadescription="Explore the Scum brand kit, featuring Slimes Studio, All in Time, and more. Download logos, graphics, and brand assets."
     >
       <BrandKitView setAssets={setAssets} />
     </PageLayout>

@@ -12,6 +12,8 @@ const Family: NextPage<{ initialTheme: Theme }> = ({ initialTheme }) => {
       headerType="absolute"
       assets={assets}
       initialTheme={initialTheme}
+      metatitle="Scum - Family | Explore the Scum family of projects and collaborations."
+      metadescription="Discover the Scum family, a collection of projects and collaborations that showcase the creative spirit of scum. Explore Slimes, Maquina Muertes, and more."
     >
       <FamilyView setAssets={setAssets} />
     </PageLayout>

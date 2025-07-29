@@ -12,6 +12,8 @@ const Axolotl: NextPage<{ initialTheme: Theme }> = ({ initialTheme }) => {
       headerType="absolute"
       assets={assets}
       initialTheme={initialTheme}
+      metatitle="Scum - Saving the Axolotls"
+      metadescription="Learn about Scum's Axolotl project, a conservation effort to help preserve and regenerate what is left of the Axolotl population in Lake Xochimilco."
     >
       <AxolotlView setAssets={setAssets} />
     </PageLayout>
