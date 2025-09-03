@@ -14,6 +14,8 @@ import {
   isTablet,
   browserName as detectedBrowserName,
 } from "react-device-detect";
+import Image from "next/image";
+import { IconBar } from "@components";
 
 interface Props {
   setAssets: Dispatch<SetStateAction<boolean[]>>;
@@ -72,10 +74,11 @@ const LandingView: FC<Props> = (props: Props) => {
   return (
     <motion.div className="relative page-centered !mb-0" {...midEnterAnimation}>
       <h1 className="sr-only">Scum - All In Time - Slimes</h1>
+      <IconBar className="absolute top-32 left-5 xl:left-1/2 transform xl:-translate-x-1/2 z-10 xl:hidden" />
       {/* ait cta */}
       <motion.a
         {...slideUp(showView, 0, 0.75)}
-        className="group w-[294px] h-12 transition-300 bg-scum-teal hover:bg-scum-black rounded-3xl absolute bottom-[8vh] md:bottom-20 z-10 flex justify-between items-center p-1"
+        className="group w-[294px] h-12 transition-300 bg-scum-teal hover:bg-scum-black rounded-3xl absolute bottom-[8vh] md:bottom-20 z-[15] flex justify-between items-center p-1"
         href="https://allintime.xyz/"
         target="_blank"
         rel="noreferrer"
@@ -98,9 +101,21 @@ const LandingView: FC<Props> = (props: Props) => {
           </svg>
         </div>
       </motion.a>
-      {browserName !== "" && (
+
+      <Image
+        src={`${process.env.CLOUDFLARE_STORAGE}/images/landing/cucuy-${
+          mobileView ? "sm" : "lg"
+        }.png`}
+        alt="Slime Landing"
+        width={1024}
+        height={1024}
+        className="absolute right-0 xl:left-1/2 top-[55%] xl:top-1/2 transform xl:-translate-x-1/2 -translate-y-1/2 w-[350px] md:w-[600px] lg:w-[700px] z-10 xl:w-[900px] 2xl:w-[1024px]"
+        onLoad={() => setShowView(true)}
+      />
+
+      {/* videos */}
+      {/* {browserName !== "" && (
         <>
-          {/* videos */}
           <motion.video
             ref={introRef}
             autoPlay
@@ -154,10 +169,11 @@ const LandingView: FC<Props> = (props: Props) => {
               type="video/mp4"
             />
             Your browser does not support the video tag.
-          </motion.video>
+          </motion.video> 
+          */}
 
-          {/* mobile */}
-          <AnimatePresence mode="wait">
+      {/* mobile */}
+      {/* <AnimatePresence mode="wait">
             {!showLoop && (
               <motion.video
                 ref={introRefMobile}
@@ -197,7 +213,7 @@ const LandingView: FC<Props> = (props: Props) => {
             Your browser does not support the video tag.
           </motion.video>
         </>
-      )}
+      )} */}
     </motion.div>
   );
 };
