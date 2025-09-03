@@ -79,7 +79,7 @@ const LandingView: FC<Props> = (props: Props) => {
       <IconBar className="absolute top-32 left-5 xl:left-1/2 transform xl:-translate-x-1/2 z-10 xl:hidden" />
       {/* ait cta */}
       <div
-        className="mx-2 absolute bottom-[6vh] md:bottom-20 xl:bottom-[70px] 2xl:bottom-[85px] z-[15]"
+        className="mx-2 absolute bottom-[6vh] md:bottom-20 z-[15]"
         style={{ width: mobileView ? "calc(100% - 16px)" : "auto" }}
       >
         <a
@@ -115,7 +115,7 @@ const LandingView: FC<Props> = (props: Props) => {
         alt="Slime Landing"
         width={1024}
         height={1024}
-        className="absolute right-0 xl:left-1/2 top-[55%] xl:top-1/2 transform xl:-translate-x-1/2 -translate-y-1/2 w-auto h-[100%] xl:h-auto lg:w-[700px] z-10 xl:w-[900px] 2xl:w-[1024px]"
+        className="absolute right-0 xl:left-1/2 top-[55%] xl:top-[47%] transform xl:-translate-x-1/2 -translate-y-1/2 w-auto h-[100%] xl:h-auto lg:w-[700px] z-10 xl:w-[800px] 2xl:w-[1024px]"
         // onLoad={() => setShowView(true)}
       />
 
