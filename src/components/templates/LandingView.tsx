@@ -33,7 +33,8 @@ const LandingView: FC<Props> = (props: Props) => {
   }, []);
 
   const [winWidth] = useWindowSize();
-  const mobileView = winWidth <= 1024;
+  const tabletView = winWidth <= 1024;
+  const mobileView = winWidth <= 640;
   //refs
   const introRef = useRef<HTMLVideoElement>(null);
   const loopRef = useRef<HTMLVideoElement>(null);
@@ -77,40 +78,44 @@ const LandingView: FC<Props> = (props: Props) => {
       <h1 className="sr-only">Scum - All In Time - Slimes</h1>
       <IconBar className="absolute top-32 left-5 xl:left-1/2 transform xl:-translate-x-1/2 z-10 xl:hidden" />
       {/* ait cta */}
-      <motion.a
-        {...slideUp(showView, 0, 0.75)}
-        className="group w-[294px] h-12 transition-300 bg-scum-teal hover:bg-scum-black rounded-3xl absolute bottom-[8vh] md:bottom-20 z-[15] flex justify-between items-center p-1"
-        href="https://allintime.xyz/"
-        target="_blank"
-        rel="noreferrer"
+      <div
+        className="mx-2 absolute bottom-[6vh] md:bottom-20 xl:bottom-[70px] 2xl:bottom-[85px] z-[15]"
+        style={{ width: mobileView ? "calc(100% - 16px)" : "auto" }}
       >
-        <div className="ml-4 lg:mt-0.5 font-forma-bold text-[19px] group-hover:text-white transition-300">
-          Shop All In Time
-        </div>
-        <div className="w-[40px] h-[40px] rounded-full bg-scum-black group-hover:bg-scum-teal transition-300 row-centered">
-          <svg
-            width="11"
-            height="11"
-            viewBox="0 0 11 11"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M1.56445 10.623L0.321289 9.37988L7.80811 1.89307H2.06543L2.08398 0.176758H10.749V8.85107H9.03271V3.13623L1.56445 10.623Z"
-              className="fill-scum-beige group-hover:fill-scum-black transition-300"
-            />
-          </svg>
-        </div>
-      </motion.a>
+        <a
+          className="group w-full sm:w-[294px] h-12 transition-300 bg-scum-teal hover:bg-scum-black rounded-3xl flex justify-between items-center p-1"
+          href="https://allintime.xyz/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <div className="ml-4 lg:mt-0.5 font-forma-bold text-[19px] group-hover:text-white transition-300">
+            Shop All In Time
+          </div>
+          <div className="w-[40px] h-[40px] rounded-full bg-scum-black group-hover:bg-scum-teal transition-300 row-centered">
+            <svg
+              width="11"
+              height="11"
+              viewBox="0 0 11 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.56445 10.623L0.321289 9.37988L7.80811 1.89307H2.06543L2.08398 0.176758H10.749V8.85107H9.03271V3.13623L1.56445 10.623Z"
+                className="fill-scum-beige group-hover:fill-scum-black transition-300"
+              />
+            </svg>
+          </div>
+        </a>
+      </div>
 
       <Image
         src={`${process.env.CLOUDFLARE_STORAGE}/images/landing/cucuy-${
-          mobileView ? "sm" : "lg"
+          tabletView ? "sm" : "lg"
         }.png`}
         alt="Slime Landing"
         width={1024}
         height={1024}
-        className="absolute right-0 xl:left-1/2 top-[55%] xl:top-1/2 transform xl:-translate-x-1/2 -translate-y-1/2 w-[350px] md:w-[600px] lg:w-[700px] z-10 xl:w-[900px] 2xl:w-[1024px]"
+        className="absolute right-0 xl:left-1/2 top-[55%] xl:top-1/2 transform xl:-translate-x-1/2 -translate-y-1/2 w-auto h-[100%] xl:h-auto lg:w-[700px] z-10 xl:w-[900px] 2xl:w-[1024px]"
         // onLoad={() => setShowView(true)}
       />
 
@@ -124,7 +129,7 @@ const LandingView: FC<Props> = (props: Props) => {
             playsInline
             key="intro desktop"
             className={`${
-              mobileView && "hidden"
+              tabletView && "hidden"
             } h-full w-screen absolute inset-0 -z-10 ${
               !showLoop ? "visible" : "invisible"
             }`}
@@ -153,7 +158,7 @@ const LandingView: FC<Props> = (props: Props) => {
             key="loop desktop"
             loop
             className={`${
-              mobileView && "hidden"
+              tabletView && "hidden"
             } h-full w-screen absolute inset-0 -z-20 ${
               showLoop ? "visible" : "invisible"
             }`}
@@ -182,7 +187,7 @@ const LandingView: FC<Props> = (props: Props) => {
                 autoPlay
                 playsInline
                 key="intro-mobile"
-                className={`mobile-video -z-10 ${!mobileView && "hidden"} ${
+                className={`mobile-video -z-10 ${!tabletView && "hidden"} ${
                   !showLoop ? "visible" : "invisible"
                 }`}
                 style={{ objectFit: "cover" }}
@@ -202,7 +207,7 @@ const LandingView: FC<Props> = (props: Props) => {
             playsInline
             key="loop-mobile"
             loop
-            className={`mobile-video -z-20 ${!mobileView && "hidden"}  ${
+            className={`mobile-video -z-20 ${!tabletView && "hidden"}  ${
               showLoop ? "visible" : "invisible"
             }`}
             style={{ objectFit: "cover" }}
