@@ -78,12 +78,9 @@ const LandingView: FC<Props> = (props: Props) => {
       <h1 className="sr-only">Scum - All In Time - Slimes</h1>
       <IconBar className="absolute top-32 left-5 xl:left-1/2 transform xl:-translate-x-1/2 z-10 xl:hidden" />
       {/* ait cta */}
-      <div
-        className="mx-2 absolute bottom-[6vh] md:bottom-20 z-[15]"
-        style={{ width: mobileView ? "calc(100% - 16px)" : "auto" }}
-      >
+      <div className="mx-2 absolute bottom-[6vh] md:bottom-20 z-[15]">
         <a
-          className="group w-full sm:w-[294px] h-12 transition-300 bg-scum-teal hover:bg-scum-black rounded-3xl flex justify-between items-center p-1"
+          className="group w-[294px] h-12 transition-300 bg-scum-teal hover:bg-scum-black rounded-3xl flex justify-between items-center p-1"
           href="https://allintime.xyz/"
           target="_blank"
           rel="noreferrer"
