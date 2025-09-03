@@ -59,17 +59,18 @@ const LandingView: FC<Props> = (props: Props) => {
   }, [setShowView, showLoop]);
 
   useEffect(() => {
-    if (isMobile || isTablet) setShowView(true);
+    // if (isMobile || isTablet) setShowView(true);
+    setShowView(true);
   }, []);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowView(true);
-    }, 5000);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setShowView(true);
+  //   }, 5000);
 
-    // Cleanup the timer if the component unmounts
-    return () => clearTimeout(timer);
-  }, []);
+  //   // Cleanup the timer if the component unmounts
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   return (
     <motion.div className="relative page-centered !mb-0" {...midEnterAnimation}>
@@ -110,7 +111,7 @@ const LandingView: FC<Props> = (props: Props) => {
         width={1024}
         height={1024}
         className="absolute right-0 xl:left-1/2 top-[55%] xl:top-1/2 transform xl:-translate-x-1/2 -translate-y-1/2 w-[350px] md:w-[600px] lg:w-[700px] z-10 xl:w-[900px] 2xl:w-[1024px]"
-        onLoad={() => setShowView(true)}
+        // onLoad={() => setShowView(true)}
       />
 
       {/* videos */}
