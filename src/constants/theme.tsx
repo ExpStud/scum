@@ -3,7 +3,7 @@ import { Theme } from "@types";
 export const theme: Theme[] = [
   {
     color: "beige",
-    primary: "#F6EFD3",
+    primary: "#F6F1D8", //"#F6EFD3",
     secondary: "#2C2524",
     tertiary: "#2C2524",
   },
