@@ -162,14 +162,14 @@ const LandingView: FC<Props> = (props: Props) => {
             }`}
             style={{ objectFit: "cover" }}
           >
-            {/* {browserName !== "Safari" && (
+            {browserName !== "Safari" && (
               <source
-                src={`${process.env.CLOUDFLARE_STORAGE}/videos/desktop_loop.webm`}
+                src={`${process.env.CLOUDFLARE_STORAGE}/videos/cucuy-wide.webm`}
                 type="video/webm"
               />
-            )} */}
+            )}
             <source
-              src={`${process.env.CLOUDFLARE_STORAGE}/videos/cucuy.mp4`}
+              src={`${process.env.CLOUDFLARE_STORAGE}/videos/cucuy-wide.mp4`}
               type="video/mp4"
             />
             Your browser does not support the video tag.
