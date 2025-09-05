@@ -42,7 +42,7 @@ module.exports = {
         tertiary: "var(--color-tertiary)",
         //scum
         "scum-beige": {
-          DEFAULT: "#F6EFD3",
+          DEFAULT: "#F6F1D8", //"#F6EFD3",
           500: "#F6EFD3",
           600: "#FDC3AE",
         },

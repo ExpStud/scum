@@ -9,6 +9,8 @@ const ExchangeIcon = dynamic(() => import("./@icons/ExchangeIcon"));
 const DownloadIcon = dynamic(() => import("./@icons/DownloadIcon"));
 const MenuIcon = dynamic(() => import("./@icons/MenuIcon"));
 const AxolotlPattern = dynamic(() => import("./@icons/AxolotlPattern"));
+const InstagramIcon = dynamic(() => import("./@icons/InstagramIcon"));
+
 //atoms
 const NumberInput = dynamic(() => import("./atoms/NumberInput"));
 const TextInput = dynamic(() => import("./atoms/TextInput"));
@@ -131,4 +133,5 @@ export {
   PortalsArt,
   PortalsFactions,
   FactionBlock,
+  InstagramIcon,
 }

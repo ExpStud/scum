@@ -16,7 +16,7 @@ const Socials: FC<Props> = (props: Props) => {
             <br />
             no lo cambias.
           </div>
-          <div className="flex flex-col gap-1 pb-6">
+          <div className="flex flex-col gap-1 pb-6 invisible">
             <a
               href="https://exchange.art/scum/on-sale"
               target="_blank"

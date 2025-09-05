@@ -14,6 +14,8 @@ import {
   isTablet,
   browserName as detectedBrowserName,
 } from "react-device-detect";
+import Image from "next/image";
+import { IconBar } from "@components";
 
 interface Props {
   setAssets: Dispatch<SetStateAction<boolean[]>>;
@@ -23,7 +25,7 @@ interface Props {
 
 const LandingView: FC<Props> = (props: Props) => {
   const { showView, setShowView } = props;
-  const [showLoop, setShowLoop] = useState<boolean>(false);
+  const [showLoop, setShowLoop] = useState<boolean>(true); //TODO: set to false if reverting cucuy intro
   const [browserName, setBrowserName] = useState("");
 
   useEffect(() => {
@@ -31,7 +33,8 @@ const LandingView: FC<Props> = (props: Props) => {
   }, []);
 
   const [winWidth] = useWindowSize();
-  const mobileView = winWidth <= 1024;
+  const tabletView = winWidth <= 1024;
+  const mobileView = winWidth <= 640;
   //refs
   const introRef = useRef<HTMLVideoElement>(null);
   const loopRef = useRef<HTMLVideoElement>(null);
@@ -57,58 +60,73 @@ const LandingView: FC<Props> = (props: Props) => {
   }, [setShowView, showLoop]);
 
   useEffect(() => {
-    if (isMobile || isTablet) setShowView(true);
+    // if (isTablet) setShowView(true);
+    setShowView(true);
   }, []);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowView(true);
-    }, 5000);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setShowView(true);
+  //   }, 5000);
 
-    // Cleanup the timer if the component unmounts
-    return () => clearTimeout(timer);
-  }, []);
+  //   // Cleanup the timer if the component unmounts
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   return (
     <motion.div className="relative page-centered !mb-0" {...midEnterAnimation}>
       <h1 className="sr-only">Scum - All In Time - Slimes</h1>
+      <IconBar className="absolute top-32 left-5 xl:left-1/2 transform xl:-translate-x-1/2 z-10 xl:hidden" />
       {/* ait cta */}
-      <motion.a
-        {...slideUp(showView, 0, 0.75)}
-        className="group w-[294px] h-12 transition-300 bg-scum-teal hover:bg-scum-black rounded-3xl absolute bottom-[8vh] md:bottom-20 z-10 flex justify-between items-center p-1"
-        href="https://allintime.xyz/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <div className="ml-4 lg:mt-0.5 font-forma-bold text-[19px] group-hover:text-white transition-300">
-          Shop All In Time
-        </div>
-        <div className="w-[40px] h-[40px] rounded-full bg-scum-black group-hover:bg-scum-teal transition-300 row-centered">
-          <svg
-            width="11"
-            height="11"
-            viewBox="0 0 11 11"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M1.56445 10.623L0.321289 9.37988L7.80811 1.89307H2.06543L2.08398 0.176758H10.749V8.85107H9.03271V3.13623L1.56445 10.623Z"
-              className="fill-scum-beige group-hover:fill-scum-black transition-300"
-            />
-          </svg>
-        </div>
-      </motion.a>
+      <div className="mx-2 absolute bottom-[6vh] md:bottom-20 z-[15]">
+        <a
+          className="group w-[294px] h-12 transition-300 bg-scum-teal hover:bg-scum-black rounded-3xl flex justify-between items-center p-1"
+          href="https://allintime.xyz/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <div className="ml-4 lg:mt-0.5 font-forma-bold text-[19px] group-hover:text-white transition-300">
+            Shop All In Time
+          </div>
+          <div className="w-[40px] h-[40px] rounded-full bg-scum-black group-hover:bg-scum-teal transition-300 row-centered">
+            <svg
+              width="11"
+              height="11"
+              viewBox="0 0 11 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.56445 10.623L0.321289 9.37988L7.80811 1.89307H2.06543L2.08398 0.176758H10.749V8.85107H9.03271V3.13623L1.56445 10.623Z"
+                className="fill-scum-beige group-hover:fill-scum-black transition-300"
+              />
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      <Image
+        src={`${process.env.CLOUDFLARE_STORAGE}/images/landing/cucuy-${
+          tabletView ? "sm" : "lg"
+        }.png`}
+        alt="Slime Landing"
+        width={1024}
+        height={1024}
+        className="xl:hidden absolute right-0 xl:left-1/2 top-[52%] xl:top-[47%] transform xl:-translate-x-1/2 -translate-y-1/2 w-auto h-[100%] xl:h-auto lg:w-[700px] z-10 xl:w-[800px] 2xl:w-[1024px]"
+        // onLoad={() => setShowView(true)}
+      />
+
+      {/* videos */}
       {browserName !== "" && (
         <>
-          {/* videos */}
-          <motion.video
+          {/* <motion.video
             ref={introRef}
             autoPlay
             muted
             playsInline
             key="intro desktop"
             className={`${
-              mobileView && "hidden"
+              tabletView && "hidden"
             } h-full w-screen absolute inset-0 -z-10 ${
               !showLoop ? "visible" : "invisible"
             }`}
@@ -117,27 +135,28 @@ const LandingView: FC<Props> = (props: Props) => {
               setShowLoop(true);
             }}
             {...exitAnimation}
-          >
-            {browserName !== "Safari" && (
+          > */}
+          {/* {browserName !== "Safari" && (
               <source
-                src={`${process.env.CLOUDFLARE_STORAGE}/videos/desktop_intro.webm`}
+                src={`${process.env.CLOUDFLARE_STORAGE}/videos/cucuy.mp4`}
                 type="video/webm"
               />
-            )}
-            <source
-              src={`${process.env.CLOUDFLARE_STORAGE}/videos/desktop_intro.mp4`}
+            )} */}
+          {/* <source
+              src={`${process.env.CLOUDFLARE_STORAGE}/videos/cucuy.mp4`}
               type="video/mp4"
             />
             Your browser does not support the video tag.
-          </motion.video>
+          </motion.video> */}
           <motion.video
             ref={loopRef}
+            key="loop desktop"
+            autoPlay
             muted
             playsInline
-            key="loop desktop"
             loop
             className={`${
-              mobileView && "hidden"
+              tabletView && "hidden"
             } h-full w-screen absolute inset-0 -z-20 ${
               showLoop ? "visible" : "invisible"
             }`}
@@ -145,19 +164,19 @@ const LandingView: FC<Props> = (props: Props) => {
           >
             {browserName !== "Safari" && (
               <source
-                src={`${process.env.CLOUDFLARE_STORAGE}/videos/desktop_loop.webm`}
+                src={`${process.env.CLOUDFLARE_STORAGE}/videos/cucuy-wide.webm`}
                 type="video/webm"
               />
             )}
             <source
-              src={`${process.env.CLOUDFLARE_STORAGE}/videos/desktop_loop.mp4`}
+              src={`${process.env.CLOUDFLARE_STORAGE}/videos/cucuy-wide.mp4`}
               type="video/mp4"
             />
             Your browser does not support the video tag.
           </motion.video>
 
           {/* mobile */}
-          <AnimatePresence mode="wait">
+          {/* <AnimatePresence mode="wait">
             {!showLoop && (
               <motion.video
                 ref={introRefMobile}
@@ -165,7 +184,7 @@ const LandingView: FC<Props> = (props: Props) => {
                 autoPlay
                 playsInline
                 key="intro-mobile"
-                className={`mobile-video -z-10 ${!mobileView && "hidden"} ${
+                className={`mobile-video -z-10 ${!tabletView && "hidden"} ${
                   !showLoop ? "visible" : "invisible"
                 }`}
                 style={{ objectFit: "cover" }}
@@ -185,7 +204,7 @@ const LandingView: FC<Props> = (props: Props) => {
             playsInline
             key="loop-mobile"
             loop
-            className={`mobile-video -z-20 ${!mobileView && "hidden"}  ${
+            className={`mobile-video -z-20 ${!tabletView && "hidden"}  ${
               showLoop ? "visible" : "invisible"
             }`}
             style={{ objectFit: "cover" }}
@@ -195,7 +214,7 @@ const LandingView: FC<Props> = (props: Props) => {
               type="video/mp4"
             />
             Your browser does not support the video tag.
-          </motion.video>
+          </motion.video>*/}
         </>
       )}
     </motion.div>
