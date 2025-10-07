@@ -43,13 +43,15 @@ const SlimeNav: NextPage<Props> = (props: Props) => {
       <div className="flex gap-2">
         <button
           className="slimes-button-round"
-          onClick={() => router.push(getPrevious())}
+          onClick={() =>
+            router.push(getPrevious(), undefined, { scroll: false })
+          }
         >
           ←
         </button>
         <button
-          className="slimes-button-round  "
-          onClick={() => router.push(getNext())}
+          className="slimes-button-round"
+          onClick={() => router.push(getNext(), undefined, { scroll: false })}
         >
           →
         </button>
