@@ -112,7 +112,7 @@ const LandingView: FC<Props> = (props: Props) => {
         alt="Slime Landing"
         width={1024}
         height={1024}
-        className="xl:hidden absolute right-0 xl:left-1/2 top-[52%] xl:top-[47%] transform xl:-translate-x-1/2 -translate-y-1/2 w-auto h-[100%] xl:h-auto lg:w-[700px] z-10 xl:w-[800px] 2xl:w-[1024px]"
+        className="lg:hidden absolute right-0 xl:left-1/2 top-[52%] xl:top-[47%] transform xl:-translate-x-1/2 -translate-y-1/2 w-auto h-[100%] xl:h-auto lg:w-[700px] z-10 xl:w-[800px] 2xl:w-[1024px]"
         // onLoad={() => setShowView(true)}
       />
 

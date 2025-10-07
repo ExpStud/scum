@@ -11,12 +11,12 @@ const Socials: FC<Props> = (props: Props) => {
     <div className={`${divProps.className}`}>
       <AnimateWrapper animate={show} opacity={true}>
         <div className="flex flex-col ">
-          <div className="absolute -left-40 2xl:-left-44 -top-5 -rotate-90 text-secondary text-sm font-normal font-secondary leading-[18px]">
+          <div className="absolute -left-40 2xl:-left-44 top-12 -rotate-90 text-secondary text-sm font-normal font-secondary leading-[18px]">
             el arte es un exprecíon de vida,
             <br />
             no lo cambias.
           </div>
-          <div className="flex flex-col gap-1 pb-6 invisible">
+          <div className="flex flex-col gap-1 pb-6">
             <a
               href="https://exchange.art/scum/on-sale"
               target="_blank"

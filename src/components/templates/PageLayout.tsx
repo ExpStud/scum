@@ -94,7 +94,7 @@ const PageLayout: FC<Props> = (props: Props) => {
               className={`hidden xl:block absolute outer-left-spacing z-20 ${
                 router.pathname === "/" || router.pathname === "/slimes-studio"
                   ? "bottom-[140px]"
-                  : "top-[83vh]"
+                  : "top-[78vh]"
               }`}
               show={footer}
             />
