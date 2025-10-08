@@ -1,11 +1,12 @@
 import { useRouter } from "next/router";
-import { FC, useRef } from "react";
+import { FC, useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import { useInView } from "framer-motion";
 import { AnimateWrapper } from "@components";
 
 const Footer: FC<{ show: boolean }> = ({ show }) => {
   const router = useRouter();
+  const [isPageReady, setIsPageReady] = useState(false);
 
   const textColor =
     router.pathname === "/axolotl"
@@ -19,9 +20,18 @@ const Footer: FC<{ show: boolean }> = ({ show }) => {
     once: true,
   });
 
+  // Delay the page ready state to ensure content has settled
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsPageReady(true);
+    }, 500); // 500ms delay to allow initial content to render
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <footer ref={ref}>
-      <AnimateWrapper animate={isInView && show} height={20}>
+      <AnimateWrapper animate={isInView && show && isPageReady} height={20}>
         <div className="h-[50px] md:h-[100px] transition-200 bg-tertiary rounded-tl-[25px] md:rounded-tl-[50px] rounded-br-[25px] md:rounded-br-[50px] mb-2 md:mb-5 mx-2 md:mx-5">
           <div className="max-w-[1880px] relative w-full h-full flex items-center justify-between text-xs md:text-lg lg:text-xl 2xl:text-2xl px-6 md:px-10 xl:px-0">
             <div className="outer-left-padding">
