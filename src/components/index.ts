@@ -10,7 +10,7 @@ const DownloadIcon = dynamic(() => import("./@icons/DownloadIcon"));
 const MenuIcon = dynamic(() => import("./@icons/MenuIcon"));
 const AxolotlPattern = dynamic(() => import("./@icons/AxolotlPattern"));
 const InstagramIcon = dynamic(() => import("./@icons/InstagramIcon"));
-
+//testing
 //atoms
 const NumberInput = dynamic(() => import("./atoms/NumberInput"));
 const TextInput = dynamic(() => import("./atoms/TextInput"));
@@ -18,7 +18,9 @@ const CheckBox = dynamic(() => import("./atoms/CheckBox"));
 const LoadCircle = dynamic(() => import("./atoms/LoadSpinner"));
 const ImageShimmer = dynamic(() => import("./atoms/ImageShimmer"));
 const Logo = dynamic(() => import("./atoms/Logo"));
-const MarqueeTextAnimation = dynamic(() => import("./atoms/MarqueeTextAnimation"));
+const MarqueeTextAnimation = dynamic(
+  () => import("./atoms/MarqueeTextAnimation")
+);
 //molecules
 const PageHead = dynamic(() => import("./molecules/PageHead"));
 const NavItem = dynamic(() => import("./molecules/NavItem"));
@@ -34,8 +36,12 @@ const WorldToggleItem = dynamic(() => import("./molecules/WorldToggleItem"));
 const ImageBar = dynamic(() => import("./molecules/ImageBar"));
 const AnimateWrapper = dynamic(() => import("./molecules/AnimateWrapper"));
 const GalleryItem = dynamic(() => import("./molecules/GalleryItem"));
-const SlimeGraphicsItem = dynamic(() => import("./molecules/SlimeGraphicsItem"));
-const SlimesStudioToggleLayout = dynamic(() => import("./molecules/SlimesStudioToggleLayout"));
+const SlimeGraphicsItem = dynamic(
+  () => import("./molecules/SlimeGraphicsItem")
+);
+const SlimesStudioToggleLayout = dynamic(
+  () => import("./molecules/SlimesStudioToggleLayout")
+);
 const FactionBlock = dynamic(() => import("./molecules/FactionBlock"));
 //organisms
 const Header = dynamic(() => import("./organisms/Header"));
@@ -45,15 +51,23 @@ const ImageModal = dynamic(() => import("./organisms/ImageModal"));
 const SlimeGraphics = dynamic(() => import("./organisms/SlimeGraphics"));
 const SlimeNav = dynamic(() => import("./organisms/SlimeNav"));
 const SlimeItem = dynamic(() => import("./organisms/SlimeItem"));
-const MaquinaCharacters = dynamic(() => import("./organisms/MaquinaCharacters"));
-const MaquinaCollaborations = dynamic(() => import("./organisms/MaquinaCollaborations"));
+const MaquinaCharacters = dynamic(
+  () => import("./organisms/MaquinaCharacters")
+);
+const MaquinaCollaborations = dynamic(
+  () => import("./organisms/MaquinaCollaborations")
+);
 const MaquinaBranding = dynamic(() => import("./organisms/MaquinaBranding"));
 const Gallery = dynamic(() => import("./organisms/Gallery"));
 const DropdownItem = dynamic(() => import("./organisms/DropdownItem"));
 const Toggle = dynamic(() => import("./organisms/Toggle"));
-const CyberFrogsBranding = dynamic(() => import("./organisms/CyberFrogsBranding"));
+const CyberFrogsBranding = dynamic(
+  () => import("./organisms/CyberFrogsBranding")
+);
 const CyberFrogsArt = dynamic(() => import("./organisms/CyberFrogsArt"));
-const CyberFrogsWebsite = dynamic(() => import("./organisms/CyberFrogsWebsite"));
+const CyberFrogsWebsite = dynamic(
+  () => import("./organisms/CyberFrogsWebsite")
+);
 const PortalsSystems = dynamic(() => import("./organisms/PortalsSystems"));
 const PortalsArt = dynamic(() => import("./organisms/PortalsArt"));
 const PortalsFactions = dynamic(() => import("./organisms/PortalsFactions"));
@@ -67,7 +81,9 @@ const MaquinaView = dynamic(() => import("./templates/MaquinaView"));
 const FamilyView = dynamic(() => import("./templates/FamilyView"));
 const AxolotlView = dynamic(() => import("./templates/AxolotlView"));
 const SlimesStudioView = dynamic(() => import("./templates/SlimesStudioView"));
-const SlimesStudioItemView = dynamic(() => import("./templates/SlimesStudioItemView"));
+const SlimesStudioItemView = dynamic(
+  () => import("./templates/SlimesStudioItemView")
+);
 const BrandKitView = dynamic(() => import("./templates/BrandKitView"));
 
 export {
@@ -134,4 +150,4 @@ export {
   PortalsFactions,
   FactionBlock,
   InstagramIcon,
-}
+};
