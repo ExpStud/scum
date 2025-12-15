@@ -48,8 +48,8 @@ const Menu: FC<Props> = (props: Props) => {
               <NavItem href="/about">About</NavItem>
               <NavItem href="/slimes">Slimes</NavItem>
               <NavItem href="/maquina">Maquina Muertes</NavItem>
-              <NavItem href="/slimes-studio">Slimes Studio</NavItem>
-              <NavItem href="/axolotl">Axolotls</NavItem>
+              {/* <NavItem href="/slimes-studio">Slimes Studio</NavItem> */}
+              {/* <NavItem href="/axolotl">Axolotls</NavItem> */}
               <NavItem href="/family">Family</NavItem>
             </div>
 
